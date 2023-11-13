@@ -3,6 +3,7 @@ const {
   frontmatter: { title, module, submodule, examples },
 } = Astro.props;
 import CodeEmbed from "@components/reference/CodeEmbed/";
+import InteractiveComponentTest from "@components/InteractiveComponentTest/";
 ---
 
 <html>
@@ -14,6 +15,9 @@ import CodeEmbed from "@components/reference/CodeEmbed/";
   <slot />
   <!-- This is a react component -->
   <CodeEmbed code={examples} />
+  <h3>This is an interactive component that uses React hooks</h3>
+   This will only work
+  <InteractiveComponentTest client:load />
 
 
 </html>
