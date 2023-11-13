@@ -1,0 +1,19 @@
+{
+  "name": "p5-scratch-pad",
+  "version": "0.0.1",
+  "description": "scratch pad for website redesign for p5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:reference": "node ./scripts/build-reference.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "documentation": "^14.0.2",
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-mdx": "^3.0.0"
+  }
+}
