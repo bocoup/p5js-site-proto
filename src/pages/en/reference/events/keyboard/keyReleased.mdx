@@ -1,0 +1,33 @@
+---
+title: keyReleased
+module: Events
+submodule: Keyboard
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - |-
+    <div>
+    <code>
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe(`black rect center. turns white when key pressed and black
+        when pressed again`);
+    }
+    function keyReleased() {
+      if (value === 0) {
+        value = 255;
+      } else {
+        value = 0;
+      }
+      return false; // prevent any default behavior
+    }
+    </code>
+    </div>
+kind: function
+name: keyReleased
+namespace: keyReleased
+---
+
+
+# keyReleased

@@ -1,0 +1,61 @@
+---
+title: lerp
+module: Math
+submodule: Calculation
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    let a = 20;
+
+    let b = 80;
+
+    let c = lerp(a, b, 0.2);
+
+    let d = lerp(a, b, 0.5);
+
+    let e = lerp(a, b, 0.8);
+
+
+    let y = 50;
+
+
+    strokeWeight(5);
+
+
+    // Draw the original points in black.
+
+    stroke(0);
+
+    point(a, y);
+
+    point(b, y);
+
+
+    // Draw the lerped points in gray.
+
+    stroke(100);
+
+    point(c, y);
+
+    point(d, y);
+
+    point(e, y);
+
+
+    describe('Five points in a horizontal line. The outer points are black and
+    the inner points are gray.');
+
+    </code>
+
+    </div>
+kind: function
+name: lerp
+namespace: lerp
+---
+
+
+# lerp

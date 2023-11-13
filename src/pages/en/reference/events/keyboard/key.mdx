@@ -1,0 +1,29 @@
+---
+title: key
+module: Events
+submodule: Keyboard
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - |-
+    <div><code>
+    // Click any key to display it!
+    // (Not Guaranteed to be Case Sensitive)
+    function setup() {
+      fill(245, 123, 158);
+      textSize(50);
+    }
+
+    function draw() {
+      background(200);
+      text(key, 33, 65); // Display last key pressed.
+      describe('canvas displays any key value that is pressed in pink font.');
+    }
+    </code></div>
+name: key
+memberof: p5
+scope: instance
+namespace: '#key'
+---
+
+
+# key

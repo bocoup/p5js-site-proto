@@ -1,0 +1,27 @@
+---
+title: norm
+module: Math
+submodule: Calculation
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - |-
+    <div>
+    <code>
+    function draw() {
+      // Set the range for RGB values from 0 to 1.
+      colorMode(RGB, 1);
+
+      let r = norm(mouseX, 0, width);
+      background(r, 0, 0);
+
+      describe('A square changes color from black to red as the mouse moves from left to right.');
+    }
+    </code>
+    </div>
+kind: function
+name: norm
+namespace: norm
+---
+
+
+# norm

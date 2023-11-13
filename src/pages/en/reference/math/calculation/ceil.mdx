@@ -1,0 +1,47 @@
+---
+title: ceil
+module: Math
+submodule: Calculation
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    // Set the range for RGB values from 0 to 1.
+
+    colorMode(RGB, 1);
+
+    noStroke();
+
+
+    let r = 0.3;
+
+    fill(r, 0, 0);
+
+    rect(0, 0, width / 2, height);
+
+
+    // Round r up to 1.
+
+    r = ceil(r);
+
+    fill(r, 0, 0);
+
+    rect(width / 2, 0, width / 2, height);
+
+
+    describe('Two rectangles. The one on the left is dark red and the one on the
+    right is bright red.');
+
+    </code>
+
+    </div>
+kind: function
+name: ceil
+namespace: ceil
+---
+
+
+# ceil

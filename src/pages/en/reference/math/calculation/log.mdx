@@ -1,0 +1,29 @@
+---
+title: log
+module: Math
+submodule: Calculation
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+examples:
+  - |-
+    <div>
+    <code>
+    function draw() {
+      // Invert the y-axis.
+      scale(1, -1);
+      translate(0, -height);
+
+      let x = frameCount;
+      let y = 15 * log(x);
+      point(x, y);
+
+      describe('A series of black dots that get higher slowly from left to right.');
+    }
+    </code>
+    </div>
+kind: function
+name: log
+namespace: log
+---
+
+
+# log

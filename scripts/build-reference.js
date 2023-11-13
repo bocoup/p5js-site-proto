@@ -7,20 +7,45 @@ import remarkMDX from "remark-mdx";
 let fileContextToModuleMap = new Map();
 let fileContextToSubmoduleMap = new Map();
 
+const modulePathTree = {};
+
 function getModulePath(doc) {
-  const prefix = `./pages/en/reference`;
-  const module = fileContextToModuleMap[doc.context.file];
+  let prefix = `./src/pages/en/reference`;
+  const module = fileContextToModuleMap[doc.context.file]?.toLowerCase();
+  const submodule = fileContextToSubmoduleMap[doc.context.file]?.toLowerCase();
+
+  // Check if module exists
   if (!module) {
     console.warn(
       `Could not find module for file ${doc.context.file} in fileContextToModuleMap`
     );
     return prefix;
   }
-  const submodule = fileContextToSubmoduleMap[doc.context.file];
-  if (!submodule) {
-    return `${prefix}/${module}`;
+
+  let path = `${prefix}/${module}`;
+
+  // Add submodule to path if it exists
+  if (submodule) {
+    path += `/${submodule}`;
   }
-  return `${prefix}/${module}/${submodule}/`;
+
+  const pathWithFile = `${path.replace("./src/pages", "")}/${doc.name}`;
+
+  // Create or update modulePathTree
+  if (!modulePathTree[module]) {
+    modulePathTree[module] = {};
+  }
+
+  if (submodule) {
+    if (!modulePathTree[module][submodule]) {
+      modulePathTree[module][submodule] = {};
+    }
+    modulePathTree[module][submodule][doc.name] = pathWithFile;
+  } else {
+    modulePathTree[module][doc.name] = pathWithFile;
+  }
+
+  return path;
 }
 
 function convertToMDX(doc) {
@@ -52,6 +77,8 @@ function convertToMDX(doc) {
     title: doc.name,
     module,
     submodule,
+    // This is currently a static value but might change
+    layout: "@layouts/reference/SingleReferenceLayout.astro",
     examples: doc.examples.map((example) => example.description),
     // Add all properties as frontmatter, except for those that are objects
     // Likely needs to be organized more deliberately
@@ -73,6 +100,40 @@ function convertToMDX(doc) {
   return `${frontmatter}\n${mdxContent.toString()}`;
 }
 
+const getIndexMdx = () => {
+  const frontmatter = matter.stringify("", {
+    title: "Reference",
+  });
+
+  let markdownContent = `# Reference\n`;
+
+  for (const module in modulePathTree) {
+    markdownContent += `## ${module}\n`;
+    const submodules = modulePathTree[module];
+
+    // Check if the module has submodules
+    if (Object.keys(submodules).length > 0 && typeof submodules === "object") {
+      for (const submodule in submodules) {
+        markdownContent += `### ${submodule}\n`;
+        for (const docName in submodules[submodule]) {
+          const path = submodules[submodule][docName];
+          markdownContent += `- [${docName}](${path})\n`;
+        }
+      }
+    } else {
+      // Handling the case where the module has no submodules
+      for (const docName in submodules) {
+        const path = submodules[docName];
+        markdownContent += `- [${docName}](${path})\n`;
+      }
+    }
+  }
+
+  const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+
+  return `${frontmatter}\n${mdxContent.toString()}`;
+};
+
 async function main() {
   console.log("Building reference docs...");
   const docs = await documentation.build(["example-src/**/*.js"], {
@@ -89,6 +150,10 @@ async function main() {
     });
     await fs.writeFile(`${savePath}/${doc.name}.mdx`, mdx.toString());
   }
+
+  /* Save reference home for navigation */
+  const indexMdx = getIndexMdx();
+  await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
 }
 
 main();
