@@ -1,0 +1,39 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: setAlpha
+module: Color
+submodule: Creating & Reading
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/color/p5.Color.js
+descriptionText: |-
+  Sets the alpha (transparency) value of a color. The range depends on the
+  <a href="#/colorMode">colorMode()</a>. In the default RGB mode it's
+  between 0 and 255.
+params:
+  - name: alpha
+    description: the new alpha value.
+    type: Number
+kind: function
+name: setAlpha
+namespace: setAlpha
+examples:
+  - |-
+    <div>
+    <code>
+    function draw() {
+      clear();
+      background(200);
+      const squareColor = color(100, 50, 100);
+      squareColor.setAlpha(128 + 128 * sin(millis() / 1000));
+      fill(squareColor);
+      rect(13, 13, width - 26, height - 26);
+      describe(
+        'A purple square with gradually changing opacity drawn on a gray background.'
+      );
+    }
+    </code>
+    </div>
+    *
+---
+
+
+# setAlpha

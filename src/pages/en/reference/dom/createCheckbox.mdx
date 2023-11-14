@@ -1,0 +1,105 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createCheckbox
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/dom/dom.js
+descriptionText: >-
+  Creates a checkbox `&lt;input&gt;&lt;/input&gt;` element. Checkboxes extend
+
+  the <a href="#/p5.Element">p5.Element</a> class with a `checked()` method.
+
+  Calling `myBox.checked()` returns `true` if it the box is checked and
+
+  `false` otherwise.The first parameter, `label`, is optional. It's a string
+  that sets the label
+
+  to display next to the checkbox.The second parameter, `value`, is also
+  optional. It's a boolean that sets the
+
+  checkbox's value.
+params:
+  - name: label
+    description: label displayed after the checkbox.
+    type: String
+  - name: value
+    description: value of the checkbox. Checked is true and unchecked is false.
+    type: boolean
+kind: function
+name: createCheckbox
+namespace: createCheckbox
+examples:
+  - |-
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      checkbox = createCheckbox();
+      checkbox.position(0, 100);
+
+      describe('A black square with a checkbox beneath it. The square turns white when the box is checked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      // Label the checkbox "white".
+      checkbox = createCheckbox(' white');
+      checkbox.position(0, 100);
+
+      describe('A black square with a checkbox labeled "white" beneath it. The square turns white when the box is checked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      // Label the checkbox "white" and set its value to true.
+      checkbox = createCheckbox(' white', true);
+      checkbox.position(0, 100);
+
+      describe('A white square with a checkbox labeled "white" beneath it. The square turns black when the box is unchecked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
+---
+
+
+# createCheckbox

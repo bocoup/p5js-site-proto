@@ -1,0 +1,108 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: cone
+module: Shape
+submodule: 3D Primitives
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/3d_primitives.js
+descriptionText: >-
+  Draw a cone with given radius and heightDetailX and detailY determine the
+  number of subdivisions in the x-dimension and
+
+  the y-dimension of a cone. More subdivisions make the cone seem smoother. The
+
+  recommended maximum value for detailX is 24. Using a value greater than 24
+
+  may cause a warning or slow down the browser.
+params:
+  - name: radius
+    description: radius of the bottom surface
+    type: Number
+  - name: height
+    description: height of the cone
+    type: Number
+  - name: detailX
+    description: |-
+      number of segments,
+      the more segments the smoother geometry
+      default is 24
+    type: Integer
+  - name: detailY
+    description: |-
+      number of segments,
+      the more segments the smoother geometry
+      default is 1
+    type: Integer
+  - name: cap
+    description: whether to draw the base of the cone
+    type: Boolean
+kind: function
+name: cone
+namespace: cone
+examples:
+  - |-
+    <div>
+    <code>
+    // draw a spinning cone
+    // with radius 40 and height 70
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('a rotating white cone');
+    }
+
+    function draw() {
+      background(200);
+      rotateX(frameCount * 0.01);
+      rotateZ(frameCount * 0.01);
+      cone(40, 70);
+    }
+    </code>
+    </div>
+  - |-
+    <div>
+    <code>
+    // slide to see how detailx works
+    let detailX;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      detailX = createSlider(3, 16, 3);
+      detailX.position(10, height + 5);
+      detailX.style('width', '80px');
+      describe(
+        'a rotating white cone with limited X detail, with a slider that adjusts detailX'
+      );
+    }
+
+    function draw() {
+      background(205, 102, 94);
+      rotateY(millis() / 1000);
+      cone(30, 65, detailX.value(), 16);
+    }
+    </code>
+    </div>
+  - |-
+    <div>
+    <code>
+    // slide to see how detailY works
+    let detailY;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      detailY = createSlider(3, 16, 3);
+      detailY.position(10, height + 5);
+      detailY.style('width', '80px');
+      describe(
+        'a rotating white cone with limited Y detail, with a slider that adjusts detailY'
+      );
+    }
+
+    function draw() {
+      background(205, 102, 94);
+      rotateY(millis() / 1000);
+      cone(30, 65, 16, detailY.value());
+    }
+    </code>
+    </div>
+---
+
+
+# cone

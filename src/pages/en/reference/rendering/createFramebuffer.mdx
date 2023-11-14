@@ -1,0 +1,73 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createFramebuffer
+module: Rendering
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/rendering.js
+descriptionText: >-
+  Creates and returns a new <a href="#/p5.Framebuffer">p5.Framebuffer</a>, a
+
+  high-performance WebGL object that you can draw to and then use as a
+  texture.Options can
+  include:undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedIf
+  `width`, `height`, or `density` are specified, then the framebuffer will
+
+  keep that size until manually changed. Otherwise, it will be autosized, and
+
+  it will update to match the main canvas's size and density when the main
+
+  canvas changes.
+params:
+  - name: options
+    description: An optional object with configuration
+    type: Object
+kind: function
+name: createFramebuffer
+namespace: createFramebuffer
+examples:
+  - |-
+    <div>
+    <code>
+    let prev, next, cam;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      prev = createFramebuffer({ format: FLOAT });
+      next = createFramebuffer({ format: FLOAT });
+      cam = createCamera();
+      noStroke();
+    }
+
+    function draw() {
+      // Swap prev and next so that we can use the previous
+      // frame as a texture when drawing the current frame
+      [prev, next] = [next, prev];
+
+      // Draw to the framebuffer
+      next.begin();
+      background(255);
+
+      push();
+      // Draw the previous texture farther away, but scaled
+      // up to fill the screen, plus a bit extra scale so it grows
+      translate(0, 0, -200);
+      scale(1.001 * (200 + cam.eyeZ) / cam.eyeZ);
+      tint(255, 253);
+      image(prev, -width/2, -height/2);
+      pop();
+
+      push();
+      normalMaterial();
+      translate(25*sin(frameCount * 0.014), 25*sin(frameCount * 0.02), 0);
+      rotateX(frameCount * 0.01);
+      rotateY(frameCount * 0.01);
+      box(12);
+      pop();
+      next.end();
+
+      image(next, -width/2, -height/2);
+    }
+    </code>
+    </div>
+---
+
+
+# createFramebuffer

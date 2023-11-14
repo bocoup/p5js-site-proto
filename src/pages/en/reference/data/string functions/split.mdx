@@ -1,0 +1,58 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: split
+module: Data
+submodule: String Functions
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/utilities/string_functions.js
+descriptionText: >-
+  The <a href="#/p5/split">split()</a> function maps to String.split(), it
+  breaks a String into
+
+  pieces using a character or string as the delimiter. The delim parameter
+
+  specifies the character or characters that mark the boundaries between
+
+  each piece. A String[] array is returned that contains each of the pieces.The
+  <a href="#/p5/splitTokens">splitTokens()</a> function works in a similar
+  fashion, except that it
+
+  splits using a range of characters instead of a specific character or
+
+  sequence.
+params:
+  - name: value
+    description: the String to be split
+    type: String
+  - name: delim
+    description: the String used to separate the data
+    type: String
+kind: function
+name: split
+namespace: split
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    let names = 'Pat,Xio,Alex';
+
+    let splitString = split(names, ',');
+
+    text(splitString[0], 5, 30);
+
+    text(splitString[1], 5, 50);
+
+    text(splitString[2], 5, 70);
+
+    describe('“Pat” top left, “Xio” mid left, and “Alex” displayed bottom
+    left');
+
+    </code>
+
+    </div>
+---
+
+
+# split

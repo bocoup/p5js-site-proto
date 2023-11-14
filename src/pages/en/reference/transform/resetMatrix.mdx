@@ -1,0 +1,26 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: resetMatrix
+module: Transform
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/transform.js
+descriptionText: Replaces the current matrix with the identity matrix.
+params: []
+kind: function
+name: resetMatrix
+namespace: resetMatrix
+examples:
+  - |-
+    <div>
+    <code>
+    translate(50, 50);
+    applyMatrix(0.5, 0.5, -0.5, 0.5, 0, 0);
+    rect(0, 0, 20, 20);
+    // Note that the translate is also reset.
+    resetMatrix();
+    rect(0, 0, 20, 20);
+    </code>
+    </div>
+---
+
+
+# resetMatrix

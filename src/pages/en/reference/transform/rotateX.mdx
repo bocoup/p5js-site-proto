@@ -1,0 +1,42 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: rotateX
+module: Transform
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/transform.js
+descriptionText: >-
+  Rotates a shape around X axis by the amount specified in angle parameter.
+
+  The angles can be entered in either RADIANS or DEGREES.Objects are always
+  rotated around their relative position to the
+
+  origin and positive numbers rotate objects in a clockwise direction.
+
+  All transformations are reset when <a href="#/p5/draw">draw()</a> begins
+  again.
+params:
+  - name: angle
+    description: |-
+      the angle of rotation, specified in radians
+      or degrees, depending on current angleMode
+    type: Number
+kind: function
+name: rotateX
+namespace: rotateX
+examples:
+  - |-
+    <div modernizr='webgl'>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+    function draw() {
+      background(255);
+      rotateX(millis() / 1000);
+      box();
+    }
+    </code>
+    </div>
+---
+
+
+# rotateX

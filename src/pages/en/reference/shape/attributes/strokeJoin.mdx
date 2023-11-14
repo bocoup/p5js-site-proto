@@ -1,0 +1,113 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: strokeJoin
+module: Shape
+submodule: Attributes
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/attributes.js
+descriptionText: >-
+  Sets the style of the joints which connect line segments. These joints are
+
+  either mitered (`MITER`), beveled (`BEVEL`), or rounded (`ROUND`). The default
+
+  joint is `MITER` in 2D mode and `ROUND` in WebGL mode.The argument passed to
+  `strokeJoin()` must be written in ALL CAPS because
+
+  the constants `MITER`, `BEVEL`, and `ROUND` are defined this way.
+
+  JavaScript is a case-sensitive language.
+params:
+  - name: join
+    description: 'either MITER, BEVEL, or ROUND'
+    type: Constant
+kind: function
+name: strokeJoin
+namespace: strokeJoin
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    noFill();
+
+    strokeWeight(10.0);
+
+    strokeJoin(MITER);
+
+    beginShape();
+
+    vertex(35, 20);
+
+    vertex(65, 50);
+
+    vertex(35, 80);
+
+    endShape();
+
+    describe('A right-facing arrowhead shape with a pointed tip in center of
+    canvas.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    noFill();
+
+    strokeWeight(10.0);
+
+    strokeJoin(BEVEL);
+
+    beginShape();
+
+    vertex(35, 20);
+
+    vertex(65, 50);
+
+    vertex(35, 80);
+
+    endShape();
+
+    describe('A right-facing arrowhead shape with a flat tip in center of
+    canvas.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    noFill();
+
+    strokeWeight(10.0);
+
+    strokeJoin(ROUND);
+
+    beginShape();
+
+    vertex(35, 20);
+
+    vertex(65, 50);
+
+    vertex(35, 80);
+
+    endShape();
+
+    describe('A right-facing arrowhead shape with a rounded tip in center of
+    canvas.');
+
+    </code>
+
+    </div>
+---
+
+
+# strokeJoin

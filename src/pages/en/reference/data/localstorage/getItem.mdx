@@ -1,0 +1,51 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getItem
+module: Data
+submodule: LocalStorage
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/data/local_storage.js
+descriptionText: |-
+  Returns the value of an item that was stored in local storage
+  using storeItem()
+params:
+  - name: key
+    description: name that you wish to use to store in local storage
+    type: String
+kind: function
+name: getItem
+namespace: getItem
+examples:
+  - |-
+    <div><code>
+    // Click the mouse to change
+    // the color of the background
+    // Once you have changed the color
+    // it will stay changed even when you
+    // reload the page.
+
+    let myColor;
+
+    function setup() {
+      createCanvas(100, 100);
+      myColor = getItem('myColor');
+    }
+
+    function draw() {
+      if (myColor !== null) {
+        background(myColor);
+      }
+      describe(`If you click, the canvas changes to a random color.·
+        If you reload the page, the canvas is still the color it was when the
+        page was previously loaded.`);
+    }
+
+    function mousePressed() {
+      myColor = color(random(255), random(255), random(255));
+      storeItem('myColor', myColor);
+    }
+    </code></div>
+---
+
+
+# getItem

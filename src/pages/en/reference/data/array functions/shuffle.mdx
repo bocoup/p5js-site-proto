@@ -1,0 +1,40 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: shuffle
+module: Data
+submodule: Array Functions
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/utilities/array_functions.js
+descriptionText: |-
+  Randomizes the order of the elements of an array. Implements
+  <a href='http://Bost.Ocks.org/mike/shuffle/' target=_blank>
+  Fisher-Yates Shuffle Algorithm</a>.
+params:
+  - name: array
+    description: Array to shuffle
+    type: Array
+  - name: bool
+    description: modify passed array
+    type: Boolean
+kind: function
+name: shuffle
+namespace: shuffle
+examples:
+  - |-
+    <div><code>
+    function setup() {
+      let regularArr = ['ABC', 'def', createVector(), TAU, Math.E];
+      print(regularArr);
+      shuffle(regularArr, true); // force modifications to passed array
+      print(regularArr);
+
+      // By default shuffle() returns a shuffled cloned array:
+      let newArr = shuffle(regularArr);
+      print(regularArr);
+      print(newArr);
+    }
+    </code></div>
+---
+
+
+# shuffle

@@ -1,0 +1,43 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: bezierDetail
+module: Shape
+submodule: Curves
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/curves.js
+descriptionText: >-
+  Sets the resolution at which Bezier's curve is displayed. The default value is
+  20.Note, This function is only useful when using the WEBGL renderer
+
+  as the default canvas renderer does not use this information.
+params:
+  - name: detail
+    description: resolution of the curves
+    type: Number
+kind: function
+name: bezierDetail
+namespace: bezierDetail
+examples:
+  - |-
+    <div modernizr='webgl'>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      noFill();
+      bezierDetail(5);
+    }
+
+    function draw() {
+      background(200);
+      bezier(
+        -40, -40, 0,
+        90, -40, 0,
+        -90,  40, 0,
+        40,  40, 0
+      );
+    }
+    </code>
+    </div>
+---
+
+
+# bezierDetail

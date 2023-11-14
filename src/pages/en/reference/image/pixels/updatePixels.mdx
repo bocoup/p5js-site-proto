@@ -1,0 +1,65 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: updatePixels
+module: Image
+submodule: Pixels
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/pixels.js
+descriptionText: >-
+  Updates the canvas with the RGBA values in the
+
+  <a href="#/p5/pixels">pixels</a> array.`updatePixels()` only needs to be
+  called after changing values in the
+
+  <a href="#/p5/pixels">pixels</a> array. Such changes can be made directly
+
+  after calling <a href="#/p5/loadPixels">loadPixels()</a> or by calling
+
+  <a href="#/p5/set">set()</a>.
+params:
+  - name: x
+    description: |-
+      x-coordinate of the upper-left corner of region
+      to update.
+    type: Number
+  - name: 'y'
+    description: |-
+      y-coordinate of the upper-left corner of region
+      to update.
+    type: Number
+  - name: w
+    description: width of region to update.
+    type: Number
+  - name: h
+    description: height of region to update.
+    type: Number
+kind: function
+name: updatePixels
+namespace: updatePixels
+examples:
+  - |-
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0, width, height);
+      let d = pixelDensity();
+      let halfImage = 4 * (d * width) * (d * height / 2);
+      loadPixels();
+      for (let i = 0; i < halfImage; i += 1) {
+        pixels[i + halfImage] = pixels[i];
+      }
+      updatePixels();
+
+      describe('Two identical images of mountain landscapes, one on top of the other.');
+    }
+    </code>
+    </div>
+---
+
+
+# updatePixels

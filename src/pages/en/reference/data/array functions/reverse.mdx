@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: reverse
+module: Data
+submodule: Array Functions
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/utilities/array_functions.js
+descriptionText: 'Reverses the order of an array, maps to Array.reverse()'
+params:
+  - name: list
+    description: Array to reverse
+    type: Array
+kind: function
+name: reverse
+namespace: reverse
+examples:
+  - |-
+    <div class='norender'><code>
+    function setup() {
+      let myArray = ['A', 'B', 'C'];
+      print(myArray); // ['A','B','C']
+
+      reverse(myArray);
+      print(myArray); // ['C','B','A']
+    }
+    </code></div>
+---
+
+
+# reverse

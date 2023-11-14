@@ -1,0 +1,53 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: ortho
+module: 3D
+submodule: Camera
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/p5.Camera.js
+descriptionText: |-
+  Sets an orthographic projection.
+  Accepts the same parameters as the global
+  <a href="#/p5/ortho">ortho()</a>.
+  More information on this function can be found there.
+params: []
+kind: function
+name: ortho
+namespace: ortho
+examples:
+  - |-
+    <div>
+    <code>
+    // drag the mouse to look around!
+    // there's no vanishing point
+
+    let cam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      // create a camera
+      cam = createCamera();
+      // give it an orthographic projection
+      cam.ortho(-width / 2, width / 2, height / 2, -height / 2, 0, 500);
+    }
+    function draw() {
+      background(200);
+      orbitControl();
+      normalMaterial();
+
+      rotateX(0.2);
+      rotateY(-0.2);
+      push();
+      translate(-15, 0, sin(frameCount / 30) * 65);
+      box(30);
+      pop();
+      push();
+      translate(15, 0, sin(frameCount / 30 + PI) * 65);
+      box(30);
+      pop();
+    }
+    </code>
+    </div>
+---
+
+
+# ortho

@@ -1,0 +1,41 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: resizeCanvas
+module: Rendering
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/rendering.js
+descriptionText: |-
+  Resizes the canvas to given width and height. The canvas will be cleared
+  and draw will be called immediately, allowing the sketch to re-render itself
+  in the resized canvas.
+params:
+  - name: w
+    description: width of the canvas
+    type: Number
+  - name: h
+    description: height of the canvas
+    type: Number
+  - name: noRedraw
+    description: don't redraw the canvas immediately
+    type: Boolean
+kind: function
+name: resizeCanvas
+namespace: resizeCanvas
+examples:
+  - |-
+    <div class="norender"><code>
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      background(0, 100, 200);
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+    </code></div>
+---
+
+
+# resizeCanvas

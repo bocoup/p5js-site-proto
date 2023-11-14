@@ -1,0 +1,44 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getArray
+module: IO
+submodule: Table
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/p5.Table.js
+descriptionText: Retrieves all table data and returns it as a multidimensional array.
+params: []
+kind: function
+name: getArray
+namespace: getArray
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leoperd
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      // table is comma separated value "CSV"
+      // and has specifiying header for column labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      let tableArray = table.getArray();
+      for (let i = 0; i < tableArray.length; i++) {
+        print(tableArray[i]);
+      }
+      describe('no image displayed');
+    }
+    </code>
+    </div>
+---
+
+
+# getArray

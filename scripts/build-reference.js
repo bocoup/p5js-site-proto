@@ -3,13 +3,21 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { remark } from "remark";
 import remarkMDX from "remark-mdx";
+import { simpleGit } from "simple-git";
 
 let fileContextToModuleMap = new Map();
 let fileContextToSubmoduleMap = new Map();
 
+const localPath = "temp/p5.js";
+const srcPath = "src/**/*.js";
+
 const modulePathTree = {};
 
 function getModulePath(doc) {
+  if (!doc) {
+    return;
+  }
+
   let prefix = `./src/pages/en/reference`;
   const module = fileContextToModuleMap[doc.context.file]?.toLowerCase();
   const submodule = fileContextToSubmoduleMap[doc.context.file]?.toLowerCase();
@@ -25,7 +33,7 @@ function getModulePath(doc) {
   let path = `${prefix}/${module}`;
 
   // Add submodule to path if it exists
-  if (submodule) {
+  if (submodule && submodule !== module) {
     path += `/${submodule}`;
   }
 
@@ -33,22 +41,26 @@ function getModulePath(doc) {
 
   // Create or update modulePathTree
   if (!modulePathTree[module]) {
-    modulePathTree[module] = {};
+    modulePathTree[module] = { root: {} };
   }
 
-  if (submodule) {
+  if (submodule && submodule !== module) {
     if (!modulePathTree[module][submodule]) {
       modulePathTree[module][submodule] = {};
     }
     modulePathTree[module][submodule][doc.name] = pathWithFile;
   } else {
-    modulePathTree[module][doc.name] = pathWithFile;
+    modulePathTree[module]["root"][doc.name] = pathWithFile;
   }
 
   return path;
 }
 
 function convertToMDX(doc) {
+  if (!doc) {
+    return;
+  }
+
   for (const tag of doc.tags) {
     if (tag.title === "module") {
       // Store mapping of modules to their file path
@@ -60,22 +72,32 @@ function convertToMDX(doc) {
   }
 
   const module = fileContextToModuleMap[doc.context.file];
-  const submodule = fileContextToSubmoduleMap[doc.context.file];
+  let submodule = fileContextToSubmoduleMap[doc.context.file];
 
-  // This is the module declaration
+  // Submodule is not useful when identical to module
+  // Should be cleaned up in authoring
+  if (submodule === module) {
+    submodule = null;
+  }
+
+  // This is the module declaration, no reference needed
   if (module === doc.name) {
     return;
   }
 
   // p5 keeps some internal modules that we don't want to document
-  if (doc.name.startsWith("_")) {
+  if (doc.name?.startsWith("_")) {
     return;
   }
 
   const transformedParams = doc.params
     .map((param) => {
       // Check if the necessary properties exist
-      if (!param.description || !param.description.children || !param.type) {
+      if (
+        !param.description ||
+        !param.description.children ||
+        (!param.type?.name && !param.type?.expression?.name)
+      ) {
         return null;
       }
 
@@ -89,7 +111,7 @@ function convertToMDX(doc) {
       return {
         name: param.name,
         description: descriptionText,
-        type: param.type.name ?? param.type.expression.name,
+        type: param.type.name ?? param.type?.expression?.name ?? "",
       };
     })
     .filter((param) => param != null);
@@ -97,7 +119,7 @@ function convertToMDX(doc) {
   let descriptionText = "";
 
   for (const child of doc.description?.children ?? []) {
-    for (const textNode of child.children) {
+    for (const textNode of child.children ?? []) {
       switch (textNode.type) {
         case "inlineCode":
           descriptionText += `\`${textNode.value}\``;
@@ -122,34 +144,52 @@ function convertToMDX(doc) {
     }
   }
 
-  // Create the frontmatter string
-  const frontmatter = matter.stringify("", {
-    layout: "@layouts/reference/SingleReferenceLayout.astro",
-    title: doc.name,
-    module,
-    submodule,
-    // This is currently a static value but might change
-    descriptionText,
-    params: transformedParams,
-    // Add all properties as frontmatter, except for those that are objects
-    // Likely needs to be organized more deliberately
-    ...Object.entries(doc)
-      .filter(
-        ([key, value]) =>
-          typeof value !== undefined && typeof value !== "object"
-      )
-      .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
-    examples: doc.examples.map((example) => example.description),
-  });
+  // Likely intended as private
+  if (!module) {
+    return;
+  }
 
-  // Combine all pieces of the doc into a single Markdown string
-  let markdownContent = `# ${doc.name}\n`;
+  let frontMatterArgs = {};
+  try {
+    frontMatterArgs = {
+      layout: "@layouts/reference/SingleReferenceLayout.astro",
+      title: doc.name ?? "",
+      module,
+      ...(submodule ? { submodule } : {}),
+      file: doc.context.file.replace(/.*?(?=src)/, ""), // Get relative path from src
+      // This is currently a static value but might change
+      descriptionText,
+      params: transformedParams,
+      // Add all properties as frontmatter, except for those that are objects
+      // This likely needs to be organized more deliberately
+      ...Object.entries(doc)
+        .filter(
+          ([key, value]) =>
+            typeof value !== "object" && typeof value !== "undefined"
+        )
+        .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
 
-  // Process the Markdown content through remark and remark-mdx
-  const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+      examples: doc.examples
+        ? doc.examples.map((example) => example.description)
+        : [],
+    };
 
-  // Combine frontmatter and MDX content
-  return `${frontmatter}\n${mdxContent.toString()}`;
+    // Create the frontmatter string
+    const frontmatter = matter.stringify("", frontMatterArgs);
+
+    // Combine all pieces of the doc into a single Markdown string
+    let markdownContent = `# ${doc.name}\n`;
+
+    // Process the Markdown content through remark and remark-mdx
+    const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+
+    // Combine frontmatter and MDX content
+    return `${frontmatter}\n${mdxContent.toString()}`;
+  } catch (err) {
+    console.error(`Error converting ${doc.name} to MDX: ${err}`);
+    console.log(frontMatterArgs);
+    return;
+  }
 }
 
 const getIndexMdx = () => {
@@ -158,27 +198,24 @@ const getIndexMdx = () => {
   });
 
   let markdownContent = `# Reference\n`;
-
   for (const module in modulePathTree) {
     markdownContent += `## ${module}\n`;
     const submodules = modulePathTree[module];
 
-    // Check if the module has submodules
-    if (Object.keys(submodules).length > 0 && typeof submodules === "object") {
-      for (const submodule in submodules) {
-        markdownContent += `### ${submodule}\n`;
-        for (const docName in submodules[submodule]) {
-          const path = submodules[submodule][docName];
-          markdownContent += `- [${docName}](${path})\n`;
+    const scanAndAddSubmodules = (modules) => {
+      for (const [key, val] of Object.entries(modules)) {
+        if (typeof val === "object" && Object.keys(val).length > 0) {
+          if (key !== "root") {
+            markdownContent += `### ${key}\n`;
+          }
+          scanAndAddSubmodules(val);
+        } else {
+          markdownContent += `- [${key}](${val})\n`;
         }
       }
-    } else {
-      // Handling the case where the module has no submodules
-      for (const docName in submodules) {
-        const path = submodules[docName];
-        markdownContent += `- [${docName}](${path})\n`;
-      }
-    }
+    };
+
+    scanAndAddSubmodules(submodules);
   }
 
   const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
@@ -186,13 +223,38 @@ const getIndexMdx = () => {
   return `${frontmatter}\n${mdxContent.toString()}`;
 };
 
+async function cloneLibraryRepo() {
+  const git = simpleGit();
+  const repoUrl = "https://github.com/processing/p5.js.git";
+
+  console.log("Cloning repository...");
+  await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
+}
+
+async function deleteClonedLibraryRepo(path) {
+  try {
+    await fs.rm(path, { recursive: true, force: true });
+    console.log(`Deleted cloned library source code: ${path}`);
+  } catch (err) {
+    console.error(`Error deleting cloned library code: ${err}`);
+  }
+}
+
+async function cleanUp() {
+  await deleteClonedLibraryRepo("temp");
+}
+
 async function main() {
+  await cloneLibraryRepo();
+
   console.log("Building reference docs...");
-  const docs = await documentation.build(["example-src/**/*.js"], {
+  console.log(`${localPath}/${srcPath}`);
+  const docs = await documentation.build([`${localPath}/${srcPath}`], {
     shallow: true,
   });
   for (const doc of docs) {
     const mdx = await convertToMDX(doc, matter, remark, remarkMDX);
+
     if (!mdx) {
       continue;
     }
@@ -204,8 +266,13 @@ async function main() {
   }
 
   /* Save reference home for navigation */
+  console.log("Saving reference index...");
   const indexMdx = getIndexMdx();
   await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
+
+  await deleteClonedLibraryRepo("temp");
+
+  console.log("Done building reference docs!");
 }
 
 main();

@@ -1,0 +1,25 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: maxKey
+module: Data
+submodule: Dictionary
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/data/p5.TypedDict.js
+descriptionText: Return the highest key currently used in the Dictionary.
+params: []
+kind: function
+name: maxKey
+namespace: maxKey
+examples:
+  - |-
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict({ 2: 4, 4: 6, 1.2: 3 });
+      let highestKey = myDictionary.maxKey(); // value is 4
+      print(highestKey);
+    }
+    </code></div>
+---
+
+
+# maxKey

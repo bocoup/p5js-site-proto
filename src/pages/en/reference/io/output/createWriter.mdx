@@ -1,0 +1,41 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createWriter
+module: IO
+submodule: Output
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/files.js
+descriptionText: ''
+params:
+  - name: name
+    description: name of the file to be created
+    type: String
+description: ''
+kind: function
+name: createWriter
+namespace: createWriter
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100);
+      background(200);
+      text('click here to save', 10, 10, 70, 80);
+    }
+
+    function mousePressed() {
+      if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+        const writer = createWriter('squares.txt');
+        for (let i = 0; i < 10; i++) {
+          writer.print(i * i);
+        }
+        writer.close();
+        writer.clear();
+      }
+    }
+    </code>
+    </div>
+---
+
+
+# createWriter

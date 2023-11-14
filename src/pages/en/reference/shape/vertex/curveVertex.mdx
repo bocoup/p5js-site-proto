@@ -1,0 +1,63 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: curveVertex
+module: Shape
+submodule: Vertex
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/vertex.js
+descriptionText: ''
+params:
+  - name: z
+    description: z-coordinate of the vertex (for WebGL mode)
+    type: Number
+description: ''
+kind: function
+name: curveVertex
+namespace: curveVertex
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      setAttributes('antialias', true);
+    }
+    function draw() {
+      orbitControl();
+      background(50);
+      strokeWeight(4);
+      stroke(255);
+
+      point(-25, 25);
+      point(-25, 25);
+      point(-25, -25);
+      point(25, -25);
+      point(25, 25);
+      point(25, 25);
+
+      strokeWeight(1);
+      noFill();
+
+      beginShape();
+      curveVertex(-25, 25);
+      curveVertex(-25, 25);
+      curveVertex(-25, -25);
+      curveVertex(25, -25);
+      curveVertex(25, 25);
+      curveVertex(25, 25);
+      endShape();
+
+      beginShape();
+      curveVertex(-25, 25, 20);
+      curveVertex(-25, 25, 20);
+      curveVertex(-25, -25, 20);
+      curveVertex(25, -25, 20);
+      curveVertex(25, 25, 20);
+      curveVertex(25, 25, 20);
+      endShape();
+    }
+    </code>
+    </div>
+---
+
+
+# curveVertex

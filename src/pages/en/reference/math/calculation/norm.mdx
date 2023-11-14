@@ -1,0 +1,48 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: norm
+module: Math
+submodule: Calculation
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/calculation.js
+descriptionText: >-
+  Maps a number from one range to a value between 0 and 1.For example, `norm(2,
+  0, 10)` returns 0.2. 2's position in the original
+
+  range [0, 10] is proportional to 0.2's position in the range [0, 1]. This
+
+  is equivalent to calling `map(2, 0, 10, 0, 1)`.Numbers outside of the original
+  range are not constrained between 0 and 1.
+
+  Out-of-range values are often intentional and useful.
+params:
+  - name: value
+    description: incoming value to be normalized.
+    type: Number
+  - name: start
+    description: lower bound of the value's current range.
+    type: Number
+  - name: stop
+    description: upper bound of the value's current range.
+    type: Number
+kind: function
+name: norm
+namespace: norm
+examples:
+  - |-
+    <div>
+    <code>
+    function draw() {
+      // Set the range for RGB values from 0 to 1.
+      colorMode(RGB, 1);
+
+      let r = norm(mouseX, 0, width);
+      background(r, 0, 0);
+
+      describe('A square changes color from black to red as the mouse moves from left to right.');
+    }
+    </code>
+    </div>
+---
+
+
+# norm

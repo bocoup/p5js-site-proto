@@ -1,0 +1,36 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: reset
+module: Image
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/p5.Image.js
+descriptionText: Restarts an animated GIF at its first frame.
+params: []
+kind: function
+name: reset
+namespace: reset
+examples:
+  - |-
+    <div>
+    <code>
+    let gif;
+
+    function preload() {
+      gif = loadImage('assets/arnott-wallace-wink-loop-once.gif');
+    }
+
+    function draw() {
+      background(255);
+      image(gif, 0, 0);
+
+      describe('A cartoon face winks once and then freezes. Clicking resets the face and makes it wink again.');
+    }
+
+    function mousePressed() {
+      gif.reset();
+    }
+    </code>
+    </div>
+---
+
+
+# reset

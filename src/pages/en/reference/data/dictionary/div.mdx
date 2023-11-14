@@ -1,0 +1,33 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: div
+module: Data
+submodule: Dictionary
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/data/p5.TypedDict.js
+descriptionText: |-
+  Divide the given number with the value currently stored at the given key.
+  The quotient then replaces the value previously stored in the Dictionary.
+params:
+  - name: Key
+    description: for value you wish to divide
+    type: Number
+  - name: Amount
+    description: to divide the value by
+    type: Number
+kind: function
+name: div
+namespace: div
+examples:
+  - |-
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict(2, 8);
+      myDictionary.div(2, 2);
+      print(myDictionary.get(2)); // logs 4 to console.
+    }
+    </code></div>
+---
+
+
+# div

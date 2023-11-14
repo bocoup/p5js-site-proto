@@ -1,0 +1,32 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: fract
+module: Math
+submodule: Calculation
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/calculation.js
+descriptionText: |-
+  Calculates the fractional part of a number. For example,
+  `fract(12.34)` returns 0.34.
+params:
+  - name: 'n'
+    description: number whose fractional part will be found.
+    type: Number
+kind: function
+name: fract
+namespace: fract
+examples:
+  - |-
+    <div>
+    <code>
+    let n = 56.78;
+    text(n, 20, 33);
+    let f = fract(n);
+    text(f, 20, 66);
+
+    describe('The number 56.78 written above the number 0.78.');
+    </code>
+    </div>
+---
+
+
+# fract

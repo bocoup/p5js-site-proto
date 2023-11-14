@@ -1,0 +1,55 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: mag
+module: Math
+submodule: Calculation
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/calculation.js
+descriptionText: >-
+  Calculates the magnitude, or length, of a vector. A vector is like an arrow
+
+  pointing in space. Vectors are commonly used for programming motion.Vectors
+  don't have a "start" position because the same arrow can be drawn
+
+  anywhere. A vector's magnitude can be thought of as the distance from the
+
+  origin (0, 0) to its tip at (x, y). `mag(x, y)` is a shortcut for calling
+
+  `dist(0, 0, x, y)`.
+params:
+  - name: x
+    description: first component.
+    type: Number
+  - name: 'y'
+    description: second component.
+    type: Number
+kind: function
+name: mag
+namespace: mag
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    let x = 30;
+
+    let y = 40;
+
+    let m = mag(x, y);
+
+
+    line(0, 0, x, y);
+
+    text(m, x, y);
+
+
+    describe('A diagonal line is drawn from the top left of the canvas. The
+    number 50 is written at the end of the line.');
+
+    </code>
+
+    </div>
+---
+
+
+# mag

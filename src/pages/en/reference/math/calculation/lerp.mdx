@@ -1,0 +1,89 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: lerp
+module: Math
+submodule: Calculation
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/calculation.js
+descriptionText: >-
+  Calculates a number between two numbers at a specific increment. The `amt`
+
+  parameter is the amount to interpolate between the two numbers. 0.0 is
+
+  equal to the first number, 0.1 is very near the first number, 0.5 is
+
+  half-way in between, and 1.0 is equal to the second number. The `lerp()`
+
+  function is convenient for creating motion along a straight path and for
+
+  drawing dotted lines.If the value of `amt` is less than 0 or more than 1,
+  `lerp()` will return a
+
+  number outside of the original interval. For example, calling
+
+  `lerp(0, 10, 1.5)` will return 15.
+params:
+  - name: start
+    description: first value.
+    type: Number
+  - name: stop
+    description: second value.
+    type: Number
+  - name: amt
+    description: number.
+    type: Number
+kind: function
+name: lerp
+namespace: lerp
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    let a = 20;
+
+    let b = 80;
+
+    let c = lerp(a, b, 0.2);
+
+    let d = lerp(a, b, 0.5);
+
+    let e = lerp(a, b, 0.8);
+
+
+    let y = 50;
+
+
+    strokeWeight(5);
+
+
+    // Draw the original points in black.
+
+    stroke(0);
+
+    point(a, y);
+
+    point(b, y);
+
+
+    // Draw the lerped points in gray.
+
+    stroke(100);
+
+    point(c, y);
+
+    point(d, y);
+
+    point(e, y);
+
+
+    describe('Five points in a horizontal line. The outer points are black and
+    the inner points are gray.');
+
+    </code>
+
+    </div>
+---
+
+
+# lerp

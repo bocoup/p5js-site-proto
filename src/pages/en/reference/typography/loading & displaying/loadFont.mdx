@@ -1,0 +1,150 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: loadFont
+module: Typography
+submodule: Loading & Displaying
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/typography/loading_displaying.js
+descriptionText: >-
+  Loads a font and creates a <a href="#/p5.Font">p5.Font</a> object.
+
+  `loadFont()` can load fonts in either .otf or .ttf format. Loaded fonts can
+
+  be used to style text on the canvas and in HTML elements.The first parameter,
+  `path`, is the path to a font file.
+
+  Paths to local files should be relative. For example,
+
+  `'assets/inconsolata.otf'`. The Inconsolata font used in the following
+
+  examples can be downloaded for free
+
+  <a href="https://www.fontsquirrel.com/fonts/inconsolata"
+  target="_blank">here</a>.
+
+  Paths to remote files should be URLs. For example,
+
+  `'https://example.com/inconsolata.otf'`. URLs may be blocked due to browser
+
+  security.The second parameter, `successCallback`, is optional. If a function
+  is
+
+  passed, it will be called once the font has loaded. The callback function
+
+  may use the new <a href="#/p5.Font">p5.Font</a> object if needed.The third
+  parameter, `failureCallback`, is also optional. If a function is
+
+  passed, it will be called if the font fails to load. The callback function
+
+  may use the error
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"
+  target="_blank">Event</a>
+
+  object if needed.Fonts can take time to load. Calling `loadFont()` in
+
+  <a href="#/p5/preload">preload()</a> ensures fonts load before they're
+
+  used in <a href="#/p5/setup">setup()</a> or
+
+  <a href="#/p5/draw">draw()</a>.
+params:
+  - name: path
+    description: path of the font to be loaded.
+    type: String
+  - name: successCallback
+    description: |-
+      function called with the
+      <a href="#/p5.Font">p5.Font</a> object after it
+      loads.
+    type: Function
+  - name: failureCallback
+    description: >-
+      function called with the error
+
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"
+      target="_blank">Event</a>
+
+      object if the font fails to load.
+    type: Function
+kind: function
+name: loadFont
+namespace: loadFont
+examples:
+  - |-
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      fill('deeppink');
+      textFont(font);
+      textSize(36);
+      text('p5*js', 10, 50);
+
+      describe('The text "p5*js" written in pink on a white background.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadFont('assets/inconsolata.otf', font => {
+        fill('deeppink');
+        textFont(font);
+        textSize(36);
+        text('p5*js', 10, 50);
+
+        describe('The text "p5*js" written in pink on a white background.');
+      });
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadFont('assets/inconsolata.otf', success, failure);
+    }
+
+    function success(font) {
+      fill('deeppink');
+      textFont(font);
+      textSize(36);
+      text('p5*js', 10, 50);
+
+      describe('The text "p5*js" written in pink on a white background.');
+    }
+
+    function failure(event) {
+      console.error('Oops!', event);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function preload() {
+      loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      let p = createP('p5*js');
+      p.style('color', 'deeppink');
+      p.style('font-family', 'Inconsolata');
+      p.style('font-size', '36px');
+      p.position(10, 50);
+
+      describe('The text "p5*js" written in pink on a white background.');
+    }
+    </code>
+    </div>
+---
+
+
+# loadFont

@@ -1,0 +1,40 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: noDebugMode
+module: 3D
+submodule: Interaction
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/interaction.js
+descriptionText: Turns off debugMode() in a 3D sketch.
+params: []
+kind: function
+name: noDebugMode
+namespace: noDebugMode
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode();
+      describe(
+        'a 3D box is centered on a grid in a 3D sketch. an icon indicates the direction of each axis: a red line points +X, a green line +Y, and a blue line +Z. the grid and icon disappear when the spacebar is pressed.'
+      );
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      box(15, 30);
+      // Press the spacebar to turn debugMode off!
+      if (keyIsDown(32)) {
+        noDebugMode();
+      }
+    }
+    </code>
+    </div>
+---
+
+
+# noDebugMode

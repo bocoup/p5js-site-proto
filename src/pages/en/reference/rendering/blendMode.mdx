@@ -1,0 +1,53 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: blendMode
+module: Rendering
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/rendering.js
+descriptionText: >-
+  Blends the pixels in the display window according to the defined mode.
+
+  There is a choice of the following modes to blend the source pixels (A)
+
+  with the ones of pixels already in the display window (B):<em>(2D)</em>
+  indicates that this blend mode <b>only</b> works in the 2D renderer.<br>
+
+  <em>(3D)</em> indicates that this blend mode <b>only</b> works in the WEBGL
+  renderer.
+params:
+  - name: mode
+    description: |-
+      blend mode to set for canvas.
+      either BLEND, DARKEST, LIGHTEST, DIFFERENCE, MULTIPLY,
+      EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT,
+      SOFT_LIGHT, DODGE, BURN, ADD, REMOVE or SUBTRACT
+    type: Constant
+kind: function
+name: blendMode
+namespace: blendMode
+examples:
+  - |-
+    <div>
+    <code>
+    blendMode(LIGHTEST);
+    strokeWeight(30);
+    stroke(80, 150, 255);
+    line(25, 25, 75, 75);
+    stroke(255, 50, 50);
+    line(75, 25, 25, 75);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    blendMode(MULTIPLY);
+    strokeWeight(30);
+    stroke(80, 150, 255);
+    line(25, 25, 75, 75);
+    stroke(255, 50, 50);
+    line(75, 25, 25, 75);
+    </code>
+    </div>
+---
+
+
+# blendMode

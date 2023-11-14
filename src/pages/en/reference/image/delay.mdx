@@ -1,0 +1,73 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: delay
+module: Image
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/p5.Image.js
+descriptionText: >-
+  Changes the delay between frames in an animated GIF.The second parameter,
+  `index`, is optional. If provided, only the frame
+
+  at `index` will have its delay modified. All other frames will keep
+
+  their default delay.
+params:
+  - name: d
+    description: delay in milliseconds between switching frames.
+    type: Number
+  - name: index
+    description: index of the frame that will have its delay modified.
+    type: Number
+kind: function
+name: delay
+namespace: delay
+examples:
+  - |-
+    <div>
+    <code>
+    let gifFast;
+    let gifSlow;
+
+    function preload() {
+      gifFast = loadImage('assets/arnott-wallace-eye-loop-forever.gif');
+      gifSlow = loadImage('assets/arnott-wallace-eye-loop-forever.gif');
+    }
+
+    function setup() {
+      gifFast.resize(50, 50);
+      gifSlow.resize(50, 50);
+      gifFast.delay(10);
+      gifSlow.delay(100);
+    }
+
+    function draw() {
+      image(gifFast, 0, 0);
+      image(gifSlow, 50, 0);
+
+      describe('Two animated eyes looking around. The eye on the left moves faster than the eye on the right.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let gif;
+
+    function preload() {
+      gif = loadImage('assets/arnott-wallace-eye-loop-forever.gif');
+    }
+
+    function setup() {
+      gif.delay(3000, 67);
+    }
+
+    function draw() {
+      image(gif, 0, 0);
+
+      describe('An animated eye looking around. It pauses for three seconds while it looks down.');
+    }
+    </code>
+    </div>
+---
+
+
+# delay

@@ -1,0 +1,42 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: stroke
+module: Rendering
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/p5.RendererGL.js
+descriptionText: Basic stroke material for geometry with a given color
+params:
+  - name: v2
+    description: green or saturation value
+    type: Number
+  - name: v3
+    description: blue or brightness value
+    type: Number
+  - name: a
+    description: opacity
+    type: Number
+kind: function
+name: stroke
+namespace: stroke
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(200, 200, WEBGL);
+    }
+
+    function draw() {
+      background(0);
+      stroke(240, 150, 150);
+      fill(100, 100, 240);
+      rotateX(frameCount * 0.01);
+      rotateY(frameCount * 0.01);
+      box(75, 75, 75);
+    }
+    </code>
+    </div>
+---
+
+
+# stroke

@@ -1,0 +1,27 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: print
+module: Data
+submodule: Dictionary
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/data/p5.TypedDict.js
+descriptionText: Logs the set of items currently stored in the Dictionary to the console.
+params: []
+kind: function
+name: print
+namespace: print
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    function setup() {
+      let myDictionary = createStringDict('p5', 'js');
+      myDictionary.create('happy', 'coding');
+      myDictionary.print();
+      // above logs "key: p5 - value: js, key: happy - value: coding" to console
+    }
+    </code>
+    </div>
+---
+
+
+# print

@@ -1,0 +1,64 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: doubleClicked
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/p5.Element.js
+descriptionText: |-
+  Calls a function when the mouse is pressed twice over the element.
+  Calling `myElement.doubleClicked(false)` disables the function.
+params: []
+kind: function
+name: doubleClicked
+namespace: doubleClicked
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Call randomColor() when the
+      // canvas is double-clicked.
+      cnv.doubleClicked(randomColor);
+
+      describe('A gray square changes color when the user double-clicks the canvas.');
+    }
+
+    // Paint the background either
+    // red, yellow, blue, or green.
+    function randomColor() {
+      let c = random(['red', 'yellow', 'blue', 'green']);
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Paint the background either
+      // red, yellow, blue, or green
+      // when the canvas is double-clicked.
+      cnv.doubleClicked(() => {
+        let c = random(['red', 'yellow', 'blue', 'green']);
+        background(c);
+      });
+
+      describe('A gray square changes color when the user double-clicks the canvas.');
+    }
+    </code>
+    </div>
+---
+
+
+# doubleClicked

@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getURLPath
+module: Environment
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/environment.js
+descriptionText: >-
+  Returns the current
+
+  <a
+  href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#path_to_resource"
+  target="_blank">URL</a>
+
+  path as an array of strings.For example, consider a sketch hosted at the URL
+
+  `https://example.com/sketchbook`. Calling `getURLPath()` returns
+
+  `['sketchbook']`. For a sketch hosted at the URL
+
+  `https://example.com/sketchbook/monday`, `getURLPath()` returns
+
+  `['sketchbook', 'monday']`.
+params: []
+kind: function
+name: getURLPath
+namespace: getURLPath
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Get the sketch's URL path
+      // and display the first
+      // part.
+      let path = getURLPath();
+      text(path[0], 25, 54);
+
+      describe('The word "reference" written in black on a gray background.');
+    }
+    </code>
+    </div>
+---
+
+
+# getURLPath

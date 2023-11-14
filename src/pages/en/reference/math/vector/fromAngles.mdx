@@ -1,0 +1,61 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: fromAngles
+module: Math
+submodule: Vector
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/p5.Vector.js
+descriptionText: Make a new 3D vector from a pair of ISO spherical angles.
+params:
+  - name: theta
+    description: polar angle in radians (zero is up).
+    type: Number
+  - name: phi
+    description: |-
+      azimuthal angle in radians
+      (zero is out of the screen).
+    type: Number
+  - name: length
+    description: length of the new vector (defaults to 1).
+    type: Number
+kind: function
+name: fromAngles
+scope: static
+namespace: .fromAngles
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    let v = p5.Vector.fromAngles(0, 0);
+    // Prints "p5.Vector Object : [0, -1, 0]" to the console.
+    print(v.toString());
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+
+    function draw() {
+      background(0);
+
+      fill(255);
+      noStroke();
+
+      let theta = frameCount *  0.05;
+      let phi = 0;
+      let v = p5.Vector.fromAngles(theta, phi, 100);
+      let c = color('deeppink');
+      pointLight(c, v);
+
+      sphere(35);
+
+      describe('A light shines on a pink sphere as it orbits.');
+    }
+    </code>
+    </div>
+---
+
+
+# fromAngles

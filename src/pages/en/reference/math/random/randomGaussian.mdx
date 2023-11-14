@@ -1,0 +1,74 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: randomGaussian
+module: Math
+submodule: Random
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/random.js
+descriptionText: >-
+  Returns a random number fitting a Gaussian, or normal, distribution. Normal
+
+  distributions look like bell curves when plotted. Values from a normal
+
+  distribution cluster around a central value called the mean. The cluster's
+
+  standard deviation describes its spread.By default, `randomGaussian()`
+  produces different results each time a
+
+  sketch runs. The <a href="#/p5/randomSeed">randomSeed()</a> function can be
+
+  used to generate the same sequence of numbers each time a sketch runs.There's
+  no minimum or maximum value that `randomGaussian()` might return.
+
+  Values far from the mean are very unlikely and values near the mean are
+
+  very likely.The version of `randomGaussian()` with no parameters returns
+  values with a
+
+  mean of 0 and standard deviation of 1.The version of `randomGaussian()` with
+  one parameter interprets the
+
+  argument passed as the mean. The standard deviation is 1.The version of
+  `randomGaussian()` with two parameters interprets the first
+
+  argument passed as the mean and the second as the standard deviation.
+params:
+  - name: mean
+    description: mean.
+    type: Number
+  - name: sd
+    description: standard deviation.
+    type: Number
+kind: function
+name: randomGaussian
+namespace: randomGaussian
+examples:
+  - |-
+    <div>
+    <code>
+    function draw() {
+      noStroke();
+      fill(0, 10);
+
+      // Uniform distribution.
+      let x = random(width);
+      let y = 25;
+      circle(x, y, 5);
+
+      // Gaussian distribution with sd = 1.
+      x = randomGaussian(50);
+      y = 50;
+      circle(x, y, 5);
+
+      // Gaussian distribution with sd = 10.
+      x = randomGaussian(50, 10);
+      y = 75;
+      circle(x, y, 5);
+
+      describe('Three horizontal black lines are filled in randomly. The top line spans entire canvas. The middle line is very short. The bottom line spans two-thirds of the canvas.');
+    }
+    </code>
+    </div>
+---
+
+
+# randomGaussian
