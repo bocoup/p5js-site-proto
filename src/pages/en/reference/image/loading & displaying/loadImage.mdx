@@ -1,0 +1,90 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: loadImage
+module: Image
+submodule: Loading & Displaying
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/loading_displaying.js
+descriptionText: >-
+  Loads an image to create a <a href="#/p5.Image">p5.Image</a>
+  object.`loadImage()` interprets the first parameter one of three ways. If the
+  path
+
+  to an image file is provided, `loadImage()` will load it. Paths to local
+
+  files should be relative, such as `'assets/thundercat.jpg'`. URLs such as
+
+  `'https://example.com/thundercat.jpg'` may be blocked due to browser
+
+  security. Raw image data can also be passed as a base64 encoded image in
+
+  the form `'data:image/png;base64,arandomsequenceofcharacters'`.The second
+  parameter is optional. If a function is passed, it will be
+
+  called once the image has loaded. The callback function can optionally use
+
+  the new <a href="#/p5.Image">p5.Image</a> object.The third parameter is also
+  optional. If a function is passed, it will be
+
+  called if the image fails to load. The callback function can optionally use
+
+  the event error.Images can take time to load. Calling `loadImage()` in
+
+  <a href="#/p5/preload">preload()</a> ensures images load before they're
+
+  used in <a href="#/p5/setup">setup()</a> or <a href="#/p5/draw">draw()</a>.
+params:
+  - name: path
+    description: path of the image to be loaded or base64 encoded image.
+    type: String
+kind: function
+name: loadImage
+namespace: loadImage
+examples:
+  - |-
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadImage('assets/laDefense.jpg', img => {
+        image(img, 0, 0);
+      });
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadImage('assets/laDefense.jpg', success, failure);
+    }
+
+    function success(img) {
+      image(img, 0, 0);
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+
+    function failure(event) {
+      console.error('Oops!', event);
+    }
+    </code>
+    </div>
+---
+
+
+# loadImage

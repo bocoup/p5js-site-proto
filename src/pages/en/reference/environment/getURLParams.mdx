@@ -1,0 +1,48 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getURLParams
+module: Environment
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/environment.js
+descriptionText: >-
+  Returns the current
+
+  <a
+  href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL#parameters"
+  target="_blank">URL parameters</a>
+
+  in an Object.For example, calling `getURLParams()` in a sketch hosted at the
+  URL
+
+  `http://p5js.org?year=2014&month=May&day=15` returns
+
+  `{ year: 2014, month: 'May', day: 15 }`.
+params: []
+kind: function
+name: getURLParams
+namespace: getURLParams
+examples:
+  - |-
+    <div class='norender notest'>
+    <code>
+    // Imagine this sketch is hosted at the following URL:
+    // https://p5js.org?year=2014&month=May&day=15
+
+    function setup() {
+      background(200);
+
+      // Get the sketch's URL
+      // parameters and display
+      // them.
+      let params = getURLParams();
+      text(params.day, 10, 20);
+      text(params.month, 10, 40);
+      text(params.year, 10, 60);
+
+      describe('The text "15", "May", and "2014" written in black on separate lines.');
+    }
+    </code>
+    </div>
+---
+
+
+# getURLParams

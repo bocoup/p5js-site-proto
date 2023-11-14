@@ -1,0 +1,84 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: textToPoints
+module: Typography
+submodule: Loading & Displaying
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/typography/p5.Font.js
+descriptionText: >-
+  Returns an array of points outlining a string of text written using this
+
+  <a href="#/p5.Font">p5.Font</a>.The first parameter, `str`, is a string of
+  text. The second and third
+
+  parameters, `x` and `y`, are the text's position. By default, they set the
+
+  coordinates of the bounding box's bottom-left corner. See
+
+  <a href="#/p5/textAlign">textAlign()</a> for more ways to align text.The
+  fourth parameter, `fontSize`, is optional. It sets the text's font
+
+  size. By default, `font.textToPoints()` will use the current
+
+  <a href="#/p5/textSize">textSize()</a>.The fifth parameter, `options`, is also
+  optional. `font.textToPoints()`
+
+  expects an object with the following properties:`sampleFactor` is the ratio of
+  the text's path length to the number of
+
+  samples. It defaults to 0.1. Higher values produce more points along the
+
+  path and are more precise.`simplifyThreshold` removes collinear points if it's
+  set to a number other
+
+  than 0. The value represents the threshold angle to use when determining
+
+  whether two edges are collinear.
+params:
+  - name: str
+    description: string of text.
+    type: String
+  - name: x
+    description: x-coordinate of the text.
+    type: Number
+  - name: 'y'
+    description: y-coordinate of the text.
+    type: Number
+  - name: fontSize
+    description: |-
+      font size. Defaults to the current
+      <a href="#/p5/textSize">textSize()</a>.
+    type: Number
+  - name: options
+    description: |-
+      object with sampleFactor and simplifyThreshold
+      properties.
+    type: Object
+kind: function
+name: textToPoints
+namespace: textToPoints
+examples:
+  - |-
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+      let points = font.textToPoints('p5*js', 6, 60, 35, { sampleFactor:  0.5 });
+      points.forEach(p =>  {
+        point(p.x, p.y);
+      });
+
+      describe('A set of black dots outlining the text "p5*js" on a gray background.');
+    }
+    </code>
+    </div>
+---
+
+
+# textToPoints

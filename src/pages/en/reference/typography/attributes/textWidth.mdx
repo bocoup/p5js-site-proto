@@ -1,0 +1,57 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: textWidth
+module: Typography
+submodule: Attributes
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/typography/attributes.js
+descriptionText: |-
+  Returns the maximum width of a string of text drawn when
+  <a href="#/p5/text">text()</a> is called.
+params:
+  - name: str
+    description: string of text to measure.
+    type: String
+kind: function
+name: textWidth
+namespace: textWidth
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      textSize(28);
+      strokeWeight(0.5);
+      let s = 'yoyo';
+      let w = textWidth(s);
+      text(s, 22, 55);
+      line(22, 55, 22 + w, 55);
+
+      describe('The word "yoyo" underlined.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      textSize(28);
+      strokeWeight(0.5);
+      // "\n" starts a new line.
+      let s = 'yo\nyo';
+      let w = textWidth(s);
+      text(s, 22, 55);
+      line(22, 55, 22 + w, 55);
+
+      describe('The word "yo" written twice, one copy beneath the other. The words are divided by a horizontal line.');
+    }
+    </code>
+    </div>
+---
+
+
+# textWidth

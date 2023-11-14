@@ -1,0 +1,82 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: drop
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/dom/dom.js
+descriptionText: >-
+  Registers a callback that gets called every time a file that is
+
+  dropped on the element has been loaded.
+
+  p5 will load every dropped file into memory and pass it as a p5.File object to
+  the callback.
+
+  Multiple files dropped at the same time will result in multiple calls to the
+  callback.You can optionally pass a second callback which will be registered to
+  the raw
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">drop</a>
+  event.
+
+  The callback will thus be provided the original
+
+  <a
+  href="https://developer.mozilla.org/en-US/docs/Web/API/DragEvent">DragEvent</a>.
+
+  Dropping multiple files at the same time will trigger the second callback once
+  per drop,
+
+  whereas the first callback will trigger for each loaded file.
+params:
+  - name: callback
+    description: 'callback to receive loaded file, called for each file dropped.'
+    type: Function
+  - name: fxn
+    description: callback triggered once when files are dropped with the drop event.
+    type: Function
+kind: function
+name: drop
+namespace: drop
+examples:
+  - |-
+    <div><code>
+    function setup() {
+      let c = createCanvas(100, 100);
+      background(200);
+      textAlign(CENTER);
+      text('drop file', width / 2, height / 2);
+      c.drop(gotFile);
+    }
+
+    function gotFile(file) {
+      background(200);
+      text('received file:', width / 2, height / 2);
+      text(file.name, width / 2, height / 2 + 50);
+    }
+    </code></div>
+
+    <div><code>
+    let img;
+
+    function setup() {
+      let c = createCanvas(100, 100);
+      background(200);
+      textAlign(CENTER);
+      text('drop image', width / 2, height / 2);
+      c.drop(gotFile);
+    }
+
+    function draw() {
+      if (img) {
+        image(img, 0, 0, width, height);
+      }
+    }
+
+    function gotFile(file) {
+      img = createImg(file.data, '').hide();
+    }
+    </code></div>
+---
+
+
+# drop

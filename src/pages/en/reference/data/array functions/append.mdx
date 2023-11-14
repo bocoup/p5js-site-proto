@@ -1,0 +1,35 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: append
+module: Data
+submodule: Array Functions
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/utilities/array_functions.js
+descriptionText: |-
+  Adds a value to the end of an array. Extends the length of
+  the array by one. Maps to Array.push().
+params:
+  - name: array
+    description: Array to append
+    type: Array
+  - name: value
+    description: to be added to the Array
+    type: any
+kind: function
+name: append
+namespace: append
+examples:
+  - |-
+    <div class='norender'><code>
+    function setup() {
+      let myArray = ['Mango', 'Apple', 'Papaya'];
+      print(myArray); // ['Mango', 'Apple', 'Papaya']
+
+      append(myArray, 'Peach');
+      print(myArray); // ['Mango', 'Apple', 'Papaya', 'Peach']
+    }
+    </code></div>
+---
+
+
+# append

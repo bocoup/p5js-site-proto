@@ -1,0 +1,43 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: loadPixels
+module: Image
+submodule: Pixels
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/pixels.js
+descriptionText: |-
+  Loads the current value of each pixel on the canvas into the
+  <a href="#/p5/pixels">pixels</a> array. This
+  function must be called before reading from or writing to
+  <a href="#/p5/pixels">pixels</a>.
+params: []
+kind: function
+name: loadPixels
+namespace: loadPixels
+examples:
+  - |-
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0, width, height);
+      let d = pixelDensity();
+      let halfImage = 4 * (d * width) * (d * height / 2);
+      loadPixels();
+      for (let i = 0; i < halfImage; i += 1) {
+        pixels[i + halfImage] = pixels[i];
+      }
+      updatePixels();
+
+      describe('Two identical images of mountain landscapes, one on top of the other.');
+    }
+    </code>
+    </div>
+---
+
+
+# loadPixels

@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: displayDensity
+module: Environment
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/environment.js
+descriptionText: Returns the display's current pixel density.
+params: []
+kind: function
+name: displayDensity
+namespace: displayDensity
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      // Set the pixel density to 1.
+      pixelDensity(1);
+
+      // Create a canvas and draw
+      // a circle.
+      createCanvas(100, 100);
+      background(200);
+      circle(50, 50, 70);
+
+      describe('A fuzzy white circle drawn on a gray background. The circle becomes sharper when the mouse is pressed.');
+    }
+
+    function mousePressed() {
+      // Get the current display density.
+      let d = displayDensity();
+
+      // Use the display density to set
+      // the sketch's pixel density.
+      pixelDensity(d);
+
+      // Paint the background and
+      // draw a circle.
+      background(200);
+      circle(50, 50, 70);
+    }
+    </code>
+    </div>
+---
+
+
+# displayDensity

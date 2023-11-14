@@ -1,0 +1,55 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: set
+module: 3D
+submodule: Camera
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/p5.Camera.js
+descriptionText: |-
+  Copies information about the argument camera's view and projection to
+  the target camera. If the target camera is active, it will be reflected
+  on the screen.
+params:
+  - name: cam
+    description: source camera
+    type: p5.Camera
+kind: function
+name: set
+namespace: set
+examples:
+  - |-
+    <div>
+    <code>
+    let cam, initialCam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      strokeWeight(3);
+
+      // Set the initial state to initialCamera and set it to the camera
+      // used for drawing. Then set cam to be the active camera.
+      cam = createCamera();
+      initialCam = createCamera();
+      initialCam.camera(100, 100, 100, 0, 0, 0, 0, 0, -1);
+      cam.set(initialCam);
+
+      setCamera(cam);
+    }
+
+    function draw() {
+      orbitControl();
+      background(255);
+      box(50);
+      translate(0, 0, -25);
+      plane(100);
+    }
+
+    function doubleClicked(){
+      // Double-click to return the camera to its initial position.
+      cam.set(initialCam);
+    }
+    </code>
+    </div>
+---
+
+
+# set

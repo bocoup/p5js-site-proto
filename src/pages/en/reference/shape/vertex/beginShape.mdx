@@ -1,0 +1,208 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: beginShape
+module: Shape
+submodule: Vertex
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/vertex.js
+descriptionText: >-
+  Using the <a href="#/p5/beginShape">beginShape()</a> and <a
+  href="#/p5/endShape">endShape()</a> functions allow creating more
+
+  complex forms. <a href="#/p5/beginShape">beginShape()</a> begins recording
+  vertices for a shape and
+
+  <a href="#/p5/endShape">endShape()</a> stops recording. The value of the kind
+  parameter tells it which
+
+  types of shapes to create from the provided vertices. With no mode
+
+  specified, the shape can be any irregular polygon.The parameters available for
+  <a href="#/p5/beginShape">beginShape()</a> are:POINTS
+
+  Draw a series of pointsLINES
+
+  Draw a series of unconnected line segments (individual lines)TRIANGLES
+
+  Draw a series of separate trianglesTRIANGLE_FAN
+
+  Draw a series of connected triangles sharing the first vertex in a fan-like
+  fashionTRIANGLE_STRIP
+
+  Draw a series of connected triangles in strip fashionQUADS
+
+  Draw a series of separate quadsQUAD_STRIP
+
+  Draw quad strip using adjacent edges to form the next quadTESS (WEBGL only)
+
+  Handle irregular polygon for filling curve by explicit tessellationAfter
+  calling the <a href="#/p5/beginShape">beginShape()</a> function, a series of
+  <a href="#/p5/vertex">vertex()</a> commands must follow. To stop
+
+  drawing the shape, call <a href="#/p5/endShape">endShape()</a>. Each shape
+  will be outlined with the
+
+  current stroke color and filled with the fill color.Transformations such as <a
+  href="#/p5/translate">translate()</a>, <a href="#/p5/rotate">rotate()</a>, and
+  <a href="#/p5/scale">scale()</a> do not work
+
+  within <a href="#/p5/beginShape">beginShape()</a>. It is also not possible to
+  use other shapes, such as
+
+  <a href="#/p5/ellipse">ellipse()</a> or <a href="#/p5/rect">rect()</a> within
+  <a href="#/p5/beginShape">beginShape()</a>.
+params:
+  - name: kind
+    description: |-
+      either POINTS, LINES, TRIANGLES, TRIANGLE_FAN
+      TRIANGLE_STRIP, QUADS, QUAD_STRIP or TESS
+    type: Constant
+kind: function
+name: beginShape
+namespace: beginShape
+examples:
+  - |-
+    <div>
+    <code>
+    beginShape();
+    vertex(30, 20);
+    vertex(85, 20);
+    vertex(85, 75);
+    vertex(30, 75);
+    endShape(CLOSE);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(POINTS);
+    vertex(30, 20);
+    vertex(85, 20);
+    vertex(85, 75);
+    vertex(30, 75);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(LINES);
+    vertex(30, 20);
+    vertex(85, 20);
+    vertex(85, 75);
+    vertex(30, 75);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    noFill();
+    beginShape();
+    vertex(30, 20);
+    vertex(85, 20);
+    vertex(85, 75);
+    vertex(30, 75);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    noFill();
+    beginShape();
+    vertex(30, 20);
+    vertex(85, 20);
+    vertex(85, 75);
+    vertex(30, 75);
+    endShape(CLOSE);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(TRIANGLES);
+    vertex(30, 75);
+    vertex(40, 20);
+    vertex(50, 75);
+    vertex(60, 20);
+    vertex(70, 75);
+    vertex(80, 20);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(TRIANGLE_STRIP);
+    vertex(30, 75);
+    vertex(40, 20);
+    vertex(50, 75);
+    vertex(60, 20);
+    vertex(70, 75);
+    vertex(80, 20);
+    vertex(90, 75);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(TRIANGLE_FAN);
+    vertex(57.5, 50);
+    vertex(57.5, 15);
+    vertex(92, 50);
+    vertex(57.5, 85);
+    vertex(22, 50);
+    vertex(57.5, 15);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(QUADS);
+    vertex(30, 20);
+    vertex(30, 75);
+    vertex(50, 75);
+    vertex(50, 20);
+    vertex(65, 20);
+    vertex(65, 75);
+    vertex(85, 75);
+    vertex(85, 20);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(QUAD_STRIP);
+    vertex(30, 20);
+    vertex(30, 75);
+    vertex(50, 20);
+    vertex(50, 75);
+    vertex(65, 20);
+    vertex(65, 75);
+    vertex(85, 20);
+    vertex(85, 75);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    beginShape(TESS);
+    vertex(20, 20);
+    vertex(80, 20);
+    vertex(80, 40);
+    vertex(40, 40);
+    vertex(40, 60);
+    vertex(80, 60);
+    vertex(80, 80);
+    vertex(20, 80);
+    endShape(CLOSE);
+    </code>
+    </div>
+---
+
+
+# beginShape

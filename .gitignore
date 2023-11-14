@@ -129,3 +129,4 @@ dist
 # Custom
 /pages/*
 .DS_Store
+temp/*

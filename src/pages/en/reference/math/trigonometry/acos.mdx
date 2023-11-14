@@ -1,0 +1,50 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: acos
+module: Math
+submodule: Trigonometry
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/math/trigonometry.js
+descriptionText: |-
+  The inverse of <a href="#/p5/cos">cos()</a>, returns the arc cosine of a
+  value. This function expects arguments in the range -1 to 1. By default,
+  `acos()` returns values in the range 0 to π (about 3.14). If the
+  <a href="#/p5/angleMode">angleMode()</a> is `DEGREES`, then values are
+  returned in the range 0 to 180.
+params:
+  - name: value
+    description: value whose arc cosine is to be returned.
+    type: Number
+kind: function
+name: acos
+namespace: acos
+examples:
+  - |-
+    <div>
+    <code>
+    let a = PI;
+    let c = cos(a);
+    let ac = acos(c);
+    text(`${round(a, 3)}`, 35, 25);
+    text(`${round(c, 3)}`, 35, 50);
+    text(`${round(ac, 3)}`, 35, 75);
+
+    describe('The numbers 3.142, -1, and 3.142 written on separate rows.');
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let a = PI;
+    let c = cos(a);
+    let ac = acos(c);
+    text(`${round(a, 3)}`, 35, 25);
+    text(`${round(c, 3)}`, 35, 50);
+    text(`${round(ac, 3)}`, 35, 75);
+
+    describe('The numbers 3.927, -0.707, and 2.356 written on separate rows.');
+    </code>
+    </div>
+---
+
+
+# acos

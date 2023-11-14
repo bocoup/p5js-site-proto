@@ -1,0 +1,40 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: smooth
+module: Shape
+submodule: Attributes
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/attributes.js
+descriptionText: >-
+  Draws all geometry with smooth (anti-aliased) edges. <a
+  href="#/p5/smooth">smooth()</a> will also
+
+  improve image quality of resized images.<a href="#/p5/smooth">smooth()</a> is
+  active by default in 2D mode. It's necessary to call
+
+  <a href="#/p5/noSmooth">noSmooth()</a> to disable smoothing of geometry,
+  images, and fonts.In WebGL mode, <a href="#/p5/noSmooth">noSmooth()</a> is
+  active by default. It's necessary
+
+  to call <a href="#/p5/smooth">smooth()</a> to draw smooth (antialiased) edges.
+params: []
+kind: function
+name: smooth
+namespace: smooth
+examples:
+  - |-
+    <div>
+    <code>
+    background(0);
+    noStroke();
+    smooth();
+    ellipse(30, 48, 36, 36);
+    noSmooth();
+    ellipse(70, 48, 36, 36);
+    describe('Two pixelated white circles on a black background.');
+    </code>
+    </div>
+---
+
+
+# smooth

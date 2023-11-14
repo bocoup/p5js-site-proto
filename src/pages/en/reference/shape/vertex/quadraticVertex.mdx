@@ -1,0 +1,62 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: quadraticVertex
+module: Shape
+submodule: Vertex
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/shape/vertex.js
+descriptionText: ''
+params:
+  - name: cz
+    description: z-coordinate for the control point (for WebGL mode)
+    type: Number
+  - name: z3
+    description: z-coordinate for the anchor point (for WebGL mode)
+    type: Number
+description: ''
+kind: function
+name: quadraticVertex
+namespace: quadraticVertex
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      setAttributes('antialias', true);
+    }
+    function draw() {
+      orbitControl();
+      background(50);
+      strokeWeight(4);
+      stroke(255);
+
+      point(-35, -35);
+      point(35, -35);
+      point(0, 0);
+      point(-35, 35);
+      point(35, 35);
+      point(35, 10);
+
+      strokeWeight(1);
+      noFill();
+
+      beginShape();
+      vertex(-35, -35);
+      quadraticVertex(35, -35, 0, 0);
+      quadraticVertex(-35, 35, 35, 35);
+      vertex(35, 10);
+      endShape();
+
+      beginShape();
+      vertex(-35, -35, 20);
+      quadraticVertex(35, -35, 20, 0, 0, 20);
+      quadraticVertex(-35, 35, 20, 35, 35, 20);
+      vertex(35, 10, 20);
+      endShape();
+    }
+    </code>
+    </div>
+---
+
+
+# quadraticVertex

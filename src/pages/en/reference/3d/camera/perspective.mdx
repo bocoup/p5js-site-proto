@@ -1,0 +1,55 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: perspective
+module: 3D
+submodule: Camera
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/p5.Camera.js
+descriptionText: |-
+  Sets a perspective projection.
+  Accepts the same parameters as the global
+  <a href="#/p5/perspective">perspective()</a>.
+  More information on this function can be found there.
+params: []
+kind: function
+name: perspective
+namespace: perspective
+examples:
+  - |-
+    <div>
+    <code>
+    // drag the mouse to look around!
+
+    let cam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      // create a camera
+      cam = createCamera();
+      // give it a perspective projection
+      cam.perspective(PI / 3.0, width / height, 0.1, 500);
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      normalMaterial();
+
+      rotateX(-0.3);
+      rotateY(-0.2);
+      translate(0, 0, -50);
+
+      push();
+      translate(-15, 0, sin(frameCount / 30) * 95);
+      box(30);
+      pop();
+      push();
+      translate(15, 0, sin(frameCount / 30 + PI) * 95);
+      box(30);
+      pop();
+    }
+    </code>
+    </div>
+---
+
+
+# perspective

@@ -1,0 +1,37 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createP
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/dom/dom.js
+descriptionText: >-
+  Creates a `&lt;p&gt;&lt;/p&gt;` element. It's commonly used for
+
+  paragraph-length text.The parameter `html` is optional. It accepts a string
+  that sets the
+
+  inner HTML of the new `&lt;p&gt;&lt;/p&gt;`.
+params:
+  - name: html
+    description: inner HTML for the new &lt;p&gt;&lt;/p&gt; element.
+    type: String
+kind: function
+name: createP
+namespace: createP
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      let p = createP('Tell me a story.');
+      p.position(5, 0);
+
+      describe('A gray square displaying the text "Tell me a story." written in black.');
+    }
+    </code>
+    </div>
+---
+
+
+# createP

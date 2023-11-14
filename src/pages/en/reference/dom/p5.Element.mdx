@@ -1,0 +1,63 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.Element
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/p5.Element.js
+descriptionText: >-
+  A class to describe an
+
+  <a
+  href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+  target="_blank">HTML element</a>.
+
+  Sketches can use many elements. Common elements include the drawing canvas,
+
+  buttons, sliders, webcam feeds, and so on.All elements share the methods of
+  the `p5.Element` class. They're created
+
+  with functions such as <a href="#/p5/createCanvas">createCanvas()</a> and
+
+  <a href="#/p5/createButton">createButton()</a>.
+params:
+  - name: elt
+    description: wrapped DOM element.
+    type: HTMLElement
+  - name: pInst
+    description: pointer to p5 instance.
+    type: p5
+kind: class
+name: p5.Element
+namespace: p5.Element
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100);
+
+      background(200);
+
+      // Create a button element and
+      // place it beneath the canvas.
+      let btn = createButton('change');
+      btn.position(0, 100);
+
+      // Call randomColor() when
+      // the button is pressed.
+      btn.mousePressed(randomColor);
+
+      describe('A gray square with a button that says "change" beneath it. The square changes color when the user presses the button.');
+    }
+
+    // Paint the background either
+    // red, yellow, blue, or green.
+    function randomColor() {
+      let c = random(['red', 'yellow', 'blue', 'green']);
+      background(c);
+    }
+    </code>
+    </div>
+---
+
+
+# p5.Element

@@ -1,0 +1,51 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createDiv
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/dom/dom.js
+descriptionText: >-
+  Creates a `&lt;div&gt;&lt;/div&gt;` element. It's commonly used as a
+
+  container for other elements.The parameter `html` is optional. It accepts a
+  string that sets the
+
+  inner HTML of the new `&lt;div&gt;&lt;/div&gt;`.
+params:
+  - name: html
+    description: inner HTML for the new &lt;div&gt;&lt;/div&gt; element.
+    type: String
+kind: function
+name: createDiv
+namespace: createDiv
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      let div = createDiv('p5*js');
+      div.position(25, 35);
+
+      describe('A gray square with the text "p5*js" written in its center.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Create an h3 element within the div.
+      let div = createDiv('<h3>p5*js</h3>');
+      div.position(20, 5);
+
+      describe('A gray square with the text "p5*js" written in its center.');
+    }
+    </code>
+    </div>
+---
+
+
+# createDiv

@@ -1,0 +1,54 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: saveJSON
+module: IO
+submodule: Output
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/files.js
+descriptionText: |-
+  Writes the contents of an Array or a JSON object to a .json file.
+  The file saving process and location of the saved file will
+  vary between web browsers.
+params:
+  - name: optimize
+    description: |-
+      If true, removes line breaks
+      and spaces from the output
+      file to optimize filesize
+      (but not readability).
+    type: Boolean
+kind: function
+name: saveJSON
+namespace: saveJSON
+examples:
+  - |-
+    <div><code>
+    let json = {}; // new  JSON Object
+
+    json.id = 0;
+    json.species = 'Panthera leo';
+    json.name = 'Lion';
+
+    function setup() {
+      createCanvas(100, 100);
+      background(200);
+      text('click here to save', 10, 10, 70, 80);
+      describe('no image displayed');
+    }
+
+    function mousePressed() {
+      if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+        saveJSON(json, 'lion.json');
+      }
+    }
+
+    // saves the following to a file called "lion.json":
+    // {
+    //   "id": 0,
+    //   "species": "Panthera leo",
+    //   "name": "Lion"
+    // }
+    </code></div>
+---
+
+
+# saveJSON

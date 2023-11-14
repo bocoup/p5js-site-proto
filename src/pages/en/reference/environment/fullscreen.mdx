@@ -1,0 +1,47 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: fullscreen
+module: Environment
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/environment.js
+descriptionText: >-
+  Toggles full-screen mode or returns the current mode.Calling
+  `fullscreen(true)` makes the sketch full-screen. Calling
+
+  `fullscreen(false)` makes the sketch its original size.Calling `fullscreen()`
+  without an argument returns `true` if the sketch
+
+  is in full-screen mode and `false` if not.Note: Due to browser restrictions,
+  `fullscreen()` can only be called with
+
+  user input such as a mouse press.
+params:
+  - name: val
+    description: whether the sketch should be in fullscreen mode.
+    type: Boolean
+kind: function
+name: fullscreen
+namespace: fullscreen
+examples:
+  - |-
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      describe('A gray canvas that switches between default and full-screen display when clicked.');
+    }
+
+    // If the mouse is pressed,
+    // toggle full-screen mode.
+    function mousePressed() {
+      if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+        let fs = fullscreen();
+        fullscreen(!fs);
+      }
+    }
+    </code>
+    </div>
+---
+
+
+# fullscreen

@@ -1,0 +1,33 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: add
+module: Data
+submodule: Dictionary
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/data/p5.TypedDict.js
+descriptionText: |-
+  Add the given number to the value currently stored at the given key.
+  The sum then replaces the value previously stored in the Dictionary.
+params:
+  - name: Key
+    description: for the value you wish to add to
+    type: Number
+  - name: Number
+    description: to add to the value
+    type: Number
+kind: function
+name: add
+namespace: add
+examples:
+  - |-
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict(2, 5);
+      myDictionary.add(2, 2);
+      print(myDictionary.get(2)); // logs 7 to console.
+    }
+    </code></div>
+---
+
+
+# add

@@ -1,0 +1,41 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: mask
+module: Image
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/p5.Image.js
+descriptionText: |-
+  Masks part of an image from displaying by loading another
+  image and using its alpha channel as an alpha channel for
+  this image. Masks are cumulative, once applied to an image
+  object, they cannot be removed.
+params:
+  - name: srcImage
+    description: source image.
+    type: p5.Image
+kind: function
+name: mask
+namespace: mask
+examples:
+  - |-
+    <div>
+    <code>
+    let photo;
+    let maskImage;
+
+    function preload() {
+      photo = loadImage('assets/rockies.jpg');
+      maskImage = loadImage('assets/mask2.png');
+    }
+
+    function setup() {
+      photo.mask(maskImage);
+      image(photo, 0, 0);
+
+      describe('An image of a mountain landscape. The right side of the image has a faded patch of white.');
+    }
+    </code>
+    </div>
+---
+
+
+# mask

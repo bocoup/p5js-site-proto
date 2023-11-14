@@ -1,0 +1,52 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: findRow
+module: IO
+submodule: Table
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/p5.Table.js
+descriptionText: |-
+  Finds the first row in the Table that contains the value
+  provided, and returns a reference to that row. Even if
+  multiple rows are possible matches, only the first matching
+  row is returned. The column to search may be specified by
+  either its ID or title.
+params:
+  - name: value
+    description: The value to match
+    type: String
+kind: function
+name: findRow
+namespace: findRow
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder:
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leopard
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      //my table is comma separated value "csv"
+      //and has a header specifying the columns labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      //find the animal named zebra
+      let row = table.findRow('Zebra', 'name');
+      //find the corresponding species
+      print(row.getString('species'));
+      describe('no image displayed');
+    }
+    </code>
+    </div>
+---
+
+
+# findRow

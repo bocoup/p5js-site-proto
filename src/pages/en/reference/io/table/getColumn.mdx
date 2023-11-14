@@ -1,0 +1,45 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getColumn
+module: IO
+submodule: Table
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/p5.Table.js
+descriptionText: |-
+  Retrieves all values in the specified column, and returns them
+  as an array. The column may be specified by either its ID or title.
+params: []
+kind: function
+name: getColumn
+namespace: getColumn
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder:
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leopard
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      //my table is comma separated value "csv"
+      //and has a header specifying the columns labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      //getColumn returns an array that can be printed directly
+      print(table.getColumn('species'));
+      //outputs ["Capra hircus", "Panthera pardus", "Equus zebra"]
+      describe('no image displayed');
+    }
+    </code>
+    </div>
+---
+
+
+# getColumn

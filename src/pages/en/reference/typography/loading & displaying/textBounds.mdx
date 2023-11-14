@@ -1,0 +1,116 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: textBounds
+module: Typography
+submodule: Loading & Displaying
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/typography/p5.Font.js
+descriptionText: >-
+  Returns the bounding box for a string of text written using this
+
+  <a href="#/p5.Font">p5.Font</a>.The first parameter, `str`, is a string of
+  text. The second and third
+
+  parameters, `x` and `y`, are the text's position. By default, they set the
+
+  coordinates of the bounding box's bottom-left corner. See
+
+  <a href="#/p5/textAlign">textAlign()</a> for more ways to align text.The
+  fourth parameter, `fontSize`, is optional. It sets the font size used to
+
+  determine the bounding box. By default, `font.textBounds()` will use the
+
+  current <a href="#/p5/textSize">textSize()</a>.
+params:
+  - name: str
+    description: string of text.
+    type: String
+  - name: x
+    description: x-coordinate of the text.
+    type: Number
+  - name: 'y'
+    description: y-coordinate of the text.
+    type: Number
+  - name: fontSize
+    description: |-
+      font size. Defaults to the current
+      <a href="#/p5/textSize">textSize()</a>.
+    type: Number
+kind: function
+name: textBounds
+namespace: textBounds
+examples:
+  - |-
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      let bbox = font.textBounds('p5*js', 35, 53);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      textFont(font);
+      text('p5*js', 35, 53);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      textFont(font);
+      textSize(15);
+      textAlign(CENTER, CENTER);
+
+      let bbox = font.textBounds('p5*js', 50, 50);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      text('p5*js', 50, 50);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      let bbox = font.textBounds('p5*js', 31, 53, 15);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      textFont(font);
+      textSize(15);
+      text('p5*js', 31, 53);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
+---
+
+
+# textBounds

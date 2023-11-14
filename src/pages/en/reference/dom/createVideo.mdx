@@ -1,0 +1,106 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createVideo
+module: DOM
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/dom/dom.js
+descriptionText: >-
+  Creates a `&lt;video&gt;` element for simple audio/video playback.
+
+  Returns a new <a href="#/p5.MediaElement">p5.MediaElement</a> object.Videos
+  are shown by default. They can be hidden by calling `video.hide()`
+
+  and drawn to the canvas using <a href="#/p5/image">image()</a>.The first
+  parameter, `src`, is the path the video. If a single string is
+
+  passed, as in `'assets/topsecret.mp4'`, a single video is loaded. An array
+
+  of strings can be used to load the same video in different formats. For
+
+  example, `['assets/topsecret.mp4', 'assets/topsecret.ogv',
+  'assets/topsecret.webm']`.
+
+  This is useful for ensuring that the video can play across different browsers
+  with
+
+  different capabilities. See
+
+  <a
+  href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>MDN</a>
+
+  for more information about supported formats.The second parameter, `callback`,
+  is optional. It's a function to call once
+
+  the video is ready to play.
+params:
+  - name: callback
+    description: function to call once the video is ready to play.
+    type: Function
+kind: function
+name: createVideo
+namespace: createVideo
+examples:
+  - |-
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Note: this may not work in some browsers.
+      let video = createVideo('assets/small.mp4');
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Provide an array options for different file formats.
+      let video = createVideo(
+        ['assets/small.mp4', 'assets/small.ogv', 'assets/small.webm']
+      );
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    let video;
+
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Provide an array options for different file formats.
+      // Call mute() once the video loads.
+      video = createVideo(
+        ['assets/small.mp4', 'assets/small.ogv', 'assets/small.webm'],
+        muteVideo
+      );
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+
+    // Mute the video once it loads.
+    function muteVideo() {
+      video.volume(0);
+    }
+    </code>
+    </div>
+---
+
+
+# createVideo

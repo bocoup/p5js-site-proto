@@ -1,0 +1,76 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: buildGeometry
+module: Shape
+submodule: 3D Primitives
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/webgl/3d_primitives.js
+descriptionText: >-
+  Creates a new <a href="#/p5.Geometry">p5.Geometry</a> that contains all
+
+  the shapes drawn in a provided callback function. The returned combined shape
+
+  can then be drawn all at once using <a href="#/p5/model">model()</a>.If you
+  need to draw complex shapes every frame which don't change over time,
+
+  combining them with `buildGeometry()` once and then drawing that will run
+
+  faster than repeatedly drawing the individual pieces.One can also draw shapes
+  directly between
+
+  <a href="#/p5/beginGeometry">beginGeometry()</a> and
+
+  <a href="#/p5/endGeometry">endGeometry()</a> instead of using a callback
+
+  function.
+params:
+  - name: callback
+    description: A function that draws shapes.
+    type: Function
+kind: function
+name: buildGeometry
+namespace: buildGeometry
+examples:
+  - |-
+    <div>
+    <code>
+    let particles;
+    let button;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      button = createButton('New');
+      button.mousePressed(makeParticles);
+      makeParticles();
+    }
+
+    function makeParticles() {
+      if (particles) freeGeometry(particles);
+
+      particles = buildGeometry(() => {
+        for (let i = 0; i < 60; i++) {
+          push();
+          translate(
+            randomGaussian(0, 20),
+            randomGaussian(0, 20),
+            randomGaussian(0, 20)
+          );
+          sphere(5);
+          pop();
+        }
+      });
+    }
+
+    function draw() {
+      background(255);
+      noStroke();
+      lights();
+      orbitControl();
+      model(particles);
+    }
+    </code>
+    </div>
+---
+
+
+# buildGeometry

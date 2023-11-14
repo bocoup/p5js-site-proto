@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: hue
+module: Color
+submodule: Creating & Reading
+file: >-
+  /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/color/creating_reading.js
+descriptionText: >-
+  Extracts the hue value from a
+
+  <a href="#/p5.Color">p5.Color</a> object, array of color components, or
+
+  CSS color string.Hue exists in both HSB and HSL. It describes a color's
+  position on the
+
+  color wheel. By default, this function returns the HSL-normalized hue. If
+
+  the <a href="#/colorMode">colorMode()</a> is set to HSB, it returns the
+
+  HSB-normalized hue.
+params: []
+kind: function
+name: hue
+namespace: hue
+examples:
+  - |-
+    <div>
+    <code>
+    noStroke();
+    colorMode(HSB, 255);
+    const c = color(0, 126, 255);
+    fill(c);
+    rect(15, 20, 35, 60);
+    // Sets 'hueValue' to 0.
+    const hueValue = hue(c);
+    fill(hueValue);
+    rect(50, 20, 35, 60);
+    describe(
+      'Two rectangles. The rectangle on the left is salmon pink and the one on the right is black.'
+    );
+    </code>
+    </div>
+---
+
+
+# hue

@@ -1,0 +1,134 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: set
+module: Image
+submodule: Pixels
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/image/pixels.js
+descriptionText: >-
+  Sets the color of a pixel or draws an image to the canvas.`set()` is easy to
+  use but it's not as fast as
+
+  <a href="#/p5/pixels">pixels</a>. Use <a href="#/p5/pixels">pixels</a>
+
+  to set many pixel values.`set()` interprets the first two parameters as x- and
+  y-coordinates. It
+
+  interprets the last parameter as a grayscale value, a `[R, G, B, A]` pixel
+
+  array, a <a href="#/p5.Color">p5.Color</a> object, or a
+
+  <a href="#/p5.Image">p5.Image</a> object. If an image is passed, the first
+
+  two parameters set the coordinates for the image's upper-left corner,
+
+  regardless of the current <a href="#/p5/imageMode">imageMode()</a>.<a
+  href="#/p5/updatePixels">updatePixels()</a> must be called after using
+
+  `set()` for changes to appear.
+params:
+  - name: x
+    description: x-coordinate of the pixel.
+    type: Number
+  - name: 'y'
+    description: y-coordinate of the pixel.
+    type: Number
+kind: function
+name: set
+namespace: set
+examples:
+  - >-
+    <div>
+
+    <code>
+
+    set(30, 20, 0);
+
+    set(85, 20, 0);
+
+    set(85, 75, 0);
+
+    set(30, 75, 0);
+
+    updatePixels();
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let black = color(0);
+
+    set(30, 20, black);
+
+    set(85, 20, black);
+
+    set(85, 75, black);
+
+    set(30, 75, black);
+
+    updatePixels();
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    for (let x = 0; x < width; x += 1) {
+      for (let y = 0; y < height; y += 1) {
+        let c = map(x, 0, width, 0, 255);
+        set(x, y, c);
+      }
+    }
+
+    updatePixels();
+
+
+    describe('A horiztonal color gradient from black to white.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let img;
+
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+
+    function setup() {
+      set(0, 0, img);
+      updatePixels();
+
+      describe('An image of a mountain landscape.');
+    }
+
+    </code>
+
+    </div>
+---
+
+
+# set

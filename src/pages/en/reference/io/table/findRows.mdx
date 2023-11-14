@@ -1,0 +1,57 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: findRows
+module: IO
+submodule: Table
+file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/io/p5.Table.js
+descriptionText: |-
+  Finds the rows in the Table that contain the value
+  provided, and returns references to those rows. Returns an
+  Array, so for must be used to iterate through all the rows,
+  as shown in the example above. The column to search may be
+  specified by either its ID or title.
+params:
+  - name: value
+    description: The value to match
+    type: String
+kind: function
+name: findRows
+namespace: findRows
+examples:
+  - |-
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder:
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leopard
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      //my table is comma separated value "csv"
+      //and has a header specifying the columns labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      //add another goat
+      let newRow = table.addRow();
+      newRow.setString('id', table.getRowCount() - 1);
+      newRow.setString('species', 'Scape Goat');
+      newRow.setString('name', 'Goat');
+
+      //find the rows containing animals named Goat
+      let rows = table.findRows('Goat', 'name');
+      print(rows.length + ' Goats found');
+      describe('no image displayed');
+    }
+    </code>
+    </div>
+---
+
+
+# findRows
