@@ -1,8 +1,11 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: round
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: |-
+  Calculates the integer closest to the `n` parameter. For example,
+  `round(133.8)` returns the value 134.
 params:
   - name: 'n'
     description: number to round.

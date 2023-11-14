@@ -76,7 +76,7 @@ function convertToMDX(doc) {
     .map((param) => {
       // Check if the necessary properties exist
       if (!param.description || !param.description.children || !param.type) {
-        return null; // or some default value
+        return null;
       }
 
       // Extract the description text
@@ -92,17 +92,44 @@ function convertToMDX(doc) {
         type: param.type.name ?? param.type.expression.name,
       };
     })
-    .filter((param) => param != null); // Filter out null values
+    .filter((param) => param != null);
 
-  // console.log(transformedParams);
+  let descriptionText = "";
+
+  for (const child of doc.description?.children ?? []) {
+    for (const textNode of child.children) {
+      switch (textNode.type) {
+        case "inlineCode":
+          descriptionText += `\`${textNode.value}\``;
+          break;
+        case "link":
+          descriptionText += `[${textNode.children[0].value}](${textNode.url})`;
+          break;
+        case "strong":
+          descriptionText += `**${textNode.children[0].value}**`;
+          break;
+        case "emphasis":
+          descriptionText += `*${textNode.children[0].value}*`;
+          break;
+        case "paragraph":
+          descriptionText += `${textNode.children[0].value}`;
+          break;
+        case "text":
+        default:
+          descriptionText += textNode.value;
+          break;
+      }
+    }
+  }
 
   // Create the frontmatter string
   const frontmatter = matter.stringify("", {
+    layout: "@layouts/reference/SingleReferenceLayout.astro",
     title: doc.name,
     module,
     submodule,
     // This is currently a static value but might change
-    layout: "@layouts/reference/SingleReferenceLayout.astro",
+    descriptionText,
     params: transformedParams,
     // Add all properties as frontmatter, except for those that are objects
     // Likely needs to be organized more deliberately

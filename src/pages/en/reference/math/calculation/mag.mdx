@@ -1,8 +1,19 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mag
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Calculates the magnitude, or length, of a vector. A vector is like an arrow
+
+  pointing in space. Vectors are commonly used for programming motion.Vectors
+  don't have a "start" position because the same arrow can be drawn
+
+  anywhere. A vector's magnitude can be thought of as the distance from the
+
+  origin (0, 0) to its tip at (x, y). `mag(x, y)` is a shortcut for calling
+
+  `dist(0, 0, x, y)`.
 params:
   - name: x
     description: first component.

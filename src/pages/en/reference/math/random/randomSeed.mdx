@@ -1,8 +1,16 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: randomSeed
 module: Math
 submodule: Random
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: |-
+  Sets the seed value for <a href="#/p5/random">random()</a> and
+  <a href="#/p5/randomGaussian">randomGaussian()</a>. By default,
+  <a href="#/p5/random">random()</a> and
+  <a href="#/p5/randomGaussian">randomGaussian()</a> produce different
+  results each time a sketch is run. Calling `randomSeed()` with a constant
+  argument, such as `randomSeed(99)`, makes these functions produce the same
+  results each time a sketch is run.
 params:
   - name: seed
     description: seed value.

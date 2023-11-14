@@ -1,8 +1,20 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: keyReleased
 module: Events
 submodule: Keyboard
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  The <a href="#/p5/keyReleased">keyReleased()</a> function is called once every
+  time a key is released.
+
+  See <a href="#/p5/key">key</a> and <a href="#/p5/keyCode">keyCode</a> for more
+  information.<br><br>
+
+  Browsers may have different default
+
+  behaviors attached to various key events. To prevent any default
+
+  behavior for this event, add "return false" to the end of the function.
 params:
   - name: event
     description: optional KeyboardEvent callback argument.

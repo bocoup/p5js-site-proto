@@ -1,8 +1,19 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: map
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Re-maps a number from one range to another.For example, calling `map(2, 0, 10,
+  0, 100)` returns 20. The first three
+
+  arguments set the original value to 2 and the original range from 0 to 10.
+
+  The last two arguments set the target range from 0 to 100. 20's position
+
+  in the target range [0, 100] is proportional to 2's position in the
+
+  original range [0, 10].
 params:
   - name: value
     description: the incoming value to be converted.

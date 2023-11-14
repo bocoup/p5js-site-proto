@@ -1,8 +1,13 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: abs
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: |-
+  Calculates the absolute value of a number. A number's absolute value is its
+  distance from zero on the number line. -5 and 5 are both five units away
+  from zero, so calling `abs(-5)` and `abs(5)` both return 5. The absolute
+  value of a number is always positive.
 params:
   - name: 'n'
     description: number to compute.

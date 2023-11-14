@@ -1,8 +1,11 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: fract
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: |-
+  Calculates the fractional part of a number. For example,
+  `fract(12.34)` returns 0.34.
 params:
   - name: 'n'
     description: number whose fractional part will be found.

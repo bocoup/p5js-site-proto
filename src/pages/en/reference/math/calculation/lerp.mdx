@@ -1,8 +1,25 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: lerp
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Calculates a number between two numbers at a specific increment. The `amt`
+
+  parameter is the amount to interpolate between the two numbers. 0.0 is
+
+  equal to the first number, 0.1 is very near the first number, 0.5 is
+
+  half-way in between, and 1.0 is equal to the second number. The `lerp()`
+
+  function is convenient for creating motion along a straight path and for
+
+  drawing dotted lines.If the value of `amt` is less than 0 or more than 1,
+  `lerp()` will return a
+
+  number outside of the original interval. For example, calling
+
+  `lerp(0, 10, 1.5)` will return 15.
 params:
   - name: start
     description: first value.

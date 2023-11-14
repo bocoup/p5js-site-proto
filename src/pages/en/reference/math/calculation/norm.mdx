@@ -1,8 +1,18 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: norm
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Maps a number from one range to a value between 0 and 1.For example, `norm(2,
+  0, 10)` returns 0.2. 2's position in the original
+
+  range [0, 10] is proportional to 0.2's position in the range [0, 1]. This
+
+  is equivalent to calling `map(2, 0, 10, 0, 1)`.Numbers outside of the original
+  range are not constrained between 0 and 1.
+
+  Out-of-range values are often intentional and useful.
 params:
   - name: value
     description: incoming value to be normalized.

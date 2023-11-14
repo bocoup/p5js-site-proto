@@ -1,8 +1,17 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sq
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Squares a number, which means multiplying the number by itself. The value
+
+  returned is always a positive number.For example, `sq(3)` evaluates 3 × 3 
+  which is 9. `sq(-3)` evaluates
+
+  -3 × -3 which is also 9.  Multiplying two negative numbers produces
+
+  a positive number.
 params:
   - name: 'n'
     description: number to square.

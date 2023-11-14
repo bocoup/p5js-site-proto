@@ -1,8 +1,17 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sqrt
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: >-
+  Calculates the square root of a number. A number's square root can be
+
+  multiplied by itself to produce the original number.For example, `sqrt(9)`
+  returns 3 because 3 × 3 = 9. `sqrt()` always
+
+  returns a positive value. `sqrt()` doesn't work with negative arguments
+
+  such as `sqrt(-9)`.
 params:
   - name: 'n'
     description: non-negative number to square root.

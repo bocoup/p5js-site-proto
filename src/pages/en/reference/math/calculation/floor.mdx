@@ -1,8 +1,11 @@
 ---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: floor
 module: Math
 submodule: Calculation
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+descriptionText: |-
+  Calculates the closest integer value that is less than or equal to the
+  value of the `n` parameter.
 params:
   - name: 'n'
     description: number to round down.
