@@ -3,6 +3,13 @@ title: keyTyped
 module: Events
 submodule: Keyboard
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: event
+    description: optional KeyboardEvent callback argument.
+    type: KeyboardEvent
+kind: function
+name: keyTyped
+namespace: keyTyped
 examples:
   - |-
     <div>
@@ -25,9 +32,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: keyTyped
-namespace: keyTyped
 ---
 
 

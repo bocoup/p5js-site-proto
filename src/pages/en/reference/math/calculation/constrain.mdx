@@ -3,6 +3,19 @@ title: constrain
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number to constrain.
+    type: Number
+  - name: low
+    description: minimum limit.
+    type: Number
+  - name: high
+    description: maximum limit.
+    type: Number
+kind: function
+name: constrain
+namespace: constrain
 examples:
   - |-
     <div>
@@ -45,9 +58,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: constrain
-namespace: constrain
 ---
 
 

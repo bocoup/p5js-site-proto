@@ -3,6 +3,13 @@ title: exp
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: exponent to raise.
+    type: Number
+kind: function
+name: exp
+namespace: exp
 examples:
   - |-
     <div>
@@ -20,9 +27,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: exp
-namespace: exp
 ---
 
 

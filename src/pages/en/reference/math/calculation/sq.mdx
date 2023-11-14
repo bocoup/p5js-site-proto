@@ -3,6 +3,13 @@ title: sq
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number to square.
+    type: Number
+kind: function
+name: sq
+namespace: sq
 examples:
   - |-
     <div>
@@ -20,9 +27,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: sq
-namespace: sq
 ---
 
 

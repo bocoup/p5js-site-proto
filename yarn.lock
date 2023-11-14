@@ -61,6 +61,18 @@
     unist-util-visit "^4.1.2"
     vfile "^5.3.7"
 
+"@astrojs/preact@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/preact/-/preact-3.0.1.tgz#d27a6ca3fb996997893e5caf2a8e065e12640662"
+  integrity sha512-pAfN+U7J4hw7qijqkBx1ZBpPO+ooa+MkKIgshCozfqsHTp18uPflxQUviz0TEzB5nn7hSndzncWuc3pz/HbtJw==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.22.5"
+    "@babel/plugin-transform-react-jsx-development" "^7.22.5"
+    "@preact/preset-vite" "^2.5.0"
+    "@preact/signals" "^1.2.1"
+    babel-plugin-transform-hook-names "^1.0.2"
+    preact-render-to-string "^6.2.1"
+
 "@astrojs/prism@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-3.0.0.tgz#c9443e4cbf435acf0b5adc2c627d9789991514e7"
@@ -102,7 +114,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.23.3.tgz#3febd552541e62b5e883a25eb3effd7c7379db11"
   integrity sha512-BmR4bWbDIoFJmJ9z2cZ8Gmm2MXgEDgjdWgpKmKWUt54UGFJdlj31ECtbaDvCG/qVdG3AQ1SfpZEs01lUFbzLOQ==
 
-"@babel/core@^7.18.10", "@babel/core@^7.22.10", "@babel/core@^7.23.2":
+"@babel/core@^7.18.10", "@babel/core@^7.22.1", "@babel/core@^7.22.10", "@babel/core@^7.23.2":
   version "7.23.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.23.3.tgz#5ec09c8803b91f51cc887dedc2654a35852849c9"
   integrity sha512-Jg+msLuNuCJDyBvFv5+OKOUjWMZgd85bKjbICd3zWrKAo+bJ49HJufi7CQE0q0uR8NGyO6xkCACScNqyjHSZew==
@@ -253,6 +265,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
+"@babel/plugin-transform-react-jsx-development@^7.22.5":
+  version "7.22.5"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-development/-/plugin-transform-react-jsx-development-7.22.5.tgz#e716b6edbef972a92165cd69d92f1255f7e73e87"
+  integrity sha512-bDhuzwWMuInwCYeDeMzyi7TaBgRQei6DqxhbyniL7/VG4RSS7HtSL2QbY4eESy1KJqlWt8g3xeEBGPuo+XqC8A==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.22.5"
+
 "@babel/plugin-transform-react-jsx-self@^7.22.5":
   version "7.23.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.23.3.tgz#ed3e7dadde046cce761a8e3cf003a13d1a7972d9"
@@ -267,7 +286,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
-"@babel/plugin-transform-react-jsx@^7.22.5":
+"@babel/plugin-transform-react-jsx@^7.22.15", "@babel/plugin-transform-react-jsx@^7.22.5":
   version "7.22.15"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.22.15.tgz#7e6266d88705d7c49f11c98db8b9464531289cd6"
   integrity sha512-oKckg2eZFa8771O/5vi7XeTvmM6+O9cxZu+kanTU7tD4sin5nO/G8jGJhq8Hvt2Z0kUoEDRayuZLaUlYl8QuGA==
@@ -615,6 +634,66 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@preact/preset-vite@^2.5.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@preact/preset-vite/-/preset-vite-2.6.0.tgz#2b2c54ee2196d75b7b9e0297998497d3dbe37ce0"
+  integrity sha512-5nztNzXbCpqyVum/K94nB2YQ5PTnvWdz4u7/X0jc8+kLyskSSpkNUxLQJeI90zfGSFIX1Ibj2G2JIS/mySHWYQ==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.22.15"
+    "@babel/plugin-transform-react-jsx-development" "^7.22.5"
+    "@prefresh/vite" "^2.4.1"
+    "@rollup/pluginutils" "^4.1.1"
+    babel-plugin-transform-hook-names "^1.0.2"
+    debug "^4.3.4"
+    kolorist "^1.8.0"
+    resolve "^1.22.8"
+
+"@preact/signals-core@^1.4.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@preact/signals-core/-/signals-core-1.5.0.tgz#5d34db4d3c242c93e1cefb7ce8b2d10ecbdbfa79"
+  integrity sha512-U2diO1Z4i1n2IoFgMYmRdHWGObNrcuTRxyNEn7deSq2cru0vj0583HYQZHsAqcs7FE+hQyX3mjIV7LAfHCvy8w==
+
+"@preact/signals@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@preact/signals/-/signals-1.2.1.tgz#e593036a4d2acc3b23578418af1fd002fc19cb25"
+  integrity sha512-hRPvp1C2ooDzOHqfnhdpHgoIFDbYFAXLhoid3+jSItuPPD/J0r/UsiWKv/8ZO/oEhjRaP0M5niuRYsWqmY2GEA==
+  dependencies:
+    "@preact/signals-core" "^1.4.0"
+
+"@prefresh/babel-plugin@0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@prefresh/babel-plugin/-/babel-plugin-0.5.1.tgz#3161bbbf12dd39a5fe08514349898fa6a20525b7"
+  integrity sha512-uG3jGEAysxWoyG3XkYfjYHgaySFrSsaEb4GagLzYaxlydbuREtaX+FTxuIidp241RaLl85XoHg9Ej6E4+V1pcg==
+
+"@prefresh/core@^1.5.1":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-1.5.2.tgz#750e1936d82f3b0a1199d3cda5c35e3443128490"
+  integrity sha512-A/08vkaM1FogrCII5PZKCrygxSsc11obExBScm3JF1CryK2uDS3ZXeni7FeKCx1nYdUkj4UcJxzPzc1WliMzZA==
+
+"@prefresh/utils@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@prefresh/utils/-/utils-1.2.0.tgz#cbdfe549b207041e38bb6cc382408b30cd24fec8"
+  integrity sha512-KtC/fZw+oqtwOLUFM9UtiitB0JsVX0zLKNyRTA332sqREqSALIIQQxdUCS1P3xR/jT1e2e8/5rwH6gdcMLEmsQ==
+
+"@prefresh/vite@^2.4.1":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@prefresh/vite/-/vite-2.4.4.tgz#d94d69db76e84e9c62d5da6b5e0c909da9f7ab97"
+  integrity sha512-7jcz3j5pXufOWTjl31n0Lc3BcU8oGoacoaWx/Ur1QJ+fd4Xu0G7g/ER1xV02x7DCiVoFi7xtSgaophOXoJvpmA==
+  dependencies:
+    "@babel/core" "^7.22.1"
+    "@prefresh/babel-plugin" "0.5.1"
+    "@prefresh/core" "^1.5.1"
+    "@prefresh/utils" "^1.2.0"
+    "@rollup/pluginutils" "^4.2.1"
+
+"@rollup/pluginutils@^4.1.1", "@rollup/pluginutils@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
+  integrity sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==
+  dependencies:
+    estree-walker "^2.0.1"
+    picomatch "^2.2.2"
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
@@ -1051,6 +1130,11 @@ b4a@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/b4a/-/b4a-1.6.4.tgz#ef1c1422cae5ce6535ec191baeed7567443f36c9"
   integrity sha512-fpWrvyVHEKyeEvbKZTVOeZF3VSKKWtJxFIxX/jaVPf+cLbGUSitjb49pHLqPV2BUNNZ0LcoeEGfE/YCpyDYHIw==
+
+babel-plugin-transform-hook-names@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-hook-names/-/babel-plugin-transform-hook-names-1.0.2.tgz#0d75c2d78e8bbcdb258241131562b9cf07f010f3"
+  integrity sha512-5gafyjyyBTTdX/tQQ0hRgu4AhNHG/hqWi0ZZmg2xvs2FgRkJXzDNKBZCyoYqgFkovfDrgM8OoKg8karoUvWeCw==
 
 bail@^2.0.0:
   version "2.0.2"
@@ -1796,7 +1880,7 @@ estree-util-visit@^2.0.0:
     "@types/estree-jsx" "^1.0.0"
     "@types/unist" "^3.0.0"
 
-estree-walker@^2.0.2:
+estree-walker@^2.0.1, estree-walker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
@@ -2609,6 +2693,11 @@ kleur@^4.0.3, kleur@^4.1.4:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
+
+kolorist@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.8.0.tgz#edddbbbc7894bc13302cdf740af6374d4a04743c"
+  integrity sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==
 
 konan@^2.1.1:
   version "2.1.1"
@@ -4205,7 +4294,7 @@ picocolors@^1.0.0:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
-picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
+picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.2, picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
@@ -4236,6 +4325,18 @@ postcss@^8.4.27, postcss@^8.4.31:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+preact-render-to-string@^6.2.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-6.3.1.tgz#2479ebca8e6721cacfcecaa79bd861005a3d9b8f"
+  integrity sha512-NQ28WrjLtWY6lKDlTxnFpKHZdpjfF+oE6V4tZ0rTrunHrtZp6Dm0oFrcJalt/5PNeqJz4j1DuZDS0Y6rCBoqDA==
+  dependencies:
+    pretty-format "^3.8.0"
+
+preact@^10.6.5:
+  version "10.19.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.19.1.tgz#821b243a08ad4b71c77aa4f5a5035588e86c047e"
+  integrity sha512-ZSsUr6EFlwWH0btdXMj6+X+hJAZ1v+aUzKlfwBGokKB1ZO6Shz+D16LxQhM8f+E/UgkKbVe2tsWXtGTUMCkGpQ==
+
 prebuild-install@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-7.1.1.tgz#de97d5b34a70a0c81334fd24641f2a1702352e45"
@@ -4263,6 +4364,11 @@ preferred-pm@^3.1.2:
     find-yarn-workspace-root2 "1.2.16"
     path-exists "^4.0.0"
     which-pm "2.0.0"
+
+pretty-format@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
+  integrity sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==
 
 prismjs@^1.29.0:
   version "1.29.0"
@@ -4558,7 +4664,7 @@ require-directory@^2.1.1:
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
   integrity sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==
 
-resolve@^1.22.1, resolve@^1.22.4:
+resolve@^1.22.1, resolve@^1.22.4, resolve@^1.22.8:
   version "1.22.8"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.8.tgz#b6c87a9f2aa06dfab52e3d70ac8cde321fa5a48d"
   integrity sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==

@@ -3,6 +3,16 @@ title: pow
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: base of the exponential expression.
+    type: Number
+  - name: e
+    description: power by which to raise the base.
+    type: Number
+kind: function
+name: pow
+namespace: pow
 examples:
   - >-
     <div>
@@ -38,9 +48,6 @@ examples:
     </code>
 
     </div>
-kind: function
-name: pow
-namespace: pow
 ---
 
 

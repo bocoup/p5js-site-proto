@@ -3,6 +3,13 @@ title: keyPressed
 module: Events
 submodule: Keyboard
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: event
+    description: optional KeyboardEvent callback argument.
+    type: KeyboardEvent
+kind: function
+name: keyPressed
+namespace: keyPressed
 examples:
   - |-
     <div>
@@ -49,9 +56,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: keyPressed
-namespace: keyPressed
 ---
 
 

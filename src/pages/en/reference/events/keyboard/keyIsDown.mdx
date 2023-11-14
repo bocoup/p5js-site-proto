@@ -3,6 +3,13 @@ title: keyIsDown
 module: Events
 submodule: Keyboard
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: code
+    description: The key to check for.
+    type: Number
+kind: function
+name: keyIsDown
+namespace: keyIsDown
 examples:
   - |-
     <div><code>
@@ -63,9 +70,6 @@ examples:
         + or - are pressed.`);
     }
     </code></div>
-kind: function
-name: keyIsDown
-namespace: keyIsDown
 ---
 
 

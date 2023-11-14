@@ -3,6 +3,13 @@ title: randomSeed
 module: Math
 submodule: Random
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: seed
+    description: seed value.
+    type: Number
+kind: function
+name: randomSeed
+namespace: randomSeed
 examples:
   - >-
     <div>
@@ -33,9 +40,6 @@ examples:
     </code>
 
     </div>
-kind: function
-name: randomSeed
-namespace: randomSeed
 ---
 
 

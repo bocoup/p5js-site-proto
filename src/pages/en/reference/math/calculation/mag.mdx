@@ -3,6 +3,16 @@ title: mag
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: x
+    description: first component.
+    type: Number
+  - name: 'y'
+    description: second component.
+    type: Number
+kind: function
+name: mag
+namespace: mag
 examples:
   - >-
     <div>
@@ -27,9 +37,6 @@ examples:
     </code>
 
     </div>
-kind: function
-name: mag
-namespace: mag
 ---
 
 

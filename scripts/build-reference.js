@@ -72,6 +72,30 @@ function convertToMDX(doc) {
     return;
   }
 
+  const transformedParams = doc.params
+    .map((param) => {
+      // Check if the necessary properties exist
+      if (!param.description || !param.description.children || !param.type) {
+        return null; // or some default value
+      }
+
+      // Extract the description text
+      const descriptionText = param.description.children
+        .map((child) =>
+          child.children.map((textNode) => textNode.value).join("")
+        )
+        .join("");
+
+      return {
+        name: param.name,
+        description: descriptionText,
+        type: param.type.name ?? param.type.expression.name,
+      };
+    })
+    .filter((param) => param != null); // Filter out null values
+
+  // console.log(transformedParams);
+
   // Create the frontmatter string
   const frontmatter = matter.stringify("", {
     title: doc.name,
@@ -79,7 +103,7 @@ function convertToMDX(doc) {
     submodule,
     // This is currently a static value but might change
     layout: "@layouts/reference/SingleReferenceLayout.astro",
-    examples: doc.examples.map((example) => example.description),
+    params: transformedParams,
     // Add all properties as frontmatter, except for those that are objects
     // Likely needs to be organized more deliberately
     ...Object.entries(doc)
@@ -88,6 +112,7 @@ function convertToMDX(doc) {
           typeof value !== undefined && typeof value !== "object"
       )
       .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
+    examples: doc.examples.map((example) => example.description),
   });
 
   // Combine all pieces of the doc into a single Markdown string

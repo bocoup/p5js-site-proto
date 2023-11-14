@@ -3,6 +3,19 @@ title: lerp
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: start
+    description: first value.
+    type: Number
+  - name: stop
+    description: second value.
+    type: Number
+  - name: amt
+    description: number.
+    type: Number
+kind: function
+name: lerp
+namespace: lerp
 examples:
   - >-
     <div>
@@ -52,9 +65,6 @@ examples:
     </code>
 
     </div>
-kind: function
-name: lerp
-namespace: lerp
 ---
 
 

@@ -3,6 +3,16 @@ title: round
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number to round.
+    type: Number
+  - name: decimals
+    description: 'number of decimal places to round to, default is 0.'
+    type: Number
+kind: function
+name: round
+namespace: round
 examples:
   - |-
     <div>
@@ -22,9 +32,6 @@ examples:
     describe('The number 12.78 written in middle of canvas.');
     </code>
     </div>
-kind: function
-name: round
-namespace: round
 ---
 
 

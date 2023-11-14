@@ -3,6 +3,16 @@ title: randomGaussian
 module: Math
 submodule: Random
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: mean
+    description: mean.
+    type: Number
+  - name: sd
+    description: standard deviation.
+    type: Number
+kind: function
+name: randomGaussian
+namespace: randomGaussian
 examples:
   - |-
     <div>
@@ -30,9 +40,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: randomGaussian
-namespace: randomGaussian
 ---
 
 

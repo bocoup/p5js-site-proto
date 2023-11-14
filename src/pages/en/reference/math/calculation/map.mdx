@@ -3,6 +3,28 @@ title: map
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: value
+    description: the incoming value to be converted.
+    type: Number
+  - name: start1
+    description: lower bound of the value's current range.
+    type: Number
+  - name: stop1
+    description: upper bound of the value's current range.
+    type: Number
+  - name: start2
+    description: lower bound of the value's target range.
+    type: Number
+  - name: stop2
+    description: upper bound of the value's target range.
+    type: Number
+  - name: withinBounds
+    description: constrain the value to the newly mapped range.
+    type: Boolean
+kind: function
+name: map
+namespace: map
 examples:
   - |-
     <div>
@@ -36,9 +58,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: map
-namespace: map
 ---
 
 

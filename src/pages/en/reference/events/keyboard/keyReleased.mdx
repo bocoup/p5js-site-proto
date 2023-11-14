@@ -3,6 +3,13 @@ title: keyReleased
 module: Events
 submodule: Keyboard
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: event
+    description: optional KeyboardEvent callback argument.
+    type: KeyboardEvent
+kind: function
+name: keyReleased
+namespace: keyReleased
 examples:
   - |-
     <div>
@@ -24,9 +31,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: keyReleased
-namespace: keyReleased
 ---
 
 

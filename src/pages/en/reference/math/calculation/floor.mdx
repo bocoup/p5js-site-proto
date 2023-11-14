@@ -3,6 +3,13 @@ title: floor
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number to round down.
+    type: Number
+kind: function
+name: floor
+namespace: floor
 examples:
   - >-
     <div>
@@ -38,9 +45,6 @@ examples:
     </code>
 
     </div>
-kind: function
-name: floor
-namespace: floor
 ---
 
 

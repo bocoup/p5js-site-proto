@@ -3,6 +3,13 @@ title: abs
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number to compute.
+    type: Number
+kind: function
+name: abs
+namespace: abs
 examples:
   - |-
     <div>
@@ -21,9 +28,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: abs
-namespace: abs
 ---
 
 

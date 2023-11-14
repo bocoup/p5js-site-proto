@@ -3,6 +3,13 @@ title: log
 module: Math
 submodule: Calculation
 layout: '@layouts/reference/SingleReferenceLayout.astro'
+params:
+  - name: 'n'
+    description: number greater than 0.
+    type: Number
+kind: function
+name: log
+namespace: log
 examples:
   - |-
     <div>
@@ -20,9 +27,6 @@ examples:
     }
     </code>
     </div>
-kind: function
-name: log
-namespace: log
 ---
 
 
