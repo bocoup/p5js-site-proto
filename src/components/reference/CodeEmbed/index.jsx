@@ -1,8 +1,6 @@
-import React from "react";
-
 const CodeEmbed = ({ code }) => {
   return (
-    <div>
+    <div style={{ backgroundColor: "lightgray", padding: "1rem" }}>
       <pre>
         <code>{code}</code>
       </pre>
