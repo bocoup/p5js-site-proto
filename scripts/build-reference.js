@@ -9,7 +9,7 @@ let fileContextToModuleMap = new Map();
 let fileContextToSubmoduleMap = new Map();
 
 const localPath = "temp/p5.js";
-const srcPath = "src/**/*.js";
+const srcPath = "src/**/p5.Element.js";
 
 const modulePathTree = {};
 
@@ -57,6 +57,7 @@ function getModulePath(doc) {
 }
 
 function convertToMDX(doc) {
+  console.log(doc);
   if (!doc) {
     return;
   }
@@ -148,7 +149,7 @@ function convertToMDX(doc) {
   if (!module) {
     return;
   }
-
+  console.log(doc);
   let frontMatterArgs = {};
   try {
     frontMatterArgs = {
@@ -245,13 +246,15 @@ async function cleanUp() {
 }
 
 async function main() {
-  await cloneLibraryRepo();
+  // await cloneLibraryRepo();
 
   console.log("Building reference docs...");
   console.log(`${localPath}/${srcPath}`);
   const docs = await documentation.build([`${localPath}/${srcPath}`], {
     shallow: true,
+    inferPrivate: false,
   });
+
   for (const doc of docs) {
     const mdx = await convertToMDX(doc, matter, remark, remarkMDX);
 
@@ -270,7 +273,7 @@ async function main() {
   const indexMdx = getIndexMdx();
   await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
 
-  await deleteClonedLibraryRepo("temp");
+  // await deleteClonedLibraryRepo("temp");
 
   console.log("Done building reference docs!");
 }

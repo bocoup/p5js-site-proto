@@ -2,14 +2,118 @@
 layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: parent
 module: DOM
-file: /Users/stalgia/Desktop/Work/p5-scratch-pad/temp/p5.js/src/core/p5.Element.js
-descriptionText: ''
+file: src/core/p5.Element.js
+descriptionText: >-
+  Attaches this element to a parent element.For example, a
+  `&lt;div&gt;&lt;/div&gt;` element may be used as a box to
+
+  hold two pieces of text, a header and a paragraph. The
+
+  `&lt;div&gt;&lt;/div&gt;` is the parent element of both the header and
+
+  paragraph.The parameter `parent` can have one of three types. `parent` can be
+  a
+
+  string with the parent element's ID, as in
+
+  `myElement.parent('container')`. It can also be another
+
+  <a href="#/p5.Element">p5.Element</a> object, as in
+
+  `myElement.parent(myDiv)`. Finally, `parent` can be an `HTMLElement`
+
+  object, as in `myElement.parent(anotherElement)`.Calling `myElement.parent()`
+  without an argument returns this element's
+
+  parent.
 params: []
-description: ''
 kind: function
 name: parent
 namespace: parent
-examples: []
+examples:
+  - |-
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create a div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color to white
+      div.style('background-color', 'white');
+      // Align any text to the center.
+      div.style('text-align', 'center');
+      // Set its ID to "container".
+      div.id('container');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent
+      // using its ID "container".
+      p.parent('container');
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create rectangular div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color and align
+      // any text to the center.
+      div.style('background-color', 'white');
+      div.style('text-align', 'center');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent.
+      p.parent(div);
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create rectangular div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color and align
+      // any text to the center.
+      div.style('background-color', 'white');
+      div.style('text-align', 'center');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent
+      // using the underlying
+      // HTMLElement.
+      p.parent(div.elt);
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
 ---
 
 
