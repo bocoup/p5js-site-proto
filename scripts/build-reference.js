@@ -8,7 +8,10 @@ import { exec } from "child_process";
 const localPath = "in/p5.js";
 const jsonFilePath = "./out/data.json";
 
-const modulePathTree = {};
+const modulePathTree = {
+  modules: {},
+  classes: {},
+};
 
 function getModulePath(doc) {
   if (!doc || !doc.name) {
@@ -27,7 +30,30 @@ function getModulePath(doc) {
   }
   const path = `${prefix}/${docClass}/`;
 
+  addDocToModulePathTree(doc, path);
+
   return path;
+}
+
+function addDocToModulePathTree(doc, path) {
+  if (doc.class && doc.class !== "p5") {
+    if (!modulePathTree.classes[doc.class]) {
+      modulePathTree.classes[doc.class] = {};
+    }
+    modulePathTree.classes[doc.class][doc.name] = path;
+  } else if (doc.module && doc.module !== "p5") {
+    if (!modulePathTree.modules[doc.module]) {
+      modulePathTree.modules[doc.module] = {};
+    }
+    if (doc.submodule) {
+      if (!modulePathTree.modules[doc.module][doc.submodule]) {
+        modulePathTree.modules[doc.module][doc.submodule] = {};
+      }
+      modulePathTree.modules[doc.module][doc.submodule][doc.name] = path;
+    } else {
+      modulePathTree.modules[doc.module][doc.name] = path;
+    }
+  }
 }
 
 async function convertToMDX(doc) {
@@ -78,37 +104,35 @@ async function convertToMDX(doc) {
   }
 }
 
-// const getIndexMdx = () => {
-//   console.log("Saving reference index...");
-//   const frontmatter = matter.stringify("", {
-//     title: "Reference",
-//   });
+const getIndexMdx = () => {
+  const frontmatter = matter.stringify("", {
+    title: "Reference",
+  });
 
-//   let markdownContent = `# Reference\n`;
-//   for (const module in modulePathTree) {
-//     markdownContent += `## ${module}\n`;
-//     const submodules = modulePathTree[module];
+  let markdownContent = `# Reference\n`;
+  for (const key of Object.keys(modulePathTree.modules)) {
+    markdownContent += `## ${key}\n`;
+    const submodules = modulePathTree.modules[key];
+    const scanAndAddSubmodules = (modules) => {
+      if (!modules) return;
+      for (const [key, val] of Object.entries(modules)) {
+        if (typeof val === "object" && Object.keys(val).length > 0) {
+          markdownContent += `### ${key}\n`;
 
-//     const scanAndAddSubmodules = (modules) => {
-//       for (const [key, val] of Object.entries(modules)) {
-//         if (typeof val === "object" && Object.keys(val).length > 0) {
-//           if (key !== "root") {
-//             markdownContent += `### ${key}\n`;
-//           }
-//           scanAndAddSubmodules(val);
-//         } else {
-//           markdownContent += `- [${key}](${val})\n`;
-//         }
-//       }
-//     };
+          scanAndAddSubmodules(val);
+        } else {
+          markdownContent += `- [${key}](${val})\n`;
+        }
+      }
+    };
 
-//     scanAndAddSubmodules(submodules);
-//   }
+    scanAndAddSubmodules(submodules);
+  }
 
-//   const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+  const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
 
-//   return `${frontmatter}\n${mdxContent.toString()}`;
-// };
+  return `${frontmatter}\n${mdxContent.toString()}`;
+};
 
 async function cloneLibraryRepo() {
   const git = simpleGit();
@@ -252,8 +276,8 @@ async function main() {
 
   await saveMDX(mdxDocs);
 
-  // const indexMdx = getIndexMdx();
-  // await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
+  const indexMdx = getIndexMdx();
+  await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
 
   // console.log("Done building reference docs!");
 }
