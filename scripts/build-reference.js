@@ -20,7 +20,7 @@ function getModulePath(doc) {
     return;
   }
 
-  let prefix = `./src/pages/en/reference/#`;
+  let prefix = `./src/pages/en/reference`;
 
   let docClass = doc.class;
   if (!docClass) {
@@ -38,12 +38,13 @@ function getModulePath(doc) {
 }
 
 function addDocToModulePathTree(doc, path) {
+  const modulePath = path.replace("./src/pages/en/reference/", "") + doc.name;
   if (doc.class && doc.class !== "p5") {
     if (!modulePathTree.classes[doc.class]) {
       modulePathTree.classes[doc.class] = {};
     }
-    modulePathTree.classes[doc.class][doc.name] = path;
-  } else if (doc.module && doc.module !== "p5") {
+    modulePathTree.classes[doc.class][doc.name] = modulePath;
+  } else {
     if (!modulePathTree.modules[doc.module]) {
       modulePathTree.modules[doc.module] = {};
     }
@@ -51,9 +52,9 @@ function addDocToModulePathTree(doc, path) {
       if (!modulePathTree.modules[doc.module][doc.submodule]) {
         modulePathTree.modules[doc.module][doc.submodule] = {};
       }
-      modulePathTree.modules[doc.module][doc.submodule][doc.name] = path;
+      modulePathTree.modules[doc.module][doc.submodule][doc.name] = modulePath;
     } else {
-      modulePathTree.modules[doc.module][doc.name] = path;
+      modulePathTree.modules[doc.module][doc.name] = modulePath;
     }
   }
 }
@@ -61,7 +62,9 @@ function addDocToModulePathTree(doc, path) {
 async function convertClassToMDX(doc) {
   let frontMatterArgs = {};
   const sourcePath = doc.file?.replace(/.*p5\.js\/(.*)/, "$1") ?? "";
-  const memberMethodPreviews = classMethodPreviews[doc.name] ?? {};
+  const memberMethodPreviews = classMethodPreviews[doc.name]
+    ? { memberMethodPreviews: classMethodPreviews[doc.name] }
+    : {};
   try {
     frontMatterArgs = {
       layout: "@layouts/reference/ClassReferenceLayout.astro",
@@ -283,9 +286,10 @@ function addClassMethodPreviewsToClassDocs(doc, path) {
   if (!classMethodPreviews[doc.class]) {
     classMethodPreviews[doc.class] = {};
   }
+  const classMethodPath = "../" + modulePathTree.classes[doc.class][doc.name];
   classMethodPreviews[doc.class][doc.name] = {
     description: doc.description,
-    path: path,
+    path: classMethodPath,
   };
 }
 
