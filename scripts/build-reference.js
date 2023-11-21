@@ -2,11 +2,15 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import { remark } from "remark";
 import remarkMDX from "remark-mdx";
-import { simpleGit } from "simple-git";
 import { exec } from "child_process";
+import {
+  cloneLibraryRepo,
+  fixForAbsolutePathInPreprocessor,
+} from "./utilities.js";
 
 const localPath = "in/p5.js";
 const jsonFilePath = "./out/data.json";
+const repoUrl = "https://github.com/processing/p5.js.git";
 
 const classMethodPreviews = {};
 const modulePathTree = {
@@ -44,37 +48,15 @@ main().catch((err) => {
 
 /** SETUP */
 
-async function cloneLibraryRepo() {
-  const git = simpleGit();
-  const repoUrl = "https://github.com/processing/p5.js.git";
-
-  console.log("Cloning repository...");
-  try {
-    await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
-    console.log("Repository cloned successfully.");
-    await fixForAbsolutePathInPreprocessor();
-  } catch (err) {
-    console.error(`Error cloning repo: ${err}`);
-  }
-}
-
-// This is a fix for the use of an absolute path in the preprocessor.js file in p5.js
-async function fixForAbsolutePathInPreprocessor() {
-  try {
-    const preprocessorPath = `${localPath}/docs/preprocessor.js`;
-
-    let preprocessorContent = await fs.readFile(preprocessorPath, "utf8");
-
-    // Modify the absolute path in the preprocessor file
-    preprocessorContent = preprocessorContent.replace(
-      "path.join(process.cwd(), 'docs', 'parameterData.json')",
-      `path.join(process.cwd(), '${localPath}/docs', 'parameterData.json')`
-    );
-
-    await fs.writeFile(preprocessorPath, preprocessorContent, "utf8");
-    console.log("Preprocessor file modified successfully.");
-  } catch (err) {
-    console.error(`Error modifying absolute path in preprocessor: ${err}`);
+async function cloneLibraryRepoIfNeeded() {
+  const currentRepoExists =
+    (await fileExistsAt(localPath)) &&
+    (await isModifiedWithin24Hours(localPath));
+  if (!currentRepoExists) {
+    await cloneLibraryRepo(localPath, repoUrl);
+    await fixForAbsolutePathInPreprocessor(localPath);
+  } else {
+    console.log("Library repo already exists, skipping clone...");
   }
 }
 
@@ -110,17 +92,6 @@ async function saveMDX(mdxDocs) {
 }
 
 /** PARSING DOCS */
-
-async function cloneLibraryRepoIfNeeded() {
-  const currentRepoExists =
-    (await fileExistsAt(localPath)) &&
-    (await isModifiedWithin24Hours(localPath));
-  if (!currentRepoExists) {
-    await cloneLibraryRepo();
-  } else {
-    console.log("Library repo already exists, skipping clone...");
-  }
-}
 
 async function buildDocs() {
   console.log("Loading docs from JSON file...");
