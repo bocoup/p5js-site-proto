@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5
 module: IO
 submodule: Output
@@ -16,6 +16,7 @@ description: |
   <p>A p5 sketch can run in "global" or "instance" mode:
   "global"   - all properties and methods are attached to the window
   "instance" - all properties and methods are bound to this p5 object</p>
+isConstructor: true
 line: 12
 params:
   - name: sketch
@@ -32,8 +33,6 @@ params:
 return:
   description: a p5 instance
   type: P5
-isConstructor: 1
-chainable: false
 ---
 
 

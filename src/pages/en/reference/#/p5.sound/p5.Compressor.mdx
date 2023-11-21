@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Compressor
 module: p5.sound
 submodule: p5.sound
@@ -31,9 +31,48 @@ description: >
 
   <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are
   available.</p>
+isConstructor: true
 line: 10036
-isConstructor: 1
-chainable: false
+compressor:
+  description: >
+    <p>The p5.Compressor is built with a <a
+    href="https://www.w3.org/TR/webaudio/#the-dynamicscompressornode-interface"
+       target="_blank" title="W3 spec for Dynamics Compressor Node">Web Audio Dynamics Compressor Node
+       </a></p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+process:
+  description: |
+    <p>Performs the same function as .connect, but also accepts
+    optional parameters to set compressor's audioParams</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+set:
+  description: |
+    <p>Set the paramters of a compressor.</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+attack:
+  description: |
+    <p>Get current attack or set value w/ time ramp</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+knee:
+  description: |
+    <p>Get current knee or set value w/ time ramp</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+ratio:
+  description: |
+    <p>Get current ratio or set value w/ time ramp</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+threshold:
+  description: |
+    <p>Get current threshold or set value w/ time ramp</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+release:
+  description: |
+    <p>Get current release or set value w/ time ramp</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
+reduction:
+  description: |
+    <p>Return the current reduction value</p>
+  path: ./src/pages/en/reference/#/p5.Compressor/
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Reverb
 module: p5.sound
 submodule: p5.sound
@@ -29,9 +29,29 @@ description: >
 
   <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are
   available.</p>
+isConstructor: true
 line: 8308
-isConstructor: 1
-chainable: false
+process:
+  description: |
+    <p>Connect a source to the reverb, and assign reverb parameters.</p>
+  path: ./src/pages/en/reference/#/p5.Reverb/
+set:
+  description: |
+    <p>Set the reverb settings. Similar to .process(), but without
+    assigning a new input.</p>
+  path: ./src/pages/en/reference/#/p5.Reverb/
+amp:
+  description: |
+    <p>Set the output level of the reverb effect.</p>
+  path: ./src/pages/en/reference/#/p5.Reverb/
+connect:
+  description: |
+    <p>Send output to a p5.sound or web audio object</p>
+  path: ./src/pages/en/reference/#/p5.Reverb/
+disconnect:
+  description: |
+    <p>Disconnect all output.</p>
+  path: ./src/pages/en/reference/#/p5.Reverb/
 ---
 
 

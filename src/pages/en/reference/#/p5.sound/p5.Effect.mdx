@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Effect
 module: p5.sound
 submodule: p5.sound
@@ -21,6 +21,7 @@ description: >
   <a href="/reference/#/p5.Filter">p5.Filter</a>,
 
   <a href="/reference/#/p5.Reverb">p5.Reverb</a>.</p>
+isConstructor: true
 line: 6423
 params:
   - name: ac
@@ -50,8 +51,29 @@ params:
                                    signals are mixed properly.</p>
     type: AudioNode
     optional: true
-isConstructor: 1
-chainable: false
+amp:
+  description: |
+    <p>Set the output volume of the filter.</p>
+  path: ./src/pages/en/reference/#/p5.Effect/
+chain:
+  description: |
+    <p>Link effects together in a chain
+    Example usage: filter.chain(reverb, delay, panner);
+    May be used with an open-ended number of arguments</p>
+  path: ./src/pages/en/reference/#/p5.Effect/
+drywet:
+  description: |
+    <p>Adjust the dry/wet value.</p>
+  path: ./src/pages/en/reference/#/p5.Effect/
+connect:
+  description: |
+    <p>Send output to a p5.js-sound, Web Audio Node, or use signal to
+    control an AudioParam</p>
+  path: ./src/pages/en/reference/#/p5.Effect/
+disconnect:
+  description: |
+    <p>Disconnect all output.</p>
+  path: ./src/pages/en/reference/#/p5.Effect/
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.TableRow
 module: IO
 submodule: Table
@@ -9,6 +9,7 @@ description: |
   stored in columns, from a table.</p>
   <p>A Table Row contains both an ordered array, and an unordered
   JSON object.</p>
+isConstructor: true
 line: 9
 params:
   - name: str
@@ -23,8 +24,38 @@ params:
       <p>comma separated values (csv) by default</p>
     type: String
     optional: true
-isConstructor: 1
-chainable: false
+set:
+  description: |
+    <p>Stores a value in the TableRow's specified column.
+    The column may be specified by either its ID or title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
+setNum:
+  description: |
+    <p>Stores a Float value in the TableRow's specified column.
+    The column may be specified by either its ID or title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
+setString:
+  description: |
+    <p>Stores a String value in the TableRow's specified column.
+    The column may be specified by either its ID or title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
+get:
+  description: |
+    <p>Retrieves a value from the TableRow's specified column.
+    The column may be specified by either its ID or title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
+getNum:
+  description: |
+    <p>Retrieves a Float value from the TableRow's specified
+    column. The column may be specified by either its ID or
+    title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
+getString:
+  description: |
+    <p>Retrieves an String value from the TableRow's specified
+    column. The column may be specified by either its ID or
+    title.</p>
+  path: ./src/pages/en/reference/#/p5.TableRow/
 ---
 
 

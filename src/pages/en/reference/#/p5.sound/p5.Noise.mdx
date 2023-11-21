@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Noise
 module: p5.sound
 submodule: p5.sound
@@ -7,6 +7,7 @@ file: lib/addons/p5.sound.js
 description: >
   <p>Noise is a type of oscillator that generates a buffer with random
   values.</p>
+isConstructor: true
 line: 5620
 params:
   - name: type
@@ -14,8 +15,11 @@ params:
       <p>Type of noise can be 'white' (default),
                            'brown' or 'pink'.</p>
     type: String
-isConstructor: 1
-chainable: false
+setType:
+  description: |
+    <p>Set type of noise to 'white', 'pink' or 'brown'.
+    White is the default.</p>
+  path: ./src/pages/en/reference/#/p5.Noise/
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Score
 module: p5.sound
 submodule: p5.sound
@@ -9,6 +9,7 @@ description: |
   be played back in order. For example, you could have an
   A part, a B part, and a C part, and play them back in this order
   <code>new p5.Score(a, a, b, a, c)</code></p>
+isConstructor: true
 line: 9493
 params:
   - name: parts
@@ -17,8 +18,32 @@ params:
     type: p5.Part
     optional: true
     multiple: true
-isConstructor: 1
-chainable: false
+start:
+  description: |
+    <p>Start playback of the score.</p>
+  path: ./src/pages/en/reference/#/p5.Score/
+stop:
+  description: |
+    <p>Stop playback of the score.</p>
+  path: ./src/pages/en/reference/#/p5.Score/
+pause:
+  description: |
+    <p>Pause playback of the score.</p>
+  path: ./src/pages/en/reference/#/p5.Score/
+loop:
+  description: |
+    <p>Loop playback of the score.</p>
+  path: ./src/pages/en/reference/#/p5.Score/
+noLoop:
+  description: |
+    <p>Stop looping playback of the score. If it
+    is currently playing, this will go into effect
+    after the current round of playback completes.</p>
+  path: ./src/pages/en/reference/#/p5.Score/
+setBPM:
+  description: |
+    <p>Set the tempo for all parts in the score</p>
+  path: ./src/pages/en/reference/#/p5.Score/
 ---
 
 

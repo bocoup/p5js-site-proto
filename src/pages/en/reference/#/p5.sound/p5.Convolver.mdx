@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Convolver
 module: p5.sound
 submodule: p5.sound
@@ -19,6 +19,7 @@ description: |-
 
   <p>Use the method <code>createConvolution(path)</code> to instantiate a
   p5.Convolver with a path to your impulse response audio file.</p>
+isConstructor: true
 line: 8549
 params:
   - name: path
@@ -38,8 +39,50 @@ params:
                                          about what went wrong.</p>
     type: Function
     optional: true
-isConstructor: 1
-chainable: false
+convolverNode:
+  description: |
+    <p>Internally, the p5.Convolver uses the a
+    <a href="http://www.w3.org/TR/webaudio/#ConvolverNode">
+    Web Audio Convolver Node</a>.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
+impulses:
+  description: |
+    <p>If you load multiple impulse files using the .addImpulse method,
+    they will be stored as Objects in this Array. Toggle between them
+    with the <code>toggleImpulse(id)</code> method.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
+process:
+  description: |
+    <p>Connect a source to the convolver.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
+addImpulse:
+  description: |
+    <p>Load and assign a new Impulse Response to the p5.Convolver.
+    The impulse is added to the <code>.impulses</code> array. Previous
+    impulses can be accessed with the <code>.toggleImpulse(id)</code>
+    method.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
+resetImpulse:
+  description: |
+    <p>Similar to .addImpulse, except that the <code>.impulses</code>
+    Array is reset to save memory. A new <code>.impulses</code>
+    array is created with this impulse as the only item.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
+toggleImpulse:
+  description: |
+    <p>If you have used <code>.addImpulse()</code> to add multiple impulses
+    to a p5.Convolver, then you can use this method to toggle between
+    the items in the <code>.impulses</code> Array. Accepts a parameter
+    to identify which impulse you wish to use, identified either by its
+    original filename (String) or by its position in the <code>.impulses
+    </code> Array (Number).<br/>
+    You can access the objects in the .impulses Array directly. Each
+    Object has two attributes: an <code>.audioBuffer</code> (type:
+    Web Audio <a href="
+    http://webaudio.github.io/web-audio-api/#the-audiobuffer-interface">
+    AudioBuffer)</a> and a <code>.name</code>, a String that corresponds
+    with the original filename.</p>
+  path: ./src/pages/en/reference/#/p5.Convolver/
 ---
 
 

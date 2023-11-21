@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: camera
 module: 3D
 submodule: Camera
@@ -31,6 +31,7 @@ description: >
   <p>If no parameters are given, the following default is used:
 
   camera(0, 0, (height/2) / tan(PI/6), 0, 0, 0, 0, 1, 0)</p>
+isConstructor: true
 line: 13
 params:
   - name: x
@@ -79,13 +80,10 @@ params:
     type: Number
     optional: true
 itemtype: method
-class: p5
 alt: |-
   White square repeatedly grows to fill canvas and then shrinks.
   An interactive example of a red cube with 3 sliders for moving it across x, y,
   z axis and 3 sliders for shifting its center.
-isConstructor: 1
-chainable: false
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.EQ
 module: p5.sound
 submodule: p5.sound
@@ -33,6 +33,7 @@ description: >
 
   <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are
   available.</p>
+isConstructor: true
 line: 7105
 params:
   - name: _eqsize
@@ -43,8 +44,18 @@ params:
 return:
   description: p5.EQ object
   type: Object
-isConstructor: 1
-chainable: false
+bands:
+  description: |
+    <p>The p5.EQ is built with abstracted p5.Filter objects.
+    To modify any bands, use methods of the <a
+    href="/reference/#/p5.Filter" title="p5.Filter reference">
+    p5.Filter</a> API, especially <code>gain</code> and <code>freq</code>.
+    Bands are stored in an array, with indices 0 - 3, or 0 - 7</p>
+  path: ./src/pages/en/reference/#/p5.EQ/
+process:
+  description: |
+    <p>Process an input by connecting it to the EQ</p>
+  path: ./src/pages/en/reference/#/p5.EQ/
 ---
 
 

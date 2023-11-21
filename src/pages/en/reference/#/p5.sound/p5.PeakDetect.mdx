@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.PeakDetect
 module: p5.sound
 submodule: p5.sound
@@ -63,6 +63,7 @@ description: >-
   target="_blank">Felix Turner</a>.
 
   </p>
+isConstructor: true
 line: 10312
 params:
   - name: freq1
@@ -87,8 +88,23 @@ params:
       <p>Defaults to 20.</p>
     type: Number
     optional: true
-isConstructor: 1
-chainable: false
+isDetected:
+  description: |
+    <p>isDetected is set to true when a peak is detected.</p>
+  path: ./src/pages/en/reference/#/p5.PeakDetect/
+update:
+  description: |
+    <p>The update method is run in the draw loop.</p>
+    <p>Accepts an FFT object. You must call .analyze()
+    on the FFT object prior to updating the peakDetect
+    because it relies on a completed FFT analysis.</p>
+  path: ./src/pages/en/reference/#/p5.PeakDetect/
+onPeak:
+  description: |
+    <p>onPeak accepts two arguments: a function to call when
+    a peak is detected. The value of the peak,
+    between 0.0 and 1.0, is passed to the callback.</p>
+  path: ./src/pages/en/reference/#/p5.PeakDetect/
 ---
 
 

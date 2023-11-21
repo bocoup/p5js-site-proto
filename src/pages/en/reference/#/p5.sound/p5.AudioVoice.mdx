@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.AudioVoice
 module: p5.sound
 submodule: p5.sound
@@ -8,9 +8,16 @@ description: |
   <p>Base class for monophonic synthesizers. Any extensions of this class
   should follow the API and implement the methods below in order to
   remain compatible with p5.PolySynth();</p>
+isConstructor: true
 line: 11149
-isConstructor: 1
-chainable: false
+connect:
+  description: |
+    <p>Connect to p5 objects or Web Audio Nodes</p>
+  path: ./src/pages/en/reference/#/p5.AudioVoice/
+disconnect:
+  description: |
+    <p>Disconnect from soundOut</p>
+  path: ./src/pages/en/reference/#/p5.AudioVoice/
 ---
 
 

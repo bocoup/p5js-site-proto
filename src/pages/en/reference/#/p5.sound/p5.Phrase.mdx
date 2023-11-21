@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Phrase
 module: p5.sound
 submodule: p5.sound
@@ -20,6 +20,7 @@ description: |-
   which value is passed into the callback at each step of the
   phrase. It can be numbers, an object with multiple numbers,
   or a zero (0) indicates a rest so the callback won't be called).</p>
+isConstructor: true
 line: 9103
 params:
   - name: name
@@ -41,8 +42,14 @@ params:
       <p>Array of values to pass into the callback
                                 at each step of the phrase.</p>
     type: Array
-isConstructor: 1
-chainable: false
+sequence:
+  description: |
+    <p>Array of values to pass into the callback
+    at each step of the phrase. Depending on the callback
+    function's requirements, these values may be numbers,
+    strings, or an object with multiple parameters.
+    Zero (0) indicates a rest.</p>
+  path: ./src/pages/en/reference/#/p5.Phrase/
 ---
 
 

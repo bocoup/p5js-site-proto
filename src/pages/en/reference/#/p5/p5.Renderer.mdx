@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Renderer
 module: Rendering
 submodule: Rendering
@@ -8,6 +8,7 @@ description: |
   <p>Main graphics and rendering context, as well as the base API
   implementation for p5.js "core". To be used as the superclass for
   Renderer2D and Renderer3D classes, respectively.</p>
+isConstructor: true
 line: 10
 params:
   - name: elt
@@ -24,8 +25,6 @@ params:
       <p>whether we're using it as main canvas</p>
     type: Boolean
     optional: true
-isConstructor: 1
-chainable: false
 ---
 
 

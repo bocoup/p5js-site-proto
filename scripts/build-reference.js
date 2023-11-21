@@ -8,6 +8,8 @@ import { exec } from "child_process";
 const localPath = "in/p5.js";
 const jsonFilePath = "./out/data.json";
 
+const classMethodPreviews = {};
+
 const modulePathTree = {
   modules: {},
   classes: {},
@@ -56,9 +58,46 @@ function addDocToModulePathTree(doc, path) {
   }
 }
 
+async function convertClassToMDX(doc) {
+  let frontMatterArgs = {};
+  const sourcePath = doc.file?.replace(/.*p5\.js\/(.*)/, "$1") ?? "";
+  const memberMethodPreviews = classMethodPreviews[doc.name] ?? {};
+  try {
+    frontMatterArgs = {
+      layout: "@layouts/reference/ClassReferenceLayout.astro",
+      title: doc.name ?? "",
+      module: doc.module,
+      submodule: doc.submodule ?? "",
+      file: sourcePath ?? "",
+      description: doc.description ?? "",
+      isConstructor: true,
+      ...(doc.line ? { line: doc.line } : {}),
+      ...(doc.params ? { params: doc.params } : {}),
+      ...(doc.itemtype ? { itemtype: doc.itemtype } : {}),
+      ...(doc.examples ? { examples: doc.examples } : {}),
+      ...(doc.alt ? { alt: doc.alt } : {}),
+      ...(doc.return ? { return: doc.return } : {}),
+      ...memberMethodPreviews,
+    };
+
+    const frontmatter = matter.stringify("", frontMatterArgs);
+    let markdownContent = `# ${doc.name}\n`;
+    const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+    return `${frontmatter}\n${mdxContent.toString()}`;
+  } catch (err) {
+    console.error(`Error converting ${doc.name} to MDX: ${err}`);
+    console.log(frontMatterArgs);
+    return;
+  }
+}
+
 async function convertToMDX(doc) {
   if (!doc || !doc.name) {
     return;
+  }
+
+  if (doc.is_constructor) {
+    return convertClassToMDX(doc);
   }
 
   if (doc.name?.startsWith("_")) {
@@ -86,16 +125,12 @@ async function convertToMDX(doc) {
       ...(doc.examples ? { examples: doc.examples } : {}),
       ...(doc.alt ? { alt: doc.alt } : {}),
       ...(doc.return ? { return: doc.return } : {}),
-      ...(doc.is_constructor ? { isConstructor: doc.is_constructor } : {}),
-      chainable: !doc.is_constructor && doc.chainable === 1,
+      chainable: doc.chainable === 1,
     };
 
     const frontmatter = matter.stringify("", frontMatterArgs);
-    // Combine all pieces of the doc into a single Markdown string
     let markdownContent = `# ${doc.name}\n`;
-    // Process the Markdown content through remark and remark-mdx
     const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
-    // Combine frontmatter and MDX content
     return `${frontmatter}\n${mdxContent.toString()}`;
   } catch (err) {
     console.error(`Error converting ${doc.name} to MDX: ${err}`);
@@ -222,12 +257,36 @@ async function loadDocsFromJson() {
   }
 }
 
-async function yuiDocsToMDX(docs) {
-  console.log("Converting YUI docs to MDX...");
+async function classItemsToMDX(docs) {
+  console.log("Converting YUI classitem docs to MDX...");
 
-  const classItemDocs = await convertDocsToMDX(Object.values(docs.classitems));
-  const classesDocs = await convertDocsToMDX(Object.values(docs.classes));
-  return [...classItemDocs, ...classesDocs];
+  return convertDocsToMDX(Object.values(docs.classitems));
+}
+
+async function classesToMDX(docs) {
+  console.log("Converting YUI classes docs to MDX...");
+
+  return convertDocsToMDX(Object.values(docs.classes));
+}
+
+function addClassMethodPreviewsToClassDocs(doc, path) {
+  if (
+    !doc.class ||
+    doc.class === "p5" ||
+    !doc.name ||
+    !path ||
+    !doc.description
+  ) {
+    return;
+  }
+  // If this is a class method, we need to add relevant info to the classMethodPreviews object
+  if (!classMethodPreviews[doc.class]) {
+    classMethodPreviews[doc.class] = {};
+  }
+  classMethodPreviews[doc.class][doc.name] = {
+    description: doc.description,
+    path: path,
+  };
 }
 
 async function convertDocsToMDX(docs) {
@@ -237,6 +296,7 @@ async function convertDocsToMDX(docs) {
         const mdx = await convertToMDX(doc);
         const savePath = getModulePath(doc);
         const name = doc.name;
+        addClassMethodPreviewsToClassDocs(doc, savePath);
         return { mdx, savePath, name };
       })
     );
@@ -272,14 +332,17 @@ async function main() {
 
   const docs = await buildDocs();
 
-  const mdxDocs = await yuiDocsToMDX(docs);
-
-  await saveMDX(mdxDocs);
+  const classItemMDXDocs = await classItemsToMDX(docs);
+  await saveMDX(classItemMDXDocs);
+  // Do in two separate steps so that class MDX
+  // can reference classitem MDX
+  const classMDXDocs = await classesToMDX(docs);
+  await saveMDX(classMDXDocs);
 
   const indexMdx = getIndexMdx();
   await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
 
-  // console.log("Done building reference docs!");
+  console.log("Done building reference docs!");
 }
 
 main();

@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Delay
 module: p5.sound
 submodule: p5.sound
@@ -31,9 +31,61 @@ description: >
 
   <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are
   available.</p>
+isConstructor: true
 line: 7926
-isConstructor: 1
-chainable: false
+leftDelay:
+  description: |
+    <p>The p5.Delay is built with two
+    <a href="http://www.w3.org/TR/webaudio/#DelayNode">
+    Web Audio Delay Nodes</a>, one for each stereo channel.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+rightDelay:
+  description: |
+    <p>The p5.Delay is built with two
+    <a href="http://www.w3.org/TR/webaudio/#DelayNode">
+    Web Audio Delay Nodes</a>, one for each stereo channel.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+process:
+  description: |
+    <p>Add delay to an audio signal according to a set
+    of delay parameters.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+delayTime:
+  description: |
+    <p>Set the delay (echo) time, in seconds. Usually this value will be
+    a floating point number between 0.0 and 1.0.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+feedback:
+  description: |
+    <p>Feedback occurs when Delay sends its signal back through its input
+    in a loop. The feedback amount determines how much signal to send each
+    time through the loop. A feedback greater than 1.0 is not desirable because
+    it will increase the overall output each time through the loop,
+    creating an infinite feedback loop. The default value is 0.5</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+filter:
+  description: |
+    <p>Set a lowpass filter frequency for the delay. A lowpass filter
+    will cut off any frequencies higher than the filter frequency.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+setType:
+  description: |
+    <p>Choose a preset type of delay. 'pingPong' bounces the signal
+    from the left to the right channel to produce a stereo effect.
+    Any other parameter will revert to the default delay setting.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+amp:
+  description: |
+    <p>Set the output level of the delay effect.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+connect:
+  description: |
+    <p>Send output to a p5.sound or web audio object</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
+disconnect:
+  description: |
+    <p>Disconnect all output.</p>
+  path: ./src/pages/en/reference/#/p5.Delay/
 ---
 
 

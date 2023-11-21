@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.OnsetDetect
 module: p5.sound
 submodule: p5.sound
@@ -7,6 +7,7 @@ file: lib/addons/p5.sound.js
 description: |
   <p>Listen for onsets (a sharp increase in volume) within a given
   frequency range.</p>
+isConstructor: true
 line: 11624
 params:
   - name: freqLow
@@ -25,8 +26,6 @@ params:
     description: |
       <p>Function to call when an onset is detected</p>
     type: Function
-isConstructor: 1
-chainable: false
 ---
 
 

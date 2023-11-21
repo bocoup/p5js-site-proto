@@ -1,5 +1,5 @@
 ---
-layout: '@layouts/reference/SingleReferenceLayout.astro'
+layout: '@layouts/reference/ClassReferenceLayout.astro'
 title: p5.Graphics
 module: Rendering
 submodule: Rendering
@@ -10,6 +10,7 @@ description: |
   to draw into an off-screen graphics buffer. The two parameters define the
   width and height in pixels. The fields and methods for this class are
   extensive, but mirror the normal drawing API for p5.</p>
+isConstructor: true
 line: 10
 params:
   - name: w
@@ -34,8 +35,34 @@ params:
       <p>existing html canvas element</p>
     type: HTMLCanvasElement
     optional: true
-isConstructor: 1
-chainable: false
+reset:
+  description: >
+    <p>Resets certain values such as those modified by functions in the
+    Transform category
+
+    and in the Lights category that are not automatically reset
+
+    with graphics buffer objects. Calling this in <a href='#/p5/draw'>draw()</a>
+    will copy the behavior
+
+    of the standard canvas.</p>
+  path: ./src/pages/en/reference/#/p5.Graphics/
+remove:
+  description: |
+    <p>Removes a Graphics object from the page and frees any resources
+    associated with it.</p>
+  path: ./src/pages/en/reference/#/p5.Graphics/
+createFramebuffer:
+  description: >
+    <p>Creates and returns a new <a href="#/p5.Framebuffer">p5.Framebuffer</a>
+
+    inside a p5.Graphics WebGL context.</p>
+
+    <p>This takes the same parameters as the <a
+    href="#/p5/createFramebuffer">global
+
+    createFramebuffer function.</a></p>
+  path: ./src/pages/en/reference/#/p5.Graphics/
 ---
 
 
