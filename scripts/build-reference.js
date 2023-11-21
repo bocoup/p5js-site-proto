@@ -4,12 +4,14 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkMDX from "remark-mdx";
 import { simpleGit } from "simple-git";
+import { exec } from "child_process";
 
 let fileContextToModuleMap = new Map();
 let fileContextToSubmoduleMap = new Map();
 
 const localPath = "in/p5.js";
 const srcPath = "src/**/p5.Element.js";
+const jsonFilePath = "./out/data.json";
 
 const modulePathTree = {};
 
@@ -19,8 +21,8 @@ function getModulePath(doc) {
   }
 
   let prefix = `./src/pages/en/reference`;
-  const module = fileContextToModuleMap[doc.context.file]?.toLowerCase();
-  const submodule = fileContextToSubmoduleMap[doc.context.file]?.toLowerCase();
+  const module = fileContextToModuleMap[doc.context.file].toLowerCase();
+  const submodule = fileContextToSubmoduleMap[doc.context.file].toLowerCase();
 
   // Check if module exists
   if (!module) {
@@ -214,8 +216,30 @@ async function cloneLibraryRepo() {
   console.log("Cloning repository...");
   try {
     await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
+    console.log("Repository cloned successfully.");
+    await fixForAbsolutePathInPreprocessor();
   } catch (err) {
     console.error(`Error cloning repo: ${err}`);
+  }
+}
+
+// This is a fix for the use of an absolute path in the preprocessor.js file in p5.js
+async function fixForAbsolutePathInPreprocessor() {
+  try {
+    const preprocessorPath = `${localPath}/docs/preprocessor.js`;
+
+    let preprocessorContent = await fs.readFile(preprocessorPath, "utf8");
+
+    // Modify the absolute path in the preprocessor file
+    preprocessorContent = preprocessorContent.replace(
+      "path.join(process.cwd(), 'docs', 'parameterData.json')",
+      `path.join(process.cwd(), '${localPath}/docs', 'parameterData.json')`
+    );
+
+    await fs.writeFile(preprocessorPath, preprocessorContent, "utf8");
+    console.log("Preprocessor file modified successfully.");
+  } catch (err) {
+    console.error(`Error modifying absolute path in preprocessor: ${err}`);
   }
 }
 
@@ -235,15 +259,51 @@ async function libraryRepoExists() {
     .catch(() => false);
 }
 
+// async function buildDocs() {
+//   console.log(`Building reference docs to ${localPath}/${srcPath}...`);
+//   try {
+//     return documentation.build([`${localPath}/${srcPath}`], {
+//       shallow: true,
+//       inferPrivate: false,
+//     });
+//   } catch (err) {
+//     console.error(`Error building docs: ${err}`);
+//     return [];
+//   }
+// }
+
 async function buildDocs() {
-  console.log(`Building reference docs to ${localPath}/${srcPath}...`);
+  await runYuidocCommand();
+  return loadDocsFromJson();
+}
+
+async function runYuidocCommand() {
+  console.log("Running yuidoc command...");
   try {
-    return documentation.build([`${localPath}/${srcPath}`], {
-      shallow: true,
-      inferPrivate: false,
+    await new Promise((resolve, reject) => {
+      exec("yuidoc -p", (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error running yuidoc command: ${error}`);
+          reject();
+        } else {
+          console.log("yuidoc command completed successfully.");
+          resolve();
+        }
+      });
     });
   } catch (err) {
-    console.error(`Error building docs: ${err}`);
+    console.error(`Error running yuidoc command: ${err}`);
+  }
+}
+
+async function loadDocsFromJson() {
+  console.log("Loading docs from JSON file...");
+  try {
+    const jsonData = await fs.readFile(jsonFilePath, "utf8");
+    const docs = JSON.parse(jsonData);
+    return docs;
+  } catch (err) {
+    console.error(`Error loading docs from JSON file: ${err}`);
     return [];
   }
 }
@@ -294,14 +354,14 @@ async function main() {
 
   const docs = await buildDocs();
 
-  const mdxDocs = await convertDocsToMDX(docs);
+  // const mdxDocs = await convertDocsToMDX(docs);
 
-  await saveMDX(mdxDocs);
+  // await saveMDX(mdxDocs);
 
-  const indexMdx = getIndexMdx();
-  await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
+  // const indexMdx = getIndexMdx();
+  // await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
 
-  console.log("Done building reference docs!");
+  // console.log("Done building reference docs!");
 }
 
 main();
