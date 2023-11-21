@@ -8,7 +8,7 @@ import { simpleGit } from "simple-git";
 let fileContextToModuleMap = new Map();
 let fileContextToSubmoduleMap = new Map();
 
-const localPath = "temp/p5.js";
+const localPath = "in/p5.js";
 const srcPath = "src/**/p5.Element.js";
 
 const modulePathTree = {};
@@ -57,11 +57,9 @@ function getModulePath(doc) {
 }
 
 function convertToMDX(doc) {
-  console.log(doc);
   if (!doc) {
     return;
   }
-
   for (const tag of doc.tags) {
     if (tag.title === "module") {
       // Store mapping of modules to their file path
@@ -71,26 +69,21 @@ function convertToMDX(doc) {
       fileContextToSubmoduleMap[doc.context.file] = tag.description;
     }
   }
-
   const module = fileContextToModuleMap[doc.context.file];
   let submodule = fileContextToSubmoduleMap[doc.context.file];
-
   // Submodule is not useful when identical to module
   // Should be cleaned up in authoring
   if (submodule === module) {
     submodule = null;
   }
-
   // This is the module declaration, no reference needed
   if (module === doc.name) {
     return;
   }
-
   // p5 keeps some internal modules that we don't want to document
   if (doc.name?.startsWith("_")) {
     return;
   }
-
   const transformedParams = doc.params
     .map((param) => {
       // Check if the necessary properties exist
@@ -101,14 +94,12 @@ function convertToMDX(doc) {
       ) {
         return null;
       }
-
       // Extract the description text
       const descriptionText = param.description.children
         .map((child) =>
           child.children.map((textNode) => textNode.value).join("")
         )
         .join("");
-
       return {
         name: param.name,
         description: descriptionText,
@@ -116,9 +107,7 @@ function convertToMDX(doc) {
       };
     })
     .filter((param) => param != null);
-
   let descriptionText = "";
-
   for (const child of doc.description?.children ?? []) {
     for (const textNode of child.children ?? []) {
       switch (textNode.type) {
@@ -144,12 +133,10 @@ function convertToMDX(doc) {
       }
     }
   }
-
   // Likely intended as private
   if (!module) {
     return;
   }
-  console.log(doc);
   let frontMatterArgs = {};
   try {
     frontMatterArgs = {
@@ -169,21 +156,16 @@ function convertToMDX(doc) {
             typeof value !== "object" && typeof value !== "undefined"
         )
         .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
-
       examples: doc.examples
         ? doc.examples.map((example) => example.description)
         : [],
     };
-
     // Create the frontmatter string
     const frontmatter = matter.stringify("", frontMatterArgs);
-
     // Combine all pieces of the doc into a single Markdown string
     let markdownContent = `# ${doc.name}\n`;
-
     // Process the Markdown content through remark and remark-mdx
     const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
-
     // Combine frontmatter and MDX content
     return `${frontmatter}\n${mdxContent.toString()}`;
   } catch (err) {
@@ -194,6 +176,7 @@ function convertToMDX(doc) {
 }
 
 const getIndexMdx = () => {
+  console.log("Saving reference index...");
   const frontmatter = matter.stringify("", {
     title: "Reference",
   });
@@ -229,51 +212,94 @@ async function cloneLibraryRepo() {
   const repoUrl = "https://github.com/processing/p5.js.git";
 
   console.log("Cloning repository...");
-  await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
-}
-
-async function deleteClonedLibraryRepo(path) {
   try {
-    await fs.rm(path, { recursive: true, force: true });
-    console.log(`Deleted cloned library source code: ${path}`);
+    await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
   } catch (err) {
-    console.error(`Error deleting cloned library code: ${err}`);
+    console.error(`Error cloning repo: ${err}`);
   }
 }
 
-async function cleanUp() {
-  await deleteClonedLibraryRepo("temp");
+async function cloneLibraryRepoIfNeeded() {
+  const repoExists = await libraryRepoExists();
+  if (!repoExists) {
+    await cloneLibraryRepo();
+  } else {
+    console.log("Library repo already exists, skipping clone...");
+  }
+}
+
+async function libraryRepoExists() {
+  return fs
+    .access(localPath)
+    .then(() => true)
+    .catch(() => false);
+}
+
+async function buildDocs() {
+  console.log(`Building reference docs to ${localPath}/${srcPath}...`);
+  try {
+    return documentation.build([`${localPath}/${srcPath}`], {
+      shallow: true,
+      inferPrivate: false,
+    });
+  } catch (err) {
+    console.error(`Error building docs: ${err}`);
+    return [];
+  }
+}
+
+async function convertDocsToMDX(docs) {
+  console.log("Converting docs to MDX...");
+  try {
+    const mdxDocs = await Promise.all(
+      docs.map(async (doc) => {
+        const mdx = await convertToMDX(doc);
+        const savePath = getModulePath(doc);
+        const name = doc.name;
+        return { mdx, savePath, name };
+      })
+    );
+
+    mdxDocs.filter(
+      (mdxDoc) =>
+        mdxDoc.mdx !== null && mdxDoc.savePath !== null && mdxDoc.name !== null
+    );
+
+    return mdxDocs;
+  } catch (err) {
+    console.error(`Error converting docs to MDX: ${err}`);
+    return [];
+  }
+}
+
+async function saveMDX(mdxDocs) {
+  console.log("Saving MDX...");
+  try {
+    for (const mdxDoc of mdxDocs) {
+      await fs.mkdir(mdxDoc.savePath, {
+        recursive: true,
+      });
+      await fs.writeFile(
+        `${mdxDoc.savePath}/${mdxDoc.name}.mdx`,
+        mdxDoc.mdx.toString()
+      );
+    }
+  } catch (err) {
+    console.error(`Error saving MDX: ${err}`);
+  }
 }
 
 async function main() {
-  // await cloneLibraryRepo();
+  await cloneLibraryRepoIfNeeded();
 
-  console.log("Building reference docs...");
-  console.log(`${localPath}/${srcPath}`);
-  const docs = await documentation.build([`${localPath}/${srcPath}`], {
-    shallow: true,
-    inferPrivate: false,
-  });
+  const docs = await buildDocs();
 
-  for (const doc of docs) {
-    const mdx = await convertToMDX(doc, matter, remark, remarkMDX);
+  const mdxDocs = await convertDocsToMDX(docs);
 
-    if (!mdx) {
-      continue;
-    }
-    const savePath = getModulePath(doc);
-    await fs.mkdir(savePath, {
-      recursive: true,
-    });
-    await fs.writeFile(`${savePath}/${doc.name}.mdx`, mdx.toString());
-  }
+  await saveMDX(mdxDocs);
 
-  /* Save reference home for navigation */
-  console.log("Saving reference index...");
   const indexMdx = getIndexMdx();
   await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
-
-  // await deleteClonedLibraryRepo("temp");
 
   console.log("Done building reference docs!");
 }

@@ -1,10 +1,9 @@
 {
-  "name": "p5",
+  "name": "p5-reference",
   "description": "",
-  "version": "3.5.0",
   "url": "",
   "options": {
-    "preprocessor": "./temp/p5.js/docs/preprocessor.js",
-    "paths": ["./temp/p5.js/src/", "./temp/p5.js/lib/addons/"]
+    "preprocessor": "./in/p5.js/docs/preprocessor.js",
+    "paths": ["./in/p5.js/src/", "./in/p5.js/lib/addons/"]
   }
 }
