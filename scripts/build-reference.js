@@ -9,7 +9,6 @@ const localPath = "in/p5.js";
 const jsonFilePath = "./out/data.json";
 
 const classMethodPreviews = {};
-
 const modulePathTree = {
   modules: {},
   classes: {},
@@ -31,8 +30,6 @@ function getModulePath(doc) {
     }
   }
   const path = `${prefix}/${docClass}/`;
-
-  addDocToModulePathTree(doc, path);
 
   return path;
 }
@@ -300,6 +297,7 @@ async function convertDocsToMDX(docs) {
         const mdx = await convertToMDX(doc);
         const savePath = getModulePath(doc);
         const name = doc.name;
+        addDocToModulePathTree(doc, savePath);
         addClassMethodPreviewsToClassDocs(doc, savePath);
         return { mdx, savePath, name };
       })
