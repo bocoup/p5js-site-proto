@@ -1,0 +1,37 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: findRow
+module: IO
+submodule: Table
+file: in/p5.js/src/io/p5.Table.js
+descriptionText: |
+  <p>Finds the first row in the Table that contains the value
+  provided, and returns a reference to that row. Even if
+  multiple rows are possible matches, only the first matching
+  row is returned. The column to search may be specified by
+  either its ID or title.</p>
+params:
+  - name: value
+    description: |
+      <p>The value to match</p>
+    type: String
+  - name: column
+    description: |
+      <p>ID number or title of the
+                                     column to search</p>
+    type: Integer|String
+line: 289
+description: |
+  <p>Finds the first row in the Table that contains the value
+  provided, and returns a reference to that row. Even if
+  multiple rows are possible matches, only the first matching
+  row is returned. The column to search may be specified by
+  either its ID or title.</p>
+itemtype: method
+name: findRow
+class: p5.Table
+examples: []
+---
+
+
+# findRow

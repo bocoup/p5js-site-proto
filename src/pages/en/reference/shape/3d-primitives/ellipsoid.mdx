@@ -1,0 +1,68 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: ellipsoid
+module: Shape
+submodule: 3D Primitives
+file: in/p5.js/src/webgl/3d_primitives.js
+descriptionText: >
+  <p>Draw an ellipsoid with given radius</p>
+
+  <p>DetailX and detailY determine the number of subdivisions in the x-dimension
+  and
+
+  the y-dimension of a cone. More subdivisions make the ellipsoid appear to be
+  smoother.
+
+  Avoid detail number above 150, it may crash the browser.</p>
+params:
+  - name: radiusx
+    description: |
+      <p>x-radius of ellipsoid</p>
+    type: Number
+    optional: true
+  - name: radiusy
+    description: |
+      <p>y-radius of ellipsoid</p>
+    type: Number
+    optional: true
+  - name: radiusz
+    description: |
+      <p>z-radius of ellipsoid</p>
+    type: Number
+    optional: true
+  - name: detailX
+    description: |
+      <p>number of segments,
+                                         the more segments the smoother geometry
+                                         default is 24. Avoid detail number above
+                                         150, it may crash the browser.</p>
+    type: Integer
+    optional: true
+  - name: detailY
+    description: |
+      <p>number of segments,
+                                         the more segments the smoother geometry
+                                         default is 16. Avoid detail number above
+                                         150, it may crash the browser.</p>
+    type: Integer
+    optional: true
+line: 862
+description: >
+  <p>Draw an ellipsoid with given radius</p>
+
+  <p>DetailX and detailY determine the number of subdivisions in the x-dimension
+  and
+
+  the y-dimension of a cone. More subdivisions make the ellipsoid appear to be
+  smoother.
+
+  Avoid detail number above 150, it may crash the browser.</p>
+itemtype: method
+name: ellipsoid
+chainable: 1
+class: p5
+examples: []
+---
+
+
+# ellipsoid

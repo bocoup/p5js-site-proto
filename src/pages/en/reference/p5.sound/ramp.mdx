@@ -1,0 +1,59 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: ramp
+module: p5.sound
+submodule: p5.sound
+file: in/p5.js/lib/addons/p5.sound.js
+descriptionText: >
+  <p>Exponentially ramp to a value using the first two
+
+  values from <code><a href="#/p5.Envelope/setADSR">setADSR(attackTime,
+  decayTime)</a></code>
+
+  as <a href="https://en.wikipedia.org/wiki/RC_time_constant">
+
+  time constants</a> for simple exponential ramps.
+
+  If the value is higher than current value, it uses attackTime,
+
+  while a decrease uses decayTime.</p>
+params:
+  - name: unit
+    description: |
+      <p>p5.sound Object or Web Audio Param</p>
+    type: Object
+  - name: secondsFromNow
+    description: |
+      <p>When to trigger the ramp</p>
+    type: Number
+  - name: v
+    description: |
+      <p>Target value</p>
+    type: Number
+  - name: v2
+    description: |
+      <p>Second target value</p>
+    type: Number
+    optional: true
+line: 5350
+description: >
+  <p>Exponentially ramp to a value using the first two
+
+  values from <code><a href="#/p5.Envelope/setADSR">setADSR(attackTime,
+  decayTime)</a></code>
+
+  as <a href="https://en.wikipedia.org/wiki/RC_time_constant">
+
+  time constants</a> for simple exponential ramps.
+
+  If the value is higher than current value, it uses attackTime,
+
+  while a decrease uses decayTime.</p>
+itemtype: method
+name: ramp
+class: p5.Envelope
+examples: []
+---
+
+
+# ramp

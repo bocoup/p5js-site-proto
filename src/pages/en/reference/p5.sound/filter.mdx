@@ -1,0 +1,35 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: filter
+module: p5.sound
+submodule: p5.sound
+file: in/p5.js/lib/addons/p5.sound.js
+descriptionText: |
+  <p>Set a lowpass filter frequency for the delay. A lowpass filter
+  will cut off any frequencies higher than the filter frequency.</p>
+params:
+  - name: cutoffFreq
+    description: |
+      <p>A lowpass filter will cut off any
+                                  frequencies higher than the filter frequency.</p>
+    type: Number|Object
+  - name: res
+    description: |
+      <p>Resonance of the filter frequency
+                                  cutoff, or an object (i.e. a p5.Oscillator)
+                                  that can be used to modulate this parameter.
+                                  High numbers (i.e. 15) will produce a resonance,
+                                  low numbers (i.e. .2) will produce a slope.</p>
+    type: Number|Object
+line: 8148
+description: |
+  <p>Set a lowpass filter frequency for the delay. A lowpass filter
+  will cut off any frequencies higher than the filter frequency.</p>
+itemtype: method
+name: filter
+class: p5.Delay
+examples: []
+---
+
+
+# filter

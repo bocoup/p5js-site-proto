@@ -2,66 +2,31 @@
 layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mouseReleased
 module: DOM
-file: src/core/p5.Element.js
-descriptionText: >-
-  Calls a function when the mouse is released over the element. Calling
-
-  `myElement.mouseReleased(false)` disables the function.Note: Some mobile
-  browsers may also trigger this event when the element
-
-  receives a quick tap.
-params: []
-kind: function
+submodule: DOM
+file: in/p5.js/src/core/p5.Element.js
+descriptionText: |
+  <p>Calls a function when the mouse is released over the element. Calling
+  <code>myElement.mouseReleased(false)</code> disables the function.</p>
+  <p>Note: Some mobile browsers may also trigger this event when the element
+  receives a quick tap.</p>
+params:
+  - name: fxn
+    description: |
+      <p>function to call when the mouse is
+                                     pressed over the element.
+                                     <code>false</code> disables the function.</p>
+    type: Function|Boolean
+line: 573
+description: |
+  <p>Calls a function when the mouse is released over the element. Calling
+  <code>myElement.mouseReleased(false)</code> disables the function.</p>
+  <p>Note: Some mobile browsers may also trigger this event when the element
+  receives a quick tap.</p>
+itemtype: method
 name: mouseReleased
-namespace: mouseReleased
-examples:
-  - |-
-    <div>
-    <code>
-    function setup() {
-      // Create a canvas element and
-      // assign it to cnv.
-      let cnv = createCanvas(100, 100);
-
-      background(200);
-
-      // Call randomColor() when a
-      // mouse press ends.
-      cnv.mouseReleased(randomColor);
-
-      describe('A gray square changes color when the user releases a mouse press.');
-    }
-
-    // Paint the background either
-    // red, yellow, blue, or green.
-    function randomColor() {
-      let c = random(['red', 'yellow', 'blue', 'green']);
-      background(c);
-    }
-    </code>
-    </div>
-
-    <div>
-    <code>
-    function setup() {
-      // Create a canvas element and
-      // assign it to cnv.
-      let cnv = createCanvas(100, 100);
-
-      background(200);
-
-      // Paint the background either
-      // red, yellow, blue, or green
-      // when a mouse press ends.
-      cnv.mouseReleased(() => {
-        let c = random(['red', 'yellow', 'blue', 'green']);
-        background(c);
-      });
-
-      describe('A gray square changes color when the user releases a mouse press.');
-    }
-    </code>
-    </div>
+chainable: 1
+class: p5.Element
+examples: []
 ---
 
 

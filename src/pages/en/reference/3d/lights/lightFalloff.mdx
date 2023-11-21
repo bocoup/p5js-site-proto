@@ -1,0 +1,60 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: lightFalloff
+module: 3D
+submodule: Lights
+file: in/p5.js/src/webgl/light.js
+descriptionText: >
+  <p>Sets the falloff rate for <a href="#/p5/pointLight">pointLight()</a>
+
+  and <a href="#/p5/spotLight">spotLight()</a>.</p>
+
+  <p>lightFalloff() affects only the lights which are created after it
+
+  in the code.</p>
+
+  <p>The <code>constant</code>, <code>linear</code>, an <code>quadratic</code>
+  parameters are used to calculate falloff as follows:</p>
+
+  <p>d = distance from light position to vertex position</p>
+
+  <p>falloff = 1 / (CONSTANT + d * LINEAR + (d * d) * QUADRATIC)</p>
+params:
+  - name: constant
+    description: |
+      <p>CONSTANT value for determining falloff</p>
+    type: Number
+  - name: linear
+    description: |
+      <p>LINEAR value for determining falloff</p>
+    type: Number
+  - name: quadratic
+    description: |
+      <p>QUADRATIC value for determining falloff</p>
+    type: Number
+line: 632
+description: >
+  <p>Sets the falloff rate for <a href="#/p5/pointLight">pointLight()</a>
+
+  and <a href="#/p5/spotLight">spotLight()</a>.</p>
+
+  <p>lightFalloff() affects only the lights which are created after it
+
+  in the code.</p>
+
+  <p>The <code>constant</code>, <code>linear</code>, an <code>quadratic</code>
+  parameters are used to calculate falloff as follows:</p>
+
+  <p>d = distance from light position to vertex position</p>
+
+  <p>falloff = 1 / (CONSTANT + d * LINEAR + (d * d) * QUADRATIC)</p>
+itemtype: method
+name: lightFalloff
+chainable: 1
+alt: Two spheres with different falloff values show different intensity of light
+class: p5
+examples: []
+---
+
+
+# lightFalloff

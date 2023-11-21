@@ -1,0 +1,74 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: loadShader
+module: 3D
+submodule: Material
+file: in/p5.js/src/webgl/material.js
+descriptionText: >
+  <p>Creates a new <a href="#/p5.Shader">p5.Shader</a> object
+
+  from the provided vertex and fragment shader files.</p>
+
+  <p>The shader files are loaded asynchronously in the
+
+  background, so this method should be used in <a
+  href="#/p5/preload">preload()</a>.</p>
+
+  <p>Shaders can alter the positioning of shapes drawn with them.
+
+  To ensure consistency in rendering, it's recommended to use the vertex shader
+  in the <a href="#/p5/createShader">createShader example</a>.</p>
+
+  <p>Note, shaders can only be used in WEBGL mode.</p>
+params:
+  - name: vertFilename
+    description: |
+      <p>path to file containing vertex shader
+      source code</p>
+    type: String
+  - name: fragFilename
+    description: |
+      <p>path to file containing fragment shader
+      source code</p>
+    type: String
+  - name: callback
+    description: >
+      <p>callback to be executed after loadShader
+
+      completes. On success, the p5.Shader object is passed as the first
+      argument.</p>
+    type: Function
+    optional: true
+  - name: errorCallback
+    description: |
+      <p>callback to be executed when an error
+      occurs inside loadShader. On error, the error is passed as the first
+      argument.</p>
+    type: Function
+    optional: true
+line: 12
+description: >
+  <p>Creates a new <a href="#/p5.Shader">p5.Shader</a> object
+
+  from the provided vertex and fragment shader files.</p>
+
+  <p>The shader files are loaded asynchronously in the
+
+  background, so this method should be used in <a
+  href="#/p5/preload">preload()</a>.</p>
+
+  <p>Shaders can alter the positioning of shapes drawn with them.
+
+  To ensure consistency in rendering, it's recommended to use the vertex shader
+  in the <a href="#/p5/createShader">createShader example</a>.</p>
+
+  <p>Note, shaders can only be used in WEBGL mode.</p>
+itemtype: method
+name: loadShader
+alt: 'zooming Mandelbrot set. a colorful, infinitely detailed fractal.'
+class: p5
+examples: []
+---
+
+
+# loadShader

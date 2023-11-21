@@ -1,0 +1,74 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: slerp
+module: Math
+submodule: Vector
+file: in/p5.js/src/math/p5.Vector.js
+descriptionText: >
+  <p>Calculates a new heading and magnitude that are between two vectors. The
+
+  <code>amt</code> parameter is the amount to interpolate between the old vector
+  and
+
+  the new vector. 0.0 keeps the heading and magnitude equal to the old
+
+  vector's, 0.5 sets them halfway between, and 1.0 sets the heading and
+
+  magnitude equal to the new vector's.</p>
+
+  <p><code>slerp()</code> differs from <a href="#/p5.Vector/lerp">lerp()</a>
+  because
+
+  it interpolates magnitude. Calling <code>v0.slerp(v1, 0.5)</code> sets
+  <code>v0</code>'s
+
+  magnitude to a value halfway between its original magnitude and
+  <code>v1</code>'s.
+
+  Calling <code>v0.lerp(v1, 0.5)</code> makes no such guarantee.</p>
+
+  <p>The static version of <code>slerp()</code>, as in <code>p5.Vector.slerp(v0,
+  v1, 0.5)</code>,
+
+  returns a new <a href="#/p5.Vector">p5.Vector</a> object and doesn't change
+
+  the original.</p>
+params: []
+line: 2009
+description: >
+  <p>Calculates a new heading and magnitude that are between two vectors. The
+
+  <code>amt</code> parameter is the amount to interpolate between the old vector
+  and
+
+  the new vector. 0.0 keeps the heading and magnitude equal to the old
+
+  vector's, 0.5 sets them halfway between, and 1.0 sets the heading and
+
+  magnitude equal to the new vector's.</p>
+
+  <p><code>slerp()</code> differs from <a href="#/p5.Vector/lerp">lerp()</a>
+  because
+
+  it interpolates magnitude. Calling <code>v0.slerp(v1, 0.5)</code> sets
+  <code>v0</code>'s
+
+  magnitude to a value halfway between its original magnitude and
+  <code>v1</code>'s.
+
+  Calling <code>v0.lerp(v1, 0.5)</code> makes no such guarantee.</p>
+
+  <p>The static version of <code>slerp()</code>, as in <code>p5.Vector.slerp(v0,
+  v1, 0.5)</code>,
+
+  returns a new <a href="#/p5.Vector">p5.Vector</a> object and doesn't change
+
+  the original.</p>
+itemtype: method
+name: slerp
+class: p5.Vector
+examples: []
+---
+
+
+# slerp

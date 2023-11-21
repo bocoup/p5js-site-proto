@@ -1,0 +1,73 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: cylinder
+module: Shape
+submodule: 3D Primitives
+file: in/p5.js/src/webgl/3d_primitives.js
+descriptionText: >
+  <p>Draw a cylinder with given radius and height</p>
+
+  <p>DetailX and detailY determines the number of subdivisions in the
+  x-dimension
+
+  and the y-dimension of a cylinder. More subdivisions make the cylinder seem
+  smoother.
+
+  The recommended maximum value for detailX is 24. Using a value greater than 24
+
+  may cause a warning or slow down the browser.</p>
+params:
+  - name: radius
+    description: |
+      <p>radius of the surface</p>
+    type: Number
+    optional: true
+  - name: height
+    description: |
+      <p>height of the cylinder</p>
+    type: Number
+    optional: true
+  - name: detailX
+    description: |
+      <p>number of subdivisions in x-dimension;
+                                    default is 24</p>
+    type: Integer
+    optional: true
+  - name: detailY
+    description: |
+      <p>number of subdivisions in y-dimension;
+                                    default is 1</p>
+    type: Integer
+    optional: true
+  - name: bottomCap
+    description: |
+      <p>whether to draw the bottom of the cylinder</p>
+    type: Boolean
+    optional: true
+  - name: topCap
+    description: |
+      <p>whether to draw the top of the cylinder</p>
+    type: Boolean
+    optional: true
+line: 598
+description: >
+  <p>Draw a cylinder with given radius and height</p>
+
+  <p>DetailX and detailY determines the number of subdivisions in the
+  x-dimension
+
+  and the y-dimension of a cylinder. More subdivisions make the cylinder seem
+  smoother.
+
+  The recommended maximum value for detailX is 24. Using a value greater than 24
+
+  may cause a warning or slow down the browser.</p>
+itemtype: method
+name: cylinder
+chainable: 1
+class: p5
+examples: []
+---
+
+
+# cylinder

@@ -1,0 +1,37 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: matchRow
+module: IO
+submodule: Table
+file: in/p5.js/src/io/p5.Table.js
+descriptionText: |
+  <p>Finds the first row in the Table that matches the regular
+  expression provided, and returns a reference to that row.
+  Even if multiple rows are possible matches, only the first
+  matching row is returned. The column to search may be
+  specified by either its ID or title.</p>
+params:
+  - name: regexp
+    description: |
+      <p>The regular expression to match</p>
+    type: String|RegExp
+  - name: column
+    description: |
+      <p>The column ID (number) or
+                                       title (string)</p>
+    type: String|Integer
+line: 417
+description: |
+  <p>Finds the first row in the Table that matches the regular
+  expression provided, and returns a reference to that row.
+  Even if multiple rows are possible matches, only the first
+  matching row is returned. The column to search may be
+  specified by either its ID or title.</p>
+itemtype: method
+name: matchRow
+class: p5.Table
+examples: []
+---
+
+
+# matchRow

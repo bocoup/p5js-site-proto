@@ -21,16 +21,14 @@ function getModulePath(doc) {
   }
 
   let prefix = `./src/pages/en/reference`;
-  const module = fileContextToModuleMap[doc.context.file].toLowerCase();
-  const submodule = fileContextToSubmoduleMap[doc.context.file].toLowerCase();
 
-  // Check if module exists
-  if (!module) {
-    console.warn(
-      `Could not find module for file ${doc.context.file} in fileContextToModuleMap`
-    );
+  if (!doc.module) {
+    console.warn(`Could not find module for doc ${doc.module}`);
     return prefix;
   }
+
+  const module = doc.module.toLowerCase().replace(" ", "-");
+  const submodule = doc.submodule?.toLowerCase().replace(" ", "-");
 
   let path = `${prefix}/${module}`;
 
@@ -39,117 +37,33 @@ function getModulePath(doc) {
     path += `/${submodule}`;
   }
 
-  const pathWithFile = `${path.replace("./src/pages", "")}/${doc.name}`;
-
-  // Create or update modulePathTree
-  if (!modulePathTree[module]) {
-    modulePathTree[module] = { root: {} };
-  }
-
-  if (submodule && submodule !== module) {
-    if (!modulePathTree[module][submodule]) {
-      modulePathTree[module][submodule] = {};
-    }
-    modulePathTree[module][submodule][doc.name] = pathWithFile;
-  } else {
-    modulePathTree[module]["root"][doc.name] = pathWithFile;
-  }
-
   return path;
 }
 
-function convertToMDX(doc) {
-  if (!doc) {
+async function convertToMDX(doc) {
+  if (!doc || !doc.name) {
     return;
   }
-  for (const tag of doc.tags) {
-    if (tag.title === "module") {
-      // Store mapping of modules to their file path
-      fileContextToModuleMap[doc.context.file] = tag.name;
-    } else if (tag.title === "submodule") {
-      // Store mapping of submodules to their parent module
-      fileContextToSubmoduleMap[doc.context.file] = tag.description;
-    }
-  }
-  const module = fileContextToModuleMap[doc.context.file];
-  let submodule = fileContextToSubmoduleMap[doc.context.file];
-  // Submodule is not useful when identical to module
-  // Should be cleaned up in authoring
-  if (submodule === module) {
-    submodule = null;
-  }
-  // This is the module declaration, no reference needed
-  if (module === doc.name) {
-    return;
-  }
-  // p5 keeps some internal modules that we don't want to document
+
   if (doc.name?.startsWith("_")) {
     return;
   }
-  const transformedParams = doc.params
-    .map((param) => {
-      // Check if the necessary properties exist
-      if (
-        !param.description ||
-        !param.description.children ||
-        (!param.type?.name && !param.type?.expression?.name)
-      ) {
-        return null;
-      }
-      // Extract the description text
-      const descriptionText = param.description.children
-        .map((child) =>
-          child.children.map((textNode) => textNode.value).join("")
-        )
-        .join("");
-      return {
-        name: param.name,
-        description: descriptionText,
-        type: param.type.name ?? param.type?.expression?.name ?? "",
-      };
-    })
-    .filter((param) => param != null);
-  let descriptionText = "";
-  for (const child of doc.description?.children ?? []) {
-    for (const textNode of child.children ?? []) {
-      switch (textNode.type) {
-        case "inlineCode":
-          descriptionText += `\`${textNode.value}\``;
-          break;
-        case "link":
-          descriptionText += `[${textNode.children[0].value}](${textNode.url})`;
-          break;
-        case "strong":
-          descriptionText += `**${textNode.children[0].value}**`;
-          break;
-        case "emphasis":
-          descriptionText += `*${textNode.children[0].value}*`;
-          break;
-        case "paragraph":
-          descriptionText += `${textNode.children[0].value}`;
-          break;
-        case "text":
-        default:
-          descriptionText += textNode.value;
-          break;
-      }
-    }
+
+  if (doc.name.startsWith(">") || doc.name.startsWith("<")) {
+    doc.name = doc.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-  // Likely intended as private
-  if (!module) {
-    return;
-  }
+
   let frontMatterArgs = {};
   try {
     frontMatterArgs = {
       layout: "@layouts/reference/SingleReferenceLayout.astro",
       title: doc.name ?? "",
-      module,
-      ...(submodule ? { submodule } : {}),
-      file: doc.context.file.replace(/.*?(?=src)/, ""), // Get relative path from src
+      module: doc.module,
+      submodule: doc.submodule ?? "",
+      file: doc.file.replace(/.*?(?=src)/, ""), // Get relative path from src
       // This is currently a static value but might change
-      descriptionText,
-      params: transformedParams,
+      descriptionText: doc.description ?? "",
+      params: doc.params ?? [],
       // Add all properties as frontmatter, except for those that are objects
       // This likely needs to be organized more deliberately
       ...Object.entries(doc)
@@ -162,7 +76,7 @@ function convertToMDX(doc) {
         ? doc.examples.map((example) => example.description)
         : [],
     };
-    // Create the frontmatter string
+
     const frontmatter = matter.stringify("", frontMatterArgs);
     // Combine all pieces of the doc into a single Markdown string
     let markdownContent = `# ${doc.name}\n`;
@@ -176,6 +90,125 @@ function convertToMDX(doc) {
     return;
   }
 }
+
+// function convertToMDX(doc) {
+//   if (!doc) {
+//     return;
+//   }
+//   for (const tag of doc.tags) {
+//     if (tag.title === "module") {
+//       // Store mapping of modules to their file path
+//       fileContextToModuleMap[doc.context.file] = tag.name;
+//     } else if (tag.title === "submodule") {
+//       // Store mapping of submodules to their parent module
+//       fileContextToSubmoduleMap[doc.context.file] = tag.description;
+//     }
+//   }
+//   const module = fileContextToModuleMap[doc.context.file];
+//   let submodule = fileContextToSubmoduleMap[doc.context.file];
+//   // Submodule is not useful when identical to module
+//   // Should be cleaned up in authoring
+//   if (submodule === module) {
+//     submodule = null;
+//   }
+//   // This is the module declaration, no reference needed
+//   if (module === doc.name) {
+//     return;
+//   }
+//   // p5 keeps some internal modules that we don't want to document
+//   if (doc.name?.startsWith("_")) {
+//     return;
+//   }
+//   const transformedParams = doc.params
+//     .map((param) => {
+//       // Check if the necessary properties exist
+//       if (
+//         !param.description ||
+//         !param.description.children ||
+//         (!param.type?.name && !param.type?.expression?.name)
+//       ) {
+//         return null;
+//       }
+//       // Extract the description text
+//       const descriptionText = param.description.children
+//         .map((child) =>
+//           child.children.map((textNode) => textNode.value).join("")
+//         )
+//         .join("");
+//       return {
+//         name: param.name,
+//         description: descriptionText,
+//         type: param.type.name ?? param.type?.expression?.name ?? "",
+//       };
+//     })
+//     .filter((param) => param != null);
+//   let descriptionText = "";
+//   for (const child of doc.description?.children ?? []) {
+//     for (const textNode of child.children ?? []) {
+//       switch (textNode.type) {
+//         case "inlineCode":
+//           descriptionText += `\`${textNode.value}\``;
+//           break;
+//         case "link":
+//           descriptionText += `[${textNode.children[0].value}](${textNode.url})`;
+//           break;
+//         case "strong":
+//           descriptionText += `**${textNode.children[0].value}**`;
+//           break;
+//         case "emphasis":
+//           descriptionText += `*${textNode.children[0].value}*`;
+//           break;
+//         case "paragraph":
+//           descriptionText += `${textNode.children[0].value}`;
+//           break;
+//         case "text":
+//         default:
+//           descriptionText += textNode.value;
+//           break;
+//       }
+//     }
+//   }
+//   // Likely intended as private
+//   if (!module) {
+//     return;
+//   }
+//   let frontMatterArgs = {};
+//   try {
+//     frontMatterArgs = {
+//       layout: "@layouts/reference/SingleReferenceLayout.astro",
+//       title: doc.name ?? "",
+//       module,
+//       ...(submodule ? { submodule } : {}),
+//       file: doc.context.file.replace(/.*?(?=src)/, ""), // Get relative path from src
+//       // This is currently a static value but might change
+//       descriptionText,
+//       params: transformedParams,
+//       // Add all properties as frontmatter, except for those that are objects
+//       // This likely needs to be organized more deliberately
+//       ...Object.entries(doc)
+//         .filter(
+//           ([key, value]) =>
+//             typeof value !== "object" && typeof value !== "undefined"
+//         )
+//         .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
+//       examples: doc.examples
+//         ? doc.examples.map((example) => example.description)
+//         : [],
+//     };
+//     // Create the frontmatter string
+//     const frontmatter = matter.stringify("", frontMatterArgs);
+//     // Combine all pieces of the doc into a single Markdown string
+//     let markdownContent = `# ${doc.name}\n`;
+//     // Process the Markdown content through remark and remark-mdx
+//     const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
+//     // Combine frontmatter and MDX content
+//     return `${frontmatter}\n${mdxContent.toString()}`;
+//   } catch (err) {
+//     console.error(`Error converting ${doc.name} to MDX: ${err}`);
+//     console.log(frontMatterArgs);
+//     return;
+//   }
+// }
 
 const getIndexMdx = () => {
   console.log("Saving reference index...");
@@ -244,19 +277,14 @@ async function fixForAbsolutePathInPreprocessor() {
 }
 
 async function cloneLibraryRepoIfNeeded() {
-  const repoExists = await libraryRepoExists();
-  if (!repoExists) {
+  const currentRepoExists =
+    (await fileExistsAt(localPath)) &&
+    (await isModifiedWithin24Hours(localPath));
+  if (!currentRepoExists) {
     await cloneLibraryRepo();
   } else {
     console.log("Library repo already exists, skipping clone...");
   }
-}
-
-async function libraryRepoExists() {
-  return fs
-    .access(localPath)
-    .then(() => true)
-    .catch(() => false);
 }
 
 // async function buildDocs() {
@@ -273,10 +301,17 @@ async function libraryRepoExists() {
 // }
 
 async function buildDocs() {
-  await runYuidocCommand();
+  console.log("Loading docs from JSON file...");
+  const currentYUIBuildExists =
+    (await fileExistsAt(jsonFilePath)) &&
+    (await isModifiedWithin24Hours(jsonFilePath));
+  if (!currentYUIBuildExists) {
+    await runYuidocCommand();
+  } else {
+    console.log("YUI output already exists, skipping build...");
+  }
   return loadDocsFromJson();
 }
-
 async function runYuidocCommand() {
   console.log("Running yuidoc command...");
   try {
@@ -310,9 +345,11 @@ async function loadDocsFromJson() {
 
 async function convertDocsToMDX(docs) {
   console.log("Converting docs to MDX...");
+
   try {
+    const classitemsArray = Object.values(docs.classitems);
     const mdxDocs = await Promise.all(
-      docs.map(async (doc) => {
+      classitemsArray.map(async (doc) => {
         const mdx = await convertToMDX(doc);
         const savePath = getModulePath(doc);
         const name = doc.name;
@@ -320,12 +357,9 @@ async function convertDocsToMDX(docs) {
       })
     );
 
-    mdxDocs.filter(
-      (mdxDoc) =>
-        mdxDoc.mdx !== null && mdxDoc.savePath !== null && mdxDoc.name !== null
+    return mdxDocs.filter(
+      (mdxDoc) => mdxDoc.mdx && mdxDoc.savePath && mdxDoc.name
     );
-
-    return mdxDocs;
   } catch (err) {
     console.error(`Error converting docs to MDX: ${err}`);
     return [];
@@ -336,6 +370,7 @@ async function saveMDX(mdxDocs) {
   console.log("Saving MDX...");
   try {
     for (const mdxDoc of mdxDocs) {
+      console.log(mdxDoc);
       await fs.mkdir(mdxDoc.savePath, {
         recursive: true,
       });
@@ -354,9 +389,11 @@ async function main() {
 
   const docs = await buildDocs();
 
-  // const mdxDocs = await convertDocsToMDX(docs);
+  const mdxDocs = await convertDocsToMDX(docs);
 
-  // await saveMDX(mdxDocs);
+  console.log(mdxDocs);
+
+  await saveMDX(mdxDocs);
 
   // const indexMdx = getIndexMdx();
   // await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
@@ -365,3 +402,26 @@ async function main() {
 }
 
 main();
+
+/** UTILITIES */
+
+async function fileExistsAt(path) {
+  return fs
+    .access(path)
+    .then(() => true)
+    .catch(() => false);
+}
+
+async function isModifiedWithin24Hours(path) {
+  try {
+    const stats = await fs.stat(path);
+    const modifiedTime = stats.mtime.getTime();
+    const currentTime = Date.now();
+    const twentyFourHoursAgo = currentTime - 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+    return modifiedTime >= twentyFourHoursAgo;
+  } catch (err) {
+    console.error(`Error checking modification time: ${err}`);
+    return false;
+  }
+}

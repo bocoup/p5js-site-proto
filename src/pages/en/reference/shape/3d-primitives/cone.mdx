@@ -1,0 +1,68 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: cone
+module: Shape
+submodule: 3D Primitives
+file: in/p5.js/src/webgl/3d_primitives.js
+descriptionText: >
+  <p>Draw a cone with given radius and height</p>
+
+  <p>DetailX and detailY determine the number of subdivisions in the x-dimension
+  and
+
+  the y-dimension of a cone. More subdivisions make the cone seem smoother. The
+
+  recommended maximum value for detailX is 24. Using a value greater than 24
+
+  may cause a warning or slow down the browser.</p>
+params:
+  - name: radius
+    description: |
+      <p>radius of the bottom surface</p>
+    type: Number
+    optional: true
+  - name: height
+    description: |
+      <p>height of the cone</p>
+    type: Number
+    optional: true
+  - name: detailX
+    description: |
+      <p>number of segments,
+                                  the more segments the smoother geometry
+                                  default is 24</p>
+    type: Integer
+    optional: true
+  - name: detailY
+    description: |
+      <p>number of segments,
+                                  the more segments the smoother geometry
+                                  default is 1</p>
+    type: Integer
+    optional: true
+  - name: cap
+    description: |
+      <p>whether to draw the base of the cone</p>
+    type: Boolean
+    optional: true
+line: 740
+description: >
+  <p>Draw a cone with given radius and height</p>
+
+  <p>DetailX and detailY determine the number of subdivisions in the x-dimension
+  and
+
+  the y-dimension of a cone. More subdivisions make the cone seem smoother. The
+
+  recommended maximum value for detailX is 24. Using a value greater than 24
+
+  may cause a warning or slow down the browser.</p>
+itemtype: method
+name: cone
+chainable: 1
+class: p5
+examples: []
+---
+
+
+# cone

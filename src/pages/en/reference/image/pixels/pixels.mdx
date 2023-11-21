@@ -1,0 +1,105 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: pixels
+module: Image
+submodule: Pixels
+file: in/p5.js/src/image/pixels.js
+descriptionText: >
+  <p>An array containing the color of each pixel on the canvas. Colors are
+
+  stored as numbers representing red, green, blue, and alpha (RGBA) values.
+
+  <code>pixels</code> is a one-dimensional array for performance reasons.</p>
+
+  <p>Each pixel occupies four elements in the <code>pixels</code> array, one for
+  each RGBA
+
+  value. For example, the pixel at coordinates (0, 0) stores its RGBA values
+
+  at <code>pixels[0]</code>, <code>pixels[1]</code>, <code>pixels[2]</code>, and
+  <code>pixels[3]</code>, respectively.
+
+  The next pixel at coordinates (1, 0) stores its RGBA values at
+  <code>pixels[4]</code>,
+
+  <code>pixels[5]</code>, <code>pixels[6]</code>, and <code>pixels[7]</code>.
+  And so on. The <code>pixels</code> array
+
+  for a 100×100 canvas has 100 × 100 × 4 = 40,000 elements.</p>
+
+  <p>Some displays use several smaller pixels to set the color at a single
+
+  point. The <a href="#/p5/pixelDensity">pixelDensity()</a> function returns
+
+  the pixel density of the canvas. High density displays often have a
+
+  <a href="#/p5/pixelDensity">pixelDensity()</a> of 2. On such a display, the
+
+  <code>pixels</code> array for a 100×100 canvas has 200 × 200 × 4 =
+
+  160,000 elements.</p>
+
+  <p>Accessing the RGBA values for a point on the canvas requires a little math
+
+  as shown below. The <a href="#/p5/loadPixels">loadPixels()</a> function
+
+  must be called before accessing the <code>pixels</code> array. The
+
+  <a href="#/p5/updatePixels">updatePixels()</a> function must be called
+
+  after any changes are made.</p>
+params: []
+line: 13
+description: >
+  <p>An array containing the color of each pixel on the canvas. Colors are
+
+  stored as numbers representing red, green, blue, and alpha (RGBA) values.
+
+  <code>pixels</code> is a one-dimensional array for performance reasons.</p>
+
+  <p>Each pixel occupies four elements in the <code>pixels</code> array, one for
+  each RGBA
+
+  value. For example, the pixel at coordinates (0, 0) stores its RGBA values
+
+  at <code>pixels[0]</code>, <code>pixels[1]</code>, <code>pixels[2]</code>, and
+  <code>pixels[3]</code>, respectively.
+
+  The next pixel at coordinates (1, 0) stores its RGBA values at
+  <code>pixels[4]</code>,
+
+  <code>pixels[5]</code>, <code>pixels[6]</code>, and <code>pixels[7]</code>.
+  And so on. The <code>pixels</code> array
+
+  for a 100×100 canvas has 100 × 100 × 4 = 40,000 elements.</p>
+
+  <p>Some displays use several smaller pixels to set the color at a single
+
+  point. The <a href="#/p5/pixelDensity">pixelDensity()</a> function returns
+
+  the pixel density of the canvas. High density displays often have a
+
+  <a href="#/p5/pixelDensity">pixelDensity()</a> of 2. On such a display, the
+
+  <code>pixels</code> array for a 100×100 canvas has 200 × 200 × 4 =
+
+  160,000 elements.</p>
+
+  <p>Accessing the RGBA values for a point on the canvas requires a little math
+
+  as shown below. The <a href="#/p5/loadPixels">loadPixels()</a> function
+
+  must be called before accessing the <code>pixels</code> array. The
+
+  <a href="#/p5/updatePixels">updatePixels()</a> function must be called
+
+  after any changes are made.</p>
+itemtype: property
+name: pixels
+type: 'Number[]'
+class: p5
+examples: []
+---
+
+
+# pixels

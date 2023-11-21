@@ -2,67 +2,29 @@
 layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: touchEnded
 module: DOM
-file: src/core/p5.Element.js
-descriptionText: >-
-  Calls a function when the user stops touching the element. Calling
-
-  `myElement.touchMoved(false)` disables the function.Note: Touch functions only
-  work on mobile devices.
-params: []
-kind: function
+submodule: DOM
+file: in/p5.js/src/core/p5.Element.js
+descriptionText: |
+  <p>Calls a function when the user stops touching the element. Calling
+  <code>myElement.touchMoved(false)</code> disables the function.</p>
+  <p>Note: Touch functions only work on mobile devices.</p>
+params:
+  - name: fxn
+    description: |
+      <p>function to call when the touch
+                                     ends.
+                                     <code>false</code> disables the function.</p>
+    type: Function|Boolean
+line: 1023
+description: |
+  <p>Calls a function when the user stops touching the element. Calling
+  <code>myElement.touchMoved(false)</code> disables the function.</p>
+  <p>Note: Touch functions only work on mobile devices.</p>
+itemtype: method
 name: touchEnded
-namespace: touchEnded
-examples:
-  - |-
-    <div>
-    <code>
-    function setup() {
-      // Create a canvas element and
-      // assign it to cnv.
-      let cnv = createCanvas(100, 100);
-
-      background(200);
-
-      // Call randomColor() when the
-      // user touches the canvas,
-      // then lifts their finger.
-      cnv.touchEnded(randomColor);
-
-      describe('A gray square changes color when the user touches the canvas, then lifts their finger.');
-    }
-
-    // Paint the background either
-    // red, yellow, blue, or green.
-    function randomColor() {
-      let c = random(['red', 'yellow', 'blue', 'green']);
-      background(c);
-    }
-    </code>
-    </div>
-
-    <div>
-    <code>
-    function setup() {
-      // Create a canvas element and
-      // assign it to cnv.
-      let cnv = createCanvas(100, 100);
-
-      background(200);
-
-      // Paint the background either
-      // red, yellow, blue, or green
-      // when the user touches the
-      // canvas, then lifts their
-      // finger.
-      cnv.touchEnded(() => {
-        let c = random(['red', 'yellow', 'blue', 'green']);
-        background(c);
-      });
-
-      describe('A gray square changes color when the user touches the canvas, then lifts their finger.');
-    }
-    </code>
-    </div>
+chainable: 1
+class: p5.Element
+examples: []
 ---
 
 

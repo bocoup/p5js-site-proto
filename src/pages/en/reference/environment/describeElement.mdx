@@ -1,0 +1,99 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: describeElement
+module: Environment
+submodule: Environment
+file: in/p5.js/src/accessibility/describe.js
+descriptionText: >
+  <p>Creates a screen reader-accessible description for elements in the canvas.
+
+  Elements are shapes or groups of shapes that create meaning together.</p>
+
+  <p>The first parameter, <code>name</code>, is the name of the element.</p>
+
+  <p>The second parameter, <code>text</code>, is the description of the
+  element.</p>
+
+  <p>The third parameter, <code>display</code>, is optional. It determines how
+  the
+
+  description is displayed. If <code>LABEL</code> is passed, as in
+
+  <code>describe('A description.', LABEL)</code>, the description will be
+  visible in
+
+  a div element next to the canvas. Using <code>LABEL</code> creates unhelpful
+
+  duplicates for screen readers. Only use <code>LABEL</code> during development.
+  If
+
+  <code>FALLBACK</code> is passed, as in <code>describe('A description.',
+  FALLBACK)</code>, the
+
+  description will only be visible to screen readers. This is the default
+
+  mode.</p>
+
+  <p>Read
+
+  <a href="/learn/labeling-canvases.html">How to label your p5.js code</a> to
+
+  learn more about making sketches accessible.</p>
+params:
+  - name: name
+    description: |
+      <p>name of the element.</p>
+    type: String
+  - name: text
+    description: |
+      <p>description of the element.</p>
+    type: String
+  - name: display
+    description: |
+      <p>either LABEL or FALLBACK.</p>
+    type: Constant
+    optional: true
+line: 162
+description: >
+  <p>Creates a screen reader-accessible description for elements in the canvas.
+
+  Elements are shapes or groups of shapes that create meaning together.</p>
+
+  <p>The first parameter, <code>name</code>, is the name of the element.</p>
+
+  <p>The second parameter, <code>text</code>, is the description of the
+  element.</p>
+
+  <p>The third parameter, <code>display</code>, is optional. It determines how
+  the
+
+  description is displayed. If <code>LABEL</code> is passed, as in
+
+  <code>describe('A description.', LABEL)</code>, the description will be
+  visible in
+
+  a div element next to the canvas. Using <code>LABEL</code> creates unhelpful
+
+  duplicates for screen readers. Only use <code>LABEL</code> during development.
+  If
+
+  <code>FALLBACK</code> is passed, as in <code>describe('A description.',
+  FALLBACK)</code>, the
+
+  description will only be visible to screen readers. This is the default
+
+  mode.</p>
+
+  <p>Read
+
+  <a href="/learn/labeling-canvases.html">How to label your p5.js code</a> to
+
+  learn more about making sketches accessible.</p>
+itemtype: method
+name: describeElement
+class: p5
+examples: []
+---
+
+
+# describeElement

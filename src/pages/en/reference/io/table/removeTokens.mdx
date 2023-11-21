@@ -1,0 +1,36 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: removeTokens
+module: IO
+submodule: Table
+file: in/p5.js/src/io/p5.Table.js
+descriptionText: |
+  <p>Removes any of the specified characters (or "tokens").</p>
+  <p>If no column is specified, then the values in all columns and
+  rows are processed. A specific column may be referenced by
+  either its ID or title.</p>
+params:
+  - name: chars
+    description: |
+      <p>String listing characters to be removed</p>
+    type: String
+  - name: column
+    description: |
+      <p>Column ID (number)
+                                       or name (string)</p>
+    type: String|Integer
+    optional: true
+line: 752
+description: |
+  <p>Removes any of the specified characters (or "tokens").</p>
+  <p>If no column is specified, then the values in all columns and
+  rows are processed. A specific column may be referenced by
+  either its ID or title.</p>
+itemtype: method
+name: removeTokens
+class: p5.Table
+examples: []
+---
+
+
+# removeTokens

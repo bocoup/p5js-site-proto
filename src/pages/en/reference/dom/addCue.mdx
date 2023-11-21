@@ -1,0 +1,80 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: addCue
+module: DOM
+submodule: DOM
+file: in/p5.js/src/dom/dom.js
+descriptionText: >
+  <p>Schedules a function to call when the audio/video reaches a specific time
+
+  during its playback.</p>
+
+  <p>The first parameter, <code>time</code>, is the time, in seconds, when the
+  function
+
+  should run. This value is passed to <code>callback</code> as its first
+  argument.</p>
+
+  <p>The second parameter, <code>callback</code>, is the function to call at the
+  specified
+
+  cue time.</p>
+
+  <p>The third parameter, <code>value</code>, is optional and can be any type of
+  value.
+
+  <code>value</code> is passed to <code>callback</code>.</p>
+
+  <p>Calling <code>media.addCue()</code> returns an ID as a string. This is
+  useful for
+
+  removing the cue later.</p>
+params:
+  - name: time
+    description: |
+      <p>cue time to run the callback function.</p>
+    type: Number
+  - name: callback
+    description: |
+      <p>function to call at the cue time.</p>
+    type: Function
+  - name: value
+    description: |
+      <p>object to pass as the argument to
+                                 <code>callback</code>.</p>
+    type: Object
+    optional: true
+line: 4584
+description: >
+  <p>Schedules a function to call when the audio/video reaches a specific time
+
+  during its playback.</p>
+
+  <p>The first parameter, <code>time</code>, is the time, in seconds, when the
+  function
+
+  should run. This value is passed to <code>callback</code> as its first
+  argument.</p>
+
+  <p>The second parameter, <code>callback</code>, is the function to call at the
+  specified
+
+  cue time.</p>
+
+  <p>The third parameter, <code>value</code>, is optional and can be any type of
+  value.
+
+  <code>value</code> is passed to <code>callback</code>.</p>
+
+  <p>Calling <code>media.addCue()</code> returns an ID as a string. This is
+  useful for
+
+  removing the cue later.</p>
+itemtype: method
+name: addCue
+class: p5.MediaElement
+examples: []
+---
+
+
+# addCue
