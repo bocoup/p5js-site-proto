@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: constrain
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: |
   <p>Constrains a number between a minimum and maximum value.</p>
+line: 69
 params:
   - name: 'n'
     description: |
@@ -19,11 +20,12 @@ params:
     description: |
       <p>maximum limit.</p>
     type: Number
-line: 69
 itemtype: method
-name: constrain
 class: p5
-examples: []
+return:
+  description: constrained number.
+  type: Number
+chainable: false
 ---
 
 

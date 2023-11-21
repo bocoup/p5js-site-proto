@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: select
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Searches the page for the first element that matches the given
 
@@ -27,6 +27,7 @@ description: >
 
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"
   target="_blank">HTMLElement</a> object.</p>
+line: 21
 params:
   - name: selectors
     description: |
@@ -38,11 +39,12 @@ params:
                                                   <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" target="_blank">HTMLElement</a> to search within.</p>
     type: String|p5.Element|HTMLElement
     optional: true
-line: 21
 itemtype: method
-name: select
 class: p5
-examples: []
+return:
+  description: <a href="#/p5.Element">p5.Element</a> containing the element.
+  type: p5.Element|null
+chainable: false
 ---
 
 

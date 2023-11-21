@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: asin
 module: Math
 submodule: Trigonometry
-file: in/p5.js/src/math/trigonometry.js
+file: src/math/trigonometry.js
 description: >
   <p>The inverse of <a href="#/p5/sin">sin()</a>, returns the arc sine of a
 
@@ -17,16 +17,18 @@ description: >
   are
 
   returned in the range -90 to 90.</p>
+line: 60
 params:
   - name: value
     description: |
       <p>value whose arc sine is to be returned.</p>
     type: Number
-line: 60
 itemtype: method
-name: asin
 class: p5
-examples: []
+return:
+  description: arc sine of the given value.
+  type: Number
+chainable: false
 ---
 
 

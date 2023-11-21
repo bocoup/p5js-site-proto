@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: style
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Applies a style to an element by adding a
 
@@ -35,12 +35,13 @@ description: >
   <a href="#/p5.Color">p5.Color</a> object, as in
 
   <code>myElement.style('color', myColor)</code>.</p>
-params: []
 line: 2704
 itemtype: method
-name: style
 class: p5.Element
-examples: []
+return:
+  description: value of the property.
+  type: String
+chainable: false
 ---
 
 

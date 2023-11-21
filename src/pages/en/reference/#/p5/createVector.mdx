@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createVector
 module: Math
 submodule: Vector
-file: in/p5.js/src/math/math.js
+file: src/math/math.js
 description: >
   <p>Creates a new <a href="#/p5.Vector">p5.Vector</a> object. A vector is like
 
@@ -31,6 +31,7 @@ description: >
   <code>pos.add(vel)</code>. Vector math relies on methods inside the
 
   <a href="#/p5.Vector">p5.Vector</a> class.</p>
+line: 10
 params:
   - name: x
     description: |
@@ -47,11 +48,12 @@ params:
       <p>z component of the vector.</p>
     type: Number
     optional: true
-line: 10
 itemtype: method
-name: createVector
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Vector">p5.Vector</a> object.
+  type: p5.Vector
+chainable: false
 ---
 
 

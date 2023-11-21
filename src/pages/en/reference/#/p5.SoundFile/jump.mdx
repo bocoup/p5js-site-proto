@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: jump
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>Move the playhead of a soundfile that is currently playing to a
 
@@ -15,6 +15,7 @@ description: >
 
   not currently playing, use the <code>play</code> or <code>loop</code>
   methods.</p>
+line: 2308
 params:
   - name: cueTime
     description: |
@@ -24,11 +25,9 @@ params:
     description: |
       <p>duration in seconds.</p>
     type: Number
-line: 2308
 itemtype: method
-name: jump
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

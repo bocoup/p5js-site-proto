@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: textOutput
 module: Environment
 submodule: Environment
-file: in/p5.js/src/accessibility/outputs.js
+file: src/accessibility/outputs.js
 description: >
   <p>Creates a screen reader-accessible description for shapes on the canvas.
 
@@ -60,17 +60,16 @@ description: >
   <a href="/learn/labeling-canvases.html">How to label your p5.js code</a> to
 
   learn more about making sketches accessible.</p>
+line: 10
 params:
   - name: display
     description: |
       <p>either FALLBACK or LABEL.</p>
     type: Constant
     optional: true
-line: 10
 itemtype: method
-name: textOutput
 class: p5
-examples: []
+chainable: false
 ---
 
 

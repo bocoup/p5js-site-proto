@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: clear
 module: Color
 submodule: Setting
-file: in/p5.js/src/color/setting.js
+file: src/color/setting.js
 description: >
   <p>Clears the pixels on the canvas. This function makes every pixel 100%
 
@@ -25,6 +25,7 @@ description: >
   clears the depth buffer. If you are not using the WebGL renderer, these
 
   parameters will have no effect.</p>
+line: 390
 params:
   - name: r
     description: |
@@ -42,12 +43,9 @@ params:
     description: |
       <p>normalized alpha value.</p>
     type: Number
-line: 390
 itemtype: method
-name: clear
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

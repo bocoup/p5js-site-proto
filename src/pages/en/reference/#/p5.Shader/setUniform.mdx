@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setUniform
 module: 3D
 submodule: Material
-file: in/p5.js/src/webgl/p5.Shader.js
+file: src/webgl/p5.Shader.js
 description: >
   <p>Used to set the uniforms of a
 
@@ -56,6 +56,7 @@ description: >
   </li>
 
   </ul>
+line: 350
 params:
   - name: uniformName
     description: |
@@ -68,16 +69,13 @@ params:
       a boolean (true/false), a number, an array of numbers, or
       an image (p5.Image, p5.Graphics, p5.MediaElement, p5.Texture)</p>
     type: 'Boolean|Number|Number[]|p5.Image|p5.Graphics|p5.MediaElement|p5.Texture'
-line: 350
 itemtype: method
-name: setUniform
-chainable: 1
+class: p5.Shader
 alt: >-
   canvas toggles between a circular gradient of orange and blue vertically. and
   a circular gradient of red and green moving horizontally when mouse is
   clicked/pressed.
-class: p5.Shader
-examples: []
+chainable: true
 ---
 
 

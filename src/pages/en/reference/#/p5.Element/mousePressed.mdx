@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mousePressed
 module: DOM
 submodule: DOM
-file: in/p5.js/src/core/p5.Element.js
+file: src/core/p5.Element.js
 description: |
   <p>Calls a function when the mouse is pressed over the element.
   Calling <code>myElement.mousePressed(false)</code> disables the function.</p>
   <p>Note: Some mobile browsers may also trigger this event when the element
   receives a quick tap.</p>
+line: 329
 params:
   - name: fxn
     description: |
@@ -16,12 +17,9 @@ params:
                                      pressed over the element.
                                      <code>false</code> disables the function.</p>
     type: Function|Boolean
-line: 329
 itemtype: method
-name: mousePressed
-chainable: 1
 class: p5.Element
-examples: []
+chainable: true
 ---
 
 

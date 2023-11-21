@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: position
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Sets the position of the element. If no position type argument is given,
   the
@@ -15,12 +15,15 @@ description: >
    If no arguments given, the function returns the x and y position of the element.
   found documentation on how to be more specific with object type
    <a href="https://stackoverflow.com/questions/14714314/how-do-i-comment-object-literals-in-yuidoc">https://stackoverflow.com/questions/14714314/how-do-i-comment-object-literals-in-yuidoc</a></p>
-params: []
 line: 2584
 itemtype: method
-name: position
 class: p5.Element
-examples: []
+return:
+  description: >-
+    object of form { x: 0, y: 0 } containing the position of the element in an
+    object
+  type: Object
+chainable: false
 ---
 
 

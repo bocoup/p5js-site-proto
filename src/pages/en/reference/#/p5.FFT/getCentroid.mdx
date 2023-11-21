@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getCentroid
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Returns the
   <a href="http://en.wikipedia.org/wiki/Spectral_centroid" target="_blank">
@@ -11,12 +11,13 @@ description: |
   <em>NOTE: analyze() must be called prior to getCentroid(). Analyze()
   tells the FFT to analyze frequency data, and getCentroid() uses
   the results determine the spectral centroid.</em></p></p>
-params: []
 line: 3739
 itemtype: method
-name: getCentroid
 class: p5.FFT
-examples: []
+return:
+  description: Spectral Centroid Frequency  of the spectral centroid in Hz.
+  type: Number
+chainable: false
 ---
 
 

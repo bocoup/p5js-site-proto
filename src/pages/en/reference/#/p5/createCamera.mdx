@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createCamera
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: >
   <p>Creates a new <a href="#/p5.Camera">p5.Camera</a> object and sets it
 
@@ -33,13 +33,14 @@ description: >
   and <a href="#/p5/frustum">frustum()</a> if it is the only camera
 
   in the scene.</p>
-params: []
 line: 317
 itemtype: method
-name: createCamera
-alt: An example that creates a camera and moves it around the box.
 class: p5
-examples: []
+alt: An example that creates a camera and moves it around the box.
+return:
+  description: The newly created camera object.
+  type: p5.Camera
+chainable: false
 ---
 
 

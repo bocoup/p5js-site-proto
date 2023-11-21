@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: blendMode
 module: Rendering
 submodule: Rendering
-file: in/p5.js/src/core/rendering.js
+file: src/core/rendering.js
 description: >
   <p>Blends the pixels in the display window according to the defined mode.
 
@@ -83,6 +83,7 @@ description: >
 
   <em>(3D)</em> indicates that this blend mode <b>only</b> works in the WEBGL
   renderer.</p>
+line: 382
 params:
   - name: mode
     description: |
@@ -91,14 +92,12 @@ params:
                      EXCLUSION, SCREEN, REPLACE, OVERLAY, HARD_LIGHT,
                      SOFT_LIGHT, DODGE, BURN, ADD, REMOVE or SUBTRACT</p>
     type: Constant
-line: 382
 itemtype: method
-name: blendMode
+class: p5
 alt: |-
   translucent image thick red & blue diagonal rounded lines intersecting center
   Thick red & blue diagonal rounded lines intersecting center. dark at overlap
-class: p5
-examples: []
+chainable: false
 ---
 
 

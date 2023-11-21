@@ -3,17 +3,18 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: child
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: |
   <p>Attaches the element  as a child to the parent specified.
    Accepts either a string ID, DOM node, or <a href="#/p5.Element">p5.Element</a>.
    If no argument is specified, an array of children DOM nodes is returned.</p>
-params: []
 line: 2441
 itemtype: method
-name: child
 class: p5.Element
-examples: []
+return:
+  description: an array of child nodes
+  type: 'Node[]'
+chainable: false
 ---
 
 

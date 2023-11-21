@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: addCue
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Schedule events to trigger every time a MediaElement
   (audio/video) reaches a playback cue point.</p>
@@ -11,6 +11,7 @@ description: |
   the callback, and an optional parameter for the callback.</p>
   <p>Time will be passed as the first parameter to the callback function,
   and param will be the second parameter.</p>
+line: 2719
 params:
   - name: time
     description: |
@@ -35,11 +36,14 @@ params:
                                  callback function.</p>
     type: Object
     optional: true
-line: 2719
 itemtype: method
-name: addCue
 class: p5.SoundFile
-examples: []
+return:
+  description: |-
+    id ID of this cue,
+                        useful for removeCue(id)
+  type: Number
+chainable: false
 ---
 
 

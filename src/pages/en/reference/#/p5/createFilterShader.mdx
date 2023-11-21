@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createFilterShader
 module: 3D
 submodule: Material
-file: in/p5.js/src/webgl/material.js
+file: src/webgl/material.js
 description: >
   <p>Creates a new <a href="#/p5.Shader">p5.Shader</a> using only a fragment
   shader, as a convenience method for creating image effects.
@@ -39,16 +39,20 @@ description: >
   or the <a
   href="https://p5js.org/learn/getting-started-in-webgl-shaders.html">introduction
   to shaders</a> page.</p>
+line: 203
 params:
   - name: fragSrc
     description: |
       <p>source code for the fragment shader</p>
     type: String
-line: 203
 itemtype: method
-name: createFilterShader
 class: p5
-examples: []
+return:
+  description: |-
+    a shader object created from the provided
+                         fragment shader.
+  type: p5.Shader
+chainable: false
 ---
 
 

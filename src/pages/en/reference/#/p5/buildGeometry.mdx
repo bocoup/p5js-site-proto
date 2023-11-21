@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: buildGeometry
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Creates a new <a href="#/p5.Geometry">p5.Geometry</a> that contains all
 
@@ -26,17 +26,19 @@ description: >
   <a href="#/p5/endGeometry">endGeometry()</a> instead of using a callback
 
   function.</p>
+line: 102
 params:
   - name: callback
     description: |
       <p>A function that draws shapes.</p>
     type: Function
-line: 102
 itemtype: method
-name: buildGeometry
-alt: A cluster of spheres.
 class: p5
-examples: []
+alt: A cluster of spheres.
+return:
+  description: The model that was built from the callback function.
+  type: p5.Geometry
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: ortho
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: |
   <p>Sets an orthographic projection for the current camera in a 3D sketch
   and defines a box-shaped viewing frustum within which objects are seen.
@@ -15,6 +15,7 @@ description: |
   maximum z values.</p>
   <p>If no parameters are given, the following default is used:
   ortho(-width/2, width/2, -height/2, height/2).</p>
+line: 183
 params:
   - name: left
     description: |
@@ -46,15 +47,12 @@ params:
       <p>camera frustum far plane</p>
     type: Number
     optional: true
-line: 183
 itemtype: method
-name: ortho
-chainable: 1
+class: p5
 alt: >-
   two 3D boxes move back and forth along same plane, rotating as mouse is
   dragged.
-class: p5
-examples: []
+chainable: true
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: applyMatrix
 module: Transform
 submodule: Transform
-file: in/p5.js/src/core/transform.js
+file: src/core/transform.js
 description: >
   <p>Multiplies the current matrix by the one specified through the parameters.
 
@@ -37,19 +37,16 @@ description: >
 
   alt="The transformation matrix used when applyMatrix is called with 4x4
   matrix"/></p>
-params: []
 line: 11
 itemtype: method
-name: applyMatrix
-chainable: 1
+class: p5
 alt: |-
   A rectangle translating to the right
   A rectangle shrinking to the center
   A rectangle rotating clockwise about the center
   A rectangle shearing
   A rectangle in the upper left corner
-class: p5
-examples: []
+chainable: true
 ---
 
 

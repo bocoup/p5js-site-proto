@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createShader
 module: 3D
 submodule: Material
-file: in/p5.js/src/webgl/material.js
+file: src/webgl/material.js
 description: >
   <p>Creates a new <a href="#/p5.Shader">p5.Shader</a> object
 
@@ -15,6 +15,7 @@ description: >
 
   To ensure consistency in rendering, it's recommended to use the vertex shader
   shown in the example below.</p>
+line: 115
 params:
   - name: vertSrc
     description: |
@@ -24,12 +25,15 @@ params:
     description: |
       <p>source code for the fragment shader</p>
     type: String
-line: 115
 itemtype: method
-name: createShader
-alt: 'zooming Mandelbrot set. a colorful, infinitely detailed fractal.'
 class: p5
-examples: []
+alt: 'zooming Mandelbrot set. a colorful, infinitely detailed fractal.'
+return:
+  description: |-
+    a shader object created from the provided
+    vertex and fragment shaders.
+  type: p5.Shader
+chainable: false
 ---
 
 

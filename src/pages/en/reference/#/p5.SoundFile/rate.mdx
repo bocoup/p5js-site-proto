@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: rate
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the playback rate of a sound file. Will change the speed and the pitch.
   Values less than zero will reverse the audio buffer.</p>
+line: 2146
 params:
   - name: playbackRate
     description: |
@@ -15,11 +16,9 @@ params:
                                          Values less than zero play backwards.</p>
     type: Number
     optional: true
-line: 2146
 itemtype: method
-name: rate
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

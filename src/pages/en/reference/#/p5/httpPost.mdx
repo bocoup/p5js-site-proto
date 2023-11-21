@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: httpPost
 module: IO
 submodule: Input
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: >
   <p>Method for executing an HTTP POST request. If data type is not specified,
 
@@ -11,12 +11,16 @@ description: >
   to
 
   calling <code>httpDo(path, 'POST')</code>.</p>
-params: []
 line: 817
 itemtype: method
-name: httpPost
 class: p5
-examples: []
+return:
+  description: |-
+    A promise that resolves with the data when the operation
+                      completes successfully or rejects with the error after
+                      one occurs.
+  type: Promise
+chainable: false
 ---
 
 

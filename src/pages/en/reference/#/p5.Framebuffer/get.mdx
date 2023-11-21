@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: get
 module: Rendering
 submodule: ''
-file: in/p5.js/src/webgl/p5.Framebuffer.js
+file: src/webgl/p5.Framebuffer.js
 description: >
   <p>Get a region of pixels from the canvas in the form of a
 
@@ -27,12 +27,13 @@ description: >
 
   upper-left corner of the image, regardless of the current <a
   href="#/p5/imageMode">imageMode()</a>.</p>
-params: []
 line: 1040
 itemtype: method
-name: get
 class: p5.Framebuffer
-examples: []
+return:
+  description: the rectangle <a href="#/p5.Image">p5.Image</a>
+  type: p5.Image
+chainable: false
 ---
 
 

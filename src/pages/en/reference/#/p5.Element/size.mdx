@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: size
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Sets the element's width and height.</p>
 
@@ -40,12 +40,13 @@ description: >
   <p>Note: In the case of elements that need to load data, such as images, wait
 
   to call <code>myElement.size()</code> until after the data loads.</p>
-params: []
 line: 3140
 itemtype: method
-name: size
 class: p5.Element
-examples: []
+return:
+  description: width and height of the element in an object.
+  type: Object
+chainable: false
 ---
 
 

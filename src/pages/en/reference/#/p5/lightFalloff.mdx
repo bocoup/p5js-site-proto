@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: lightFalloff
 module: 3D
 submodule: Lights
-file: in/p5.js/src/webgl/light.js
+file: src/webgl/light.js
 description: >
   <p>Sets the falloff rate for <a href="#/p5/pointLight">pointLight()</a>
 
@@ -19,6 +19,7 @@ description: >
   <p>d = distance from light position to vertex position</p>
 
   <p>falloff = 1 / (CONSTANT + d * LINEAR + (d * d) * QUADRATIC)</p>
+line: 632
 params:
   - name: constant
     description: |
@@ -32,13 +33,10 @@ params:
     description: |
       <p>QUADRATIC value for determining falloff</p>
     type: Number
-line: 632
 itemtype: method
-name: lightFalloff
-chainable: 1
-alt: Two spheres with different falloff values show different intensity of light
 class: p5
-examples: []
+alt: Two spheres with different falloff values show different intensity of light
+chainable: true
 ---
 
 

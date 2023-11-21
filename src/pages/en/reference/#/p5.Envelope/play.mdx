@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: play
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |-
   <p>Play tells the envelope to start acting on a given input.
   If the input is a p5.sound object (i.e. AudioIn, Oscillator,
@@ -11,6 +11,7 @@ description: |-
   Envelopes can also be used to control any <a href="
   http://docs.webplatform.org/wiki/apis/webaudio/AudioParam">
   Web Audio Audio Param.</a></p>
+line: 5078
 params:
   - name: unit
     description: |
@@ -27,11 +28,9 @@ params:
       <p>time to sustain before releasing the envelope</p>
     type: Number
     optional: true
-line: 5078
 itemtype: method
-name: play
 class: p5.Envelope
-examples: []
+chainable: false
 ---
 
 

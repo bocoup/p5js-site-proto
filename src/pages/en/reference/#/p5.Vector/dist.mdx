@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: dist
 module: Math
 submodule: Vector
-file: in/p5.js/src/math/p5.Vector.js
+file: src/math/p5.Vector.js
 description: >
   <p>Returns the distance between two points represented by vectors. A point's
 
@@ -17,12 +17,13 @@ description: >
   <p>Use <a href="#/p5/dist">dist()</a> to calculate the distance between points
 
   using coordinates as in <code>dist(x1, y1, x2, y2)</code>.</p>
-params: []
 line: 1236
 itemtype: method
-name: dist
 class: p5.Vector
-examples: []
+return:
+  description: distance.
+  type: Number
+chainable: false
 ---
 
 

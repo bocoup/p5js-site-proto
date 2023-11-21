@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: amp
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the amplitude between 0 and 1.0. Or, pass in an object
   such as an oscillator to modulate amplitude with an audio signal.</p>
+line: 4238
 params:
   - name: vol
     description: |
@@ -24,11 +25,17 @@ params:
                                     seconds from now</p>
     type: Number
     optional: true
-line: 4238
 itemtype: method
-name: amp
 class: p5.Oscillator
-examples: []
+return:
+  description: |-
+    gain  If no value is provided,
+                                returns the Web Audio API
+                                AudioParam that controls
+                                this oscillator's
+                                gain/amplitude/volume)
+  type: AudioParam
+chainable: false
 ---
 
 

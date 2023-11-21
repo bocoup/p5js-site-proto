@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: slerp
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: >
   <p>For the cameras cam0 and cam1 with the given arguments, their view are
   combined
@@ -33,6 +33,7 @@ description: >
   equal to each other.
 
   For example, when it is changed by orbitControl().</p>
+line: 1642
 params:
   - name: cam0
     description: |
@@ -46,9 +47,8 @@ params:
     description: |
       <p>amount to use for interpolation during slerp</p>
     type: Number
-line: 1642
 itemtype: method
-name: slerp
+class: p5.Camera
 alt: >-
   There is a camera, drawing a cube. The camera can be moved freely with
 
@@ -56,8 +56,7 @@ alt: >-
   state.
 
   The camera cannot be moved during that time.
-class: p5.Camera
-examples: []
+chainable: false
 ---
 
 

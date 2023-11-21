@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: move
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: >
   <p>Move camera along its local axes while maintaining current camera
   orientation.</p>
+line: 1438
 params:
   - name: x
     description: |
@@ -20,14 +21,12 @@ params:
     description: |
       <p>amount to move along camera's forward-backward axis</p>
     type: Number
-line: 1438
 itemtype: method
-name: move
+class: p5.Camera
 alt: |-
   camera view moves along a series of 3D boxes, maintaining the same
   orientation throughout the move
-class: p5.Camera
-examples: []
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: match
 module: Data
 submodule: String Functions
-file: in/p5.js/src/utilities/string_functions.js
+file: src/utilities/string_functions.js
 description: |
   <p>This function is used to apply a regular expression to a piece of text,
   and return matching groups (elements found inside parentheses) as a
@@ -19,6 +19,7 @@ description: |
   Element [0] of a regular expression match returns the entire matching
   string, and the match groups start at element [1] (the first group is [1],
   the second [2], and so on).</p>
+line: 41
 params:
   - name: str
     description: |
@@ -28,11 +29,12 @@ params:
     description: |
       <p>the regexp to be used for matching</p>
     type: String
-line: 41
 itemtype: method
-name: match
 class: p5
-examples: []
+return:
+  description: Array of Strings found
+  type: 'String[]'
+chainable: false
 ---
 
 

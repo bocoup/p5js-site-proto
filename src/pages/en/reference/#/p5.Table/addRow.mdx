@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: addRow
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: >
   <p>Use <a href="#/p5/addRow">addRow()</a> to add a new row of data to a <a
   href="#/p5.Table">p5.Table</a> object. By default,
@@ -18,17 +18,19 @@ description: >
   parameter, then that row is
 
   duplicated and added to the table.</p>
+line: 90
 params:
   - name: row
     description: |
       <p>row to be added to the table</p>
     type: p5.TableRow
     optional: true
-line: 90
 itemtype: method
-name: addRow
 class: p5.Table
-examples: []
+return:
+  description: the row that was added
+  type: p5.TableRow
+chainable: false
 ---
 
 

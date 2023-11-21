@@ -3,19 +3,21 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: hasClass
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: |
   <p>Checks if specified class is already applied to element.</p>
+line: 2379
 params:
   - name: c
     description: |
       <p>class name of class to check</p>
     type: String
-line: 2379
 itemtype: method
-name: hasClass
 class: p5.Element
-examples: []
+return:
+  description: a boolean value if element has specified class
+  type: Boolean
+chainable: false
 ---
 
 

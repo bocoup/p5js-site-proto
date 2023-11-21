@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: fullscreen
 module: Environment
 submodule: Environment
-file: in/p5.js/src/core/environment.js
+file: src/core/environment.js
 description: >
   <p>Toggles full-screen mode or returns the current mode.</p>
 
@@ -20,17 +20,19 @@ description: >
   called with
 
   user input such as a mouse press.</p>
+line: 888
 params:
   - name: val
     description: |
       <p>whether the sketch should be in fullscreen mode.</p>
     type: Boolean
     optional: true
-line: 888
 itemtype: method
-name: fullscreen
 class: p5
-examples: []
+return:
+  description: current fullscreen state.
+  type: Boolean
+chainable: false
 ---
 
 

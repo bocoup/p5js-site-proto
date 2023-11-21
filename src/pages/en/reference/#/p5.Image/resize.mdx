@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: resize
 module: Image
 submodule: Image
-file: in/p5.js/src/image/p5.Image.js
+file: src/image/p5.Image.js
 description: >
   <p>Resizes the <a href="#/p5.Image">p5.Image</a> object to a given
   <code>width</code>
@@ -17,6 +17,7 @@ description: >
   on an image that was 500 × 300 pixels will resize it to
 
   50 × 30 pixels.</p>
+line: 626
 params:
   - name: width
     description: |
@@ -26,11 +27,9 @@ params:
     description: |
       <p>resized image height.</p>
     type: Number
-line: 626
 itemtype: method
-name: resize
 class: p5.Image
-examples: []
+chainable: false
 ---
 
 

@@ -3,21 +3,23 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getChild
 module: IO
 submodule: Input
-file: in/p5.js/src/io/p5.XML.js
+file: src/io/p5.XML.js
 description: |
   <p>Returns the first of the element's children that matches the name parameter
   or the child of the given index.It returns undefined if no matching
   child is found.</p>
+line: 308
 params:
   - name: name
     description: |
       <p>element name or index</p>
     type: String|Integer
-line: 308
 itemtype: method
-name: getChild
 class: p5.XML
-examples: []
+return:
+  description: ''
+  type: p5.XML
+chainable: false
 ---
 
 

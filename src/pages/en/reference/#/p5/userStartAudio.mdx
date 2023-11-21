@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: userStartAudio
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |-
   <p>It is not only a good practice to give users control over starting
   audio. This policy is enforced by many web browsers, including iOS and
@@ -27,6 +27,7 @@ description: |-
   example below. This method utilizes
   <a href="https://github.com/tambien/StartAudioContext">StartAudioContext
   </a>, a library by Yotam Mann (MIT Licence, 2016).</p>
+line: 198
 params:
   - name: elements
     description: |
@@ -41,11 +42,14 @@ params:
                                     has started</p>
     type: Function
     optional: true
-line: 198
 itemtype: method
-name: userStartAudio
 class: p5
-examples: []
+return:
+  description: |-
+    Returns a Promise that resolves when
+                                         the AudioContext state is 'running'
+  type: Promise
+chainable: false
 ---
 
 

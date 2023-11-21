@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: beginClip
 module: Color
 submodule: Setting
-file: in/p5.js/src/color/setting.js
+file: src/color/setting.js
 description: >
   <p>Start defining a shape that will mask subsequent things drawn to the
   canvas.
@@ -35,20 +35,19 @@ description: >
   <em>not</em> filled by the mask shape. Defaults to false.</li>
 
   </ul>
+line: 13
 params:
   - name: options
     description: |
       <p>An object containing clip settings.</p>
     type: Object
     optional: true
-line: 13
 itemtype: method
-name: beginClip
+class: p5
 alt: |-
   A silhouette of a rotating torus colored with a gradient from
   cyan to purple
-class: p5
-examples: []
+chainable: false
 ---
 
 

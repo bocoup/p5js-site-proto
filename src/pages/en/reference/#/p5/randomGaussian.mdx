@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: randomGaussian
 module: Math
 submodule: Random
-file: in/p5.js/src/math/random.js
+file: src/math/random.js
 description: >
   <p>Returns a random number fitting a Gaussian, or normal, distribution. Normal
 
@@ -41,6 +41,7 @@ description: >
   the first
 
   argument passed as the mean and the second as the standard deviation.</p>
+line: 193
 params:
   - name: mean
     description: |
@@ -52,11 +53,12 @@ params:
       <p>standard deviation.</p>
     type: Number
     optional: true
-line: 193
 itemtype: method
-name: randomGaussian
 class: p5
-examples: []
+return:
+  description: random number.
+  type: Number
+chainable: false
 ---
 
 

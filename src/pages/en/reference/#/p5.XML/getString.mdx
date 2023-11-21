@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getString
 module: IO
 submodule: Input
-file: in/p5.js/src/io/p5.XML.js
+file: src/io/p5.XML.js
 description: |
   <p>Returns an attribute value of the element as an String. If the defaultValue
   parameter is specified and the attribute doesn't exist, then defaultValue
   is returned. If no defaultValue is specified and the attribute doesn't
   exist, null is returned.</p>
+line: 663
 params:
   - name: name
     description: |
@@ -19,11 +20,12 @@ params:
       <p>the default value of the attribute</p>
     type: Number
     optional: true
-line: 663
 itemtype: method
-name: getString
 class: p5.XML
-examples: []
+return:
+  description: ''
+  type: String
+chainable: false
 ---
 
 

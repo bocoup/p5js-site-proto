@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: res
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Controls either width of a bandpass frequency,
   or the resonance of a low/highpass cutoff frequency.</p>
+line: 6811
 params:
   - name: res
     description: |
@@ -19,11 +20,12 @@ params:
                                     seconds from now</p>
     type: Number
     optional: true
-line: 6811
 itemtype: method
-name: res
 class: p5.Filter
-examples: []
+return:
+  description: value Returns the current res value
+  type: Number
+chainable: false
 ---
 
 

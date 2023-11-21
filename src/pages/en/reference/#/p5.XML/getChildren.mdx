@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getChildren
 module: IO
 submodule: Input
-file: in/p5.js/src/io/p5.XML.js
+file: src/io/p5.XML.js
 description: >
   <p>Returns all of the element's children as an array of <a
   href="#/p5.XML">p5.XML</a> objects. When
@@ -11,17 +11,19 @@ description: >
   the name parameter is specified, then it will return all children that match
 
   that name.</p>
+line: 258
 params:
   - name: name
     description: |
       <p>element name</p>
     type: String
     optional: true
-line: 258
 itemtype: method
-name: getChildren
 class: p5.XML
-examples: []
+return:
+  description: children of the element
+  type: 'p5.XML[]'
+chainable: false
 ---
 
 

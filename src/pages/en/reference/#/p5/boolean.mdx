@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: boolean
 module: Data
 submodule: Conversion
-file: in/p5.js/src/utilities/conversion.js
+file: src/utilities/conversion.js
 description: |
   <p>Converts a number or string to its boolean representation.
   For a number, any non-zero value (positive or negative) evaluates to true,
@@ -11,16 +11,18 @@ description: |
   true, while any other value evaluates to false. When an array of number or
   string values is passed in, then a array of booleans of the same length is
   returned.</p>
+line: 112
 params:
   - name: 'n'
     description: |
       <p>value to parse</p>
     type: String|Boolean|Number|Array
-line: 112
 itemtype: method
-name: boolean
 class: p5
-examples: []
+return:
+  description: boolean representation of value
+  type: Boolean
+chainable: false
 ---
 
 

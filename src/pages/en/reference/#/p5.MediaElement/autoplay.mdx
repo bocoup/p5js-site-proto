@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: autoplay
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Sets the audio/video to play once it's loaded.</p>
 
@@ -17,18 +17,16 @@ description: >
   media will automatically play. If <code>false</code> is passed, as in
 
   <code>media.autoPlay(false)</code>, it won't play automatically.</p>
+line: 3943
 params:
   - name: shouldAutoplay
     description: |
       <p>whether the element should autoplay.</p>
     type: Boolean
     optional: true
-line: 3943
 itemtype: method
-name: autoplay
-chainable: 1
 class: p5.MediaElement
-examples: []
+chainable: true
 ---
 
 

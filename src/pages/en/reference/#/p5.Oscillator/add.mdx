@@ -3,21 +3,25 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: add
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Add a value to the p5.Oscillator's output amplitude,
   and return the oscillator. Calling this method again
   will override the initial add() with a new value.</p>
+line: 4522
 params:
   - name: number
     description: |
       <p>Constant number to add</p>
     type: Number
-line: 4522
 itemtype: method
-name: add
 class: p5.Oscillator
-examples: []
+return:
+  description: |-
+    Oscillator Returns this oscillator
+                                       with scaled output
+  type: p5.Oscillator
+chainable: false
 ---
 
 

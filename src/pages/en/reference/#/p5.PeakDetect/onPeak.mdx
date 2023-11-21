@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: onPeak
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>onPeak accepts two arguments: a function to call when
   a peak is detected. The value of the peak,
   between 0.0 and 1.0, is passed to the callback.</p>
+line: 10470
 params:
   - name: callback
     description: |
@@ -22,11 +23,9 @@ params:
                                   a peak is detected.</p>
     type: Object
     optional: true
-line: 10470
 itemtype: method
-name: onPeak
 class: p5.PeakDetect
-examples: []
+chainable: false
 ---
 
 

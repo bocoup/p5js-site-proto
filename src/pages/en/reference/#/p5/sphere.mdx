@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sphere
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Draw a sphere with given radius.</p>
 
@@ -15,6 +15,7 @@ description: >
   smoother. The recommended maximum values are both 24. Using a value greater
 
   than 24 may cause a warning or slow down the browser.</p>
+line: 387
 params:
   - name: radius
     description: |
@@ -31,12 +32,9 @@ params:
       <p>optional number of subdivisions in y-dimension</p>
     type: Integer
     optional: true
-line: 387
 itemtype: method
-name: sphere
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

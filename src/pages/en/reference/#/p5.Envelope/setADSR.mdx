@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setADSR
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>Set values like a traditional
 
@@ -13,6 +13,7 @@ description: >
   ADSR envelope
 
   </a>.</p>
+line: 4895
 params:
   - name: attackTime
     description: |
@@ -42,11 +43,9 @@ params:
       <p>Time in seconds from now (defaults to 0)</p>
     type: Number
     optional: true
-line: 4895
 itemtype: method
-name: setADSR
 class: p5.Envelope
-examples: []
+chainable: false
 ---
 
 

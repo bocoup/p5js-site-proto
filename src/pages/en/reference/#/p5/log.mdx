@@ -3,22 +3,24 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: log
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the natural logarithm (the base-e logarithm) of a number. This
 
   function expects the <code>n</code> parameter to be a value greater than
   0.0.</p>
+line: 289
 params:
   - name: 'n'
     description: |
       <p>number greater than 0.</p>
     type: Number
-line: 289
 itemtype: method
-name: log
 class: p5
-examples: []
+return:
+  description: natural logarithm of n.
+  type: Number
+chainable: false
 ---
 
 

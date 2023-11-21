@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: removeTokens
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: |
   <p>Removes any of the specified characters (or "tokens").</p>
   <p>If no column is specified, then the values in all columns and
   rows are processed. A specific column may be referenced by
   either its ID or title.</p>
+line: 752
 params:
   - name: chars
     description: |
@@ -20,11 +21,9 @@ params:
                                        or name (string)</p>
     type: String|Integer
     optional: true
-line: 752
 itemtype: method
-name: removeTokens
 class: p5.Table
-examples: []
+chainable: false
 ---
 
 

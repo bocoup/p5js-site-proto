@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: amp
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>MonoSynth amp</p>
+line: 11544
 params:
   - name: vol
     description: |
@@ -16,11 +17,12 @@ params:
       <p>Time to reach new volume</p>
     type: Number
     optional: true
-line: 11544
 itemtype: method
-name: amp
 class: p5.MonoSynth
-examples: []
+return:
+  description: new volume value
+  type: Number
+chainable: false
 ---
 
 

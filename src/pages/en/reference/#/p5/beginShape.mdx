@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: beginShape
 module: Shape
 submodule: Vertex
-file: in/p5.js/src/core/shape/vertex.js
+file: src/core/shape/vertex.js
 description: >
   <p>Using the <a href="#/p5/beginShape">beginShape()</a> and <a
   href="#/p5/endShape">endShape()</a> functions allow creating more
@@ -71,6 +71,7 @@ description: >
 
   <a href="#/p5/ellipse">ellipse()</a> or <a href="#/p5/rect">rect()</a> within
   <a href="#/p5/beginShape">beginShape()</a>.</p>
+line: 71
 params:
   - name: kind
     description: |
@@ -78,10 +79,8 @@ params:
                                      TRIANGLE_STRIP, QUADS, QUAD_STRIP or TESS</p>
     type: Constant
     optional: true
-line: 71
 itemtype: method
-name: beginShape
-chainable: 1
+class: p5
 alt: |-
   white square-shape with black outline in middle-right of canvas.
   4 black points in a square shape in middle-right of canvas.
@@ -94,8 +93,7 @@ alt: |-
   2 white rectangle shapes in mid-right canvas. Both 20×55.
   3 side-by-side white rectangles center rect is smaller in mid-right canvas.
   Thick white l-shape with black outline mid-top-left of canvas.
-class: p5
-examples: []
+chainable: true
 ---
 
 

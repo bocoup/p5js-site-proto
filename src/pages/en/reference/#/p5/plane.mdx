@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: plane
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: |
   <p>Draw a plane with given a width and height</p>
+line: 183
 params:
   - name: width
     description: |
@@ -29,10 +30,8 @@ params:
                                   subdivisions in y-dimension</p>
     type: Integer
     optional: true
-line: 183
 itemtype: method
-name: plane
-chainable: 1
+class: p5
 alt: |-
   Nothing displayed on canvas
   Rotating interior view of a box with sides that change color.
@@ -41,8 +40,7 @@ alt: |-
   Rotating view of a cylinder with sides that change color.
   3d red and green gradient.
   rotating view of a multi-colored cylinder with concave sides.
-class: p5
-examples: []
+chainable: true
 ---
 
 

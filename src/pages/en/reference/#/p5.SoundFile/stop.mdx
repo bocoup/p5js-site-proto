@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: stop
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Stop soundfile playback.</p>
+line: 2025
 params:
   - name: startTime
     description: |
@@ -13,11 +14,9 @@ params:
                                   in seconds from now</p>
     type: Number
     optional: true
-line: 2025
 itemtype: method
-name: stop
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

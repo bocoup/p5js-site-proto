@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: lerpColor
 module: Color
 submodule: Creating & Reading
-file: in/p5.js/src/color/creating_reading.js
+file: src/color/creating_reading.js
 description: >
   <p>Blends two colors to find a third color between them. The <code>amt</code>
   parameter
@@ -23,6 +23,7 @@ description: >
   <p>The way that colors are interpolated depends on the current
 
   <a href="#/colorMode">colorMode()</a>.</p>
+line: 368
 params:
   - name: c1
     description: |
@@ -36,11 +37,12 @@ params:
     description: |
       <p>number between 0 and 1.</p>
     type: Number
-line: 368
 itemtype: method
-name: lerpColor
 class: p5
-examples: []
+return:
+  description: interpolated color.
+  type: p5.Color
+chainable: false
 ---
 
 

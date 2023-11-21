@@ -3,20 +3,22 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getItem
 module: Data
 submodule: LocalStorage
-file: in/p5.js/src/data/local_storage.js
+file: src/data/local_storage.js
 description: |
   <p>Returns the value of an item that was stored in local storage
    using storeItem()</p>
+line: 99
 params:
   - name: key
     description: |
       <p>name that you wish to use to store in local storage</p>
     type: String
-line: 99
 itemtype: method
-name: getItem
 class: p5
-examples: []
+return:
+  description: Value of stored item
+  type: Number|Object|String|Boolean|p5.Color|p5.Vector
+chainable: false
 ---
 
 

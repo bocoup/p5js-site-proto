@@ -3,19 +3,21 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: hasAttribute
 module: IO
 submodule: Input
-file: in/p5.js/src/io/p5.XML.js
+file: src/io/p5.XML.js
 description: |
   <p>Checks whether or not an element has the specified attribute.</p>
+line: 571
 params:
   - name: the
     description: |
       <p>attribute to be checked</p>
     type: String
-line: 571
 itemtype: method
-name: hasAttribute
 class: p5.XML
-examples: []
+return:
+  description: true if attribute found else false
+  type: Boolean
+chainable: false
 ---
 
 

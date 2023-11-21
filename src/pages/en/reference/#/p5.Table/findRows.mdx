@@ -3,13 +3,14 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: findRows
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: |
   <p>Finds the rows in the Table that contain the value
   provided, and returns references to those rows. Returns an
   Array, so for must be used to iterate through all the rows,
   as shown in the example above. The column to search may be
   specified by either its ID or title.</p>
+line: 351
 params:
   - name: value
     description: |
@@ -20,11 +21,12 @@ params:
       <p>ID number or title of the
                                      column to search</p>
     type: Integer|String
-line: 351
 itemtype: method
-name: findRows
 class: p5.Table
-examples: []
+return:
+  description: An Array of TableRow objects
+  type: 'p5.TableRow[]'
+chainable: false
 ---
 
 

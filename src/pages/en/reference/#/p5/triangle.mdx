@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: triangle
 module: Shape
 submodule: 2D Primitives
-file: in/p5.js/src/core/shape/2d_primitives.js
+file: src/core/shape/2d_primitives.js
 description: >
   <p>Draws a triangle to the canvas. A triangle is a three-sided polygon. The
 
@@ -14,6 +14,7 @@ description: >
   parameters
 
   specify its third point <code>(x3, y3)</code>.</p>
+line: 759
 params:
   - name: x1
     description: |
@@ -39,12 +40,9 @@ params:
     description: |
       <p>y-coordinate of the third point.</p>
     type: Number
-line: 759
 itemtype: method
-name: triangle
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

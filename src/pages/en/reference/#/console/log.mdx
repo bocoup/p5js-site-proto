@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: log
 module: Foundation
 submodule: Foundation
-file: in/p5.js/src/core/reference.js
+file: src/core/reference.js
 description: >
   <p>Prints a message to your browser's web console. When using p5, you can use
   <a href="#/p5/print">print</a>
@@ -37,18 +37,16 @@ description: >
   values),
 
   or it may be any one or more JavaScript <a href="#/p5/object">objects</a>.</p>
+line: 512
 params:
   - name: message
     description: |
       <p>:Message that you would like to print to the console</p>
     type: String|Expression|Object
-line: 512
 itemtype: method
-name: log
-static: 1
-alt: This example does not render anything
 class: console
-examples: []
+alt: This example does not render anything
+chainable: false
 ---
 
 

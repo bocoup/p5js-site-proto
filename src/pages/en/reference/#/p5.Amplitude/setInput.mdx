@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setInput
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Connects to the p5sound instance (main output) by default.
   Optionally, you can pass in a specific source (i.e. a soundfile).</p>
+line: 3117
 params:
   - name: snd
     description: |
@@ -21,11 +22,9 @@ params:
                                             to smooth amplitude readings</p>
     type: Number|undefined
     optional: true
-line: 3117
 itemtype: method
-name: setInput
 class: p5.Amplitude
-examples: []
+chainable: false
 ---
 
 

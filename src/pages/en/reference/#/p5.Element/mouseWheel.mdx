@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mouseWheel
 module: DOM
 submodule: DOM
-file: in/p5.js/src/core/p5.Element.js
+file: src/core/p5.Element.js
 description: >
   <p>Calls a function when the mouse wheel scrolls over th element.</p>
 
@@ -23,6 +23,7 @@ description: >
   to the left.</p>
 
   <p>Calling <code>myElement.mouseWheel(false)</code> disables the function.</p>
+line: 466
 params:
   - name: fxn
     description: |
@@ -30,12 +31,9 @@ params:
                                      scrolled over the element.
                                      <code>false</code> disables the function.</p>
     type: Function|Boolean
-line: 466
 itemtype: method
-name: mouseWheel
-chainable: 1
 class: p5.Element
-examples: []
+chainable: true
 ---
 
 

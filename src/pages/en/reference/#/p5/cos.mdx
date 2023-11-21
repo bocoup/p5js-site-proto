@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: cos
 module: Math
 submodule: Trigonometry
-file: in/p5.js/src/math/trigonometry.js
+file: src/math/trigonometry.js
 description: >
   <p>Calculates the cosine of an angle. <code>cos()</code> is useful for many
   geometric
@@ -14,16 +14,18 @@ description: >
   current
 
   <a href="#/p5/angleMode">angleMode</a>.</p>
+line: 183
 params:
   - name: angle
     description: |
       <p>the angle.</p>
     type: Number
-line: 183
 itemtype: method
-name: cos
 class: p5
-examples: []
+return:
+  description: cosine of the angle.
+  type: Number
+chainable: false
 ---
 
 

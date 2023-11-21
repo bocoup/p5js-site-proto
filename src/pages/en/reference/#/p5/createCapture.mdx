@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createCapture
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a <code>&lt;video&gt;</code> element that "captures" the
   audio/video stream from
@@ -60,6 +60,7 @@ description: >
   and <a
   href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia"
   target="_blank">here</a>.</p>
+line: 2121
 params:
   - name: type
     description: |
@@ -74,11 +75,12 @@ params:
                                         has loaded.</p>
     type: Function
     optional: true
-line: 2121
 itemtype: method
-name: createCapture
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

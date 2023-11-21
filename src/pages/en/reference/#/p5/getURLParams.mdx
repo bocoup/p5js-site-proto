@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getURLParams
 module: Environment
 submodule: Environment
-file: in/p5.js/src/core/environment.js
+file: src/core/environment.js
 description: >
   <p>Returns the current
 
@@ -19,13 +19,14 @@ description: >
   <code>http://p5js.org?year=2014&month=May&day=15</code> returns
 
   <code>{ year: 2014, month: 'May', day: 15 }</code>.</p>
-params: []
 line: 1140
 itemtype: method
-name: getURLParams
-alt: This example does not render anything.
 class: p5
-examples: []
+alt: This example does not render anything.
+return:
+  description: URL params
+  type: Object
+chainable: false
 ---
 
 

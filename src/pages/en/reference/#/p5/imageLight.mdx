@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: imageLight
 module: 3D
 submodule: Lights
-file: in/p5.js/src/webgl/light.js
+file: src/webgl/light.js
 description: |
   <p>Creates an image light with the given image.</p>
   <p>The image light simulates light from all the directions.
@@ -20,17 +20,16 @@ description: |
   <p>Note: The image's diffuse light will be affected by fill()
   and the specular reflections will be affected by specularMaterial()
   and shininess().</p>
+line: 497
 params:
   - name: img
     description: |
       <p>image for the background</p>
     type: p5.image
-line: 497
 itemtype: method
-name: imageLight
-alt: light with slider having a slider for varying roughness
 class: p5
-examples: []
+alt: light with slider having a slider for varying roughness
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: save
 module: Image
 submodule: Image
-file: in/p5.js/src/image/p5.Image.js
+file: src/image/p5.Image.js
 description: >
   <p>Saves the <a href="#/p5.Image">p5.Image</a> object to a file.
 
@@ -31,6 +31,7 @@ description: >
   <a href="#/p5.Image">p5.Image</a> object was loaded from a GIF file.
 
   See <a href="#/p5/saveGif">saveGif()</a> to create new GIFs.</p>
+line: 1238
 params:
   - name: filename
     description: |
@@ -42,11 +43,9 @@ params:
                                  Defaults to 'png'.</p>
     type: String
     optional: true
-line: 1238
 itemtype: method
-name: save
 class: p5.Image
-examples: []
+chainable: false
 ---
 
 

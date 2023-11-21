@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: cone
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Draw a cone with given radius and height</p>
 
@@ -15,6 +15,7 @@ description: >
   recommended maximum value for detailX is 24. Using a value greater than 24
 
   may cause a warning or slow down the browser.</p>
+line: 740
 params:
   - name: radius
     description: |
@@ -45,12 +46,9 @@ params:
       <p>whether to draw the base of the cone</p>
     type: Boolean
     optional: true
-line: 740
 itemtype: method
-name: cone
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

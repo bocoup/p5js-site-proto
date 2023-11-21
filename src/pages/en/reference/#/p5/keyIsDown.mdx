@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: keyIsDown
 module: Events
 submodule: Keyboard
-file: in/p5.js/src/events/keyboard.js
+file: src/events/keyboard.js
 description: >
   <p>The <a href="#/p5/keyIsDown">keyIsDown()</a> function checks if the key is
   currently down, i.e. pressed.
@@ -18,16 +18,18 @@ description: >
   listed
 
   <a href="http://p5js.org/reference/#p5/keyCode">here</a>.</p>
+line: 301
 params:
   - name: code
     description: |
       <p>The key to check for.</p>
     type: Number
-line: 301
 itemtype: method
-name: keyIsDown
 class: p5
-examples: []
+return:
+  description: whether key is down or not
+  type: Boolean
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadStrings
 module: IO
 submodule: Input
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: |
   <p>Reads the contents of a file and creates a String array of its individual
   lines. If the name of the file is used as the parameter, as in the above
@@ -15,6 +15,7 @@ description: |
   <p>This method is asynchronous, meaning it may not finish before the next
   line in your sketch is executed.</p>
   <p>This method is suitable for fetching files up to size of 64MB.</p>
+line: 180
 params:
   - name: filename
     description: |
@@ -35,11 +36,12 @@ params:
                                     in as first argument</p>
     type: Function
     optional: true
-line: 180
 itemtype: method
-name: loadStrings
 class: p5
-examples: []
+return:
+  description: Array of Strings
+  type: 'String[]'
+chainable: false
 ---
 
 

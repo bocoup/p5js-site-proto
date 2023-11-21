@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadImage
 module: Image
 submodule: Loading & Displaying
-file: in/p5.js/src/image/loading_displaying.js
+file: src/image/loading_displaying.js
 description: >
   <p>Loads an image to create a <a href="#/p5.Image">p5.Image</a> object.</p>
 
@@ -41,6 +41,7 @@ description: >
 
   used in <a href="#/p5/setup">setup()</a> or <a
   href="#/p5/draw">draw()</a>.</p>
+line: 18
 params:
   - name: path
     description: |
@@ -59,11 +60,12 @@ params:
                                     error if the image fails to load.</p>
     type: Function(Event)
     optional: true
-line: 18
 itemtype: method
-name: loadImage
 class: p5
-examples: []
+return:
+  description: the <a href="#/p5.Image">p5.Image</a> object.
+  type: p5.Image
+chainable: false
 ---
 
 

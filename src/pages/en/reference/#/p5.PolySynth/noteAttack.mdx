@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: noteAttack
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Trigger the Attack, and Decay portion of a MonoSynth.
   Similar to holding down a key on a piano, but it will
   hold the sustain level until you let go.</p>
+line: 11909
 params:
   - name: note
     description: |
@@ -24,11 +25,9 @@ params:
       <p>time from now (in seconds)</p>
     type: Number
     optional: true
-line: 11909
 itemtype: method
-name: noteAttack
 class: p5.PolySynth
-examples: []
+chainable: false
 ---
 
 

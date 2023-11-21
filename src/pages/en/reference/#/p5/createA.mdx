@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createA
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates an <code>&lt;a&gt;&lt;/a&gt;</code> element that links to another
   web page.</p>
@@ -30,6 +30,7 @@ description: >
 
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target"
   target="_blank">other options</a>.</p>
+line: 655
 params:
   - name: href
     description: |
@@ -45,11 +46,12 @@ params:
                                   either <code>'_blank'</code>, <code>'_self'</code>, <code>'_parent'</code>, or <code>'_top'</code>.</p>
     type: String
     optional: true
-line: 655
 itemtype: method
-name: createA
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

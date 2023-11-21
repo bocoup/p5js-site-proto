@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: shader
 module: 3D
 submodule: Material
-file: in/p5.js/src/webgl/material.js
+file: src/webgl/material.js
 description: >
   <p>Sets the <a href="#/p5.Shader">p5.Shader</a> object to
 
@@ -25,22 +25,20 @@ description: >
   restore the default shaders.</p>
 
   <p>Note, shaders can only be used in WEBGL mode.</p>
+line: 329
 params:
   - name: s
     description: |
       <p>the <a href="#/p5.Shader">p5.Shader</a> object
       to use for rendering shapes.</p>
     type: p5.Shader
-line: 329
 itemtype: method
-name: shader
-chainable: 1
+class: p5
 alt: >-
   canvas toggles between a circular gradient of orange and blue vertically. and
   a circular gradient of red and green moving horizontally when mouse is
   clicked/pressed.
-class: p5
-examples: []
+chainable: true
 ---
 
 

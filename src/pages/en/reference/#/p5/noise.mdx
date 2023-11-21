@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: noise
 module: Math
 submodule: Noise
-file: in/p5.js/src/math/noise.js
+file: src/math/noise.js
 description: >
   <p>Returns random numbers that can be tuned to feel more organic. The values
 
@@ -70,6 +70,7 @@ description: >
 
   <code>noise(x, y, z)</code>, or space and time, as in <code>noise(x, y,
   t)</code>.</p>
+line: 36
 params:
   - name: x
     description: |
@@ -85,11 +86,12 @@ params:
       <p>z-coordinate in noise space.</p>
     type: Number
     optional: true
-line: 36
 itemtype: method
-name: noise
 class: p5
-examples: []
+return:
+  description: Perlin noise value at specified coordinates.
+  type: Number
+chainable: false
 ---
 
 

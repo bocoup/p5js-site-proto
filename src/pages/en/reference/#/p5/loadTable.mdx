@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadTable
 module: IO
 submodule: Input
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: >
   <p>Reads the contents of a file or URL and creates a <a
   href="#/p5.Table">p5.Table</a> object with
@@ -34,6 +34,7 @@ description: >
 
   <p>All files loaded and saved use UTF-8 encoding. This method is suitable for
   fetching files up to size of 64MB.</p>
+line: 300
 params:
   - name: filename
     description: |
@@ -65,11 +66,12 @@ params:
                                            in as first argument</p>
     type: Function
     optional: true
-line: 300
 itemtype: method
-name: loadTable
 class: p5
-examples: []
+return:
+  description: <a href="#/p5.Table">Table</a> object containing data
+  type: Object
+chainable: false
 ---
 
 

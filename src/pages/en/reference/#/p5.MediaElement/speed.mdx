@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: speed
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Manages the audio/video playback speed. Calling <code>media.speed()</code>
   returns
@@ -22,12 +22,13 @@ description: >
   <p>Note: Not all browsers support backward playback. Even if they do,
 
   playback might not be smooth.</p>
-params: []
 line: 4076
 itemtype: method
-name: speed
 class: p5.MediaElement
-examples: []
+return:
+  description: current playback speed.
+  type: Number
+chainable: false
 ---
 
 

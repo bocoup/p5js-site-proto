@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: play
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Play tells the MonoSynth to start playing a note. This method schedules
   the calling of .triggerAttack and .triggerRelease.</p>
+line: 11379
 params:
   - name: note
     description: |
@@ -32,11 +33,9 @@ params:
       seconds.</p>
     type: Number
     optional: true
-line: 11379
 itemtype: method
-name: play
 class: p5.MonoSynth
-examples: []
+chainable: false
 ---
 
 

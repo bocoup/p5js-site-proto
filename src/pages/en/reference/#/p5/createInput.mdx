@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createInput
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a text <code>&lt;input&gt;&lt;/input&gt;</code> element. Call
   <code>myInput.size()</code>
@@ -24,12 +24,13 @@ description: >
   target="_blank">list of options</a>.
 
   The default is <code>'text'</code>.</p>
-params: []
 line: 1708
 itemtype: method
-name: createInput
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

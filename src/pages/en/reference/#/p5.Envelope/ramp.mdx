@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: ramp
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>Exponentially ramp to a value using the first two
 
@@ -17,6 +17,7 @@ description: >
   If the value is higher than current value, it uses attackTime,
 
   while a decrease uses decayTime.</p>
+line: 5350
 params:
   - name: unit
     description: |
@@ -35,11 +36,9 @@ params:
       <p>Second target value</p>
     type: Number
     optional: true
-line: 5350
 itemtype: method
-name: ramp
 class: p5.Envelope
-examples: []
+chainable: false
 ---
 
 

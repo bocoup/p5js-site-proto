@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: textFont
 module: Typography
 submodule: Loading & Displaying
-file: in/p5.js/src/typography/loading_displaying.js
+file: src/typography/loading_displaying.js
 description: >
   <p>Sets the font used by the <a href="#/p5/text">text()</a> function.</p>
 
@@ -23,12 +23,13 @@ description: >
   <p>Note: <code>WEBGL</code> mode only supports fonts loaded with
 
   <a href="#/p5/loadFont">loadFont()</a>.</p>
-params: []
 line: 335
 itemtype: method
-name: textFont
 class: p5
-examples: []
+return:
+  description: current font or p5 Object.
+  type: Object
+chainable: false
 ---
 
 

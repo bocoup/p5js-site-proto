@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: saveTable
 module: IO
 submodule: Output
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: >
   <p>Writes the contents of a <a href="#/p5.Table">Table</a> object to a file.
   Defaults to a
@@ -15,6 +15,7 @@ description: >
   The file saving process and location of the saved file will
 
   vary between web browsers.</p>
+line: 1642
 params:
   - name: Table
     description: |
@@ -29,11 +30,9 @@ params:
       <p>can be one of "tsv", "csv", or "html"</p>
     type: String
     optional: true
-line: 1642
 itemtype: method
-name: saveTable
 class: p5
-examples: []
+chainable: false
 ---
 
 

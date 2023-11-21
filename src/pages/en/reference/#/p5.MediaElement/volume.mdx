@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: volume
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Manages the audio/video volume.</p>
 
@@ -19,12 +19,13 @@ description: >
   <code>media.volume(0.5)</code>
 
   sets the volume to half of its maximum.</p>
-params: []
 line: 4016
 itemtype: method
-name: volume
 class: p5.MediaElement
-examples: []
+return:
+  description: current volume.
+  type: Number
+chainable: false
 ---
 
 

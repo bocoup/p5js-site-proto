@@ -3,20 +3,22 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: floor
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: |
   <p>Calculates the closest integer value that is less than or equal to the
   value of the <code>n</code> parameter.</p>
+line: 210
 params:
   - name: 'n'
     description: |
       <p>number to round down.</p>
     type: Number
-line: 210
 itemtype: method
-name: floor
 class: p5
-examples: []
+return:
+  description: rounded down number.
+  type: Integer
+chainable: false
 ---
 
 

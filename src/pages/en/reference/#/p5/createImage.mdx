@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createImage
 module: Image
 submodule: Image
-file: in/p5.js/src/image/image.js
+file: src/image/image.js
 description: >
   <p>Creates a new <a href="#/p5.Image">p5.Image</a> object. The new image is
 
@@ -29,6 +29,7 @@ description: >
   <a href="#/p5.Image/updatePixels">updatePixels()</a> method must be called
 
   for updates to take effect.</p>
+line: 15
 params:
   - name: width
     description: |
@@ -38,11 +39,12 @@ params:
     description: |
       <p>height in pixels.</p>
     type: Integer
-line: 15
 itemtype: method
-name: createImage
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Image">p5.Image</a> object.
+  type: p5.Image
+chainable: false
 ---
 
 

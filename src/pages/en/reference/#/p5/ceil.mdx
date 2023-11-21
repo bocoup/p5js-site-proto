@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: ceil
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the closest integer value that is greater than or equal to the
 
@@ -11,16 +11,18 @@ description: >
   value
 
   10.</p>
+line: 39
 params:
   - name: 'n'
     description: |
       <p>number to round up.</p>
     type: Number
-line: 39
 itemtype: method
-name: ceil
 class: p5
-examples: []
+return:
+  description: rounded up number.
+  type: Integer
+chainable: false
 ---
 
 

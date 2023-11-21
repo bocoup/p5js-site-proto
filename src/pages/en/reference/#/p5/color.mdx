@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: color
 module: Color
 submodule: Creating & Reading
-file: in/p5.js/src/color/creating_reading.js
+file: src/color/creating_reading.js
 description: >
   <p>Creates a <a href="#/p5/p5.Color">p5.Color</a> object. By default, the
 
@@ -38,12 +38,13 @@ description: >
   parameter
 
   sets the alpha (transparency) value.</p>
-params: []
 line: 120
 itemtype: method
-name: color
 class: p5
-examples: []
+return:
+  description: resulting color.
+  type: p5.Color
+chainable: false
 ---
 
 

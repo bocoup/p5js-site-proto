@@ -3,17 +3,18 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: unhex
 module: Data
 submodule: Conversion
-file: in/p5.js/src/utilities/conversion.js
+file: src/utilities/conversion.js
 description: |
   <p>Converts a string representation of a hexadecimal number to its equivalent
   integer value. When an array of strings in hexadecimal notation is passed
   in, an array of integers of the same length is returned.</p>
-params: []
 line: 293
 itemtype: method
-name: unhex
 class: p5
-examples: []
+return:
+  description: integer representation of hexadecimal value
+  type: Number
+chainable: false
 ---
 
 

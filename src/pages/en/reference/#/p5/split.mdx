@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: split
 module: Data
 submodule: String Functions
-file: in/p5.js/src/utilities/string_functions.js
+file: src/utilities/string_functions.js
 description: >
   <p>The <a href="#/p5/split">split()</a> function maps to String.split(), it
   breaks a String into
@@ -20,6 +20,7 @@ description: >
   splits using a range of characters instead of a specific character or
 
   sequence.</p>
+line: 427
 params:
   - name: value
     description: |
@@ -29,11 +30,12 @@ params:
     description: |
       <p>the String used to separate the data</p>
     type: String
-line: 427
 itemtype: method
-name: split
 class: p5
-examples: []
+return:
+  description: Array of Strings
+  type: 'String[]'
+chainable: false
 ---
 
 

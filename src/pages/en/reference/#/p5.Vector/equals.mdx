@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: equals
 module: Math
 submodule: Vector
-file: in/p5.js/src/math/p5.Vector.js
+file: src/math/p5.Vector.js
 description: >
   <p>Returns <code>true</code> if the vector's components are all the same as
   another
@@ -26,12 +26,13 @@ description: >
   <code>p5.Vector.equals(v0, v1)</code>,
 
   interprets both parameters as <a href="#/p5.Vector">p5.Vector</a> objects.</p>
-params: []
 line: 2268
 itemtype: method
-name: equals
 class: p5.Vector
-examples: []
+return:
+  description: whether the vectors are equal.
+  type: Boolean
+chainable: false
 ---
 
 

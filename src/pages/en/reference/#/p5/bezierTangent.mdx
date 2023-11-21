@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: bezierTangent
 module: Shape
 submodule: Curves
-file: in/p5.js/src/core/shape/curves.js
+file: src/core/shape/curves.js
 description: |
   <p>Evaluates the tangent to the Bezier at position t for points a, b, c, d.
   The parameters a and d are the first and last points
   on the curve, and b and c are the control points.
   The final parameter t varies between 0 and 1.</p>
+line: 186
 params:
   - name: a
     description: |
@@ -30,16 +31,17 @@ params:
     description: |
       <p>value between 0 and 1</p>
     type: Number
-line: 186
 itemtype: method
-name: bezierTangent
+class: p5
 alt: >-
   s-shaped line with 6 short orange lines showing the tangents at those points.
 
   s-shaped line with 6 short orange lines showing lines coming out the underside
   of the bezier.
-class: p5
-examples: []
+return:
+  description: the tangent at position t
+  type: Number
+chainable: false
 ---
 
 

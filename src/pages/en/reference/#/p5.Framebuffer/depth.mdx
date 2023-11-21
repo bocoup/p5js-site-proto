@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: depth
 module: Rendering
 submodule: ''
-file: in/p5.js/src/webgl/p5.Framebuffer.js
+file: src/webgl/p5.Framebuffer.js
 description: >
   <p>A texture with the depth information of the framebuffer. If the framebuffer
 
@@ -23,17 +23,14 @@ description: >
   texture, you may want to flip vertically, e.g. with
 
   <code>plane(framebuffer.width, -framebuffer.height)</code>.</p>
-params: []
 line: 1335
 itemtype: property
-name: depth
-type: p5.FramebufferTexture|undefined
+class: p5.Framebuffer
 alt: |-
   A video of a rectangular prism rotating, with parts closest to the camera
   appearing yellow and colors getting progressively more blue the farther
   from the camera they go
-class: p5.Framebuffer
-examples: []
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sin
 module: Math
 submodule: Trigonometry
-file: in/p5.js/src/math/trigonometry.js
+file: src/math/trigonometry.js
 description: >
   <p>Calculates the sine of an angle. <code>sin()</code> is useful for many
   geometric tasks
@@ -13,16 +13,18 @@ description: >
   input angle increases. <code>sin()</code> takes into account the current
 
   <a href="#/p5/angleMode">angleMode</a>.</p>
+line: 239
 params:
   - name: angle
     description: |
       <p>the angle.</p>
     type: Number
-line: 239
 itemtype: method
-name: sin
 class: p5
-examples: []
+return:
+  description: sine of the angle.
+  type: Number
+chainable: false
 ---
 
 

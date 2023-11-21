@@ -3,22 +3,21 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: save
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Save a p5.SoundFile as a .wav file. The browser will prompt the user
   to download the file to their device. To upload a file to a server, see
   <a href="/reference/#/p5.SoundFile/getBlob">getBlob</a></p>
+line: 2850
 params:
   - name: fileName
     description: |
       <p>name of the resulting .wav file.</p>
     type: String
     optional: true
-line: 2850
 itemtype: method
-name: save
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: arrayCopy
 module: Data
 submodule: Array Functions
-file: in/p5.js/src/utilities/array_functions.js
+file: src/utilities/array_functions.js
 description: |
   <p>Copies an array (or part of an array) to another array. The src array is
   copied to the dst array, beginning at the position specified by
@@ -16,17 +16,10 @@ description: |
   arrayCopy(src, 0, dst, 0, src.length).</p>
   <p>Using this function is far more efficient for copying array data than
   iterating through a for() loop and copying each element individually.</p>
-params: []
 line: 35
 itemtype: method
-name: arrayCopy
-deprecated: true
-deprecationMessage: >-
-  Use <a
-  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">arr1.copyWithin(arr2)</a>
-  instead.
 class: p5
-examples: []
+chainable: false
 ---
 
 

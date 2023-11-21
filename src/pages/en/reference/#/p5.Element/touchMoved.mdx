@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: touchMoved
 module: DOM
 submodule: DOM
-file: in/p5.js/src/core/p5.Element.js
+file: src/core/p5.Element.js
 description: |
   <p>Calls a function when the user touches the element and moves their
   finger. Calling <code>myElement.touchMoved(false)</code> disables the
   function.</p>
   <p>Note: Touch functions only work on mobile devices.</p>
+line: 956
 params:
   - name: fxn
     description: |
@@ -16,12 +17,9 @@ params:
                                      moves over the element.
                                      <code>false</code> disables the function.</p>
     type: Function|Boolean
-line: 956
 itemtype: method
-name: touchMoved
-chainable: 1
 class: p5.Element
-examples: []
+chainable: true
 ---
 
 

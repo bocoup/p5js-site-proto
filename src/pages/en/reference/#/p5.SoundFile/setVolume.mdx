@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setVolume
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Multiply the output volume (amplitude) of a sound file
   between 0.0 (silence) and 1.0 (full volume).
@@ -13,6 +13,7 @@ description: |
   complex fades, see the Envelope class.</p>
   <p>Alternately, you can pass in a signal source such as an
   oscillator to modulate the amplitude with an audio signal.</p>
+line: 2239
 params:
   - name: volume
     description: |
@@ -30,11 +31,9 @@ params:
                                      t seconds in the future</p>
     type: Number
     optional: true
-line: 2239
 itemtype: method
-name: setVolume
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

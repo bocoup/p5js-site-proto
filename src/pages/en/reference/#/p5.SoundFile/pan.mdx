@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: pan
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the stereo panning of a p5.sound object to
   a floating point number between -1.0 (left) and 1.0 (right).
   Default is 0.0 (center).</p>
+line: 2087
 params:
   - name: panValue
     description: |
@@ -20,11 +21,9 @@ params:
                                       seconds from now</p>
     type: Number
     optional: true
-line: 2087
 itemtype: method
-name: pan
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

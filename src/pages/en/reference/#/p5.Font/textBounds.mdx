@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: textBounds
 module: Typography
 submodule: Loading & Displaying
-file: in/p5.js/src/typography/p5.Font.js
+file: src/typography/p5.Font.js
 description: >
   <p>Returns the bounding box for a string of text written using this
 
@@ -26,6 +26,7 @@ description: >
   use the
 
   current <a href="#/p5/textSize">textSize()</a>.</p>
+line: 55
 params:
   - name: str
     description: |
@@ -45,11 +46,14 @@ params:
                                   <a href="#/p5/textSize">textSize()</a>.</p>
     type: Number
     optional: true
-line: 55
 itemtype: method
-name: textBounds
 class: p5.Font
-examples: []
+return:
+  description: |-
+    object describing the bounding box with
+                                properties x, y, w, and h.
+  type: Object
+chainable: false
 ---
 
 

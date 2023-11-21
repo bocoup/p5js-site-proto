@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: set
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the reverb settings. Similar to .process(), but without
   assigning a new input.</p>
+line: 8446
 params:
   - name: seconds
     description: |
@@ -25,11 +26,9 @@ params:
       <p>Play the reverb backwards or forwards.</p>
     type: Boolean
     optional: true
-line: 8446
 itemtype: method
-name: set
 class: p5.Reverb
-examples: []
+chainable: false
 ---
 
 

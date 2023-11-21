@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: currentTime
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>Return the current position of the p5.SoundFile playhead, in seconds.
 
@@ -11,12 +11,13 @@ description: >
   <code>reverseBuffer</code>
 
   has been called, currentTime will count backwards.</p>
-params: []
 line: 2293
 itemtype: method
-name: currentTime
 class: p5.SoundFile
-examples: []
+return:
+  description: currentTime of the soundFile in seconds.
+  type: Number
+chainable: false
 ---
 
 

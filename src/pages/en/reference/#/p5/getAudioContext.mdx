@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getAudioContext
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |-
   <p>Returns the Audio Context for this sketch. Useful for users
   who would like to dig deeper into the <a target='_blank' href=
@@ -12,12 +12,13 @@ description: |-
 
   <p>Some browsers require users to startAudioContext
   with a user gesture, such as touchStarted in the example below.</p>
-params: []
 line: 159
 itemtype: method
-name: getAudioContext
 class: p5
-examples: []
+return:
+  description: AudioContext for this sketch
+  type: Object
+chainable: false
 ---
 
 

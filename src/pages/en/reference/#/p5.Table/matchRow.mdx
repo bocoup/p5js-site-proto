@@ -3,13 +3,14 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: matchRow
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: |
   <p>Finds the first row in the Table that matches the regular
   expression provided, and returns a reference to that row.
   Even if multiple rows are possible matches, only the first
   matching row is returned. The column to search may be
   specified by either its ID or title.</p>
+line: 417
 params:
   - name: regexp
     description: |
@@ -20,11 +21,12 @@ params:
       <p>The column ID (number) or
                                        title (string)</p>
     type: String|Integer
-line: 417
 itemtype: method
-name: matchRow
 class: p5.Table
-examples: []
+return:
+  description: TableRow object
+  type: p5.TableRow
+chainable: false
 ---
 
 

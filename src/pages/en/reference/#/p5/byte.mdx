@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: byte
 module: Data
 submodule: Conversion
-file: in/p5.js/src/utilities/conversion.js
+file: src/utilities/conversion.js
 description: >
   <p>Converts a number, string representation of a number, or boolean to its
   byte
@@ -15,12 +15,13 @@ description: >
   corresponding byte representation. When an array of number, string or boolean
 
   values is passed in, then an array of bytes the same length is returned.</p>
-params: []
 line: 144
 itemtype: method
-name: byte
 class: p5
-examples: []
+return:
+  description: byte representation of value
+  type: Number
+chainable: false
 ---
 
 

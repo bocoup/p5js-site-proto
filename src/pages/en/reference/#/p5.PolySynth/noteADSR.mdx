@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: noteADSR
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>noteADSR sets the envelope for a specific note that has just been
   triggered.
@@ -14,6 +14,7 @@ description: >
   called
 
   in order to prevent the modified envelope from being used on other notes.</p>
+line: 11849
 params:
   - name: note
     description: |
@@ -49,11 +50,9 @@ params:
       <p>Time in seconds from now (defaults to 0)</p>
     type: Number
     optional: true
-line: 11849
 itemtype: method
-name: noteADSR
 class: p5.PolySynth
-examples: []
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: camera
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: >
   <p>Sets the position of the current camera in a 3D sketch.
 
@@ -31,6 +31,7 @@ description: >
   <p>If no parameters are given, the following default is used:
 
   camera(0, 0, (height/2) / tan(PI/6), 0, 0, 0, 0, 1, 0)</p>
+line: 13
 params:
   - name: x
     description: |
@@ -77,17 +78,13 @@ params:
       <p>z component of direction 'up' from camera</p>
     type: Number
     optional: true
-line: 13
 itemtype: method
-name: camera
-is_constructor: 1
-chainable: 1
+class: p5
 alt: |-
   White square repeatedly grows to fill canvas and then shrinks.
   An interactive example of a red cube with 3 sliders for moving it across x, y,
   z axis and 3 sliders for shifting its center.
-class: p5
-examples: []
+chainable: true
 ---
 
 

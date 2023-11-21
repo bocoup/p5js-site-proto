@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: draw
 module: Rendering
 submodule: ''
-file: in/p5.js/src/webgl/p5.Framebuffer.js
+file: src/webgl/p5.Framebuffer.js
 description: >
   <p>Run a function while drawing to the framebuffer rather than to its canvas.
 
@@ -13,6 +13,7 @@ description: >
   and then calling <code>framebuffer.end()</code>, but ensures that one never
 
   accidentally forgets <code>begin</code> or <code>end</code>.</p>
+line: 961
 params:
   - name: callback
     description: |
@@ -20,14 +21,12 @@ params:
       function will immediately be run, but it will draw to the framebuffer
       instead of the canvas.</p>
     type: Function
-line: 961
 itemtype: method
-name: draw
+class: p5.Framebuffer
 alt: |-
   A video of a floating and rotating red cube is pasted twice on the
   canvas: once in the top left, and again, larger, in the bottom right.
-class: p5.Framebuffer
-examples: []
+chainable: false
 ---
 
 

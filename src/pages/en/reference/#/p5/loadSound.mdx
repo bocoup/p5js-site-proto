@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadSound
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>loadSound() returns a new p5.SoundFile from a specified
   path. If called during preload(), the p5.SoundFile will be ready
@@ -12,6 +12,7 @@ description: |
   loadSound accepts a callback as the second parameter. Using a
   <a href="https://github.com/processing/p5.js/wiki/Local-server">
   local server</a> is recommended when loading external files.</p>
+line: 2946
 params:
   - name: path
     description: |
@@ -39,11 +40,12 @@ params:
                                      so far, from 0.0 to 1.0.</p>
     type: Function
     optional: true
-line: 2946
 itemtype: method
-name: loadSound
 class: p5
-examples: []
+return:
+  description: Returns a p5.SoundFile
+  type: SoundFile
+chainable: false
 ---
 
 

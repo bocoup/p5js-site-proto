@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: set
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.TableRow.js
+file: src/io/p5.TableRow.js
 description: |
   <p>Stores a value in the TableRow's specified column.
   The column may be specified by either its ID or title.</p>
+line: 36
 params:
   - name: column
     description: |
@@ -17,11 +18,9 @@ params:
     description: |
       <p>The value to be stored</p>
     type: String|Number
-line: 36
 itemtype: method
-name: set
 class: p5.TableRow
-examples: []
+chainable: false
 ---
 
 

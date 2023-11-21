@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: save
 module: IO
 submodule: Output
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: |
   <p>Saves a given element(image, text, json, csv, wav, or html) to the client's
   computer. The first parameter can be a pointer to element we want to save.
@@ -19,6 +19,7 @@ description: |
   <strong>Note that it is not recommended to
   call this method within draw, as it will open a new save dialog on every
   render.</strong></p>
+line: 1381
 params:
   - name: objectOrFilename
     description: |
@@ -50,11 +51,9 @@ params:
                                 rather than readability.</p>
     type: Boolean|String
     optional: true
-line: 1381
 itemtype: method
-name: save
 class: p5
-examples: []
+chainable: false
 ---
 
 

@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setADSR
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: >
   <p>Set the PolySynths global envelope. This method modifies the envelopes of
   each
 
   monosynth so that all notes are played with this envelope.</p>
+line: 11881
 params:
   - name: attackTime
     description: |
@@ -39,11 +40,9 @@ params:
       <p>Time in seconds from now (defaults to 0)</p>
     type: Number
     optional: true
-line: 11881
 itemtype: method
-name: setADSR
 class: p5.PolySynth
-examples: []
+chainable: false
 ---
 
 

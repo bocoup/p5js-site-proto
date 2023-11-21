@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: join
 module: Data
 submodule: String Functions
-file: in/p5.js/src/utilities/string_functions.js
+file: src/utilities/string_functions.js
 description: >
   <p>Combines an array of Strings into one String, each separated by the
 
@@ -13,6 +13,7 @@ description: >
   href="#/p5/nf">nf()</a> or
 
   nfs().</p>
+line: 15
 params:
   - name: list
     description: |
@@ -22,11 +23,12 @@ params:
     description: |
       <p>String to be placed between each item</p>
     type: String
-line: 15
 itemtype: method
-name: join
 class: p5
-examples: []
+return:
+  description: joined String
+  type: String
+chainable: false
 ---
 
 

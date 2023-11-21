@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createCheckbox
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a checkbox <code>&lt;input&gt;&lt;/input&gt;</code> element.
   Checkboxes extend
@@ -25,6 +25,7 @@ description: >
   that sets the
 
   checkbox's value.</p>
+line: 914
 params:
   - name: label
     description: |
@@ -37,11 +38,12 @@ params:
       <code>false</code>.</p>
     type: Boolean
     optional: true
-line: 914
 itemtype: method
-name: createCheckbox
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

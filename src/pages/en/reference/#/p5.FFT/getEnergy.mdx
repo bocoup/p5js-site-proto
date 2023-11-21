@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getEnergy
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Returns the amount of energy (volume) at a specific
   <a href="https://en.wikipedia.org/wiki/Audio_frequency" target="_blank">
@@ -17,6 +17,7 @@ description: |
   tells the FFT to analyze frequency data, and getEnergy() uses
   the results to determine the value at a specific frequency or
   range of frequencies.</em></p></p>
+line: 3650
 params:
   - name: frequency1
     description: |
@@ -34,11 +35,14 @@ params:
                                     two frequencies.</p>
     type: Number
     optional: true
-line: 3650
 itemtype: method
-name: getEnergy
 class: p5.FFT
-examples: []
+return:
+  description: |-
+    Energy   Energy (volume/amplitude) from
+                                0 and 255.
+  type: Number
+chainable: false
 ---
 
 

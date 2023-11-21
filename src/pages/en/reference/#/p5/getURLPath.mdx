@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getURLPath
 module: Environment
 submodule: Environment
-file: in/p5.js/src/core/environment.js
+file: src/core/environment.js
 description: >
   <p>Returns the current
 
@@ -24,12 +24,13 @@ description: >
   returns
 
   <code>['sketchbook', 'monday']</code>.</p>
-params: []
 line: 1107
 itemtype: method
-name: getURLPath
 class: p5
-examples: []
+return:
+  description: path components.
+  type: 'String[]'
+chainable: false
 ---
 
 

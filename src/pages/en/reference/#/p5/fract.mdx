@@ -3,20 +3,22 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: fract
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: |
   <p>Calculates the fractional part of a number. For example,
   <code>fract(12.34)</code> returns 0.34.</p>
+line: 730
 params:
   - name: 'n'
     description: |
       <p>number whose fractional part will be found.</p>
     type: Number
-line: 730
 itemtype: method
-name: fract
 class: p5
-examples: []
+return:
+  description: fractional part of n.
+  type: Number
+chainable: false
 ---
 
 

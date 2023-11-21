@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: rotateZ
 module: Transform
 submodule: Transform
-file: in/p5.js/src/core/transform.js
+file: src/core/transform.js
 description: >
   <p>Rotates a shape around Z axis by the amount specified in angle parameter.
 
@@ -17,19 +17,17 @@ description: >
 
   All transformations are reset when <a href="#/p5/draw">draw()</a> begins
   again.</p>
+line: 333
 params:
   - name: angle
     description: |
       <p>the angle of rotation, specified in radians
                              or degrees, depending on current angleMode</p>
     type: Number
-line: 333
 itemtype: method
-name: rotateZ
-chainable: 1
-alt: 3d box rotating around the z axis.
 class: p5
-examples: []
+alt: 3d box rotating around the z axis.
+chainable: true
 ---
 
 

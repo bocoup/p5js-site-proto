@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: bezierVertex
 module: Shape
 submodule: Vertex
-file: in/p5.js/src/core/shape/vertex.js
+file: src/core/shape/vertex.js
 description: >
   <p>Specifies vertex coordinates for Bezier curves. Each call to
 
@@ -30,11 +30,9 @@ description: >
   and only when there is no MODE or POINTS parameter specified to
 
   <a href="#/p5/beginShape">beginShape()</a>.</p>
-params: []
 line: 297
 itemtype: method
-name: bezierVertex
-chainable: 1
+class: p5
 alt: >-
   crescent-shaped line in middle of canvas. Points facing left.
 
@@ -42,8 +40,7 @@ alt: >-
 
   crescent shape in middle of canvas with another crescent shape on positive
   z-axis.
-class: p5
-examples: []
+chainable: true
 ---
 
 

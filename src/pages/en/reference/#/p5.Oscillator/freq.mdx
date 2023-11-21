@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: freq
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set frequency of an oscillator to a value. Or, pass in an object
   such as an oscillator to modulate the frequency with an audio signal.</p>
+line: 4285
 params:
   - name: Frequency
     description: |
@@ -24,11 +25,16 @@ params:
                                        at x seconds from now</p>
     type: Number
     optional: true
-line: 4285
 itemtype: method
-name: freq
 class: p5.Oscillator
-examples: []
+return:
+  description: |-
+    Frequency If no value is provided,
+                                    returns the Web Audio API
+                                    AudioParam that controls
+                                    this oscillator's frequency
+  type: AudioParam
+chainable: false
 ---
 
 

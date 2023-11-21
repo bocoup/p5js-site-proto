@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: redraw
 module: Structure
 submodule: Structure
-file: in/p5.js/src/core/structure.js
+file: src/core/structure.js
 description: >
   <p>Executes the code within <a href="#/p5/draw">draw()</a> one time. This
 
@@ -34,20 +34,19 @@ description: >
   <p>In addition you can set the number of redraws per method call. Just
 
   add an integer as single parameter for the number of redraws.</p>
+line: 391
 params:
   - name: 'n'
     description: |
       <p>Redraw for n-times. The default value is 1.</p>
     type: Integer
     optional: true
-line: 391
 itemtype: method
-name: redraw
+class: p5
 alt: |-
   black line on far left of canvas
   black line on far left of canvas
-class: p5
-examples: []
+chainable: false
 ---
 
 

@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: trim
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: |
   <p>Trims leading and trailing whitespace, such as spaces and tabs,
   from String table values. If no column is specified, then the
   values in all columns and rows are trimmed. A specific column
   may be referenced by either its ID or title.</p>
+line: 824
 params:
   - name: column
     description: |
@@ -16,11 +17,9 @@ params:
                                        or name (string)</p>
     type: String|Integer
     optional: true
-line: 824
 itemtype: method
-name: trim
 class: p5.Table
-examples: []
+chainable: false
 ---
 
 

@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loop
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Loop the p5.SoundFile. Accepts optional parameters to set the
   playback rate, playback volume, loopStart, loopEnd.</p>
+line: 1905
 params:
   - name: startTime
     description: |
@@ -34,11 +35,9 @@ params:
       <p>(optional) loop duration in seconds</p>
     type: Number
     optional: true
-line: 1905
 itemtype: method
-name: loop
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

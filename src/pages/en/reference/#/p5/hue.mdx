@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: hue
 module: Color
 submodule: Creating & Reading
-file: in/p5.js/src/color/creating_reading.js
+file: src/color/creating_reading.js
 description: |
   <p>Extracts the hue value from a
   <a href="#/p5.Color">p5.Color</a> object, array of color components, or
@@ -12,17 +12,19 @@ description: |
   color wheel. By default, this function returns the HSL-normalized hue. If
   the <a href="#/colorMode">colorMode()</a> is set to HSB, it returns the
   HSB-normalized hue.</p>
+line: 330
 params:
   - name: color
     description: |
       <p><a href="#/p5.Color">p5.Color</a> object, array of
                                               color components, or CSS color string.</p>
     type: 'p5.Color|Number[]|String'
-line: 330
 itemtype: method
-name: hue
 class: p5
-examples: []
+return:
+  description: the hue
+  type: Number
+chainable: false
 ---
 
 

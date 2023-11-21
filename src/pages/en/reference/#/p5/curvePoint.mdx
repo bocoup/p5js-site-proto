@@ -3,13 +3,14 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: curvePoint
 module: Shape
 submodule: Curves
-file: in/p5.js/src/core/shape/curves.js
+file: src/core/shape/curves.js
 description: |
   <p>Evaluates the curve at position t for points a, b, c, d.
   The parameter t varies between 0 and 1, a and d are control points
   of the curve, and b and c are the start and end points of the curve.
   This can be done once with the x coordinates and a second time
   with the y coordinates to get the location of a curve at t.</p>
+line: 445
 params:
   - name: a
     description: |
@@ -31,11 +32,12 @@ params:
     description: |
       <p>value between 0 and 1</p>
     type: Number
-line: 445
 itemtype: method
-name: curvePoint
 class: p5
-examples: []
+return:
+  description: <a href="#/p5/curve">Curve</a> value at position t
+  type: Number
+chainable: false
 ---
 
 

@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: concat
 module: Data
 submodule: Array Functions
-file: in/p5.js/src/utilities/array_functions.js
+file: src/utilities/array_functions.js
 description: |
   <p>Concatenates two arrays, maps to Array.concat(). Does not modify the
   input arrays.</p>
+line: 112
 params:
   - name: a
     description: |
@@ -16,16 +17,12 @@ params:
     description: |
       <p>second Array to concatenate</p>
     type: Array
-line: 112
 itemtype: method
-name: concat
-deprecated: true
-deprecationMessage: >-
-  Use <a
-  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">arr1.concat(arr2)</a>
-  instead.
 class: p5
-examples: []
+return:
+  description: concatenated array
+  type: Array
+chainable: false
 ---
 
 

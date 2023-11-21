@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: waveform
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Returns an array of amplitude values (between -1.0 and +1.0) that represent
   a snapshot of amplitude readings in a single buffer. Length will be
   equal to bins (defaults to 1024). Can be used to draw the waveform
   of a sound.</p>
+line: 3501
 params:
   - name: bins
     description: |
@@ -23,11 +24,14 @@ params:
                                   than a regular array.</p>
     type: String
     optional: true
-line: 3501
 itemtype: method
-name: waveform
 class: p5.FFT
-examples: []
+return:
+  description: |-
+    Array    Array of amplitude values (-1 to 1)
+                              over time. Array length = bins.
+  type: Array
+chainable: false
 ---
 
 

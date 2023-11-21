@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: curveTightness
 module: Shape
 submodule: Curves
-file: in/p5.js/src/core/shape/curves.js
+file: src/core/shape/curves.js
 description: >
   <p>Modifies the quality of forms created with <a href="#/p5/curve">curve()</a>
 
@@ -19,18 +19,16 @@ description: >
 
   them recognizable and as values increase in magnitude, they will continue to
   deform.</p>
+line: 399
 params:
   - name: amount
     description: |
       <p>amount of deformation from the original vertices</p>
     type: Number
-line: 399
 itemtype: method
-name: curveTightness
-chainable: 1
-alt: 'Line shaped like right-facing arrow,points move with mouse-x and warp shape.'
 class: p5
-examples: []
+alt: 'Line shaped like right-facing arrow,points move with mouse-x and warp shape.'
+chainable: true
 ---
 
 

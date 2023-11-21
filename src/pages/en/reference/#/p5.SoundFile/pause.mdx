@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: pause
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Pauses a file that is currently playing. If the file is not
   playing, then nothing will happen.</p>
@@ -11,6 +11,7 @@ description: |
   position.
   If p5.SoundFile had been set to loop before it was paused,
   it will continue to loop after it is unpaused with .play().</p>
+line: 1847
 params:
   - name: startTime
     description: |
@@ -18,11 +19,9 @@ params:
                                    seconds from now</p>
     type: Number
     optional: true
-line: 1847
 itemtype: method
-name: pause
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

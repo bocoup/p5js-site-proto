@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: print
 module: Environment
 submodule: Environment
-file: in/p5.js/src/core/environment.js
+file: src/core/environment.js
 description: >
   <p>Displays text in the web browser's console.</p>
 
@@ -16,16 +16,15 @@ description: >
   <code>print()</code> without
 
   an argument opens the browser's dialog for printing documents.</p>
+line: 21
 params:
   - name: contents
     description: |
       <p>content to print to the console.</p>
     type: Any
-line: 21
 itemtype: method
-name: print
 class: p5
-examples: []
+chainable: false
 ---
 
 

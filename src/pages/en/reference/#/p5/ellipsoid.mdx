@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: ellipsoid
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Draw an ellipsoid with given radius</p>
 
@@ -14,6 +14,7 @@ description: >
   smoother.
 
   Avoid detail number above 150, it may crash the browser.</p>
+line: 862
 params:
   - name: radiusx
     description: |
@@ -46,12 +47,9 @@ params:
                                          150, it may crash the browser.</p>
     type: Integer
     optional: true
-line: 862
 itemtype: method
-name: ellipsoid
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setBuffer
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Replace the current Audio Buffer with a new Buffer.</p>
+line: 2630
 params:
   - name: buf
     description: |
@@ -13,11 +14,9 @@ params:
                          will create a stereo source. 1 will create
                          a mono source.</p>
     type: Array
-line: 2630
 itemtype: method
-name: setBuffer
 class: p5.SoundFile
-examples: []
+chainable: false
 ---
 
 

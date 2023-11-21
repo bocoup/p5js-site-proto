@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: setSource
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the input source. Accepts a number representing a
   position in the array returned by getSources().
@@ -11,16 +11,15 @@ description: |
    <a href="https://developer.mozilla.org/
    en-US/docs/Web/API/MediaDevices/enumerateDevices" target="_blank">
    navigator.mediaDevices.enumerateDevices()</a></p>
+line: 6340
 params:
   - name: num
     description: |
       <p>position of input source in the array</p>
     type: Number
-line: 6340
 itemtype: method
-name: setSource
 class: p5.AudioIn
-examples: []
+chainable: false
 ---
 
 

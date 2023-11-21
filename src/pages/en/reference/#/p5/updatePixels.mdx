@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: updatePixels
 module: Image
 submodule: Pixels
-file: in/p5.js/src/image/pixels.js
+file: src/image/pixels.js
 description: >
   <p>Updates the canvas with the RGBA values in the
 
@@ -17,6 +17,7 @@ description: >
   after calling <a href="#/p5/loadPixels">loadPixels()</a> or by calling
 
   <a href="#/p5/set">set()</a>.</p>
+line: 878
 params:
   - name: x
     description: |
@@ -40,11 +41,9 @@ params:
       <p>height of region to update.</p>
     type: Number
     optional: true
-line: 878
 itemtype: method
-name: updatePixels
 class: p5
-examples: []
+chainable: false
 ---
 
 

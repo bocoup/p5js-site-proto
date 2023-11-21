@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createImg
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates an <code>&lt;img&gt;</code> element that can appear outside of the
   canvas.</p>
@@ -43,12 +43,13 @@ description: >
   call after the image loads. The new image is passed to the callback
 
   function as a <a href="#/p5.Element">p5.Element</a> object.</p>
-params: []
 line: 583
 itemtype: method
-name: createImg
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

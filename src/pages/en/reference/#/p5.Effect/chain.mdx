@@ -3,22 +3,21 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: chain
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Link effects together in a chain
   Example usage: filter.chain(reverb, delay, panner);
   May be used with an open-ended number of arguments</p>
+line: 6502
 params:
   - name: arguments
     description: |
       <p>Chain together multiple sound objects</p>
     type: Object
     optional: true
-line: 6502
 itemtype: method
-name: chain
 class: p5.Effect
-examples: []
+chainable: false
 ---
 
 

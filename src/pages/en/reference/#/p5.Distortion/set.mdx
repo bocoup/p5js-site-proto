@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: set
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the amount and oversample of the waveshaper distortion.</p>
+line: 10900
 params:
   - name: amount
     description: |
@@ -20,11 +21,9 @@ params:
     type: String
     optional: true
     optdefault: '''none'''
-line: 10900
 itemtype: method
-name: set
 class: p5.Distortion
-examples: []
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: dist
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the distance between two points.</p>
 
@@ -20,12 +20,13 @@ description: >
   <p>Use <a href="#/p5.Vector/dist">p5.Vector.dist()</a> to calculate the
 
   distance between two <a href="#/p5.Vector">p5.Vector</a> objects.</p>
-params: []
 line: 124
 itemtype: method
-name: dist
 class: p5
-examples: []
+return:
+  description: distance between the two points.
+  type: Number
+chainable: false
 ---
 
 

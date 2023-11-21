@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createGraphics
 module: Rendering
 submodule: Rendering
-file: in/p5.js/src/core/rendering.js
+file: src/core/rendering.js
 description: >
   <p>Creates and returns a new p5.Graphics object. Use this class if you need
 
@@ -27,13 +27,14 @@ description: >
 
   By default this canvas will be hidden (offscreen buffer), to make visible, set
   element's style to display:block;</p>
-params: []
 line: 243
 itemtype: method
-name: createGraphics
-alt: 4 grey squares alternating light and dark grey. White quarter circle mid-left.
 class: p5
-examples: []
+alt: 4 grey squares alternating light and dark grey. White quarter circle mid-left.
+return:
+  description: offscreen graphics buffer
+  type: p5.Graphics
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: cursor
 module: Environment
 submodule: Environment
-file: in/p5.js/src/core/environment.js
+file: src/core/environment.js
 description: >
   <p>Changes the cursor's appearance.</p>
 
@@ -37,6 +37,7 @@ description: >
 
   and <code>y</code> must be less than the image's width and height,
   respectively.</p>
+line: 193
 params:
   - name: type
     description: |
@@ -54,11 +55,9 @@ params:
       <p>vertical active spot of the cursor.</p>
     type: Number
     optional: true
-line: 193
 itemtype: method
-name: cursor
 class: p5
-examples: []
+chainable: false
 ---
 
 

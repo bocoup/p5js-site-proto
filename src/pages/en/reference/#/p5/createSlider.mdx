@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createSlider
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a slider <code>&lt;input&gt;&lt;/input&gt;</code> element. Range
   sliders are
@@ -28,6 +28,7 @@ description: >
 
   allows the slider to move smoothly from <code>min</code> to
   <code>max</code>.</p>
+line: 717
 params:
   - name: min
     description: |
@@ -47,11 +48,12 @@ params:
       <p>size for each step in the slider's range.</p>
     type: Number
     optional: true
-line: 717
 itemtype: method
-name: createSlider
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: orbitControl
 module: 3D
 submodule: Interaction
-file: in/p5.js/src/webgl/interaction.js
+file: src/webgl/interaction.js
 description: |
   <p>Allows movement around a 3D sketch using a mouse or trackpad or touch.
   Left-clicking and dragging or swipe motion will rotate the camera position
@@ -15,6 +15,7 @@ description: |
   Calling this function without parameters is equivalent to calling
   orbitControl(1,1). To reverse direction of movement in either axis,
   enter a negative number for sensitivity.</p>
+line: 11
 params:
   - name: sensitivityX
     description: |
@@ -62,13 +63,10 @@ params:
       true/false.</p>
     type: Object
     optional: true
-line: 11
 itemtype: method
-name: orbitControl
-chainable: 1
-alt: Camera orbits around a box when mouse is hold-clicked & then moved.
 class: p5
-examples: []
+alt: Camera orbits around a box when mouse is hold-clicked & then moved.
+chainable: true
 ---
 
 

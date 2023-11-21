@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: cylinder
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Draw a cylinder with given radius and height</p>
 
@@ -16,6 +16,7 @@ description: >
   The recommended maximum value for detailX is 24. Using a value greater than 24
 
   may cause a warning or slow down the browser.</p>
+line: 598
 params:
   - name: radius
     description: |
@@ -49,12 +50,9 @@ params:
       <p>whether to draw the top of the cylinder</p>
     type: Boolean
     optional: true
-line: 598
 itemtype: method
-name: cylinder
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

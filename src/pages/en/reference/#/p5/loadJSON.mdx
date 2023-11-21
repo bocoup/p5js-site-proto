@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadJSON
 module: IO
 submodule: Input
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: |
   <p>Loads a JSON file from a file or a URL, and returns an Object.
   Note that even if the JSON file contains an Array, an Object will be
@@ -14,12 +14,13 @@ description: |
   callback following the syntax specified <a href="https://github.com/camsong/
   fetch-jsonp">here</a>.</p>
   <p>This method is suitable for fetching files up to size of 64MB.</p>
-params: []
 line: 17
 itemtype: method
-name: loadJSON
 class: p5
-examples: []
+return:
+  description: JSON data
+  type: Object|Array
+chainable: false
 ---
 
 

@@ -3,22 +3,24 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: lightness
 module: Color
 submodule: Creating & Reading
-file: in/p5.js/src/color/creating_reading.js
+file: src/color/creating_reading.js
 description: |
   <p>Extracts the HSL lightness value from a
   <a href="#/p5.Color">p5.Color</a> object, array of color components, or
   CSS color string.</p>
+line: 459
 params:
   - name: color
     description: |
       <p><a href="#/p5.Color">p5.Color</a> object, array of
                                               color components, or CSS color string.</p>
     type: 'p5.Color|Number[]|String'
-line: 459
 itemtype: method
-name: lightness
 class: p5
-examples: []
+return:
+  description: the lightness
+  type: Number
+chainable: false
 ---
 
 

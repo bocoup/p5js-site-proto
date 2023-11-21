@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: bezierPoint
 module: Shape
 submodule: Curves
-file: in/p5.js/src/core/shape/curves.js
+file: src/core/shape/curves.js
 description: >
   <p>Given the x or y co-ordinate values of control and anchor points of a
   bezier
@@ -19,6 +19,7 @@ description: >
   This can be done once with the x coordinates and a second time
 
   with the y coordinates to get the location of a bezier curve at t.</p>
+line: 131
 params:
   - name: a
     description: |
@@ -40,12 +41,13 @@ params:
     description: |
       <p>value between 0 and 1</p>
     type: Number
-line: 131
 itemtype: method
-name: bezierPoint
-alt: 10 points plotted on a given bezier at equal distances.
 class: p5
-examples: []
+alt: 10 points plotted on a given bezier at equal distances.
+return:
+  description: the value of the Bezier at position t
+  type: Number
+chainable: false
 ---
 
 

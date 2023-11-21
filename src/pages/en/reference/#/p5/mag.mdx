@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mag
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the magnitude, or length, of a vector. A vector is like an arrow
 
@@ -17,6 +17,7 @@ description: >
   calling
 
   <code>dist(0, 0, x, y)</code>.</p>
+line: 315
 params:
   - name: x
     description: |
@@ -26,11 +27,12 @@ params:
     description: |
       <p>second component.</p>
     type: Number
-line: 315
 itemtype: method
-name: mag
 class: p5
-examples: []
+return:
+  description: 'magnitude of vector from (0,0) to (x,y).'
+  type: Number
+chainable: false
 ---
 
 

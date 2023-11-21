@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: storeItem
 module: Data
 submodule: LocalStorage
-file: in/p5.js/src/data/local_storage.js
+file: src/data/local_storage.js
 description: |
   <p>Stores a value in local storage under the key name.
    Local storage is saved in the browser and persists
@@ -13,6 +13,7 @@ description: |
    see <a href="#/p5/getItem">getItem</a>.
   Sensitive data such as passwords or personal information
    should not be stored in local storage.</p>
+line: 10
 params:
   - name: key
     description: ''
@@ -20,11 +21,9 @@ params:
   - name: value
     description: ''
     type: String|Number|Object|Boolean|p5.Color|p5.Vector
-line: 10
 itemtype: method
-name: storeItem
 class: p5
-examples: []
+chainable: false
 ---
 
 

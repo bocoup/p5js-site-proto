@@ -3,20 +3,22 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: textWidth
 module: Typography
 submodule: Attributes
-file: in/p5.js/src/typography/attributes.js
+file: src/typography/attributes.js
 description: |
   <p>Returns the maximum width of a string of text drawn when
   <a href="#/p5/text">text()</a> is called.</p>
+line: 192
 params:
   - name: str
     description: |
       <p>string of text to measure.</p>
     type: String
-line: 192
 itemtype: method
-name: textWidth
 class: p5
-examples: []
+return:
+  description: width measured in units of pixels.
+  type: Number
+chainable: false
 ---
 
 

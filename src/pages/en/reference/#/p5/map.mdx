@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: map
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Re-maps a number from one range to another.</p>
 
@@ -17,6 +17,7 @@ description: >
   in the target range [0, 100] is proportional to 2's position in the
 
   original range [0, 10].</p>
+line: 347
 params:
   - name: value
     description: |
@@ -43,11 +44,12 @@ params:
       <p>constrain the value to the newly mapped range.</p>
     type: Boolean
     optional: true
-line: 347
 itemtype: method
-name: map
 class: p5
-examples: []
+return:
+  description: remapped number.
+  type: Number
+chainable: false
 ---
 
 

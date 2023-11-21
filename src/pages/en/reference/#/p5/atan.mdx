@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: atan
 module: Math
 submodule: Trigonometry
-file: in/p5.js/src/math/trigonometry.js
+file: src/math/trigonometry.js
 description: >
   <p>The inverse of <a href="#/p5/tan">tan()</a>, returns the arc tangent of a
 
@@ -17,16 +17,18 @@ description: >
   are
 
   returned in the range -90 to 90.</p>
+line: 103
 params:
   - name: value
     description: |
       <p>value whose arc tangent is to be returned.</p>
     type: Number
-line: 103
 itemtype: method
-name: atan
 class: p5
-examples: []
+return:
+  description: arc tangent of the given value.
+  type: Number
+chainable: false
 ---
 
 

@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: shuffle
 module: Data
 submodule: Array Functions
-file: in/p5.js/src/utilities/array_functions.js
+file: src/utilities/array_functions.js
 description: |
   <p>Randomizes the order of the elements of an array. Implements
   <a href='http://Bost.Ocks.org/mike/shuffle/' target=_blank>
   Fisher-Yates Shuffle Algorithm</a>.</p>
+line: 185
 params:
   - name: array
     description: |
@@ -18,11 +19,12 @@ params:
       <p>modify passed array</p>
     type: Boolean
     optional: true
-line: 185
 itemtype: method
-name: shuffle
 class: p5
-examples: []
+return:
+  description: shuffled Array
+  type: Array
+chainable: false
 ---
 
 

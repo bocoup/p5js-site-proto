@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadFont
 module: Typography
 submodule: Loading & Displaying
-file: in/p5.js/src/typography/loading_displaying.js
+file: src/typography/loading_displaying.js
 description: >
   <p>Loads a font and creates a <a href="#/p5.Font">p5.Font</a> object.
 
@@ -57,6 +57,7 @@ description: >
   used in <a href="#/p5/setup">setup()</a> or
 
   <a href="#/p5/draw">draw()</a>.</p>
+line: 16
 params:
   - name: path
     description: |
@@ -76,11 +77,12 @@ params:
                                                 object if the font fails to load.</p>
     type: Function
     optional: true
-line: 16
 itemtype: method
-name: loadFont
 class: p5
-examples: []
+return:
+  description: <a href="#/p5.Font">p5.Font</a> object.
+  type: p5.Font
+chainable: false
 ---
 
 

@@ -40,27 +40,23 @@ async function convertToMDX(doc) {
   }
 
   let frontMatterArgs = {};
+  const sourcePath = doc.file.replace(/.*p5\.js\/(.*)/, "$1");
   try {
     frontMatterArgs = {
       layout: "@layouts/reference/SingleReferenceLayout.astro",
       title: doc.name ?? "",
       module: doc.module,
       submodule: doc.submodule ?? "",
-      file: doc.file.replace(/.*?(?=src)/, ""), // Get relative path from src
-      // This is currently a static value but might change
+      file: sourcePath,
       description: doc.description ?? "",
-      params: doc.params ?? [],
-      // Add all properties as frontmatter, except for those that are objects
-      // This likely needs to be organized more deliberately
-      ...Object.entries(doc)
-        .filter(
-          ([key, value]) =>
-            typeof value !== "object" && typeof value !== "undefined"
-        )
-        .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
-      examples: doc.examples
-        ? doc.examples.map((example) => example.description)
-        : [],
+      ...(doc.line ? { line: doc.line } : {}),
+      ...(doc.params ? { params: doc.params } : {}),
+      ...(doc.itemtype ? { itemtype: doc.itemtype } : {}),
+      ...(doc.class ? { class: doc.class } : {}),
+      ...(doc.examples ? { examples: doc.examples } : {}),
+      ...(doc.alt ? { alt: doc.alt } : {}),
+      ...(doc.return ? { return: doc.return } : {}),
+      chainable: doc.chainable === 1,
     };
 
     const frontmatter = matter.stringify("", frontMatterArgs);

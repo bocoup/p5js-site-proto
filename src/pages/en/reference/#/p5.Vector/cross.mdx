@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: cross
 module: Math
 submodule: Vector
-file: in/p5.js/src/math/p5.Vector.js
+file: src/math/p5.Vector.js
 description: >
   <p>Returns the cross product of two vectors. The cross product is a vector
 
@@ -17,12 +17,13 @@ description: >
   v2)</code>, is the same
 
   as calling <code>v1.cross(v2)</code>.</p>
-params: []
 line: 1192
 itemtype: method
-name: cross
 class: p5.Vector
-examples: []
+return:
+  description: cross product as a <a href="#/p5.Vector">p5.Vector</a>.
+  type: p5.Vector
+chainable: false
 ---
 
 

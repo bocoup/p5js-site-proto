@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: connect
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Connect to an audio unit. If no parameter is provided, will
   connect to the main output (i.e. your speakers).<br/></p>
+line: 6191
 params:
   - name: unit
     description: |
@@ -14,11 +15,9 @@ params:
                               such as an FFT</p>
     type: Object
     optional: true
-line: 6191
 itemtype: method
-name: connect
 class: p5.AudioIn
-examples: []
+chainable: false
 ---
 
 

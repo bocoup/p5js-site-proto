@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getBlob
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>This method is useful for sending a SoundFile to a server. It returns the
   .wav-encoded audio data as a "<a target="_blank" title="Blob reference at
@@ -13,12 +13,13 @@ description: |
   use the <code>httpDo</code> options object to send a POST request with some
   specific options: we encode the request as <code>multipart/form-data</code>,
   and attach the blob as one of the form values using <code>FormData</code>.</p>
-params: []
 line: 2882
 itemtype: method
-name: getBlob
 class: p5.SoundFile
-examples: []
+return:
+  description: A file-like data object
+  type: Blob
+chainable: false
 ---
 
 

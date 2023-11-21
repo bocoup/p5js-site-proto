@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: play
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Play a note by triggering noteAttack and noteRelease with sustain time</p>
+line: 11800
 params:
   - name: note
     description: |
@@ -27,11 +28,9 @@ params:
       <p>time to sustain before releasing the envelope</p>
     type: Number
     optional: true
-line: 11800
 itemtype: method
-name: play
 class: p5.PolySynth
-examples: []
+chainable: false
 ---
 
 

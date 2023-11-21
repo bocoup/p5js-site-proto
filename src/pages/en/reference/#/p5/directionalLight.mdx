@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: directionalLight
 module: 3D
 submodule: Lights
-file: in/p5.js/src/webgl/light.js
+file: src/webgl/light.js
 description: >
   <p>Creates a directional light with the given color and direction.</p>
 
@@ -35,16 +35,13 @@ description: >
   Placing them in setup() will cause them to only have an effect
 
   the first time through the loop.</p>
-params: []
 line: 246
 itemtype: method
-name: directionalLight
-chainable: 1
+class: p5
 alt: |-
   scene with sphere and directional light. The direction of
   the light is controlled with the mouse position.
-class: p5
-examples: []
+chainable: true
 ---
 
 

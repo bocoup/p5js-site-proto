@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: torus
 module: Shape
 submodule: 3D Primitives
-file: in/p5.js/src/webgl/3d_primitives.js
+file: src/webgl/3d_primitives.js
 description: >
   <p>Draw a torus with given radius and tube radius</p>
 
@@ -19,6 +19,7 @@ description: >
   Setting them to relatively small values like 4 and 6 allows you to create new
 
   shapes other than a torus.</p>
+line: 1004
 params:
   - name: radius
     description: |
@@ -44,12 +45,9 @@ params:
                                      default is 16</p>
     type: Integer
     optional: true
-line: 1004
 itemtype: method
-name: torus
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

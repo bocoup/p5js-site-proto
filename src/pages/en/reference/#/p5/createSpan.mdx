@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createSpan
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a <code>&lt;span&gt;&lt;/span&gt;</code> element. It's commonly
   used as a
@@ -19,6 +19,7 @@ description: >
   the
 
   inner HTML of the new <code>&lt;span&gt;&lt;/span&gt;</code>.</p>
+line: 518
 params:
   - name: html
     description: >
@@ -26,11 +27,12 @@ params:
       element.</p>
     type: String
     optional: true
-line: 518
 itemtype: method
-name: createSpan
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

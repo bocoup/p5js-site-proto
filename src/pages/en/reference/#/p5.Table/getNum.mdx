@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getNum
 module: IO
 submodule: Table
-file: in/p5.js/src/io/p5.Table.js
+file: src/io/p5.Table.js
 description: |
   <p>Retrieves a Float value from the Table's specified row and column.
   The row is specified by its ID, while the column may be specified by
   either its ID or title.</p>
+line: 1131
 params:
   - name: row
     description: |
@@ -18,11 +19,12 @@ params:
       <p>columnName (string) or
                                         ID (number)</p>
     type: String|Integer
-line: 1131
 itemtype: method
-name: getNum
 class: p5.Table
-examples: []
+return:
+  description: ''
+  type: Number
+chainable: false
 ---
 
 

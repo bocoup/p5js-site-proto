@@ -3,21 +3,25 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: mult
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Multiply the p5.Oscillator's output amplitude
   by a fixed value (i.e. turn it up!). Calling this method
   again will override the initial mult() with a new value.</p>
+line: 4543
 params:
   - name: number
     description: |
       <p>Constant number to multiply</p>
     type: Number
-line: 4543
 itemtype: method
-name: mult
 class: p5.Oscillator
-examples: []
+return:
+  description: |-
+    Oscillator Returns this oscillator
+                                       with multiplied output
+  type: p5.Oscillator
+chainable: false
 ---
 
 

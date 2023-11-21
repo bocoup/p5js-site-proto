@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: toString
 module: Color
 submodule: Creating & Reading
-file: in/p5.js/src/color/p5.Color.js
+file: src/color/p5.Color.js
 description: |
   <p>Returns the color formatted as a string. Doing so can be useful for
   debugging, or for using p5.js with other libraries.</p>
+line: 360
 params:
   - name: format
     description: >
@@ -26,11 +27,12 @@ params:
       percentages.</p>
     type: String
     optional: true
-line: 360
 itemtype: method
-name: toString
 class: p5.Color
-examples: []
+return:
+  description: the formatted string.
+  type: String
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: rotate
 module: Transform
 submodule: Transform
-file: in/p5.js/src/core/transform.js
+file: src/core/transform.js
 description: >
   <p>Rotates a shape by the amount specified by the angle parameter. This
 
@@ -30,6 +30,7 @@ description: >
   by a rotation matrix. This function can be further controlled by
 
   <a href="#/p5/push">push()</a> and <a href="#/p5/pop">pop()</a>.</p>
+line: 222
 params:
   - name: angle
     description: |
@@ -41,13 +42,10 @@ params:
       <p>(in 3d) the axis to rotate around</p>
     type: 'p5.Vector|Number[]'
     optional: true
-line: 222
 itemtype: method
-name: rotate
-chainable: 1
-alt: white 52×52 rect with black outline at center rotated counter 45 degrees
 class: p5
-examples: []
+alt: white 52×52 rect with black outline at center rotated counter 45 degrees
+chainable: true
 ---
 
 

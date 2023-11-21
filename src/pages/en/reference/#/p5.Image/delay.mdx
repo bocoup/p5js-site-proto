@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: delay
 module: Image
 submodule: Image
-file: in/p5.js/src/image/p5.Image.js
+file: src/image/p5.Image.js
 description: >
   <p>Changes the delay between frames in an animated GIF.</p>
 
@@ -13,6 +13,7 @@ description: >
   at <code>index</code> will have its delay modified. All other frames will keep
 
   their default delay.</p>
+line: 1521
 params:
   - name: d
     description: |
@@ -23,11 +24,9 @@ params:
       <p>index of the frame that will have its delay modified.</p>
     type: Number
     optional: true
-line: 1521
 itemtype: method
-name: delay
 class: p5.Image
-examples: []
+chainable: false
 ---
 
 

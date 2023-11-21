@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: add
 module: Data
 submodule: Dictionary
-file: in/p5.js/src/data/p5.TypedDict.js
+file: src/data/p5.TypedDict.js
 description: |
   <p>Add the given number to the value currently stored at the given key.
   The sum then replaces the value previously stored in the Dictionary.</p>
+line: 439
 params:
   - name: Key
     description: |
@@ -16,11 +17,9 @@ params:
     description: |
       <p>to add to the value</p>
     type: Number
-line: 439
 itemtype: method
-name: add
 class: p5.NumberDict
-examples: []
+chainable: false
 ---
 
 

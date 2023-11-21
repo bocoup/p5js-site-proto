@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadModel
 module: Shape
 submodule: 3D Models
-file: in/p5.js/src/webgl/loading.js
+file: src/webgl/loading.js
 description: >
   <p>Load a 3d model from an OBJ or STL file.</p>
 
@@ -31,13 +31,14 @@ description: >
   color will be
 
   rendered without color properties.</p>
-params: []
 line: 12
 itemtype: method
-name: loadModel
-alt: 'Vertically rotating 3-d teapot with red, green and blue gradient.'
 class: p5
-examples: []
+alt: 'Vertically rotating 3-d teapot with red, green and blue gradient.'
+return:
+  description: the <a href="#/p5.Geometry">p5.Geometry</a> object
+  type: p5.Geometry
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: loadXML
 module: IO
 submodule: Input
-file: in/p5.js/src/io/files.js
+file: src/io/files.js
 description: >
   <p>Reads the contents of a file and creates an XML object with its values.
 
@@ -33,6 +33,7 @@ description: >
   object.</p>
 
   <p>This method is suitable for fetching files up to size of 64MB.</p>
+line: 575
 params:
   - name: filename
     description: |
@@ -52,11 +53,12 @@ params:
                                     in as first argument</p>
     type: Function
     optional: true
-line: 575
 itemtype: method
-name: loadXML
 class: p5
-examples: []
+return:
+  description: XML object containing data
+  type: Object
+chainable: false
 ---
 
 

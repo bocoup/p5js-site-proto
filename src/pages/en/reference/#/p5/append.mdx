@@ -3,10 +3,11 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: append
 module: Data
 submodule: Array Functions
-file: in/p5.js/src/utilities/array_functions.js
+file: src/utilities/array_functions.js
 description: |
   <p>Adds a value to the end of an array. Extends the length of
   the array by one. Maps to Array.push().</p>
+line: 10
 params:
   - name: array
     description: |
@@ -16,16 +17,12 @@ params:
     description: |
       <p>to be added to the Array</p>
     type: Any
-line: 10
 itemtype: method
-name: append
-deprecated: true
-deprecationMessage: >-
-  Use <a
-  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">array.push(value)</a>
-  instead.
 class: p5
-examples: []
+return:
+  description: the array that was appended to
+  type: Array
+chainable: false
 ---
 
 

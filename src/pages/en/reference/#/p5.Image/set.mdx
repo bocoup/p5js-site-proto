@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: set
 module: Image
 submodule: Image
-file: in/p5.js/src/image/p5.Image.js
+file: src/image/p5.Image.js
 description: >
   <p>Sets the color of one or more pixels within a
 
@@ -28,6 +28,7 @@ description: >
   <p><a href="#/p5.Image/updatePixels">img.updatePixels()</a> must be called
 
   after using <code>img.set()</code> for changes to appear.</p>
+line: 535
 params:
   - name: x
     description: |
@@ -43,11 +44,9 @@ params:
                                         <a href="#/p5.Color">p5.Color</a> object |
                                         <a href="#/p5.Image">p5.Image</a> to copy.</p>
     type: 'Number|Number[]|Object'
-line: 535
 itemtype: method
-name: set
 class: p5.Image
-examples: []
+chainable: false
 ---
 
 

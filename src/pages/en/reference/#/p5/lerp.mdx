@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: lerp
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates a number between two numbers at a specific increment. The
   <code>amt</code>
@@ -25,6 +25,7 @@ description: >
   number outside of the original interval. For example, calling
 
   <code>lerp(0, 10, 1.5)</code> will return 15.</p>
+line: 239
 params:
   - name: start
     description: |
@@ -38,11 +39,12 @@ params:
     description: |
       <p>number.</p>
     type: Number
-line: 239
 itemtype: method
-name: lerp
 class: p5
-examples: []
+return:
+  description: lerped value.
+  type: Number
+chainable: false
 ---
 
 

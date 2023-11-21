@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sq
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Squares a number, which means multiplying the number by itself. The value
 
@@ -15,16 +15,18 @@ description: >
   -3 × -3 which is also 9.  Multiplying two negative numbers produces
 
   a positive number.</p>
+line: 670
 params:
   - name: 'n'
     description: |
       <p>number to square.</p>
     type: Number
-line: 670
 itemtype: method
-name: sq
 class: p5
-examples: []
+return:
+  description: squared number.
+  type: Number
+chainable: false
 ---
 
 

@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: perspective
 module: 3D
 submodule: Camera
-file: in/p5.js/src/webgl/p5.Camera.js
+file: src/webgl/p5.Camera.js
 description: |
   <p>Sets a perspective projection for the current camera in a 3D sketch.
   This projection represents depth through foreshortening: objects
@@ -16,6 +16,7 @@ description: |
   <p>If no parameters are given, the following default is used:
   perspective(PI/3, width/height, eyeZ/10, eyeZ*10),
   where eyeZ is equal to ((height/2) / tan(PI/6)).</p>
+line: 119
 params:
   - name: fovy
     description: |
@@ -38,13 +39,10 @@ params:
       <p>frustum far plane length</p>
     type: Number
     optional: true
-line: 119
 itemtype: method
-name: perspective
-chainable: 1
-alt: 'two colored 3D boxes move back and forth, rotating as mouse is dragged.'
 class: p5
-examples: []
+alt: 'two colored 3D boxes move back and forth, rotating as mouse is dragged.'
+chainable: true
 ---
 
 

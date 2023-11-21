@@ -3,15 +3,19 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getPan
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Returns the current stereo pan position (-1.0 to 1.0)</p>
-params: []
 line: 2131
 itemtype: method
-name: getPan
 class: p5.SoundFile
-examples: []
+return:
+  description: |-
+    Returns the stereo pan setting of the Oscillator
+                             as a number between -1.0 (left) and 1.0 (right).
+                             0.0 is center and default.
+  type: Number
+chainable: false
 ---
 
 

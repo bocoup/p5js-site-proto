@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: time
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Manages the media element's playback time. Calling
   <code>media.time()</code>
@@ -16,12 +16,13 @@ description: >
   the
 
   time, in seconds, to jump to when playback begins.</p>
-params: []
 line: 4143
 itemtype: method
-name: time
 class: p5.MediaElement
-examples: []
+return:
+  description: current time (in seconds).
+  type: Number
+chainable: false
 ---
 
 

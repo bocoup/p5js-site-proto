@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: sqrt
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the square root of a number. A number's square root can be
 
@@ -16,16 +16,18 @@ description: >
   arguments
 
   such as <code>sqrt(-9)</code>.</p>
+line: 700
 params:
   - name: 'n'
     description: |
       <p>non-negative number to square root.</p>
     type: Number
-line: 700
 itemtype: method
-name: sqrt
 class: p5
-examples: []
+return:
+  description: square root of number.
+  type: Number
+chainable: false
 ---
 
 

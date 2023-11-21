@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createAudio
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a hidden <code>&lt;audio&gt;</code> element for simple audio
   playback.
@@ -35,6 +35,7 @@ description: >
   to call once
 
   the audio is ready to play.</p>
+line: 2043
 params:
   - name: src
     description: |
@@ -47,11 +48,12 @@ params:
       <p>function to call once the audio is ready to play.</p>
     type: Function
     optional: true
-line: 2043
 itemtype: method
-name: createAudio
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.MediaElement">p5.MediaElement</a> object.
+  type: p5.MediaElement
+chainable: false
 ---
 
 

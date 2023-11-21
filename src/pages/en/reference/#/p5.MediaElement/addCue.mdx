@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: addCue
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Schedules a function to call when the audio/video reaches a specific time
 
@@ -29,6 +29,7 @@ description: >
   useful for
 
   removing the cue later.</p>
+line: 4584
 params:
   - name: time
     description: |
@@ -44,11 +45,14 @@ params:
                                  <code>callback</code>.</p>
     type: Object
     optional: true
-line: 4584
 itemtype: method
-name: addCue
 class: p5.MediaElement
-examples: []
+return:
+  description: |-
+    id ID of this cue,
+                        useful for `media.removeCue(id)`.
+  type: Number
+chainable: false
 ---
 
 

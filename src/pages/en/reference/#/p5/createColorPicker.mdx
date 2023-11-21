@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createColorPicker
 module: DOM
 submodule: DOM
-file: in/p5.js/src/dom/dom.js
+file: src/dom/dom.js
 description: >
   <p>Creates a color picker element.</p>
 
@@ -26,6 +26,7 @@ description: >
   href="#/p5.Color">p5.Color</a> object.</li>
 
   </ul>
+line: 1614
 params:
   - name: value
     description: >
@@ -34,11 +35,12 @@ params:
       target="_blank">CSS color string</a>.</p>
     type: String|p5.Color
     optional: true
-line: 1614
 itemtype: method
-name: createColorPicker
 class: p5
-examples: []
+return:
+  description: new <a href="#/p5.Element">p5.Element</a> object.
+  type: p5.Element
+chainable: false
 ---
 
 

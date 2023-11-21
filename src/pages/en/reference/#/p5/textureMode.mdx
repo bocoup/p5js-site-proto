@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: textureMode
 module: 3D
 submodule: Material
-file: in/p5.js/src/webgl/material.js
+file: src/webgl/material.js
 description: >
   <p>Sets the coordinate space for texture mapping. The default mode is IMAGE
 
@@ -17,17 +17,16 @@ description: >
   size of a quad would require the points (0,0) (100, 0) (100,200) (0,200).
 
   The same mapping in NORMAL is (0,0) (1,0) (1,1) (0,1).</p>
+line: 664
 params:
   - name: mode
     description: |
       <p>either IMAGE or NORMAL</p>
     type: Constant
-line: 664
 itemtype: method
-name: textureMode
-alt: 'quad with a texture, mapped using image coordinates'
 class: p5
-examples: []
+alt: 'quad with a texture, mapped using image coordinates'
+chainable: false
 ---
 
 

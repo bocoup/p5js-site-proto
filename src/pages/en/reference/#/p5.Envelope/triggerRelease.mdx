@@ -3,11 +3,12 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: triggerRelease
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Trigger the Release of the Envelope. This is similar to releasing
   the key on a piano and letting the sound fade according to the
   release level and release time.</p>
+line: 5256
 params:
   - name: unit
     description: |
@@ -17,11 +18,9 @@ params:
     description: |
       <p>time to trigger the release</p>
     type: Number
-line: 5256
 itemtype: method
-name: triggerRelease
 class: p5.Envelope
-examples: []
+chainable: false
 ---
 
 

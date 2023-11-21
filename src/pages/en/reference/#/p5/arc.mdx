@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: arc
 module: Shape
 submodule: 2D Primitives
-file: in/p5.js/src/core/shape/2d_primitives.js
+file: src/core/shape/2d_primitives.js
 description: >
   <p>Draws an arc to the canvas. Arcs are drawn along the outer edge of an
   ellipse
@@ -24,6 +24,7 @@ description: >
 
   a semi-circle (<code>OPEN</code>), a closed semi-circle (<code>CHORD</code>),
   or a closed pie segment (<code>PIE</code>).</p>
+line: 102
 params:
   - name: x
     description: |
@@ -63,12 +64,9 @@ params:
                               draw a stroke for a detail of more than 50.</p>
     type: Integer
     optional: true
-line: 102
 itemtype: method
-name: arc
-chainable: 1
 class: p5
-examples: []
+chainable: true
 ---
 
 

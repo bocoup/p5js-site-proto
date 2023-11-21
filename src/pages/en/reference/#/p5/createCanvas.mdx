@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: createCanvas
 module: Rendering
 submodule: Rendering
-file: in/p5.js/src/core/rendering.js
+file: src/core/rendering.js
 description: >
   <p>Creates a canvas element in the document and sets its dimensions
 
@@ -58,13 +58,14 @@ description: >
   <a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>
 
   positioning the canvas</a> wiki page.</p>
-params: []
 line: 15
 itemtype: method
-name: createCanvas
-alt: Black line extending from top-left of canvas to bottom right.
 class: p5
-examples: []
+alt: Black line extending from top-left of canvas to bottom right.
+return:
+  description: pointer to p5.Renderer holding canvas
+  type: p5.Renderer
+chainable: false
 ---
 
 

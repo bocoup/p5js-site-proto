@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: pow
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: |
   <p>Calculates exponential expressions such as 2^3.</p>
   <p>For example, <code>pow(2, 3)</code> is equivalent to the expression
   2 × 2 × 2. <code>pow(2, -3)</code> is equivalent to 1 ÷
   (2 × 2 × 2).</p>
+line: 601
 params:
   - name: 'n'
     description: |
@@ -18,11 +19,12 @@ params:
     description: |
       <p>power by which to raise the base.</p>
     type: Number
-line: 601
 itemtype: method
-name: pow
 class: p5
-examples: []
+return:
+  description: n^e.
+  type: Number
+chainable: false
 ---
 
 

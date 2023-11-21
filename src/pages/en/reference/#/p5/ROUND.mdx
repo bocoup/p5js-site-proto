@@ -3,12 +3,13 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: round
 module: Math
 submodule: Calculation
-file: in/p5.js/src/math/calculation.js
+file: src/math/calculation.js
 description: >
   <p>Calculates the integer closest to the <code>n</code> parameter. For
   example,
 
   <code>round(133.8)</code> returns the value 134.</p>
+line: 635
 params:
   - name: 'n'
     description: |
@@ -19,11 +20,12 @@ params:
       <p>number of decimal places to round to, default is 0.</p>
     type: Number
     optional: true
-line: 635
 itemtype: method
-name: round
 class: p5
-examples: []
+return:
+  description: rounded number.
+  type: Integer
+chainable: false
 ---
 
 

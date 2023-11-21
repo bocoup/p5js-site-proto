@@ -3,13 +3,14 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: getSources
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Returns a list of available input sources. This is a wrapper
   for <a href="https://developer.mozilla.org/
   en-US/docs/Web/API/MediaDevices/enumerateDevices" target="_blank">
   MediaDevices.enumerateDevices() - Web APIs | MDN</a>
   and it returns a Promise.</p>
+line: 6280
 params:
   - name: successCallback
     description: |
@@ -24,11 +25,14 @@ params:
                                          message as its argument.</p>
     type: Function
     optional: true
-line: 6280
 itemtype: method
-name: getSources
 class: p5.AudioIn
-examples: []
+return:
+  description: |-
+    Returns a Promise that can be used in place of the callbacks, similar
+                               to the enumerateDevices() method
+  type: Promise
+chainable: false
 ---
 
 

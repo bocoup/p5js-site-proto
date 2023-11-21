@@ -3,9 +3,10 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: set
 module: p5.sound
 submodule: p5.sound
-file: in/p5.js/lib/addons/p5.sound.js
+file: lib/addons/p5.sound.js
 description: |
   <p>Set the X,Y,Z position of the Panner</p>
+line: 7668
 params:
   - name: xVal
     description: ''
@@ -19,11 +20,12 @@ params:
   - name: time
     description: ''
     type: Number
-line: 7668
 itemtype: method
-name: set
 class: p5.Panner3D
-examples: []
+return:
+  description: 'Updated x, y, z values as an array'
+  type: Array
+chainable: false
 ---
 
 

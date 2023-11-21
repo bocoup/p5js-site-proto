@@ -3,7 +3,7 @@ layout: '@layouts/reference/SingleReferenceLayout.astro'
 title: splice
 module: Data
 submodule: Array Functions
-file: in/p5.js/src/utilities/array_functions.js
+file: src/utilities/array_functions.js
 description: |
   <p>Inserts a value or an array of values into an existing array. The first
   parameter specifies the initial array to be modified, and the second
@@ -11,6 +11,7 @@ description: |
   value which specifies the array position from which to insert data.
   (Remember that array index numbering starts at zero, so the first position
   is 0, the second position is 1, and so on.)</p>
+line: 273
 params:
   - name: list
     description: |
@@ -24,16 +25,12 @@ params:
     description: |
       <p>in the array from which to insert data</p>
     type: Integer
-line: 273
 itemtype: method
-name: splice
-deprecated: true
-deprecationMessage: >-
-  Use <a
-  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">array.splice()</a>
-  instead.
 class: p5
-examples: []
+return:
+  description: the list
+  type: Array
+chainable: false
 ---
 
 
