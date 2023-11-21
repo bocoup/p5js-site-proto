@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.Part
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |-
+  <p>A p5.Part plays back one or more p5.Phrases. Instantiate a part
+  with steps and tatums. By default, each step represents a 1/16th note.</p>
+
+  <p>See p5.Phrase for more about musical timing.</p>
+line: 9185
+params:
+  - name: steps
+    description: |
+      <p>Steps in the part</p>
+    type: Number
+    optional: true
+  - name: tatums
+    description: >
+      <p>Divisions of a beat, e.g. use 1/4, or 0.25 for a quater note (default
+      is 1/16, a sixteenth note)</p>
+    type: Number
+    optional: true
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.Part

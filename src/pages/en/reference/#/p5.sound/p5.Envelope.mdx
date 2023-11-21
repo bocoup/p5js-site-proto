@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.Envelope
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: >-
+  <p>Envelopes are pre-defined amplitude distribution over time.
+
+  Typically, envelopes are used to control the output volume
+
+  of an object, a series of fades referred to as Attack, Decay,
+
+  Sustain and Release (
+
+  <a
+  href="https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg">ADSR</a>
+
+  ). Envelopes can also control other Web Audio Parameters—for example, a
+  p5.Envelope can
+
+  control an Oscillator's frequency like this: <code>osc.freq(env)</code>.</p>
+
+  <p>Use <code><a href="#/p5.Envelope/setRange">setRange</a></code> to change
+  the attack/release level.
+
+  Use <code><a href="#/p5.Envelope/setADSR">setADSR</a></code> to change
+  attackTime, decayTime, sustainPercent and releaseTime.</p>
+
+  <p>Use the <code><a href="#/p5.Envelope/play">play</a></code> method to play
+  the entire envelope,
+
+  the <code><a href="#/p5.Envelope/ramp">ramp</a></code> method for a pingable
+  trigger,
+
+  or <code><a href="#/p5.Envelope/triggerAttack">triggerAttack</a></code>/
+
+  <code><a href="#/p5.Envelope/triggerRelease">triggerRelease</a></code> to
+  trigger noteOn/noteOff.</p>
+line: 4721
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.Envelope

@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.Convolver
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |-
+  <p>p5.Convolver extends p5.Reverb. It can emulate the sound of real
+  physical spaces through a process called <a href="
+  https://en.wikipedia.org/wiki/Convolution_reverb#Real_space_simulation">
+  convolution</a>.</p>
+
+  <p>Convolution multiplies any audio input by an "impulse response"
+  to simulate the dispersion of sound over time. The impulse response is
+  generated from an audio file that you provide. One way to
+  generate an impulse response is to pop a balloon in a reverberant space
+  and record the echo. Convolution can also be used to experiment with
+  sound.</p>
+
+  <p>Use the method <code>createConvolution(path)</code> to instantiate a
+  p5.Convolver with a path to your impulse response audio file.</p>
+line: 8549
+params:
+  - name: path
+    description: |
+      <p>path to a sound file</p>
+    type: String
+  - name: callback
+    description: |
+      <p>function to call when loading succeeds</p>
+    type: Function
+    optional: true
+  - name: errorCallback
+    description: |
+      <p>function to call if loading fails.
+                                         This function will receive an error or
+                                         XMLHttpRequest object with information
+                                         about what went wrong.</p>
+    type: Function
+    optional: true
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.Convolver

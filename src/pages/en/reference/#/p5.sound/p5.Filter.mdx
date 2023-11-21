@@ -1,0 +1,57 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.Filter
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: >
+  <p>A p5.Filter uses a Web Audio Biquad Filter to filter
+
+  the frequency response of an input source. Subclasses
+
+  include:</p>
+
+  <a href="/reference/#/p5.LowPass"><code>p5.LowPass</code></a>:
+
+  Allows frequencies below the cutoff frequency to pass through,
+
+  and attenuates frequencies above the cutoff.<br/>
+
+  <a href="/reference/#/p5.HighPass"><code>p5.HighPass</code></a>:
+
+  The opposite of a lowpass filter. <br/>
+
+  <a href="/reference/#/p5.BandPass"><code>p5.BandPass</code></a>:
+
+  Allows a range of frequencies to pass through and attenuates
+
+  the frequencies below and above this frequency range.<br/>
+
+
+  <p>The <code>.res()</code> method controls either width of the
+
+  bandpass, or resonance of the low/highpass cutoff frequency.</p>
+
+  <p>This class extends <a href = "/reference/#/p5.Effect">p5.Effect</a>.
+
+  Methods <a href = "/reference/#/p5.Effect/amp">amp()</a>, <a href =
+  "/reference/#/p5.Effect/chain">chain()</a>,
+
+  <a href = "/reference/#/p5.Effect/drywet">drywet()</a>, <a href =
+  "/reference/#/p5.Effect/connect">connect()</a>, and
+
+  <a href = "/reference/#/p5.Effect/disconnect">disconnect()</a> are
+  available.</p>
+line: 6628
+params:
+  - name: type
+    description: |
+      <p>'lowpass' (default), 'highpass', 'bandpass'</p>
+    type: String
+    optional: true
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.Filter

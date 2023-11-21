@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.PolySynth
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>An AudioVoice is used as a single voice for sound synthesis.
+  The PolySynth class holds an array of AudioVoice, and deals
+  with voices allocations, with setting notes to be played, and
+  parameters to be set.</p>
+line: 11691
+params:
+  - name: synthVoice
+    description: |
+      <p>A monophonic synth voice inheriting
+                                     the AudioVoice class. Defaults to p5.MonoSynth</p>
+    type: Number
+    optional: true
+  - name: maxVoices
+    description: |
+      <p>Number of voices, defaults to 8;</p>
+    type: Number
+    optional: true
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.PolySynth

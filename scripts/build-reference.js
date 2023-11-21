@@ -19,7 +19,11 @@ function getModulePath(doc) {
 
   let docClass = doc.class;
   if (!docClass) {
-    docClass = "p5";
+    if (doc.module.startsWith("p5.")) {
+      docClass = doc.module;
+    } else {
+      docClass = "p5";
+    }
   }
   const path = `${prefix}/${docClass}/`;
 
@@ -40,14 +44,14 @@ async function convertToMDX(doc) {
   }
 
   let frontMatterArgs = {};
-  const sourcePath = doc.file.replace(/.*p5\.js\/(.*)/, "$1");
+  const sourcePath = doc.file?.replace(/.*p5\.js\/(.*)/, "$1") ?? "";
   try {
     frontMatterArgs = {
       layout: "@layouts/reference/SingleReferenceLayout.astro",
       title: doc.name ?? "",
       module: doc.module,
       submodule: doc.submodule ?? "",
-      file: sourcePath,
+      file: sourcePath ?? "",
       description: doc.description ?? "",
       ...(doc.line ? { line: doc.line } : {}),
       ...(doc.params ? { params: doc.params } : {}),
@@ -56,7 +60,8 @@ async function convertToMDX(doc) {
       ...(doc.examples ? { examples: doc.examples } : {}),
       ...(doc.alt ? { alt: doc.alt } : {}),
       ...(doc.return ? { return: doc.return } : {}),
-      chainable: doc.chainable === 1,
+      ...(doc.is_constructor ? { isConstructor: doc.is_constructor } : {}),
+      chainable: !doc.is_constructor && doc.chainable === 1,
     };
 
     const frontmatter = matter.stringify("", frontMatterArgs);
@@ -73,156 +78,37 @@ async function convertToMDX(doc) {
   }
 }
 
-// function convertToMDX(doc) {
-//   if (!doc) {
-//     return;
-//   }
-//   for (const tag of doc.tags) {
-//     if (tag.title === "module") {
-//       // Store mapping of modules to their file path
-//       fileContextToModuleMap[doc.context.file] = tag.name;
-//     } else if (tag.title === "submodule") {
-//       // Store mapping of submodules to their parent module
-//       fileContextToSubmoduleMap[doc.context.file] = tag.description;
-//     }
-//   }
-//   const module = fileContextToModuleMap[doc.context.file];
-//   let submodule = fileContextToSubmoduleMap[doc.context.file];
-//   // Submodule is not useful when identical to module
-//   // Should be cleaned up in authoring
-//   if (submodule === module) {
-//     submodule = null;
-//   }
-//   // This is the module declaration, no reference needed
-//   if (module === doc.name) {
-//     return;
-//   }
-//   // p5 keeps some internal modules that we don't want to document
-//   if (doc.name?.startsWith("_")) {
-//     return;
-//   }
-//   const transformedParams = doc.params
-//     .map((param) => {
-//       // Check if the necessary properties exist
-//       if (
-//         !param.description ||
-//         !param.description.children ||
-//         (!param.type?.name && !param.type?.expression?.name)
-//       ) {
-//         return null;
+// const getIndexMdx = () => {
+//   console.log("Saving reference index...");
+//   const frontmatter = matter.stringify("", {
+//     title: "Reference",
+//   });
+
+//   let markdownContent = `# Reference\n`;
+//   for (const module in modulePathTree) {
+//     markdownContent += `## ${module}\n`;
+//     const submodules = modulePathTree[module];
+
+//     const scanAndAddSubmodules = (modules) => {
+//       for (const [key, val] of Object.entries(modules)) {
+//         if (typeof val === "object" && Object.keys(val).length > 0) {
+//           if (key !== "root") {
+//             markdownContent += `### ${key}\n`;
+//           }
+//           scanAndAddSubmodules(val);
+//         } else {
+//           markdownContent += `- [${key}](${val})\n`;
+//         }
 //       }
-//       // Extract the description text
-//       const descriptionText = param.description.children
-//         .map((child) =>
-//           child.children.map((textNode) => textNode.value).join("")
-//         )
-//         .join("");
-//       return {
-//         name: param.name,
-//         description: descriptionText,
-//         type: param.type.name ?? param.type?.expression?.name ?? "",
-//       };
-//     })
-//     .filter((param) => param != null);
-//   let descriptionText = "";
-//   for (const child of doc.description?.children ?? []) {
-//     for (const textNode of child.children ?? []) {
-//       switch (textNode.type) {
-//         case "inlineCode":
-//           descriptionText += `\`${textNode.value}\``;
-//           break;
-//         case "link":
-//           descriptionText += `[${textNode.children[0].value}](${textNode.url})`;
-//           break;
-//         case "strong":
-//           descriptionText += `**${textNode.children[0].value}**`;
-//           break;
-//         case "emphasis":
-//           descriptionText += `*${textNode.children[0].value}*`;
-//           break;
-//         case "paragraph":
-//           descriptionText += `${textNode.children[0].value}`;
-//           break;
-//         case "text":
-//         default:
-//           descriptionText += textNode.value;
-//           break;
-//       }
-//     }
-//   }
-//   // Likely intended as private
-//   if (!module) {
-//     return;
-//   }
-//   let frontMatterArgs = {};
-//   try {
-//     frontMatterArgs = {
-//       layout: "@layouts/reference/SingleReferenceLayout.astro",
-//       title: doc.name ?? "",
-//       module,
-//       ...(submodule ? { submodule } : {}),
-//       file: doc.context.file.replace(/.*?(?=src)/, ""), // Get relative path from src
-//       // This is currently a static value but might change
-//       descriptionText,
-//       params: transformedParams,
-//       // Add all properties as frontmatter, except for those that are objects
-//       // This likely needs to be organized more deliberately
-//       ...Object.entries(doc)
-//         .filter(
-//           ([key, value]) =>
-//             typeof value !== "object" && typeof value !== "undefined"
-//         )
-//         .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
-//       examples: doc.examples
-//         ? doc.examples.map((example) => example.description)
-//         : [],
 //     };
-//     // Create the frontmatter string
-//     const frontmatter = matter.stringify("", frontMatterArgs);
-//     // Combine all pieces of the doc into a single Markdown string
-//     let markdownContent = `# ${doc.name}\n`;
-//     // Process the Markdown content through remark and remark-mdx
-//     const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
-//     // Combine frontmatter and MDX content
-//     return `${frontmatter}\n${mdxContent.toString()}`;
-//   } catch (err) {
-//     console.error(`Error converting ${doc.name} to MDX: ${err}`);
-//     console.log(frontMatterArgs);
-//     return;
+
+//     scanAndAddSubmodules(submodules);
 //   }
-// }
 
-const getIndexMdx = () => {
-  console.log("Saving reference index...");
-  const frontmatter = matter.stringify("", {
-    title: "Reference",
-  });
+//   const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
 
-  let markdownContent = `# Reference\n`;
-  for (const module in modulePathTree) {
-    markdownContent += `## ${module}\n`;
-    const submodules = modulePathTree[module];
-
-    const scanAndAddSubmodules = (modules) => {
-      for (const [key, val] of Object.entries(modules)) {
-        if (typeof val === "object" && Object.keys(val).length > 0) {
-          if (key !== "root") {
-            markdownContent += `### ${key}\n`;
-          }
-          scanAndAddSubmodules(val);
-        } else {
-          markdownContent += `- [${key}](${val})\n`;
-        }
-      }
-    };
-
-    scanAndAddSubmodules(submodules);
-  }
-
-  const mdxContent = remark().use(remarkMDX).processSync(markdownContent);
-
-  return `${frontmatter}\n${mdxContent.toString()}`;
-};
+//   return `${frontmatter}\n${mdxContent.toString()}`;
+// };
 
 async function cloneLibraryRepo() {
   const git = simpleGit();
@@ -312,13 +198,18 @@ async function loadDocsFromJson() {
   }
 }
 
-async function convertDocsToMDX(docs) {
-  console.log("Converting docs to MDX...");
+async function yuiDocsToMDX(docs) {
+  console.log("Converting YUI docs to MDX...");
 
+  const classItemDocs = await convertDocsToMDX(Object.values(docs.classitems));
+  const classesDocs = await convertDocsToMDX(Object.values(docs.classes));
+  return [...classItemDocs, ...classesDocs];
+}
+
+async function convertDocsToMDX(docs) {
   try {
-    const classitemsArray = Object.values(docs.classitems);
     const mdxDocs = await Promise.all(
-      classitemsArray.map(async (doc) => {
+      docs.map(async (doc) => {
         const mdx = await convertToMDX(doc);
         const savePath = getModulePath(doc);
         const name = doc.name;
@@ -357,7 +248,7 @@ async function main() {
 
   const docs = await buildDocs();
 
-  const mdxDocs = await convertDocsToMDX(docs);
+  const mdxDocs = await yuiDocsToMDX(docs);
 
   await saveMDX(mdxDocs);
 

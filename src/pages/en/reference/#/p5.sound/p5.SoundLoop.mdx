@@ -1,0 +1,27 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: p5.SoundLoop
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>SoundLoop</p>
+line: 9673
+params:
+  - name: callback
+    description: |
+      <p>this function will be called on each iteration of theloop</p>
+    type: Function
+  - name: interval
+    description: >
+      <p>amount of time (if a number) or beats (if a string, following <a href =
+      "https://github.com/Tonejs/Tone.js/wiki/Time">Tone.Time</a> convention)
+      for each iteration of the loop. Defaults to 1 second.</p>
+    type: Number|String
+    optional: true
+isConstructor: 1
+chainable: false
+---
+
+
+# p5.SoundLoop
