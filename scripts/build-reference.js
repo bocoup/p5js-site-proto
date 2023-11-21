@@ -14,6 +14,147 @@ const modulePathTree = {
   classes: {},
 };
 
+/** MAIN */
+
+async function main() {
+  await cloneLibraryRepoIfNeeded();
+
+  const docs = await buildDocs();
+
+  // Class items also covers the functions that
+  // p5 makes globally available
+  const classItemMDXDocs = await classItemsToMDX(docs);
+  await saveMDX(classItemMDXDocs);
+  // Do in two separate steps so that class MDX
+  // can reference classitems
+  const classMDXDocs = await classesToMDX(docs);
+  await saveMDX(classMDXDocs);
+
+  // Build the reference file differently
+  const indexMdx = getIndexMdx();
+  await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
+
+  console.log("Done building reference docs!");
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
+
+/** SETUP */
+
+async function cloneLibraryRepo() {
+  const git = simpleGit();
+  const repoUrl = "https://github.com/processing/p5.js.git";
+
+  console.log("Cloning repository...");
+  try {
+    await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
+    console.log("Repository cloned successfully.");
+    await fixForAbsolutePathInPreprocessor();
+  } catch (err) {
+    console.error(`Error cloning repo: ${err}`);
+  }
+}
+
+// This is a fix for the use of an absolute path in the preprocessor.js file in p5.js
+async function fixForAbsolutePathInPreprocessor() {
+  try {
+    const preprocessorPath = `${localPath}/docs/preprocessor.js`;
+
+    let preprocessorContent = await fs.readFile(preprocessorPath, "utf8");
+
+    // Modify the absolute path in the preprocessor file
+    preprocessorContent = preprocessorContent.replace(
+      "path.join(process.cwd(), 'docs', 'parameterData.json')",
+      `path.join(process.cwd(), '${localPath}/docs', 'parameterData.json')`
+    );
+
+    await fs.writeFile(preprocessorPath, preprocessorContent, "utf8");
+    console.log("Preprocessor file modified successfully.");
+  } catch (err) {
+    console.error(`Error modifying absolute path in preprocessor: ${err}`);
+  }
+}
+
+/** IO */
+
+async function loadDocsFromJson() {
+  console.log("Loading docs from JSON file...");
+  try {
+    const jsonData = await fs.readFile(jsonFilePath, "utf8");
+    const docs = JSON.parse(jsonData);
+    return docs;
+  } catch (err) {
+    console.error(`Error loading docs from JSON file: ${err}`);
+    return [];
+  }
+}
+
+async function saveMDX(mdxDocs) {
+  console.log("Saving MDX...");
+  try {
+    for (const mdxDoc of mdxDocs) {
+      await fs.mkdir(mdxDoc.savePath, {
+        recursive: true,
+      });
+      await fs.writeFile(
+        `${mdxDoc.savePath}/${mdxDoc.name}.mdx`,
+        mdxDoc.mdx.toString()
+      );
+    }
+  } catch (err) {
+    console.error(`Error saving MDX: ${err}`);
+  }
+}
+
+/** PARSING DOCS */
+
+async function cloneLibraryRepoIfNeeded() {
+  const currentRepoExists =
+    (await fileExistsAt(localPath)) &&
+    (await isModifiedWithin24Hours(localPath));
+  if (!currentRepoExists) {
+    await cloneLibraryRepo();
+  } else {
+    console.log("Library repo already exists, skipping clone...");
+  }
+}
+
+async function buildDocs() {
+  console.log("Loading docs from JSON file...");
+  const currentYUIBuildExists =
+    (await fileExistsAt(jsonFilePath)) &&
+    (await isModifiedWithin24Hours(jsonFilePath));
+  if (!currentYUIBuildExists) {
+    await runYuidocCommand();
+  } else {
+    console.log("YUI output already exists, skipping build...");
+  }
+  return loadDocsFromJson();
+}
+async function runYuidocCommand() {
+  console.log("Running yuidoc command...");
+  try {
+    await new Promise((resolve, reject) => {
+      exec("yuidoc -p", (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error running yuidoc command: ${error}`);
+          reject();
+        } else {
+          console.log("yuidoc command completed successfully.");
+          resolve();
+        }
+      });
+    });
+  } catch (err) {
+    console.error(`Error running yuidoc command: ${err}`);
+  }
+}
+
+/** MDX CONSTRUCTION */
+
 function getModulePath(doc) {
   if (!doc || !doc.name) {
     return;
@@ -169,94 +310,6 @@ const getIndexMdx = () => {
   return `${frontmatter}\n${mdxContent.toString()}`;
 };
 
-async function cloneLibraryRepo() {
-  const git = simpleGit();
-  const repoUrl = "https://github.com/processing/p5.js.git";
-
-  console.log("Cloning repository...");
-  try {
-    await git.clone(repoUrl, localPath, ["--depth", "1", "--filter=blob:none"]);
-    console.log("Repository cloned successfully.");
-    await fixForAbsolutePathInPreprocessor();
-  } catch (err) {
-    console.error(`Error cloning repo: ${err}`);
-  }
-}
-
-// This is a fix for the use of an absolute path in the preprocessor.js file in p5.js
-async function fixForAbsolutePathInPreprocessor() {
-  try {
-    const preprocessorPath = `${localPath}/docs/preprocessor.js`;
-
-    let preprocessorContent = await fs.readFile(preprocessorPath, "utf8");
-
-    // Modify the absolute path in the preprocessor file
-    preprocessorContent = preprocessorContent.replace(
-      "path.join(process.cwd(), 'docs', 'parameterData.json')",
-      `path.join(process.cwd(), '${localPath}/docs', 'parameterData.json')`
-    );
-
-    await fs.writeFile(preprocessorPath, preprocessorContent, "utf8");
-    console.log("Preprocessor file modified successfully.");
-  } catch (err) {
-    console.error(`Error modifying absolute path in preprocessor: ${err}`);
-  }
-}
-
-async function cloneLibraryRepoIfNeeded() {
-  const currentRepoExists =
-    (await fileExistsAt(localPath)) &&
-    (await isModifiedWithin24Hours(localPath));
-  if (!currentRepoExists) {
-    await cloneLibraryRepo();
-  } else {
-    console.log("Library repo already exists, skipping clone...");
-  }
-}
-
-async function buildDocs() {
-  console.log("Loading docs from JSON file...");
-  const currentYUIBuildExists =
-    (await fileExistsAt(jsonFilePath)) &&
-    (await isModifiedWithin24Hours(jsonFilePath));
-  if (!currentYUIBuildExists) {
-    await runYuidocCommand();
-  } else {
-    console.log("YUI output already exists, skipping build...");
-  }
-  return loadDocsFromJson();
-}
-async function runYuidocCommand() {
-  console.log("Running yuidoc command...");
-  try {
-    await new Promise((resolve, reject) => {
-      exec("yuidoc -p", (error, stdout, stderr) => {
-        if (error) {
-          console.error(`Error running yuidoc command: ${error}`);
-          reject();
-        } else {
-          console.log("yuidoc command completed successfully.");
-          resolve();
-        }
-      });
-    });
-  } catch (err) {
-    console.error(`Error running yuidoc command: ${err}`);
-  }
-}
-
-async function loadDocsFromJson() {
-  console.log("Loading docs from JSON file...");
-  try {
-    const jsonData = await fs.readFile(jsonFilePath, "utf8");
-    const docs = JSON.parse(jsonData);
-    return docs;
-  } catch (err) {
-    console.error(`Error loading docs from JSON file: ${err}`);
-    return [];
-  }
-}
-
 async function classItemsToMDX(docs) {
   console.log("Converting YUI classitem docs to MDX...");
 
@@ -311,43 +364,6 @@ async function convertDocsToMDX(docs) {
     return [];
   }
 }
-
-async function saveMDX(mdxDocs) {
-  console.log("Saving MDX...");
-  try {
-    for (const mdxDoc of mdxDocs) {
-      await fs.mkdir(mdxDoc.savePath, {
-        recursive: true,
-      });
-      await fs.writeFile(
-        `${mdxDoc.savePath}/${mdxDoc.name}.mdx`,
-        mdxDoc.mdx.toString()
-      );
-    }
-  } catch (err) {
-    console.error(`Error saving MDX: ${err}`);
-  }
-}
-
-async function main() {
-  await cloneLibraryRepoIfNeeded();
-
-  const docs = await buildDocs();
-
-  const classItemMDXDocs = await classItemsToMDX(docs);
-  await saveMDX(classItemMDXDocs);
-  // Do in two separate steps so that class MDX
-  // can reference classitem MDX
-  const classMDXDocs = await classesToMDX(docs);
-  await saveMDX(classMDXDocs);
-
-  const indexMdx = getIndexMdx();
-  await fs.writeFile(`./src/pages/en/reference/index.mdx`, indexMdx.toString());
-
-  console.log("Done building reference docs!");
-}
-
-main();
 
 /** UTILITIES */
 
