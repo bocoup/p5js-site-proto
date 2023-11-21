@@ -1,3 +1,5 @@
+import fs from "fs/promises";
+
 async function cloneLibraryRepo(repoUrl, localSavePath) {
   const git = simpleGit();
 
@@ -34,4 +36,30 @@ async function fixForAbsolutePathInPreprocessor(localSavePath) {
   }
 }
 
-export { cloneLibraryRepo, fixForAbsolutePathInPreprocessor };
+async function fileExistsAt(path) {
+  return fs
+    .access(path)
+    .then(() => true)
+    .catch(() => false);
+}
+
+async function isModifiedWithin24Hours(path) {
+  try {
+    const stats = await fs.stat(path);
+    const modifiedTime = stats.mtime.getTime();
+    const currentTime = Date.now();
+    const twentyFourHoursAgo = currentTime - 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+    return modifiedTime >= twentyFourHoursAgo;
+  } catch (err) {
+    console.error(`Error checking modification time: ${err}`);
+    return false;
+  }
+}
+
+export {
+  cloneLibraryRepo,
+  fixForAbsolutePathInPreprocessor,
+  fileExistsAt,
+  isModifiedWithin24Hours,
+};
