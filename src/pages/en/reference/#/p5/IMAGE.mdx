@@ -1,0 +1,88 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: image
+module: Image
+submodule: Loading & Displaying
+file: in/p5.js/src/image/loading_displaying.js
+description: >
+  <p>Draws a source image to the canvas.</p>
+
+  <p>The first parameter, <code>img</code>, is the source image to be drawn. The
+  second and
+
+  third parameters, <code>dx</code> and <code>dy</code>, set the coordinates of
+  the destination
+
+  image's top left corner. See <a href="#/p5/imageMode">imageMode()</a> for
+
+  other ways to position images.</p>
+
+  <p>Here's a diagram that explains how optional parameters work in
+  <code>image()</code>:</p>
+
+  <p><img src="assets/drawImage.png"></img></p>
+
+  <p>The fourth and fifth parameters, <code>dw</code> and <code>dh</code>, are
+  optional. They set the
+
+  the width and height to draw the destination image. By default,
+  <code>image()</code>
+
+  draws the full source image at its original size.</p>
+
+  <p>The sixth and seventh parameters, <code>sx</code> and <code>sy</code>, are
+  also optional.
+
+  These coordinates define the top left corner of a subsection to draw from
+
+  the source image.</p>
+
+  <p>The eighth and ninth parameters, <code>sw</code> and <code>sh</code>, are
+  also optional.
+
+  They define the width and height of a subsection to draw from the source
+
+  image. By default, <code>image()</code> draws the full subsection that begins
+  at
+
+  (<code>sx</code>, <code>sy</code>) and extends to the edges of the source
+  image.</p>
+
+  <p>The ninth parameter, <code>fit</code>, is also optional. It enables a
+  subsection of
+
+  the source image to be drawn without affecting its aspect ratio. If
+
+  <code>CONTAIN</code> is passed, the full subsection will appear within the
+  destination
+
+  rectangle. If <code>COVER</code> is passed, the subsection will completely
+  cover the
+
+  destination rectangle. This may have the effect of zooming into the
+
+  subsection.</p>
+
+  <p>The tenth and eleventh paremeters, <code>xAlign</code> and
+  <code>yAlign</code>, are also
+
+  optional. They determine how to align the fitted subsection.
+  <code>xAlign</code> can
+
+  be set to either <code>LEFT</code>, <code>RIGHT</code>, or
+  <code>CENTER</code>. <code>yAlign</code> can be set to
+
+  either <code>TOP</code>, <code>BOTTOM</code>, or <code>CENTER</code>. By
+  default, both <code>xAlign</code> and <code>yAlign</code>
+
+  are set to <code>CENTER</code>.</p>
+params: []
+line: 832
+itemtype: method
+name: image
+class: p5
+examples: []
+---
+
+
+# image

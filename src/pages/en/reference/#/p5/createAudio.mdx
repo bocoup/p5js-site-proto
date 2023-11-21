@@ -1,0 +1,58 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createAudio
+module: DOM
+submodule: DOM
+file: in/p5.js/src/dom/dom.js
+description: >
+  <p>Creates a hidden <code>&lt;audio&gt;</code> element for simple audio
+  playback.
+
+  Returns a new <a href="#/p5.MediaElement">p5.MediaElement</a> object.</p>
+
+  <p>The first parameter, <code>src</code>, is the path the video. If a single
+  string is
+
+  passed, as in <code>'assets/video.mp4'</code>, a single video is loaded. An
+  array
+
+  of strings can be used to load the same video in different formats. For
+
+  example, <code>['assets/video.mp4', 'assets/video.ogv',
+  'assets/video.webm']</code>.
+
+  This is useful for ensuring that the video can play across different
+
+  browsers with different capabilities. See
+
+  <a
+  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats"
+  target="_blank">MDN</a>
+
+  for more information about supported formats.</p>
+
+  <p>The second parameter, <code>callback</code>, is optional. It's a function
+  to call once
+
+  the audio is ready to play.</p>
+params:
+  - name: src
+    description: |
+      <p>path to an audio file, or an array of paths
+                                      for supporting different browsers.</p>
+    type: 'String|String[]'
+    optional: true
+  - name: callback
+    description: |
+      <p>function to call once the audio is ready to play.</p>
+    type: Function
+    optional: true
+line: 2043
+itemtype: method
+name: createAudio
+class: p5
+examples: []
+---
+
+
+# createAudio

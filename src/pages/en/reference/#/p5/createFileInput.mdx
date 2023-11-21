@@ -1,0 +1,46 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createFileInput
+module: DOM
+submodule: DOM
+file: in/p5.js/src/dom/dom.js
+description: >
+  <p>Creates an <code>&lt;input&gt;&lt;/input&gt;</code> element of type
+  <code>'file'</code>.
+
+  This allows users to select local files for use in a sketch.</p>
+
+  <p>The first parameter, <code>callback</code>, is a function that's called
+  when the file
+
+  loads. The callback function should have one parameter, <code>file</code>,
+  that's a
+
+  <a href="#/p5.File">p5.File</a> object.</p>
+
+  <p>The second parameter, <code>multiple</code>, is optional. It's a boolean
+  value that
+
+  allows loading multiple files if set to <code>true</code>. If
+  <code>true</code>, <code>callback</code>
+
+  will be called once per file.</p>
+params:
+  - name: callback
+    description: |
+      <p>function to call once the file loads.</p>
+    type: Function
+  - name: multiple
+    description: |
+      <p>allow multiple files to be selected.</p>
+    type: Boolean
+    optional: true
+line: 1785
+itemtype: method
+name: createFileInput
+class: p5
+examples: []
+---
+
+
+# createFileInput

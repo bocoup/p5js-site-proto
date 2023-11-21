@@ -1,0 +1,54 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: clip
+module: Color
+submodule: Setting
+file: in/p5.js/src/color/setting.js
+description: >
+  <p>Use the shape drawn by a callback function to mask subsequent things drawn
+  to the canvas.
+
+  Only opaque regions of the mask shape will allow content to be drawn.</p>
+
+  <p>The mask will apply to anything drawn after this call. To draw without a
+  mask, contain
+
+  the code to apply the mask and to draw the masked content between
+
+  <a href="#/p5/push">push()</a> and <a href="#/p5/pop">pop()</a>.</p>
+
+  <p>Alternatively, rather than drawing the mask shape in a function, draw the
+
+  shape between <a href="#/p5/beginClip">beginClip()</a> and <a
+  href="#/p5/endClip">endClip()</a>.</p>
+
+  <p>Options can include:</p>
+
+  <ul>
+
+  <li><code>invert</code>: A boolean specifying whether or not to mask the areas
+  <em>not</em> filled by the mask shape. Defaults to false.</li>
+
+  </ul>
+params:
+  - name: callback
+    description: |
+      <p>A function that draws the mask shape.</p>
+    type: Function
+  - name: options
+    description: |
+      <p>An object containing clip settings.</p>
+    type: Object
+    optional: true
+line: 120
+itemtype: method
+name: clip
+alt: |-
+  A silhouette of a rotating torus colored with a gradient from
+  cyan to purple
+class: p5
+examples: []
+---
+
+
+# clip

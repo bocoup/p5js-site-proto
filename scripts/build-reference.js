@@ -1,4 +1,3 @@
-import * as documentation from "documentation";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import { remark } from "remark";
@@ -6,36 +5,23 @@ import remarkMDX from "remark-mdx";
 import { simpleGit } from "simple-git";
 import { exec } from "child_process";
 
-let fileContextToModuleMap = new Map();
-let fileContextToSubmoduleMap = new Map();
-
 const localPath = "in/p5.js";
-const srcPath = "src/**/p5.Element.js";
 const jsonFilePath = "./out/data.json";
 
 const modulePathTree = {};
 
 function getModulePath(doc) {
-  if (!doc) {
+  if (!doc || !doc.name) {
     return;
   }
 
-  let prefix = `./src/pages/en/reference`;
+  let prefix = `./src/pages/en/reference/#`;
 
-  if (!doc.module) {
-    console.warn(`Could not find module for doc ${doc.module}`);
-    return prefix;
+  let docClass = doc.class;
+  if (!docClass) {
+    docClass = "p5";
   }
-
-  const module = doc.module.toLowerCase().replace(" ", "-");
-  const submodule = doc.submodule?.toLowerCase().replace(" ", "-");
-
-  let path = `${prefix}/${module}`;
-
-  // Add submodule to path if it exists
-  if (submodule && submodule !== module) {
-    path += `/${submodule}`;
-  }
+  const path = `${prefix}/${docClass}/`;
 
   return path;
 }
@@ -62,7 +48,7 @@ async function convertToMDX(doc) {
       submodule: doc.submodule ?? "",
       file: doc.file.replace(/.*?(?=src)/, ""), // Get relative path from src
       // This is currently a static value but might change
-      descriptionText: doc.description ?? "",
+      description: doc.description ?? "",
       params: doc.params ?? [],
       // Add all properties as frontmatter, except for those that are objects
       // This likely needs to be organized more deliberately
@@ -287,19 +273,6 @@ async function cloneLibraryRepoIfNeeded() {
   }
 }
 
-// async function buildDocs() {
-//   console.log(`Building reference docs to ${localPath}/${srcPath}...`);
-//   try {
-//     return documentation.build([`${localPath}/${srcPath}`], {
-//       shallow: true,
-//       inferPrivate: false,
-//     });
-//   } catch (err) {
-//     console.error(`Error building docs: ${err}`);
-//     return [];
-//   }
-// }
-
 async function buildDocs() {
   console.log("Loading docs from JSON file...");
   const currentYUIBuildExists =
@@ -370,7 +343,6 @@ async function saveMDX(mdxDocs) {
   console.log("Saving MDX...");
   try {
     for (const mdxDoc of mdxDocs) {
-      console.log(mdxDoc);
       await fs.mkdir(mdxDoc.savePath, {
         recursive: true,
       });
@@ -390,8 +362,6 @@ async function main() {
   const docs = await buildDocs();
 
   const mdxDocs = await convertDocsToMDX(docs);
-
-  console.log(mdxDocs);
 
   await saveMDX(mdxDocs);
 

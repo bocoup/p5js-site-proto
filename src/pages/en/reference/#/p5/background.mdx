@@ -1,0 +1,61 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: background
+module: Color
+submodule: Setting
+file: in/p5.js/src/color/setting.js
+description: >
+  <p>Sets the color used for the background of the canvas. By default, the
+
+  background is transparent. This function is typically used within
+
+  <a href="#/p5/draw">draw()</a> to clear the display window at the beginning
+
+  of each frame. It can also be used inside <a href="#/p5/setup">setup()</a> to
+
+  set the background on the first frame of animation.</p>
+
+  <p>The version of <code>background()</code> with one parameter interprets the
+  value one of four
+
+  ways. If the parameter is a number, it's interpreted as a grayscale value.
+
+  If the parameter is a string, it's interpreted as a CSS color string.  RGB,
+  RGBA,
+
+  HSL, HSLA, hex, and named color strings are supported. If the parameter is a
+
+  <a href="#/p5.Color">p5.Color</a> object, it will be used as the background
+  color.
+
+  If the parameter is a <a href="#/p5.Image">p5.Image</a> object, it will be
+  used as
+
+  the background image.</p>
+
+  <p>The version of <code>background()</code> with two parameters interprets the
+  first one as a
+
+  grayscale value. The second parameter sets the alpha (transparency) value.</p>
+
+  <p>The version of <code>background()</code> with three parameters interprets
+  them as RGB, HSB,
+
+  or HSL colors, depending on the current <a
+  href="#/p5/colorMode">colorMode()</a>.
+
+  By default, colors are specified in RGB values. Calling background(255, 204,
+  0)
+
+  sets the background a bright yellow color.</p>
+params: []
+line: 215
+itemtype: method
+name: background
+chainable: 1
+class: p5
+examples: []
+---
+
+
+# background

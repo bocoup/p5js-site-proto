@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: set
+module: 3D
+submodule: Camera
+file: in/p5.js/src/webgl/p5.Camera.js
+description: |
+  <p>Copies information about the argument camera's view and projection to
+  the target camera. If the target camera is active, it will be reflected
+  on the screen.</p>
+params:
+  - name: cam
+    description: |
+      <p>source camera</p>
+    type: p5.Camera
+line: 1572
+itemtype: method
+name: set
+alt: |-
+  Prepare two cameras. One is the camera that sets the initial state,
+  and the other is the camera that moves with interaction.
+  Draw a plane and a box on top of it, operate the camera using orbitControl().
+  Double-click to set the camera in the initial state and return to
+  the initial state.
+class: p5.Camera
+examples: []
+---
+
+
+# set

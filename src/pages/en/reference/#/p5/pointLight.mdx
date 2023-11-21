@@ -1,0 +1,31 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: pointLight
+module: 3D
+submodule: Lights
+file: in/p5.js/src/webgl/light.js
+description: |
+  <p>Creates a point light with the given color and position.</p>
+  <p>A point light emits light from a single point in all directions.
+  Because the light is emitted from a specific point (position),
+  it has a different effect when it is positioned farther vs. nearer
+  an object.</p>
+  <p>A maximum of <strong>5</strong> point lights can be active at once.</p>
+  <p>Note: lights need to be called (whether directly or indirectly)
+  within draw() to remain persistent in a looping program.
+  Placing them in setup() will cause them to only have an effect
+  the first time through the loop.</p>
+params: []
+line: 373
+itemtype: method
+name: pointLight
+chainable: 1
+alt: |-
+  scene with sphere and point light. The position of
+  the light is controlled with the mouse position.
+class: p5
+examples: []
+---
+
+
+# pointLight

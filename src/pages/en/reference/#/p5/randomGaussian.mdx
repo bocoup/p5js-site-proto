@@ -1,0 +1,63 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: randomGaussian
+module: Math
+submodule: Random
+file: in/p5.js/src/math/random.js
+description: >
+  <p>Returns a random number fitting a Gaussian, or normal, distribution. Normal
+
+  distributions look like bell curves when plotted. Values from a normal
+
+  distribution cluster around a central value called the mean. The cluster's
+
+  standard deviation describes its spread.</p>
+
+  <p>By default, <code>randomGaussian()</code> produces different results each
+  time a
+
+  sketch runs. The <a href="#/p5/randomSeed">randomSeed()</a> function can be
+
+  used to generate the same sequence of numbers each time a sketch runs.</p>
+
+  <p>There's no minimum or maximum value that <code>randomGaussian()</code>
+  might return.
+
+  Values far from the mean are very unlikely and values near the mean are
+
+  very likely.</p>
+
+  <p>The version of <code>randomGaussian()</code> with no parameters returns
+  values with a
+
+  mean of 0 and standard deviation of 1.</p>
+
+  <p>The version of <code>randomGaussian()</code> with one parameter interprets
+  the
+
+  argument passed as the mean. The standard deviation is 1.</p>
+
+  <p>The version of <code>randomGaussian()</code> with two parameters interprets
+  the first
+
+  argument passed as the mean and the second as the standard deviation.</p>
+params:
+  - name: mean
+    description: |
+      <p>mean.</p>
+    type: Number
+    optional: true
+  - name: sd
+    description: |
+      <p>standard deviation.</p>
+    type: Number
+    optional: true
+line: 193
+itemtype: method
+name: randomGaussian
+class: p5
+examples: []
+---
+
+
+# randomGaussian

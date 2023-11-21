@@ -1,0 +1,37 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: imageLight
+module: 3D
+submodule: Lights
+file: in/p5.js/src/webgl/light.js
+description: |
+  <p>Creates an image light with the given image.</p>
+  <p>The image light simulates light from all the directions.
+  This is done by using the image as a texture for an infinitely
+  large sphere light. This sphere contains
+  or encapsulates the whole scene/drawing.
+  It will have different effect for varying shininess of the
+  object in the drawing.
+  Under the hood it is mainly doing 2 types of calculations,
+  the first one is creating an irradiance map the
+  environment map of the input image.
+  The second one is managing reflections based on the shininess
+  or roughness of the material used in the scene.</p>
+  <p>Note: The image's diffuse light will be affected by fill()
+  and the specular reflections will be affected by specularMaterial()
+  and shininess().</p>
+params:
+  - name: img
+    description: |
+      <p>image for the background</p>
+    type: p5.image
+line: 497
+itemtype: method
+name: imageLight
+alt: light with slider having a slider for varying roughness
+class: p5
+examples: []
+---
+
+
+# imageLight

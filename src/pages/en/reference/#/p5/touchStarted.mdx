@@ -1,0 +1,34 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: touchStarted
+module: Events
+submodule: Touch
+file: in/p5.js/src/events/touch.js
+description: >
+  <p>The touchStarted() function is called once after every time a touch is
+
+  registered. If no <a href="#/p5/touchStarted">touchStarted()</a> function is
+  defined, the <a href="#/p5/mousePressed">mousePressed()</a>
+
+  function will be called instead if it is defined.<br><br>
+
+  Browsers may have different default behaviors attached to various touch
+
+  events. To prevent any default behavior for this event, add "return false"
+
+  to the end of the method.</p>
+params:
+  - name: event
+    description: |
+      <p>optional TouchEvent callback argument.</p>
+    type: TouchEvent
+    optional: true
+line: 70
+itemtype: method
+name: touchStarted
+class: p5
+examples: []
+---
+
+
+# touchStarted

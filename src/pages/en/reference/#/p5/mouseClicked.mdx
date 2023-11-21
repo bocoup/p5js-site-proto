@@ -1,0 +1,39 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: mouseClicked
+module: Events
+submodule: Mouse
+file: in/p5.js/src/events/mouse.js
+description: >
+  <p>The <a href="#/p5/mouseClicked">mouseClicked()</a> function is called once
+  after a mouse button has been
+
+  pressed and then released.<br><br>
+
+  Browsers handle clicks differently, so this function is only guaranteed to be
+
+  run when the left mouse button is clicked. To handle other mouse buttons
+
+  being pressed or released, see <a href="#/p5/mousePressed">mousePressed()</a>
+  or <a href="#/p5/mouseReleased">mouseReleased()</a>.<br><br>
+
+  Browsers may have different default
+
+  behaviors attached to various mouse events. To prevent any default
+
+  behavior for this event, add "return false" to the end of the function.</p>
+params:
+  - name: event
+    description: |
+      <p>optional MouseEvent callback argument.</p>
+    type: MouseEvent
+    optional: true
+line: 750
+itemtype: method
+name: mouseClicked
+class: p5
+examples: []
+---
+
+
+# mouseClicked

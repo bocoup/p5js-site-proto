@@ -1,0 +1,31 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: triggerAttack
+module: p5.sound
+submodule: p5.sound
+file: in/p5.js/lib/addons/p5.sound.js
+description: |
+  <p>Trigger the Attack, and Decay portion of the Envelope.
+  Similar to holding down a key on a piano, but it will
+  hold the sustain level until you let go. Input can be
+  any p5.sound object, or a <a href="
+  http://docs.webplatform.org/wiki/apis/webaudio/AudioParam">
+  Web Audio Param</a>.</p>
+params:
+  - name: unit
+    description: |
+      <p>p5.sound Object or Web Audio Param</p>
+    type: Object
+  - name: secondsFromNow
+    description: |
+      <p>time from now (in seconds)</p>
+    type: Number
+line: 5148
+itemtype: method
+name: triggerAttack
+class: p5.Envelope
+examples: []
+---
+
+
+# triggerAttack

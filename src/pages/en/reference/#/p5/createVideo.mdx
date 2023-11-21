@@ -1,0 +1,62 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: createVideo
+module: DOM
+submodule: DOM
+file: in/p5.js/src/dom/dom.js
+description: >
+  <p>Creates a <code>&lt;video&gt;</code> element for simple audio/video
+  playback.
+
+  Returns a new <a href="#/p5.MediaElement">p5.MediaElement</a> object.</p>
+
+  <p>Videos are shown by default. They can be hidden by calling
+  <code>video.hide()</code>
+
+  and drawn to the canvas using <a href="#/p5/image">image()</a>.</p>
+
+  <p>The first parameter, <code>src</code>, is the path the video. If a single
+  string is
+
+  passed, as in <code>'assets/topsecret.mp4'</code>, a single video is loaded.
+  An array
+
+  of strings can be used to load the same video in different formats. For
+
+  example, <code>['assets/topsecret.mp4', 'assets/topsecret.ogv',
+  'assets/topsecret.webm']</code>.
+
+  This is useful for ensuring that the video can play across different browsers
+  with
+
+  different capabilities. See
+
+  <a
+  href='https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats'>MDN</a>
+
+  for more information about supported formats.</p>
+
+  <p>The second parameter, <code>callback</code>, is optional. It's a function
+  to call once
+
+  the video is ready to play.</p>
+params:
+  - name: src
+    description: |
+      <p>path to a video file, or an array of paths for
+                                    supporting different browsers.</p>
+    type: 'String|String[]'
+  - name: callback
+    description: |
+      <p>function to call once the video is ready to play.</p>
+    type: Function
+    optional: true
+line: 1950
+itemtype: method
+name: createVideo
+class: p5
+examples: []
+---
+
+
+# createVideo

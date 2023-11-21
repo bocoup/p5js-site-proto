@@ -1,0 +1,49 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: debugMode
+module: 3D
+submodule: Interaction
+file: in/p5.js/src/webgl/interaction.js
+description: >
+  <p>debugMode() helps visualize 3D space by adding a grid to indicate where the
+
+  ‘ground’ is in a sketch and an axes icon which indicates the +X, +Y, and +Z
+
+  directions. This function can be called without parameters to create a
+
+  default grid and axes icon, or it can be called according to the examples
+
+  above to customize the size and position of the grid and/or axes icon.  The
+
+  grid is drawn using the most recently set stroke color and weight.  To
+
+  specify these parameters, add a call to stroke() and strokeWeight()
+
+  just before the end of the draw() loop.</p>
+
+  <p>By default, the grid will run through the origin (0,0,0) of the sketch
+
+  along the XZ plane
+
+  and the axes icon will be offset from the origin.  Both the grid and axes
+
+  icon will be sized according to the current canvas size.  Note that because
+  the
+
+  grid runs parallel to the default camera view, it is often helpful to use
+
+  debugMode along with orbitControl to allow full view of the grid.</p>
+params: []
+line: 376
+itemtype: method
+name: debugMode
+alt: |-
+  a 3D box is centered on a grid in a 3D sketch. an icon
+  indicates the direction of each axis: a red line points +X,
+  a green line +Y, and a blue line +Z.
+class: p5
+examples: []
+---
+
+
+# debugMode

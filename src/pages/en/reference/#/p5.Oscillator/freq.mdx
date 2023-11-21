@@ -1,0 +1,35 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: freq
+module: p5.sound
+submodule: p5.sound
+file: in/p5.js/lib/addons/p5.sound.js
+description: |
+  <p>Set frequency of an oscillator to a value. Or, pass in an object
+  such as an oscillator to modulate the frequency with an audio signal.</p>
+params:
+  - name: Frequency
+    description: |
+      <p>Frequency in Hz
+                                            or modulating signal/oscillator</p>
+    type: Number|Object
+  - name: rampTime
+    description: |
+      <p>Ramp time (in seconds)</p>
+    type: Number
+    optional: true
+  - name: timeFromNow
+    description: |
+      <p>Schedule this event to happen
+                                       at x seconds from now</p>
+    type: Number
+    optional: true
+line: 4285
+itemtype: method
+name: freq
+class: p5.Oscillator
+examples: []
+---
+
+
+# freq

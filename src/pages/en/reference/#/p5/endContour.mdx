@@ -1,0 +1,49 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: endContour
+module: Shape
+submodule: Vertex
+file: in/p5.js/src/core/shape/vertex.js
+description: >
+  <p>Use the <a href="#/p5/beginContour">beginContour()</a> and <a
+  href="#/p5/endContour">endContour()</a> functions to create negative
+
+  shapes within shapes such as the center of the letter 'O'. <a
+  href="#/p5/beginContour">beginContour()</a>
+
+  begins recording vertices for the shape and <a
+  href="#/p5/endContour">endContour()</a> stops recording.
+
+  The vertices that define a negative shape must "wind" in the opposite
+
+  direction from the exterior shape. First draw vertices for the exterior
+
+  clockwise order, then for internal shapes, draw vertices
+
+  shape in counter-clockwise.</p>
+
+  <p>These functions can only be used within a <a
+  href="#/p5/beginShape">beginShape()</a>/<a href="#/p5/endShape">endShape()</a>
+  pair and
+
+  transformations such as <a href="#/p5/translate">translate()</a>, <a
+  href="#/p5/rotate">rotate()</a>, and <a href="#/p5/scale">scale()</a> do not
+  work
+
+  within a <a href="#/p5/beginContour">beginContour()</a>/<a
+  href="#/p5/endContour">endContour()</a> pair. It is also not possible to use
+
+  other shapes, such as <a href="#/p5/ellipse">ellipse()</a> or <a
+  href="#/p5/rect">rect()</a> within.</p>
+params: []
+line: 528
+itemtype: method
+name: endContour
+chainable: 1
+alt: white rect and smaller grey rect with red outlines in center of canvas.
+class: p5
+examples: []
+---
+
+
+# endContour
