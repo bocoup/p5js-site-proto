@@ -1,0 +1,33 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: httpDo
+module: IO
+submodule: Input
+file: src/io/files.js
+description: >
+  <p>Method for executing an HTTP request. If data type is not specified,
+
+  p5 will try to guess based on the URL, defaulting to text.<br><br>
+
+  For more advanced use, you may also pass in the path as the first argument
+
+  and a object as the second argument, the signature follows the one specified
+
+  in the Fetch API specification.
+
+  This method is suitable for fetching files up to size of 64MB when "GET" is
+  used.</p>
+line: 907
+itemtype: method
+class: p5
+return:
+  description: |-
+    A promise that resolves with the data when the operation
+                      completes successfully or rejects with the error after
+                      one occurs.
+  type: Promise
+chainable: false
+---
+
+
+# httpDo

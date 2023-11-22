@@ -1,0 +1,40 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: mouseWheel
+module: DOM
+submodule: DOM
+file: src/core/p5.Element.js
+description: >
+  <p>Calls a function when the mouse wheel scrolls over th element.</p>
+
+  <p>The callback function, <code>fxn</code>, is passed an <code>event</code>
+  object. <code>event</code> has
+
+  two numeric properties, <code>deltaY</code> and <code>deltaX</code>.
+  <code>event.deltaY</code> is
+
+  negative if the mouse wheel rotates away from the user. It's positive if
+
+  the mouse wheel rotates toward the user. <code>event.deltaX</code> is positive
+  if
+
+  the mouse wheel moves to the right. It's negative if the mouse wheel moves
+
+  to the left.</p>
+
+  <p>Calling <code>myElement.mouseWheel(false)</code> disables the function.</p>
+line: 466
+params:
+  - name: fxn
+    description: |
+      <p>function to call when the mouse wheel is
+                                     scrolled over the element.
+                                     <code>false</code> disables the function.</p>
+    type: Function|Boolean
+itemtype: method
+class: p5.Element
+chainable: true
+---
+
+
+# mouseWheel

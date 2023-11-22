@@ -1,0 +1,42 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: specularColor
+module: 3D
+submodule: Lights
+file: src/webgl/light.js
+description: >
+  <p>Sets the color of the specular highlight of a non-ambient light
+
+  (i.e. all lights except <a href="#/p5/ambientLight">ambientLight()</a>).</p>
+
+  <p>specularColor() affects only the lights which are created after
+
+  it in the code.</p>
+
+  <p>This function is used in combination with
+
+  <a href="#/p5/specularMaterial">specularMaterial()</a>.
+
+  If a geometry does not use specularMaterial(), this function
+
+  will have no effect.</p>
+
+  <p>The default color is white (255, 255, 255), which is used if
+
+  specularColor() is not explicitly called.</p>
+
+  <p>Note: specularColor is equivalent to the Processing function
+
+  <a
+  href="https://processing.org/reference/lightSpecular_.html">lightSpecular</a>.</p>
+line: 134
+itemtype: method
+class: p5
+alt: |-
+  Sphere with specular highlight. Clicking the mouse toggles the
+  specular highlight color between red and the default white.
+chainable: true
+---
+
+
+# specularColor

@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: noteRelease
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>Trigger the Release of an AudioVoice note. This is similar to releasing
+  the key on a piano and letting the sound fade according to the
+  release level and release time.</p>
+line: 12021
+params:
+  - name: note
+    description: |
+      <p>midi note on which attack should be triggered.
+                                        If no value is provided, all notes will be released.</p>
+    type: Number
+    optional: true
+  - name: secondsFromNow
+    description: |
+      <p>time to trigger the release</p>
+    type: Number
+    optional: true
+itemtype: method
+class: p5.PolySynth
+chainable: false
+---
+
+
+# noteRelease

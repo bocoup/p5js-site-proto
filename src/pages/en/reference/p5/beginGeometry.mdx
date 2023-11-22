@@ -1,0 +1,34 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: beginGeometry
+module: Shape
+submodule: 3D Primitives
+file: src/webgl/3d_primitives.js
+description: >
+  <p>Starts creating a new p5.Geometry. Subsequent shapes drawn will be added
+
+  to the geometry and then returned when
+
+  <a href="#/p5/endGeometry">endGeometry()</a> is called. One can also use
+
+  <a href="#/p5/buildGeometry">buildGeometry()</a> to pass a function that
+
+  draws shapes.</p>
+
+  <p>If you need to draw complex shapes every frame which don't change over
+  time,
+
+  combining them upfront with <code>beginGeometry()</code> and
+  <code>endGeometry()</code> and then
+
+  drawing that will run faster than repeatedly drawing the individual
+  pieces.</p>
+line: 13
+itemtype: method
+class: p5
+alt: 'A series of different flat, curved, and 3D shapes floating in space.'
+chainable: false
+---
+
+
+# beginGeometry

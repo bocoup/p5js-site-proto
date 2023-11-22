@@ -1,0 +1,27 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: midiToFreq
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>Returns the frequency value of a MIDI note value.
+  General MIDI treats notes as integers where middle C
+  is 60, C# is 61, D is 62 etc. Useful for generating
+  musical frequencies with oscillators.</p>
+line: 841
+params:
+  - name: midiNote
+    description: |
+      <p>The number of a MIDI note</p>
+    type: Number
+itemtype: method
+class: p5
+return:
+  description: Frequency value of the given MIDI note
+  type: Number
+chainable: false
+---
+
+
+# midiToFreq

@@ -1,0 +1,28 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: copyToContext
+module: 3D
+submodule: Material
+file: src/webgl/p5.Shader.js
+description: |
+  <p>Shaders belong to the main canvas or a p5.Graphics. Once they are compiled,
+  they can only be used in the context they were compiled on.</p>
+  <p>Use this method to make a new copy of a shader that gets compiled on a
+  different context.</p>
+line: 106
+params:
+  - name: context
+    description: |
+      <p>The graphic or instance to copy this shader to.
+      Pass <code>window</code> if you need to copy to the main canvas.</p>
+    type: p5|p5.Graphics
+itemtype: method
+class: p5.Shader
+return:
+  description: A new shader on the target context.
+  type: p5.Shader
+chainable: false
+---
+
+
+# copyToContext

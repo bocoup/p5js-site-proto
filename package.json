@@ -4,15 +4,30 @@
   "description": "scratch pad for website redesign for p5",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:reference": "node ./scripts/build-reference.js"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "build:reference": "node ./scripts/build-reference.js",
+    "build:examples": "node ./scripts/build-examples.js"
   },
   "type": "module",
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@astrojs/mdx": "^1.1.4",
+    "@astrojs/preact": "^3.0.1",
+    "@astrojs/react": "^3.0.4",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^3.5.3",
+    "astro-compress": "^2.2.3",
     "documentation": "^14.0.2",
     "gray-matter": "^4.0.3",
+    "html-entities": "1.3.1",
+    "preact": "^10.6.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.0",
     "simple-git": "^3.20.0"

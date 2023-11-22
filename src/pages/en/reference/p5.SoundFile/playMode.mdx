@@ -1,0 +1,27 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: playMode
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>p5.SoundFile has two play modes: <code>restart</code> and
+  <code>sustain</code>. Play Mode determines what happens to a
+  p5.SoundFile if it is triggered while in the middle of playback.
+  In sustain mode, playback will continue simultaneous to the
+  new playback. In restart mode, play() will stop playback
+  and start over. With untilDone, a sound will play only if it's
+  not already playing. Sustain is the default mode.</p>
+line: 1787
+params:
+  - name: str
+    description: |
+      <p>'restart' or 'sustain' or 'untilDone'</p>
+    type: String
+itemtype: method
+class: p5.SoundFile
+chainable: false
+---
+
+
+# playMode

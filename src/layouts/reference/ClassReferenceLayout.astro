@@ -1,0 +1,35 @@
+---
+const {
+  frontmatter: { title, module, submodule, examples, memberMethodPreviews },
+} = Astro.props;
+import CodeEmbed from "@components/reference/CodeEmbed/";
+import InteractiveComponentTest from "@components/InteractiveComponentTest/";
+console.log("memberMethodPreviews", memberMethodPreviews);
+---
+
+<html>
+  CLASSSSSS
+  <h1>{title}</h1>
+  <h2>Module: {module}</h2>
+  <p>Submodule: {submodule}</p>
+  <br />
+  <!-- This is the actual MDX content: -->
+  <slot />
+  <!-- This is a react component -->
+  <CodeEmbed code={examples} />
+  {
+    (
+      <ul>
+        {memberMethodPreviews &&
+          Object.entries(memberMethodPreviews).map(([name, method]) => (
+            <div>
+              <a href={method.path}>{name}</a>
+              <p>{method.description}</p>
+            </div>
+          ))}
+      </ul>
+    )
+  }
+
+
+</html>

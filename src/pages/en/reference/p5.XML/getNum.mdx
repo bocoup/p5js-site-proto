@@ -1,0 +1,32 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: getNum
+module: IO
+submodule: Input
+file: src/io/p5.XML.js
+description: |
+  <p>Returns an attribute value of the element as an Number. If the defaultValue
+  parameter is specified and the attribute doesn't exist, then defaultValue
+  is returned. If no defaultValue is specified and the attribute doesn't
+  exist, the value 0 is returned.</p>
+line: 616
+params:
+  - name: name
+    description: |
+      <p>the non-null full name of the attribute</p>
+    type: String
+  - name: defaultValue
+    description: |
+      <p>the default value of the attribute</p>
+    type: Number
+    optional: true
+itemtype: method
+class: p5.XML
+return:
+  description: ''
+  type: Number
+chainable: false
+---
+
+
+# getNum

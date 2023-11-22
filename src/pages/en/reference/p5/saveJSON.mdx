@@ -1,0 +1,33 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: saveJSON
+module: IO
+submodule: Output
+file: src/io/files.js
+description: |
+  <p>Writes the contents of an Array or a JSON object to a .json file.
+  The file saving process and location of the saved file will
+  vary between web browsers.</p>
+line: 1525
+params:
+  - name: json
+    description: ''
+    type: Array|Object
+  - name: filename
+    description: ''
+    type: String
+  - name: optimize
+    description: |
+      <p>If true, removes line breaks
+                                     and spaces from the output
+                                     file to optimize filesize
+                                     (but not readability).</p>
+    type: Boolean
+    optional: true
+itemtype: method
+class: p5
+chainable: false
+---
+
+
+# saveJSON

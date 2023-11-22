@@ -1,0 +1,63 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: slerp
+module: 3D
+submodule: Camera
+file: src/webgl/p5.Camera.js
+description: >
+  <p>For the cameras cam0 and cam1 with the given arguments, their view are
+  combined
+
+  with the parameter amt that represents the quantity, and the obtained view is
+  applied.
+
+  For example, if cam0 is looking straight ahead and cam1 is looking straight
+
+  to the right and amt is 0.5, the applied camera will look to the halfway
+
+  between front and right.
+
+  If the applied camera is active, the applied result will be reflected on the
+  screen.
+
+  When applying this function, all cameras involved must have exactly the same
+  projection
+
+  settings. For example, if one is perspective, ortho, frustum, the other two
+  must also be
+
+  perspective, ortho, frustum respectively. However, if all cameras have ortho
+  settings,
+
+  interpolation is possible if the ratios of left, right, top and bottom are
+  equal to each other.
+
+  For example, when it is changed by orbitControl().</p>
+line: 1642
+params:
+  - name: cam0
+    description: |
+      <p>first p5.Camera</p>
+    type: p5.Camera
+  - name: cam1
+    description: |
+      <p>second p5.Camera</p>
+    type: p5.Camera
+  - name: amt
+    description: |
+      <p>amount to use for interpolation during slerp</p>
+    type: Number
+itemtype: method
+class: p5.Camera
+alt: >-
+  There is a camera, drawing a cube. The camera can be moved freely with
+
+  orbitControl(). Double-click to smoothly return the camera to its initial
+  state.
+
+  The camera cannot be moved during that time.
+chainable: false
+---
+
+
+# slerp

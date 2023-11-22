@@ -1,0 +1,24 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: color
+module: Rendering
+submodule: ''
+file: src/webgl/p5.Framebuffer.js
+description: |
+  <p>A texture with the color information of the framebuffer. Pass this (or the
+  framebuffer itself) to <a href="#/p5/texture">texture()</a> to draw it to
+  the canvas, or pass it to a shader with
+  <a href="#/p5.Shader/setUniform">setUniform()</a> to read its data.</p>
+  <p>Since Framebuffers are controlled by WebGL, their y coordinates are stored
+  flipped compared to images and videos. When texturing with a framebuffer
+  texture, you may want to flip vertically, e.g. with
+  <code>plane(framebuffer.width, -framebuffer.height)</code>.</p>
+line: 1293
+itemtype: property
+class: p5.Framebuffer
+alt: 'A red, green, and blue sphere in the middle of the canvas'
+chainable: false
+---
+
+
+# color

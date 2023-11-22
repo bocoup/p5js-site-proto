@@ -1,0 +1,64 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: cursor
+module: Environment
+submodule: Environment
+file: src/core/environment.js
+description: >
+  <p>Changes the cursor's appearance.</p>
+
+  <p>The first parameter, <code>type</code>, sets the type of cursor to display.
+  The
+
+  built-in options are <code>ARROW</code>, <code>CROSS</code>,
+  <code>HAND</code>, <code>MOVE</code>, <code>TEXT</code>, and
+  <code>WAIT</code>.
+
+  <code>cursor()</code> also recognizes standard CSS cursor properties passed as
+
+  strings: <code>'help'</code>, <code>'wait'</code>, <code>'crosshair'</code>,
+  <code>'not-allowed'</code>, <code>'zoom-in'</code>,
+
+  and <code>'grab'</code>. If the path to an image is passed, as in
+
+  <code>cursor('assets/target.png')</code>, then the image will be used as the
+  cursor.
+
+  Images must be in .cur, .gif, .jpg, .jpeg, or .png format.</p>
+
+  <p>The parameters <code>x</code> and <code>y</code> are optional. If an image
+  is used for the
+
+  cursor, <code>x</code> and <code>y</code> set the location pointed to within
+  the image. They are
+
+  both 0 by default, so the cursor points to the image's top-left corner.
+  <code>x</code>
+
+  and <code>y</code> must be less than the image's width and height,
+  respectively.</p>
+line: 193
+params:
+  - name: type
+    description: |
+      <p>Built-in: either ARROW, CROSS, HAND, MOVE, TEXT, or WAIT.
+                                    Native CSS properties: 'grab', 'progress', and so on.
+                                    Path to cursor image.</p>
+    type: String|Constant
+  - name: x
+    description: |
+      <p>horizontal active spot of the cursor.</p>
+    type: Number
+    optional: true
+  - name: 'y'
+    description: |
+      <p>vertical active spot of the cursor.</p>
+    type: Number
+    optional: true
+itemtype: method
+class: p5
+chainable: false
+---
+
+
+# cursor

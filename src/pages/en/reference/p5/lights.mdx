@@ -1,0 +1,23 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: lights
+module: 3D
+submodule: Lights
+file: src/webgl/light.js
+description: |
+  <p>Places an ambient and directional light in the scene.
+  The lights are set to ambientLight(128, 128, 128) and
+  directionalLight(128, 128, 128, 0, 0, -1).</p>
+  <p>Note: lights need to be called (whether directly or indirectly)
+  within draw() to remain persistent in a looping program.
+  Placing them in setup() will cause them to only have an effect
+  the first time through the loop.</p>
+line: 590
+itemtype: method
+class: p5
+alt: the light is partially ambient and partially directional
+chainable: true
+---
+
+
+# lights

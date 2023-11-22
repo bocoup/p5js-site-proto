@@ -1,0 +1,53 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: get
+module: Image
+submodule: Image
+file: src/image/p5.Image.js
+description: >
+  <p>Gets a pixel or a region of pixels from a
+
+  <a href="#/p5.Image">p5.Image</a> object.</p>
+
+  <p><code>img.get()</code> is easy to use but it's not as fast as
+
+  <a href="#/p5.Image/pixels">img.pixels</a>. Use
+
+  <a href="#/p5.Image/pixels">img.pixels</a> to read many pixel values.</p>
+
+  <p>The version of <code>img.get()</code> with no parameters returns the entire
+  image.</p>
+
+  <p>The version of <code>img.get()</code> with two parameters interprets them
+  as
+
+  coordinates. It returns an array with the <code>[R, G, B, A]</code> values of
+  the
+
+  pixel at the given point.</p>
+
+  <p>The version of <code>img.get()</code> with four parameters interprets them
+  as
+
+  coordinates and dimensions. It returns a subsection of the canvas as a
+
+  <a href="#/p5.Image">p5.Image</a> object. The first two parameters are
+
+  the coordinates for the upper-left corner of the subsection. The last two
+
+  parameters are the width and height of the subsection.</p>
+
+  <p>Use <a href="#/p5.Image/get">img.get()</a> to work directly with
+
+  <a href="#/p5.Image">p5.Image</a> objects.</p>
+line: 430
+itemtype: method
+class: p5.Image
+return:
+  description: subsection as a <a href="#/p5.Image">p5.Image</a> object.
+  type: p5.Image
+chainable: false
+---
+
+
+# get

@@ -1,0 +1,27 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: httpPost
+module: IO
+submodule: Input
+file: src/io/files.js
+description: >
+  <p>Method for executing an HTTP POST request. If data type is not specified,
+
+  p5 will try to guess based on the URL, defaulting to text. This is equivalent
+  to
+
+  calling <code>httpDo(path, 'POST')</code>.</p>
+line: 817
+itemtype: method
+class: p5
+return:
+  description: |-
+    A promise that resolves with the data when the operation
+                      completes successfully or rejects with the error after
+                      one occurs.
+  type: Promise
+chainable: false
+---
+
+
+# httpPost

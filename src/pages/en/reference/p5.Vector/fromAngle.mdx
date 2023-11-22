@@ -1,0 +1,30 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: fromAngle
+module: Math
+submodule: Vector
+file: src/math/p5.Vector.js
+description: |
+  <p>Make a new 2D vector from an angle.</p>
+line: 2352
+params:
+  - name: angle
+    description: >
+      <p>desired angle, in radians. Unaffected by <a
+      href="#/p5/angleMode">angleMode()</a>.</p>
+    type: Number
+  - name: length
+    description: |
+      <p>length of the new vector (defaults to 1).</p>
+    type: Number
+    optional: true
+itemtype: method
+class: p5.Vector
+return:
+  description: new <a href="#/p5.Vector">p5.Vector</a> object.
+  type: p5.Vector
+chainable: false
+---
+
+
+# fromAngle

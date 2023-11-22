@@ -1,0 +1,44 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: box
+module: Shape
+submodule: 3D Primitives
+file: src/webgl/3d_primitives.js
+description: |
+  <p>Draw a box with given width, height and depth</p>
+line: 268
+params:
+  - name: width
+    description: |
+      <p>width of the box</p>
+    type: Number
+    optional: true
+  - name: height
+    description: |
+      <p>height of the box</p>
+    type: Number
+    optional: true
+  - name: depth
+    description: |
+      <p>depth of the box</p>
+    type: Number
+    optional: true
+  - name: detailX
+    description: |
+      <p>Optional number of triangle
+                                 subdivisions in x-dimension</p>
+    type: Integer
+    optional: true
+  - name: detailY
+    description: |
+      <p>Optional number of triangle
+                                 subdivisions in y-dimension</p>
+    type: Integer
+    optional: true
+itemtype: method
+class: p5
+chainable: true
+---
+
+
+# box

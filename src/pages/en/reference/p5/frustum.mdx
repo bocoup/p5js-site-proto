@@ -1,0 +1,63 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: frustum
+module: 3D
+submodule: Camera
+file: src/webgl/p5.Camera.js
+description: |
+  <p>Sets the frustum of the current camera as defined by
+  the parameters.</p>
+  <p>A frustum is a geometric form: a pyramid with its top
+  cut off. With the viewer's eye at the imaginary top of
+  the pyramid, the six planes of the frustum act as clipping
+  planes when rendering a 3D view. Thus, any form inside the
+  clipping planes is visible; anything outside
+  those planes is not visible.</p>
+  <p>Setting the frustum changes the perspective of the scene being rendered.
+  This can be achieved more simply in many cases by using
+  <a href="https://p5js.org/reference/#/p5/perspective">perspective()</a>.</p>
+  <p>If no parameters are given, the following default is used:
+  frustum(-width/20, width/20, height/20, -height/20, eyeZ/10, eyeZ*10),
+  where eyeZ is equal to ((height/2) / tan(PI/6)).</p>
+line: 246
+params:
+  - name: left
+    description: |
+      <p>camera frustum left plane</p>
+    type: Number
+    optional: true
+  - name: right
+    description: |
+      <p>camera frustum right plane</p>
+    type: Number
+    optional: true
+  - name: bottom
+    description: |
+      <p>camera frustum bottom plane</p>
+    type: Number
+    optional: true
+  - name: top
+    description: |
+      <p>camera frustum top plane</p>
+    type: Number
+    optional: true
+  - name: near
+    description: |
+      <p>camera frustum near plane</p>
+    type: Number
+    optional: true
+  - name: far
+    description: |
+      <p>camera frustum far plane</p>
+    type: Number
+    optional: true
+itemtype: method
+class: p5
+alt: >-
+  two 3D boxes move back and forth along same plane, rotating as mouse is
+  dragged.
+chainable: true
+---
+
+
+# frustum

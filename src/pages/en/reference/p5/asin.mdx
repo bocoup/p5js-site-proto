@@ -1,0 +1,35 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: asin
+module: Math
+submodule: Trigonometry
+file: src/math/trigonometry.js
+description: >
+  <p>The inverse of <a href="#/p5/sin">sin()</a>, returns the arc sine of a
+
+  value. This function expects input values in the range of -1 to 1. By
+
+  default, <code>asin()</code> returns values in the range -π ÷ 2
+
+  (about -1.57) to π ÷ 2 (about 1.57). If the
+
+  <a href="#/p5/angleMode">angleMode()</a> is <code>DEGREES</code> then values
+  are
+
+  returned in the range -90 to 90.</p>
+line: 60
+params:
+  - name: value
+    description: |
+      <p>value whose arc sine is to be returned.</p>
+    type: Number
+itemtype: method
+class: p5
+return:
+  description: arc sine of the given value.
+  type: Number
+chainable: false
+---
+
+
+# asin

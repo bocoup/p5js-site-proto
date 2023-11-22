@@ -1,0 +1,31 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: setInput
+module: p5.sound
+submodule: p5.sound
+file: lib/addons/p5.sound.js
+description: |
+  <p>Connects to the p5sound instance (main output) by default.
+  Optionally, you can pass in a specific source (i.e. a soundfile).</p>
+line: 3117
+params:
+  - name: snd
+    description: |
+      <p>set the sound source
+                                           (optional, defaults to
+                                           main output)</p>
+    type: SoundObject|undefined
+    optional: true
+  - name: smoothing
+    description: |
+      <p>a range between 0.0 and 1.0
+                                            to smooth amplitude readings</p>
+    type: Number|undefined
+    optional: true
+itemtype: method
+class: p5.Amplitude
+chainable: false
+---
+
+
+# setInput

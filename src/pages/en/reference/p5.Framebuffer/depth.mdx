@@ -1,0 +1,37 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: depth
+module: Rendering
+submodule: ''
+file: src/webgl/p5.Framebuffer.js
+description: >
+  <p>A texture with the depth information of the framebuffer. If the framebuffer
+
+  was created with <code>{ depth: false }</code> in its settings, then this
+  property will
+
+  be undefined. Pass this to <a href="#/p5/texture">texture()</a> to draw it to
+
+  the canvas, or pass it to a shader with
+
+  <a href="#/p5.Shader/setUniform">setUniform()</a> to read its data.</p>
+
+  <p>Since Framebuffers are controlled by WebGL, their y coordinates are stored
+
+  flipped compared to images and videos. When texturing with a framebuffer
+
+  texture, you may want to flip vertically, e.g. with
+
+  <code>plane(framebuffer.width, -framebuffer.height)</code>.</p>
+line: 1335
+itemtype: property
+class: p5.Framebuffer
+alt: |-
+  A video of a rectangular prism rotating, with parts closest to the camera
+  appearing yellow and colors getting progressively more blue the farther
+  from the camera they go
+chainable: false
+---
+
+
+# depth

@@ -1,0 +1,31 @@
+---
+layout: '@layouts/reference/SingleReferenceLayout.astro'
+title: shuffle
+module: Data
+submodule: Array Functions
+file: src/utilities/array_functions.js
+description: |
+  <p>Randomizes the order of the elements of an array. Implements
+  <a href='http://Bost.Ocks.org/mike/shuffle/' target=_blank>
+  Fisher-Yates Shuffle Algorithm</a>.</p>
+line: 185
+params:
+  - name: array
+    description: |
+      <p>Array to shuffle</p>
+    type: Array
+  - name: bool
+    description: |
+      <p>modify passed array</p>
+    type: Boolean
+    optional: true
+itemtype: method
+class: p5
+return:
+  description: shuffled Array
+  type: Array
+chainable: false
+---
+
+
+# shuffle

@@ -130,3 +130,5 @@ dist
 /pages/*
 .DS_Store
 temp/*
+
+in/
