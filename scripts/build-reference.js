@@ -149,6 +149,10 @@ function getModulePath(doc) {
 }
 
 function addDocToModulePathTree(doc, path) {
+  if (!doc || !doc.name || !path) {
+    return;
+  }
+
   const modulePath = path.replace("./src/pages/en/reference/", "") + doc.name;
   if (doc.class && doc.class !== "p5") {
     if (!modulePathTree.classes[doc.class]) {
@@ -206,7 +210,7 @@ async function convertClassToMDX(doc) {
 }
 
 async function convertToMDX(doc) {
-  if (!doc || !doc.name) {
+  if (!doc || !doc.name || !doc.file) {
     return;
   }
 
@@ -223,7 +227,7 @@ async function convertToMDX(doc) {
   }
 
   let frontMatterArgs = {};
-  const sourcePath = doc.file?.replace(/.*p5\.js\/(.*)/, "$1") ?? "";
+  const sourcePath = doc.file.replace(/.*p5\.js\/(.*)/, "$1") ?? "";
   try {
     frontMatterArgs = {
       layout: "@layouts/reference/SingleReferenceLayout.astro",
