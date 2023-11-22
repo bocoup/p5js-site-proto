@@ -30,6 +30,7 @@
     "react-dom": "^18.0.0",
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.0",
-    "simple-git": "^3.20.0"
+    "simple-git": "^3.20.0",
+    "yuidocjs": "^0.10.2"
   }
 }
