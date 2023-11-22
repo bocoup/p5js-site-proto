@@ -55,7 +55,7 @@ async function cloneLibraryRepoIfNeeded() {
     (await fileExistsAt(localPath)) &&
     (await isModifiedWithin24Hours(localPath));
   if (!currentRepoExists) {
-    await cloneLibraryRepo(localPath, repoUrl);
+    await cloneLibraryRepo(repoUrl, localPath);
     await fixForAbsolutePathInPreprocessor(localPath);
   } else {
     console.log("Library repo already exists, skipping clone...");

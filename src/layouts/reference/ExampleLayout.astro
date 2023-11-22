@@ -1,0 +1,16 @@
+---
+const {
+  frontmatter: { title, code, description },
+} = Astro.props;
+import CodeEmbed from "@components/reference/CodeEmbed/";
+import InteractiveComponentTest from "@components/InteractiveComponentTest/";
+---
+
+<html>
+  <h1>{title}</h1>
+  <br />
+  <p>{description}</p>
+  <CodeEmbed code={code} />
+
+
+</html>

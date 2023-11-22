@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build:reference": "node ./scripts/build-reference.js"
+    "build:reference": "node ./scripts/build-reference.js",
+    "build:examples": "node ./scripts/build-examples.js"
   },
   "type": "module",
   "author": "",

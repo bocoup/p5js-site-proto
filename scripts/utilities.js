@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import simpleGit from "simple-git";
 
 async function cloneLibraryRepo(repoUrl, localSavePath) {
   const git = simpleGit();
