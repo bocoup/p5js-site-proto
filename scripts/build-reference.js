@@ -274,7 +274,7 @@ const getIndexMdx = () => {
 
           scanAndAddSubmodules(val);
         } else {
-          markdownContent += `- [${key}](./${val})\n`;
+          markdownContent += `- [${key}](./${val}/)\n`;
         }
       }
     };
