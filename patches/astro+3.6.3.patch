@@ -1,3 +1,4 @@
+# see https://github.com/withastro/astro/issues/9223
 diff --git a/node_modules/astro/dist/i18n/middleware.js b/node_modules/astro/dist/i18n/middleware.js
 index 6f33369..3bb049a 100644
 --- a/node_modules/astro/dist/i18n/middleware.js
