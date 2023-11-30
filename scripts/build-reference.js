@@ -240,7 +240,7 @@ async function convertToMDX(doc) {
       ...(doc.params ? { params: doc.params } : {}),
       ...(doc.itemtype ? { itemtype: doc.itemtype } : {}),
       ...(doc.class ? { class: doc.class } : {}),
-      ...(doc.examples ? { examples: doc.examples } : {}),
+      ...(doc.example ? { example: doc.example } : {}),
       ...(doc.alt ? { alt: doc.alt } : {}),
       ...(doc.return ? { return: doc.return } : {}),
       chainable: doc.chainable === 1,

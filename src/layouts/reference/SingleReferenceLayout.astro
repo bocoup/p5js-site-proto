@@ -1,6 +1,6 @@
 ---
 const {
-  frontmatter: { title, module, submodule, examples },
+  frontmatter: { title, module, submodule, example },
 } = Astro.props;
 import CodeEmbed from "@components/reference/CodeEmbed/";
 import InteractiveComponentTest from "@components/InteractiveComponentTest/";
@@ -15,7 +15,7 @@ import InteractiveComponentTest from "@components/InteractiveComponentTest/";
   <slot />
   <hr />
   <h3>Example code rendered with a preact component</h3>
-  <CodeEmbed code={examples} />
+  <CodeEmbed code={example} />
 
   <h3>This is an interactive component that uses preact hooks</h3>
   <InteractiveComponentTest client:idle />
