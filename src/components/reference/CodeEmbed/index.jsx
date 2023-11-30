@@ -1,5 +1,3 @@
-import Preact from "preact";
-
 const CodeEmbed = ({ code }) => {
   return (
     <div>
