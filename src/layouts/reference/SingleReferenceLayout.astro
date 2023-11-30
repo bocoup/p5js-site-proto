@@ -13,10 +13,11 @@ import InteractiveComponentTest from "@components/InteractiveComponentTest/";
   <br />
   <!-- This is the actual MDX content: -->
   <slot />
-  <!-- This is a react component -->
+  <hr />
+  <h3>Example code rendered with a preact component</h3>
   <CodeEmbed code={examples} />
-  <h3>This is an interactive component that uses React hooks</h3>
-   This will only work
+
+  <h3>This is an interactive component that uses preact hooks</h3>
   <InteractiveComponentTest client:idle />
 
 
