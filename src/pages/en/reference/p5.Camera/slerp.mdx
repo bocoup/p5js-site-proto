@@ -49,6 +49,86 @@ params:
     type: Number
 itemtype: method
 class: p5.Camera
+example:
+  - |-
+
+    <div>
+    <code>
+    let cam0, cam1, cam;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      strokeWeight(3);
+
+      // camera for slerp.
+      cam = createCamera();
+      // cam0 is looking at the cube from the front.
+      // cam1 is pointing straight to the right in the cube
+      // at the same position as cam0 by doing a pan(-PI/2).
+      cam0 = createCamera();
+      cam1 = createCamera();
+      cam1.pan(-PI/2);
+
+      // we only use cam.
+      setCamera(cam);
+    }
+
+    function draw() {
+      // calculate amount.
+      const amt = 0.5 - 0.5 * cos(frameCount * TAU / 120);
+      // slerp cam0 and cam1 with amt, set to cam.
+      // When amt moves from 0 to 1, cam moves from cam0 to cam1,
+      // shaking the camera to the right.
+      cam.slerp(cam0, cam1, amt);
+
+      background(255);
+      // Every time the camera turns right, the cube drifts left.
+      box(40);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    let cam, lastCam, initialCam;
+    let countForReset = 30;
+    // This sample uses orbitControl() to move the camera.
+    // Double-clicking the canvas restores the camera to its initial state.
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      strokeWeight(3);
+
+      cam = createCamera(); // main camera
+      lastCam = createCamera(); // Camera for recording loc info before reset
+      initialCam = createCamera(); // Camera for recording the initial state
+
+      setCamera(cam); // set main camera
+    }
+
+    function draw() {
+      if (countForReset < 30) {
+        // if the reset count is less than 30,
+        // it will move closer to the original camera as it increases.
+        countForReset++;
+        cam.slerp(lastCam, initialCam, countForReset / 30);
+      } else {
+        // if the count is 30,
+        // you can freely move the main camera with orbitControl().
+        orbitControl();
+      }
+
+      background(255);
+      box(40);
+    }
+    // A double-click sets countForReset to 0 and initiates a reset.
+    function doubleClicked() {
+      if (countForReset === 30) {
+        countForReset = 0;
+        lastCam.set(cam);
+      }
+    }
+    </code>
+    </div>
 alt: >-
   There is a camera, drawing a cube. The camera can be moved freely with
 

@@ -38,6 +38,91 @@ description: >
 line: 105
 itemtype: method
 class: p5.Element
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create a div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color to white
+      div.style('background-color', 'white');
+      // Align any text to the center.
+      div.style('text-align', 'center');
+      // Set its ID to "container".
+      div.id('container');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent
+      // using its ID "container".
+      p.parent('container');
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create rectangular div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color and align
+      // any text to the center.
+      div.style('background-color', 'white');
+      div.style('text-align', 'center');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent.
+      p.parent(div);
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup()  {
+      background(200);
+
+      // Create rectangular div element.
+      let div = createDiv();
+      // Place the div in the top-left corner.
+      div.position(10, 20);
+      // Set its width and height.
+      div.size(80, 60);
+      // Set its background color and align
+      // any text to the center.
+      div.style('background-color', 'white');
+      div.style('text-align', 'center');
+
+      // Create a paragraph element.
+      let p = createP('p5*js');
+      // Make the div its parent
+      // using the underlying
+      // HTMLElement.
+      p.parent(div.elt);
+
+      describe('The text "p5*js" written in black at the center of a white rectangle. The rectangle is inside a gray square.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

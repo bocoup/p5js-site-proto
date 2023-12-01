@@ -44,6 +44,70 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    noStroke();
+
+    // Mask in some shapes
+    push();
+    beginClip();
+    triangle(15, 37, 30, 13, 43, 37);
+    circle(45, 45, 7);
+    endClip();
+
+    fill('red');
+    rect(5, 5, 45, 45);
+    pop();
+
+    translate(50, 50);
+
+    // Mask out the same shapes
+    push();
+    beginClip({ invert: true });
+    triangle(15, 37, 30, 13, 43, 37);
+    circle(45, 45, 7);
+    endClip();
+
+    fill('red');
+    rect(5, 5, 45, 45);
+    pop();
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+
+    function draw() {
+      background(255);
+      noStroke();
+
+      beginClip();
+      push();
+      rotateX(frameCount * 0.01);
+      rotateY(frameCount * 0.01);
+      scale(0.5);
+      torus(30, 15);
+      pop();
+      endClip();
+
+      beginShape(QUAD_STRIP);
+      fill(0, 255, 255);
+      vertex(-width/2, -height/2);
+      vertex(width/2, -height/2);
+      fill(100, 0, 100);
+      vertex(-width/2, height/2);
+      vertex(width/2, height/2);
+      endShape();
+    }
+    </code>
+    </div>
 alt: |-
   A silhouette of a rotating torus colored with a gradient from
   cyan to purple

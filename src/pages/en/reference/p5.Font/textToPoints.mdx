@@ -72,6 +72,28 @@ params:
     optional: true
 itemtype: method
 class: p5.Font
+example:
+  - |-
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+      let points = font.textToPoints('p5*js', 6, 60, 35, { sampleFactor:  0.5 });
+      points.forEach(p =>  {
+        point(p.x, p.y);
+      });
+
+      describe('A set of black dots outlining the text "p5*js" on a gray background.');
+    }
+    </code>
+    </div>
 return:
   description: 'array of point objects, each with x, y, and alpha (path angle) properties.'
   type: Array

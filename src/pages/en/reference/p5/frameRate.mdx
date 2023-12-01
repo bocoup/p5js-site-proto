@@ -25,6 +25,57 @@ description: >
 line: 302
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // Set the x variable based
+      // on the current frameCount.
+      let x = frameCount % 100;
+
+      // If the mouse is pressed,
+      // decrease the frame rate.
+      if (mouseIsPressed === true) {
+        frameRate(10);
+      } else {
+        frameRate(60);
+      }
+
+      // Use x to set the circle's
+      // position.
+      circle(x, 50, 20);
+
+      describe('A white circle on a gray background. The circle moves from left to right in a loop. It slows down when the mouse is pressed.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // If the mouse is pressed, do lots
+      // of math to slow down drawing.
+      if (mouseIsPressed === true) {
+        for (let i = 0; i < 1000000; i += 1) {
+          random();
+        }
+      }
+
+      // Get the current frame rate
+      // and display it.
+      let fps = frameRate();
+      text(fps, 50, 50);
+
+      describe('A number written in black written on a gray background. The number decreases when the mouse is pressed.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

@@ -10,6 +10,26 @@ description: |
 line: 411
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // Set the frame rate to 20.
+      frameRate(20);
+
+      // Get the target frame rate and
+      // display it.
+      let fps = getTargetFrameRate();
+      text(fps, 43, 54);
+
+      describe('The number 20 written in black on a gray background.');
+    }
+    </code>
+    </div>
 return:
   description: _targetFrameRate
   type: Number

@@ -13,6 +13,49 @@ description: |
 line: 747
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    square(32, 10, 35);
+
+    noFill();
+
+    square(32, 55, 35);
+
+    describe('A white square on top of an empty square. Both squares have black
+    outlines.');
+
+    </code>
+
+    </div>
+
+
+    <div modernizr='webgl'>
+
+    <code>
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+
+
+    function draw() {
+      background(0);
+      noFill();
+      stroke(100, 100, 240);
+      rotateX(frameCount * 0.01);
+      rotateY(frameCount * 0.01);
+      box(45, 45, 45);
+      describe('A purple cube wireframe spinning on a black canvas.');
+    }
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

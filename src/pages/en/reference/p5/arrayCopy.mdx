@@ -19,6 +19,22 @@ description: |
 line: 35
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    let src = ['A', 'B', 'C'];
+    let dst = [1, 2, 3];
+    let srcPosition = 1;
+    let dstPosition = 0;
+    let length = 2;
+
+    print(src); // ['A', 'B', 'C']
+    print(dst); // [ 1 ,  2 ,  3 ]
+
+    arrayCopy(src, srcPosition, dst, dstPosition, length);
+    print(dst); // ['B', 'C', 3]
+    </code></div>
 chainable: false
 ---
 

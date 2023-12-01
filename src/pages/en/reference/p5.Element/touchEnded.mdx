@@ -18,6 +18,58 @@ params:
     type: Function|Boolean
 itemtype: method
 class: p5.Element
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Call randomColor() when the
+      // user touches the canvas,
+      // then lifts their finger.
+      cnv.touchEnded(randomColor);
+
+      describe('A gray square changes color when the user touches the canvas, then lifts their finger.');
+    }
+
+    // Paint the background either
+    // red, yellow, blue, or green.
+    function randomColor() {
+      let c = random(['red', 'yellow', 'blue', 'green']);
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Paint the background either
+      // red, yellow, blue, or green
+      // when the user touches the
+      // canvas, then lifts their
+      // finger.
+      cnv.touchEnded(() => {
+        let c = random(['red', 'yellow', 'blue', 'green']);
+        background(c);
+      });
+
+      describe('A gray square changes color when the user touches the canvas, then lifts their finger.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

@@ -47,6 +47,100 @@ params:
     type: 'Number|Number[]|Object'
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    set(30, 20, 0);
+
+    set(85, 20, 0);
+
+    set(85, 75, 0);
+
+    set(30, 75, 0);
+
+    updatePixels();
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let black = color(0);
+
+    set(30, 20, black);
+
+    set(85, 20, black);
+
+    set(85, 75, black);
+
+    set(30, 75, black);
+
+    updatePixels();
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    for (let x = 0; x < width; x += 1) {
+      for (let y = 0; y < height; y += 1) {
+        let c = map(x, 0, width, 0, 255);
+        set(x, y, c);
+      }
+    }
+
+    updatePixels();
+
+
+    describe('A horiztonal color gradient from black to white.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let img;
+
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+
+    function setup() {
+      set(0, 0, img);
+      updatePixels();
+
+      describe('An image of a mountain landscape.');
+    }
+
+    </code>
+
+    </div>
 chainable: false
 ---
 

@@ -9,6 +9,17 @@ description: |
 line: 567
 itemtype: method
 class: p5.NumberDict
+example:
+  - |-
+
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict({ 2: -10, 4: 0.65, 1.2: 3 });
+      let lowestValue = myDictionary.minValue(); // value is -10
+      print(lowestValue);
+    }
+    </code></div>
 return:
   description: ''
   type: Number

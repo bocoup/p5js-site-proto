@@ -54,6 +54,69 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Note: this may not work in some browsers.
+      let video = createVideo('assets/small.mp4');
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Provide an array options for different file formats.
+      let video = createVideo(
+        ['assets/small.mp4', 'assets/small.ogv', 'assets/small.webm']
+      );
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    let video;
+
+    function setup() {
+      noCanvas();
+
+      // Load a video and add it to the page.
+      // Provide an array options for different file formats.
+      // Call mute() once the video loads.
+      video = createVideo(
+        ['assets/small.mp4', 'assets/small.ogv', 'assets/small.webm'],
+        muteVideo
+      );
+      // Show the default video controls.
+      video.showControls();
+
+      describe('A video of a toy robot with playback controls beneath it.');
+    }
+
+    // Mute the video once it loads.
+    function muteVideo() {
+      video.volume(0);
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.MediaElement">p5.MediaElement</a> object.
   type: p5.MediaElement

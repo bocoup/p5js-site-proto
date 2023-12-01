@@ -17,6 +17,17 @@ params:
     type: Number|String
 itemtype: method
 class: p5.TypedDict
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    function setup() {
+      let myDictionary = createStringDict('p5', 'js');
+      myDictionary.set('p5', 'JS');
+      myDictionary.print(); // logs "key: p5 - value: JS" to console
+    }
+    </code></div>
 chainable: false
 ---
 

@@ -10,6 +10,26 @@ description: |
 line: 1223
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+    function setup() {
+      tint('red');
+      image(img, 0, 0);
+      noTint();
+      image(img, 50, 0);
+
+      describe('Two images of an umbrella and a ceiling side-by-side. The image on the left has a red tint.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

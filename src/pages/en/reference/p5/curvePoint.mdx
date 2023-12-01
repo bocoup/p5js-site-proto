@@ -34,6 +34,30 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    noFill();
+    curve(5, 26, 5, 26, 73, 24, 73, 61);
+    curve(5, 26, 73, 24, 73, 61, 15, 65);
+    fill(255);
+    ellipseMode(CENTER);
+    let steps = 6;
+    for (let i = 0; i <= steps; i++) {
+      let t = i / steps;
+      let x = curvePoint(5, 5, 73, 73, t);
+      let y = curvePoint(26, 26, 24, 61, t);
+      ellipse(x, y, 5, 5);
+      x = curvePoint(5, 73, 73, 15, t);
+      y = curvePoint(26, 24, 61, 65, t);
+      ellipse(x, y, 5, 5);
+    }
+    </code>
+    </div>
+
+    line hooking down to right-bottom with 13 5×5 white ellipse points
 return:
   description: <a href="#/p5/curve">Curve</a> value at position t
   type: Number

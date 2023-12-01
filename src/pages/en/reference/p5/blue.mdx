@@ -16,6 +16,33 @@ params:
     type: 'p5.Color|Number[]|String'
 itemtype: method
 class: p5
+example:
+  - >
+
+    <div>
+
+    <code>
+
+    const c = color(175, 100, 220);
+
+    fill(c);
+
+    rect(15, 20, 35, 60);
+
+    // Sets 'blueValue' to 220.
+
+    const blueValue = blue(c);
+
+    fill(0, 0, blueValue);
+
+    rect(50, 20, 35, 60);
+
+    describe('Two rectangles. The left one is light purple and the right one is
+    royal blue.');
+
+    </code>
+
+    </div>
 return:
   description: the blue value.
   type: Number

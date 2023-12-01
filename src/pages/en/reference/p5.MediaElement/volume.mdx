@@ -22,6 +22,41 @@ description: >
 line: 4016
 itemtype: method
 class: p5.MediaElement
+example:
+  - |-
+
+    <div>
+    <code>
+    let dragon;
+
+    function setup() {
+      // Create a p5.MediaElement using createAudio().
+      dragon = createAudio('assets/lucky_dragons.mp3');
+      // Show the default media controls.
+      dragon.showControls();
+
+      describe('The text "Volume: V" on a gray square with media controls beneath it. The number "V" oscillates between 0 and 1 as the music plays.');
+    }
+
+    function draw() {
+      background(200);
+
+      // Produce a number between 0 and 1.
+      let n = 0.5 * sin(frameCount * 0.01) + 0.5;
+      // Use n to set the volume.
+      dragon.volume(n);
+
+      // Get the current volume
+      // and display it.
+      let v = dragon.volume();
+      // Round v to 1 decimal place
+      // for display.
+      v = round(v, 1);
+      textAlign(CENTER);
+      text(`Volume: ${v}`, 50, 50);
+    }
+    </code>
+    </div>
 return:
   description: current volume.
   type: Number

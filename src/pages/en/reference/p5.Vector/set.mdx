@@ -15,6 +15,34 @@ description: >
 line: 156
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div>
+    <code>
+    strokeWeight(5);
+
+    // Top left.
+    let pos = createVector(25, 25);
+    point(pos);
+
+    // Top right.
+    pos.set(75, 25);
+    point(pos);
+
+    // Bottom right.
+    let p2 = createVector(75, 75);
+    pos.set(p2);
+    point(pos);
+
+    // Bottom left.
+    let arr = [25, 75];
+    pos.set(arr);
+    point(pos);
+
+    describe('Four black dots arranged in a square on a gray background.');
+    </code>
+    </div>
 chainable: true
 ---
 

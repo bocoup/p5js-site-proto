@@ -27,6 +27,21 @@ description: >
 line: 466
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      drawingContext.shadowOffsetX = 5;
+      drawingContext.shadowOffsetY = -5;
+      drawingContext.shadowBlur = 10;
+      drawingContext.shadowColor = 'black';
+      background(200);
+      ellipse(width / 2, height / 2, 50, 50);
+    }
+    </code>
+    </div>
 alt: white ellipse with shadow blur effect around edges
 chainable: false
 ---

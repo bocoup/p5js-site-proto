@@ -16,6 +16,31 @@ description: |
 line: 1293
 itemtype: property
 class: p5.Framebuffer
+example:
+  - |-
+
+    <div>
+    <code>
+    let framebuffer;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      framebuffer = createFramebuffer();
+      noStroke();
+    }
+
+    function draw() {
+      // Draw to the framebuffer
+      framebuffer.begin();
+      background(255);
+      normalMaterial();
+      sphere(20);
+      framebuffer.end();
+
+      // Draw the framebuffer to the main canvas
+      image(framebuffer.color, -width/2, -height/2);
+    }
+    </code>
+    </div>
 alt: 'A red, green, and blue sphere in the middle of the canvas'
 chainable: false
 ---

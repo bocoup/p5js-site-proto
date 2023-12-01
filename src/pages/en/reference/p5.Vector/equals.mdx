@@ -29,6 +29,47 @@ description: >
 line: 2268
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    let v0 = createVector(10, 20, 30);
+    let v1 = createVector(10, 20, 30);
+    let v2 = createVector(0, 0, 0);
+
+    // Prints "true" to the console.
+    print(v0.equals(v1));
+    // Prints "false" to the console.
+    print(v0.equals(v2));
+    </code>
+    </div>
+
+    <div class = "norender">
+    <code>
+    let v0 = createVector(5, 10, 20);
+    let v1 = createVector(5, 10, 20);
+    let v2 = createVector(13, 10, 19);
+
+    // Prints "true" to the console.
+    print(v0.equals(v1.x, v1.y, v1.z));
+    // Prints "false" to the console.
+    print(v0.equals(v2.x, v2.y, v2.z));
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    let v0 = createVector(10, 20, 30);
+    let v1 = createVector(10, 20, 30);
+    let v2 = createVector(0, 0, 0);
+
+    // Prints "true" to the console.
+    print(p5.Vector.equals(v0, v1));
+    // Prints "false" to the console.
+    print(p5.Vector.equals(v0, v2));
+    </code>
+    </div>
 return:
   description: whether the vectors are equal.
   type: Boolean

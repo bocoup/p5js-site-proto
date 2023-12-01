@@ -32,6 +32,29 @@ params:
     type: String
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    let names = 'Pat,Xio,Alex';
+
+    let splitString = split(names, ',');
+
+    text(splitString[0], 5, 30);
+
+    text(splitString[1], 5, 50);
+
+    text(splitString[2], 5, 70);
+
+    describe('“Pat” top left, “Xio” mid left, and “Alex” displayed bottom
+    left');
+
+    </code>
+
+    </div>
 return:
   description: Array of Strings
   type: 'String[]'

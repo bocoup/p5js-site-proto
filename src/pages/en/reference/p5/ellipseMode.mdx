@@ -51,6 +51,55 @@ params:
     type: Constant
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    ellipseMode(RADIUS);
+
+    fill(255);
+
+    ellipse(50, 50, 30, 30);
+
+    ellipseMode(CENTER);
+
+    fill(100);
+
+    ellipse(50, 50, 30, 30);
+
+    describe('A white circle with a gray circle at its center. Both circles have
+    black outlines.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    ellipseMode(CORNER);
+
+    fill(255);
+
+    ellipse(25, 25, 50, 50);
+
+    ellipseMode(CORNERS);
+
+    fill(100);
+
+    ellipse(25, 25, 50, 50);
+
+    describe('A white circle with a gray circle at its top-left corner. Both
+    circles have black outlines.');
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

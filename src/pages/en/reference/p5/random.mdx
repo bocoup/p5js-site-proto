@@ -8,6 +8,8 @@ description: "<p>Returns a random number or a random element from an array.</p>\
 line: 70
 itemtype: method
 class: p5
+example:
+  - "\n<div>\n<code>\nlet x = random(width);\nlet y = random(height);\n\nstrokeWeight(5);\npoint(x, y);\n\ndescribe('A black dot appears in a random posiiton on a gray square.');\n</code>\n</div>\n\n<div>\n<code>\nlet animals = ['\U0001F981', '\U0001F42F', '\U0001F43B'];\nlet animal = random(animals);\ntext(animal, 50, 50);\n\ndescribe('An animal face is displayed at random. Either a lion, tiger, or bear.');\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(200);\n\n  frameRate(5);\n  let x = random(width);\n  let y = random(height);\n\n  strokeWeight(5);\n  point(x, y);\n\n  describe('A black dot moves around randomly on a gray square.');\n}\n</code>\n</div>\n\n<div>\n<code>\nfunction draw() {\n  background(200);\n\n  frameRate(5);\n  let x = random(45, 55);\n  let y = random(45, 55);\n\n  strokeWeight(5);\n  point(x, y);\n\n  describe('A black dot moves around randomly in the middle of a gray square.');\n}\n</code>\n</div>"
 return:
   description: random number.
   type: Number

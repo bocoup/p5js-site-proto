@@ -22,6 +22,45 @@ params:
     type: Number
 itemtype: method
 class: p5.Camera
+example:
+  - |-
+
+    <div>
+    <code>
+    let cam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      normalMaterial();
+      cam = createCamera();
+    }
+
+    function draw() {
+      background(200);
+
+      // look at a new random point every 60 frames
+      if (frameCount % 60 === 0) {
+        cam.lookAt(random(-100, 100), random(-50, 50), 0);
+      }
+
+      rotateX(frameCount * 0.01);
+      translate(-100, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+      translate(35, 0, 0);
+      box(20);
+    }
+    </code>
+    </div>
 alt: |-
   camera view of rotating 3D cubes changes to look at a new random
   point every second .

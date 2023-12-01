@@ -15,6 +15,25 @@ description: |
 line: 590
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('the light is partially ambient and partially directional');
+    }
+    function draw() {
+      background(0);
+      lights();
+      rotateX(millis() / 1000);
+      rotateY(millis() / 1000);
+      rotateZ(millis() / 1000);
+      box();
+    }
+    </code>
+    </div>
 alt: the light is partially ambient and partially directional
 chainable: true
 ---

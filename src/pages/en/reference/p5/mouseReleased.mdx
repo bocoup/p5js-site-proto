@@ -27,6 +27,50 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Click within the image to change
+    // the value of the rectangle
+    // after the mouse has been clicked
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe('black 50-by-50 rect turns white with mouse click/press.');
+    }
+    function mouseReleased() {
+      if (value === 0) {
+        value = 255;
+      } else {
+        value = 0;
+      }
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    function mouseReleased() {
+      ellipse(mouseX, mouseY, 5, 5);
+      // prevent default
+      return false;
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    // returns a MouseEvent object
+    // as a callback argument
+    function mouseReleased(event) {
+      console.log(event);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

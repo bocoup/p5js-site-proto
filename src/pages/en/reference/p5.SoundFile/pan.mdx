@@ -23,6 +23,34 @@ params:
     optional: true
 itemtype: method
 class: p5.SoundFile
+example:
+  - |-
+
+    <div><code>
+     let ballX = 0;
+     let soundFile;
+
+     function preload() {
+       soundFormats('ogg', 'mp3');
+       soundFile = loadSound('assets/beatbox.mp3');
+     }
+
+     function draw() {
+       let cnv = createCanvas(100, 100);
+       cnv.mousePressed(canvasPressed);
+       background(220);
+       ballX = constrain(mouseX, 0, width);
+       ellipse(ballX, height/2, 20, 20);
+     }
+
+     function canvasPressed(){
+       // map the ball's x location to a panning degree
+       // between -1.0 (left) and 1.0 (right)
+       let panning = map(ballX, 0., width,-1.0, 1.0);
+       soundFile.pan(panning);
+       soundFile.play();
+     }
+     </div></code>
 chainable: false
 ---
 

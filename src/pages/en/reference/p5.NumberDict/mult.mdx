@@ -19,6 +19,17 @@ params:
     type: Number
 itemtype: method
 class: p5.NumberDict
+example:
+  - |
+
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict(2, 4);
+      myDictionary.mult(2, 2);
+      print(myDictionary.get(2)); // logs 8 to console.
+    }
+    </code></div>
 chainable: false
 ---
 

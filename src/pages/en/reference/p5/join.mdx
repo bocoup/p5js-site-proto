@@ -25,6 +25,18 @@ params:
     type: String
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let array = ['Hello', 'world!'];
+    let separator = ' ';
+    let message = join(array, separator);
+    text(message, 5, 50);
+    describe('“Hello world!” displayed middle left of canvas.');
+    </code>
+    </div>
 return:
   description: joined String
   type: String

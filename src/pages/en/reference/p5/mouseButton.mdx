@@ -12,6 +12,33 @@ description: |
 line: 341
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(237, 34, 93);
+      fill(0);
+
+      if (mouseIsPressed === true) {
+        if (mouseButton === LEFT) {
+          ellipse(50, 50, 50, 50);
+        }
+        if (mouseButton === RIGHT) {
+          rect(25, 25, 50, 50);
+        }
+        if (mouseButton === CENTER) {
+          triangle(23, 75, 50, 20, 78, 75);
+        }
+      }
+
+      print(mouseButton);
+      describe(`50-by-50 black ellipse appears on center of fuchsia
+        canvas on mouse click/press.`);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

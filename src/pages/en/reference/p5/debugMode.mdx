@@ -36,6 +36,116 @@ description: >
 line: 376
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode();
+      describe(
+        'a 3D box is centered on a grid in a 3D sketch. an icon indicates the direction of each axis: a red line points +X, a green line +Y, and a blue line +Z. the grid and icon disappear when the spacebar is pressed.'
+      );
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      box(15, 30);
+      // Press the spacebar to turn debugMode off!
+      if (keyIsDown(32)) {
+        noDebugMode();
+      }
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode(GRID);
+      describe('a 3D box is centered on a grid in a 3D sketch.');
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      box(15, 30);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode(AXES);
+      describe(
+        'a 3D box is centered in a 3D sketch. an icon indicates the direction of each axis: a red line points +X, a green line +Y, and a blue line +Z.'
+      );
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      box(15, 30);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode(GRID, 100, 10, 0, 0, 0);
+      describe('a 3D box is centered on a grid in a 3D sketch');
+    }
+
+    function draw() {
+      background(200);
+      orbitControl();
+      box(15, 30);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      camera(0, -30, 100, 0, 0, 0, 0, 1, 0);
+      normalMaterial();
+      debugMode(100, 10, 0, 0, 0, 20, 0, -40, 0);
+      describe(
+        'a 3D box is centered on a grid in a 3D sketch. an icon indicates the direction of each axis: a red line points +X, a green line +Y, and a blue line +Z.'
+      );
+    }
+
+    function draw() {
+      noStroke();
+      background(200);
+      orbitControl();
+      box(15, 30);
+      // set the stroke color and weight for the grid!
+      stroke(255, 0, 150);
+      strokeWeight(0.8);
+    }
+    </code>
+    </div>
 alt: |-
   a 3D box is centered on a grid in a 3D sketch. an icon
   indicates the direction of each axis: a red line points +X,

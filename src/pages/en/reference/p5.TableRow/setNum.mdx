@@ -21,6 +21,36 @@ params:
     type: Number|String
 itemtype: method
 class: p5.TableRow
+example:
+  - |2-
+
+     <div class="norender"><code>
+     // Given the CSV file "mammals.csv" in the project's "assets" folder:
+     //
+     // id,species,name
+     // 0,Capra hircus,Goat
+     // 1,Panthera pardus,Leopard
+     // 2,Equus zebra,Zebra
+
+     let table;
+
+     function preload() {
+     //my table is comma separated value "csv"
+     //and has a header specifying the columns labels
+     table = loadTable('assets/mammals.csv', 'csv', 'header');
+     }
+
+     function setup() {
+     let rows = table.getRows();
+     for (let r = 0; r < rows.length; r++) {
+       rows[r].setNum('id', r + 10);
+     }
+
+     print(table.getArray());
+
+     describe('no image displayed');
+     }
+     </code></div>
 chainable: false
 ---
 

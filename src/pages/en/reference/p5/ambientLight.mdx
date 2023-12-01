@@ -16,6 +16,59 @@ description: |
 line: 10
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      noStroke();
+      describe('sphere with coral color under black light');
+    }
+    function draw() {
+      background(100);
+      ambientLight(0); // black light (no light)
+      ambientMaterial(255, 127, 80); // coral material
+      sphere(40);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      noStroke();
+      describe('sphere with coral color under white light');
+    }
+    function draw() {
+      background(100);
+      ambientLight(255); // white light
+      ambientMaterial(255, 127, 80); // coral material
+      sphere(40);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100,100,WEBGL);
+      camera(0,-100,300);
+    }
+    function draw() {
+      background(230);
+      ambientMaterial(237,34,93); //Pink Material
+      ambientLight(mouseY);
+      //As you move the mouse up to down it changes from no ambient light to full ambient light.
+      rotateY(millis()/2000);
+      box(100);
+    }
+    </code>
+    </div>
 alt: pink ambient material cube under the ambient light
 chainable: true
 ---

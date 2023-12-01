@@ -17,6 +17,27 @@ params:
     type: p5.Image
 itemtype: method
 class: p5.Image
+example:
+  - |-
+
+    <div>
+    <code>
+    let photo;
+    let maskImage;
+
+    function preload() {
+      photo = loadImage('assets/rockies.jpg');
+      maskImage = loadImage('assets/mask2.png');
+    }
+
+    function setup() {
+      photo.mask(maskImage);
+      image(photo, 0, 0);
+
+      describe('An image of a mountain landscape. The right side of the image has a faded patch of white.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

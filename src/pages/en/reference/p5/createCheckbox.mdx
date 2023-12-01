@@ -40,6 +40,79 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      checkbox = createCheckbox();
+      checkbox.position(0, 100);
+
+      describe('A black square with a checkbox beneath it. The square turns white when the box is checked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      // Label the checkbox "white".
+      checkbox = createCheckbox(' white');
+      checkbox.position(0, 100);
+
+      describe('A black square with a checkbox labeled "white" beneath it. The square turns white when the box is checked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let checkbox;
+
+    function setup() {
+      // Create a checkbox and place it beneath the canvas.
+      // Label the checkbox "white" and set its value to true.
+      checkbox = createCheckbox(' white', true);
+      checkbox.position(0, 100);
+
+      describe('A white square with a checkbox labeled "white" beneath it. The square turns black when the box is unchecked.');
+    }
+
+    function draw() {
+      // Use the checkbox to set the background color.
+      if (checkbox.checked()) {
+        background(255);
+      } else {
+        background(0);
+      }
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

@@ -14,6 +14,17 @@ params:
     type: Number|String
 itemtype: method
 class: p5.TypedDict
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    function setup() {
+      let myDictionary = createStringDict('p5', 'js');
+      let myValue = myDictionary.get('p5');
+      print(myValue === 'js'); // logs true to console
+    }
+    </code></div>
 return:
   description: the value stored at that key
   type: Number|String

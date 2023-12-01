@@ -32,6 +32,34 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div><code>
+     let table;
+
+     function setup() {
+     table = new p5.Table();
+
+     table.addColumn('id');
+     table.addColumn('species');
+     table.addColumn('name');
+
+     let newRow = table.addRow();
+     newRow.setNum('id', table.getRowCount() - 1);
+     newRow.setString('species', 'Panthera leo');
+     newRow.setString('name', 'Lion');
+
+     // To save, un-comment next line then click 'run'
+     // saveTable(table, 'new.csv');
+
+     describe('no image displayed');
+     }
+
+     // Saves the following to a file called 'new.csv':
+     // id,species,name
+     // 0,Panthera leo,Lion
+     </code></div>
 chainable: false
 ---
 

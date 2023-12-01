@@ -16,6 +16,17 @@ params:
     type: String|Boolean|Number|Array
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(str('10')); // "10"
+    print(str(10.31)); // "10.31"
+    print(str(-10)); // "-10"
+    print(str(true)); // "true"
+    print(str(false)); // "false"
+    print(str([true, '10.3', 9.8])); // [ "true", "10.3", "9.8" ]
+    </code></div>
 return:
   description: string representation of value
   type: String

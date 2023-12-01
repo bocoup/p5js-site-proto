@@ -9,6 +9,29 @@ description: |
 line: 1295
 itemtype: method
 class: p5.Image
+example:
+  - |-
+
+    <div>
+    <code>
+    let gif;
+
+    function preload() {
+      gif = loadImage('assets/arnott-wallace-wink-loop-once.gif');
+    }
+
+    function draw() {
+      background(255);
+      image(gif, 0, 0);
+
+      describe('A cartoon face winks once and then freezes. Clicking resets the face and makes it wink again.');
+    }
+
+    function mousePressed() {
+      gif.reset();
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

@@ -47,6 +47,36 @@ description: >
 line: 734
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe(
+        'scene with sphere and spot light. The position of the light is controlled with the mouse position.'
+      );
+    }
+    function draw() {
+      background(0);
+      // move your mouse to change light position
+      let locX = mouseX - width / 2;
+      let locY = mouseY - height / 2;
+      // to set the light position,
+      // think of the world's coordinate as:
+      // -width/2,-height/2 ----------- width/2,-height/2
+      //                   |           |
+      //                   |    0,0    |
+      //                   |           |
+      //  -width/2,height/2 ----------- width/2,height/2
+      ambientLight(50);
+      spotLight(0, 250, 0, locX, locY, 100, 0, 0, -1, Math.PI / 16);
+      noStroke();
+      sphere(40);
+    }
+    </code>
+    </div>
 alt: |-
   scene with sphere and spot light. The position of
   the light is controlled with the mouse position.

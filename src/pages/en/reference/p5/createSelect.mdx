@@ -59,6 +59,133 @@ description: >
 line: 1057
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let mySelect;
+
+    function setup() {
+      // Create a dropdown and place it beneath the canvas.
+      mySelect = createSelect();
+      mySelect.position(0, 100);
+
+      // Add color options.
+      mySelect.option('red');
+      mySelect.option('green');
+      mySelect.option('blue');
+      mySelect.option('yellow');
+
+      // Set the selected option to "red".
+      mySelect.selected('red');
+
+      describe('A red square with a dropdown menu beneath it. The square changes color when a new color is selected.');
+    }
+
+    function draw() {
+      // Use the selected value to paint the background.
+      let c = mySelect.selected();
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let mySelect;
+
+    function setup() {
+      // Create a dropdown and place it beneath the canvas.
+      mySelect = createSelect();
+      mySelect.position(0, 100);
+
+      // Add color options.
+      mySelect.option('red');
+      mySelect.option('green');
+      mySelect.option('blue');
+      mySelect.option('yellow');
+
+      // Set the selected option to "red".
+      mySelect.selected('red');
+
+      // Disable the "yellow" option.
+      mySelect.disable('yellow');
+
+      describe('A red square with a dropdown menu beneath it. The square changes color when a new color is selected.');
+    }
+
+    function draw() {
+      // Use the selected value to paint the background.
+      let c = mySelect.selected();
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let mySelect;
+
+    function setup() {
+      // Create a dropdown and place it beneath the canvas.
+      mySelect = createSelect();
+      mySelect.position(0, 100);
+
+      // Add color options with names and values.
+      mySelect.option('one', 'red');
+      mySelect.option('two', 'green');
+      mySelect.option('three', 'blue');
+      mySelect.option('four', 'yellow');
+
+      // Set the selected option to "one".
+      mySelect.selected('one');
+
+      describe('A red square with a dropdown menu beneath it. The square changes color when a new color is selected.');
+    }
+
+    function draw() {
+      // Use the selected value to paint the background.
+      let c = mySelect.selected();
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    // Hold CTRL to select multiple options on Windows and Linux.
+    // Hold CMD to select multiple options on macOS.
+    let mySelect;
+
+    function setup() {
+      // Create a dropdown and allow multiple selections.
+      // Place it beneath the canvas.
+      mySelect = createSelect(true);
+      mySelect.position(0, 100);
+
+      // Add color options.
+      mySelect.option('red');
+      mySelect.option('green');
+      mySelect.option('blue');
+      mySelect.option('yellow');
+
+      describe('A gray square with a dropdown menu beneath it. Colorful circles appear when their color is selected.');
+    }
+
+    function draw() {
+      background(200);
+
+      // Use the selected value(s) to draw circles.
+      let colors = mySelect.selected();
+      colors.forEach((c, index) => {
+        let x = 10 + index * 20;
+        fill(c);
+        circle(x, 50, 20);
+      });
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

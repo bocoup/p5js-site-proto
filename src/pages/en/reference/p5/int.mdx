@@ -11,6 +11,19 @@ description: |
 line: 42
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(int('10')); // 10
+    print(int(10.31)); // 10
+    print(int(-10)); // -10
+    print(int(true)); // 1
+    print(int(false)); // 0
+    print(int([false, true, '10.3', 9.8])); // [0, 1, 10, 9]
+    print(int(Infinity)); // Infinity
+    print(int('-Infinity')); // -Infinity
+    </code></div>
 return:
   description: integer representation of value
   type: Number

@@ -23,6 +23,42 @@ description: >
 line: 124
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    let x1 = 10;
+
+    let y1 = 50;
+
+    let x2 = 90;
+
+    let y2 = 50;
+
+
+    line(x1, y1, x2, y2);
+
+    strokeWeight(5);
+
+    point(x1, y1);
+
+    point(x2, y2);
+
+
+    let d = dist(x1, y1, x2, y2);
+
+    text(d, 43, 40);
+
+
+    describe('Two dots connected by a horizontal line. The number 80 is written
+    above the center of the line.');
+
+    </code>
+
+    </div>
 return:
   description: distance between the two points.
   type: Number

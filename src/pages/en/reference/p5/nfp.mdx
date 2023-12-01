@@ -18,6 +18,32 @@ description: >
 line: 289
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+      let num1 = 11253106.115;
+      let num2 = -11253106.115;
+
+      noStroke();
+      fill(0);
+      textSize(12);
+
+      // Draw formatted numbers
+      text(nfp(num1, 4, 2), 10, 30);
+      text(nfp(num2, 4, 2), 10, 80);
+
+      // Draw dividing line
+      stroke(120);
+      line(0, 50, width, 50);
+
+      describe('“+11253106.11” top middle and “-11253106.11” displayed bottom middle');
+    }
+    </code>
+    </div>
 return:
   description: formatted String
   type: String

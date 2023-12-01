@@ -15,6 +15,36 @@ description: |
 line: 279
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div class='norender'>
+    <code>
+    // A simple if statement looking at whether
+    // rotationY - pRotationY < 0 is true or not will be
+    // sufficient for determining the rotate direction
+    // in most cases.
+
+    // Some extra logic is needed to account for cases where
+    // the angles wrap around.
+    let rotateDirection = 'clockwise';
+
+    // Simple range conversion to make things simpler.
+    // This is not absolutely necessary but the logic
+    // will be different in that case.
+
+    let rY = rotationY + 180;
+    let pRY = pRotationY + 180;
+
+    if ((rY - pRY > 0 && rY - pRY < 270) || rY - pRY < -270) {
+      rotateDirection = 'clockwise';
+    } else if (rY - pRY < 0 || rY - pRY > 270) {
+      rotateDirection = 'counter-clockwise';
+    }
+    print(rotateDirection);
+    describe('no image to display.');
+    </code>
+    </div>
 chainable: false
 ---
 

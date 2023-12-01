@@ -38,6 +38,56 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - >-
+
+
+    Calling loadStrings() inside <a href="#/p5/preload">preload()</a> guarantees
+    to complete the
+
+    operation before <a href="#/p5/setup">setup()</a> and <a
+    href="#/p5/draw">draw()</a> are called.
+
+
+    <div><code>
+
+    let result;
+
+    function preload() {
+      result = loadStrings('assets/test.txt');
+    }
+
+
+    function setup() {
+      background(200);
+      text(random(result), 10, 10, 80, 80);
+      describe(`randomly generated text from a file,
+        for example "i smell like butter"`);
+    }
+
+    </code></div>
+
+
+    Outside of preload(), you may supply a callback function to handle the
+
+    object:
+
+
+    <div><code>
+
+    function setup() {
+      loadStrings('assets/test.txt', pickString);
+      describe(`randomly generated text from a file,
+        for example "i have three feet"`);
+    }
+
+
+    function pickString(result) {
+      background(200);
+      text(random(result), 10, 10, 80, 80);
+    }
+
+    </code></div>
 return:
   description: Array of Strings
   type: 'String[]'

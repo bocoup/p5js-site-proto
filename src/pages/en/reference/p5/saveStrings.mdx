@@ -30,6 +30,35 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |2-
+
+     <div><code>
+     let words = 'apple bear cat dog';
+
+     // .split() outputs an Array
+     let list = split(words, ' ');
+
+     function setup() {
+     createCanvas(100, 100);
+     background(200);
+     text('click here to save', 10, 10, 70, 80);
+     describe('no image displayed');
+     }
+
+     function mousePressed() {
+     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+       saveStrings(list, 'nouns.txt');
+     }
+     }
+
+     // Saves the following to a file called 'nouns.txt':
+     //
+     // apple
+     // bear
+     // cat
+     // dog
+     </code></div>
 chainable: false
 ---
 

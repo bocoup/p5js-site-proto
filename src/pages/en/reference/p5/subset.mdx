@@ -28,6 +28,20 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class = 'norender'><code>
+    function setup() {
+      let myArray = [1, 2, 3, 4, 5];
+      print(myArray); // [1, 2, 3, 4, 5]
+
+      let sub1 = subset(myArray, 0, 3);
+      let sub2 = subset(myArray, 2, 2);
+      print(sub1); // [1,2,3]
+      print(sub2); // [3,4]
+    }
+    </code></div>
 return:
   description: Array of extracted elements
   type: Array

@@ -15,6 +15,43 @@ params:
     type: String
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      textSize(28);
+      strokeWeight(0.5);
+      let s = 'yoyo';
+      let w = textWidth(s);
+      text(s, 22, 55);
+      line(22, 55, 22 + w, 55);
+
+      describe('The word "yoyo" underlined.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      textSize(28);
+      strokeWeight(0.5);
+      // "\n" starts a new line.
+      let s = 'yo\nyo';
+      let w = textWidth(s);
+      text(s, 22, 55);
+      line(22, 55, 22 + w, 55);
+
+      describe('The word "yo" written twice, one copy beneath the other. The words are divided by a horizontal line.');
+    }
+    </code>
+    </div>
 return:
   description: width measured in units of pixels.
   type: Number

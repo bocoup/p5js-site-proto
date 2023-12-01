@@ -50,6 +50,27 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+      let c = frameCount % 255;
+      fill(c);
+      circle(50, 50, 25);
+
+      describe('A circle drawn in the middle of a gray square. The circle changes color from black to white, then repeats.');
+    }
+
+    function keyPressed() {
+      if (key === 's') {
+        saveGif('mySketch', 5);
+      }
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

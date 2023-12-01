@@ -46,6 +46,114 @@ params:
     type: 'Number|Number[]|Object'
 itemtype: method
 class: p5.Image
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    let img = createImage(100, 100);
+
+    img.set(30, 20, 0);
+
+    img.set(85, 20, 0);
+
+    img.set(85, 75, 0);
+
+    img.set(30, 75, 0);
+
+    img.updatePixels();
+
+    image(img, 0, 0);
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let img = createImage(100, 100);
+
+    let black = color(0);
+
+    img.set(30, 20, black);
+
+    img.set(85, 20, black);
+
+    img.set(85, 75, black);
+
+    img.set(30, 75, black);
+
+    img.updatePixels();
+
+    image(img, 0, 0);
+
+
+    describe('Four black dots arranged in a square drawn on a gray
+    background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let img = createImage(66, 66);
+
+    for (let x = 0; x < img.width; x += 1) {
+      for (let y = 0; y < img.height; y += 1) {
+        let c = map(x, 0, img.width, 0, 255);
+        img.set(x, y, c);
+      }
+    }
+
+    img.updatePixels();
+
+    image(img, 17, 17);
+
+
+    describe('A square with a horiztonal color gradient from black to white
+    drawn on a gray background.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let img;
+
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+
+    function setup() {
+      let img2 = createImage(100, 100);
+      img2.set(0, 0, img);
+      image(img2, 0, 0);
+
+      describe('An image of a mountain landscape.');
+    }
+
+    </code>
+
+    </div>
 chainable: false
 ---
 

@@ -14,6 +14,23 @@ description: |
 line: 10
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // On a touchscreen device, touch
+    // the canvas using one or more fingers
+    // at the same time
+    function draw() {
+      clear();
+      let display = touches.length + ' touches';
+      text(display, 5, 10);
+      describe(`Number of touches currently registered are displayed
+        on the canvas`);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

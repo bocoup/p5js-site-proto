@@ -26,6 +26,45 @@ params:
     optional: true
 itemtype: method
 class: p5.MediaElement
+example:
+  - |-
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video and play it automatically.
+      let video = createVideo('assets/fingers.mov', () => {
+        video.autoplay();
+        video.size(100, 100);
+      });
+
+      describe('A video of fingers walking on a treadmill.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+
+      // Load a video, but don't play it automatically.
+      let video = createVideo('assets/fingers.mov', () => {
+        video.autoplay(false);
+        video.size(100, 100);
+      });
+
+      // Play the video when the user clicks on it.
+      video.mousePressed(() => {
+        video.play();
+      });
+
+      describe('An image of fingers on a treadmill. They start walking when the user double-clicks on them.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

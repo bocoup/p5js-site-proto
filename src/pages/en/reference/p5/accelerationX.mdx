@@ -12,6 +12,21 @@ description: >
 line: 24
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Move a touchscreen device to register
+    // acceleration changes.
+    function draw() {
+      background(220, 50);
+      fill('magenta');
+      ellipse(width / 2, height / 2, accelerationX);
+      describe('Magnitude of device acceleration is displayed as ellipse size.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

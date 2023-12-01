@@ -11,6 +11,27 @@ description: |
 line: 2441
 itemtype: method
 class: p5.Element
+example:
+  - |2-
+
+     <div class='norender'><code>
+     let div0 = createDiv('this is the parent');
+     let div1 = createDiv('this is the child');
+     div0.child(div1); // use p5.Element
+     </code></div>
+     <div class='norender'><code>
+     let div0 = createDiv('this is the parent');
+     let div1 = createDiv('this is the child');
+     div1.id('apples');
+     div0.child('apples'); // use id
+     </code></div>
+     <div class='norender notest'><code>
+     // this example assumes there is a div already on the page
+     // with id "myChildDiv"
+     let div0 = createDiv('this is the parent');
+     let elt = document.getElementById('myChildDiv');
+     div0.child(elt); // use element from page
+     </code></div>
 return:
   description: an array of child nodes
   type: 'Node[]'

@@ -33,6 +33,92 @@ params:
     type: Function|Boolean
 itemtype: method
 class: p5.Element
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Call randomColor() when the
+      // mouse wheel moves.
+      cnv.mouseWheel(randomColor);
+
+      describe('A gray square changes color when the user scrolls the mouse wheel over the canvas.');
+    }
+
+    // Paint the background either
+    // red, yellow, blue, or green.
+    function randomColor() {
+      let c = random(['red', 'yellow', 'blue', 'green']);
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Paint the background either
+      // red, yellow, blue, or green
+      // when the mouse wheel moves.
+      cnv.mouseWheel(() => {
+        let c = random(['red', 'yellow', 'blue', 'green']);
+        background(c);
+      });
+
+      describe('A gray square changes color when the user scrolls the mouse wheel over the canvas.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Call changeBackground() when the
+      // mouse wheel moves.
+      cnv.mouseWheel(changeBackground);
+
+      describe('A gray square. When the mouse wheel scrolls over the square, it changes color and displays shapes.');
+    }
+
+    function changeBackground(event) {
+      // Change the background color
+      // based on deltaY.
+      if (event.deltaY > 0) {
+        background('deeppink');
+      } else if (event.deltaY < 0) {
+        background('cornflowerblue');
+      } else {
+        background(200);
+      }
+
+      // Draw a shape based on deltaX.
+      if (event.deltaX > 0) {
+        circle(50, 50, 20);
+      } else if (event.deltaX < 0) {
+        square(40, 40, 20);
+      }
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

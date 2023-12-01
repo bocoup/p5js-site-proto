@@ -13,6 +13,19 @@ params:
     type: String
 itemtype: method
 class: p5
+example:
+  - |2-
+
+     <div class="norender">
+     <code>
+     function setup() {
+       let myVar = 10;
+       storeItem('myVar', myVar);
+       print(getItem('myVar')); // logs 10 to the console
+       removeItem('myVar');
+       print(getItem('myVar')); // logs null to the console
+     }
+     </code></div>
 chainable: false
 ---
 

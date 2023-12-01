@@ -16,6 +16,41 @@ params:
     type: p5.Camera
 itemtype: method
 class: p5.Camera
+example:
+  - |-
+
+    <div>
+    <code>
+    let cam, initialCam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      strokeWeight(3);
+
+      // Set the initial state to initialCamera and set it to the camera
+      // used for drawing. Then set cam to be the active camera.
+      cam = createCamera();
+      initialCam = createCamera();
+      initialCam.camera(100, 100, 100, 0, 0, 0, 0, 0, -1);
+      cam.set(initialCam);
+
+      setCamera(cam);
+    }
+
+    function draw() {
+      orbitControl();
+      background(255);
+      box(50);
+      translate(0, 0, -25);
+      plane(100);
+    }
+
+    function doubleClicked(){
+      // Double-click to return the camera to its initial position.
+      cam.set(initialCam);
+    }
+    </code>
+    </div>
 alt: |-
   Prepare two cameras. One is the camera that sets the initial state,
   and the other is the camera that moves with interaction.

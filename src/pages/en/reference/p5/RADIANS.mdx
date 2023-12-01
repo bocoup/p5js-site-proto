@@ -19,6 +19,18 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let deg = 45;
+    let rad = radians(deg);
+    text(`${deg}˚ = ${round(rad, 3)} rad`, 10, 50);
+
+    describe('The text "45˚ = 0.785 rad".');
+    </code>
+    </div>
 return:
   description: converted angle.
   type: Number

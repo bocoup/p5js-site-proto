@@ -66,6 +66,87 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - >
+
+    <div>
+
+    <code>
+
+    arc(50, 55, 50, 50, 0, HALF_PI);
+
+    noFill();
+
+    arc(50, 55, 60, 60, HALF_PI, PI);
+
+    arc(50, 55, 70, 70, PI, PI + QUARTER_PI);
+
+    arc(50, 55, 80, 80, PI + QUARTER_PI, TWO_PI);
+
+    describe(
+      'A shattered outline of an ellipse with a quarter of a white circle at the bottom-right.'
+    );
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    arc(50, 50, 80, 80, 0, PI + QUARTER_PI);
+
+    describe('A white ellipse with the top-right third missing. The bottom is
+    outlined in black.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    arc(50, 50, 80, 80, 0, PI + QUARTER_PI, OPEN);
+
+    describe(
+      'A white ellipse missing a section from the top-right. The bottom is outlined in black.'
+    );
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    arc(50, 50, 80, 80, 0, PI + QUARTER_PI, CHORD);
+
+    describe('A white ellipse with a black outline missing a section from the
+    top-right.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    arc(50, 50, 80, 80, 0, PI + QUARTER_PI, PIE);
+
+    describe('A white ellipse with a black outline. The top-right third is
+    missing.');
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

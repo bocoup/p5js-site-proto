@@ -37,6 +37,111 @@ description: >
 line: 459
 itemtype: method
 class: p5
+example:
+  - >
+
+    <div>
+
+    <code>
+
+    noStroke();
+
+    colorMode(RGB, 100);
+
+    for (let i = 0; i < 100; i += 1) {
+      for (let j = 0; j < 100; j += 1) {
+        stroke(i, j, 0);
+        point(i, j);
+      }
+    }
+
+    describe(
+      'A diagonal green to red gradient from bottom-left to top-right with shading transitioning to black at top-left corner.'
+    );
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    noStroke();
+
+    colorMode(HSB, 100);
+
+    for (let i = 0; i < 100; i++) {
+      for (let j = 0; j < 100; j++) {
+        stroke(i, j, 100);
+        point(i, j);
+      }
+    }
+
+    describe('A rainbow gradient from left-to-right. Brightness transitions to
+    white at the top.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    colorMode(RGB, 255);
+
+    let myColor = color(180, 175, 230);
+
+    background(myColor);
+
+    colorMode(RGB, 1);
+
+    let redValue = red(myColor);
+
+    let greenValue = green(myColor);
+
+    let blueValue = blue(myColor);
+
+    text(`Red: ${redValue}`, 10, 10, 80, 80);
+
+    text(`Green: ${greenValue}`, 10, 40, 80, 80);
+
+    text(`Blue: ${blueValue}`, 10, 70, 80, 80);
+
+    describe('A purple canvas with the red, green, and blue decimal values of
+    the color written on it.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    noFill();
+
+    colorMode(RGB, 255, 255, 255, 1);
+
+    background(255);
+
+    strokeWeight(4);
+
+    stroke(255, 0, 10, 0.3);
+
+    circle(40, 40, 50);
+
+    circle(50, 60, 50);
+
+    describe('Two overlapping translucent pink circle outlines.');
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

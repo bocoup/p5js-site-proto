@@ -9,6 +9,28 @@ description: |
 line: 3587
 itemtype: property
 class: p5.MediaElement
+example:
+  - |-
+
+    <div>
+    <code>
+    let beat;
+
+    function setup() {
+      // Create a p5.MediaElement using createAudio().
+      beat = createAudio('assets/beat.mp3');
+
+      describe('The text "https://p5js.org/reference/assets/beat.mp3" written in black on a gray background.');
+    }
+
+    function draw() {
+      background(200);
+
+      textWrap(CHAR);
+      text(beat.src, 10, 10, 80, 80);
+    }
+    </code>
+    </div>
 return:
   description: src
   type: String

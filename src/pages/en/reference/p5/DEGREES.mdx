@@ -19,6 +19,18 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let rad = QUARTER_PI;
+    let deg = degrees(rad);
+    text(`${round(rad, 2)} rad = ${deg}˚`, 10, 50);
+
+    describe('The text "0.79 rad = 45˚".');
+    </code>
+    </div>
 return:
   description: converted angle.
   type: Number

@@ -23,6 +23,24 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      // Invert the y-axis.
+      scale(1, -1);
+      translate(0, -height);
+
+      let x = frameCount;
+      let y = 0.01 * sq(x);
+      point(x, y);
+
+      describe('A series of black dots that get higher quickly from left to right.');
+    }
+    </code>
+    </div>
 return:
   description: squared number.
   type: Number

@@ -16,6 +16,36 @@ description: >
 line: 4956
 itemtype: property
 class: p5.File
+example:
+  - |-
+
+    <div>
+    <code>
+    // Use the file input to load a
+    // file and display its info.
+
+    function setup() {
+      background(200);
+
+      // Create a file input and place it beneath
+      // the canvas. Call displaySubtype() when
+      // the file loads.
+      let input = createFileInput(displaySubtype);
+      input.position(0, 100);
+
+      describe('A gray square with a file input beneath it. If the user loads a file, its subtype is written in black.');
+    }
+
+    // Display the p5.File's type
+    // once it loads.
+    function displaySubtype(file) {
+      background(200);
+
+      // Display the p5.File's subtype.
+      text(`This is file's subtype is: ${file.subtype}`, 10, 10, 80, 80);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

@@ -13,6 +13,15 @@ description: |
 line: 180
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(char(65)); // "A"
+    print(char('65')); // "A"
+    print(char([65, 66, 67])); // [ "A", "B", "C" ]
+    print(join(char([65, 66, 67]), '')); // "ABC"
+    </code></div>
 return:
   description: string representation of value
   type: String

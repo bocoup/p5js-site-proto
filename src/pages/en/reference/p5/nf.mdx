@@ -28,6 +28,30 @@ description: >
 line: 126
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+      let num1 = 321;
+      let num2 = -1321;
+
+      noStroke();
+      fill(0);
+      textSize(16);
+
+      text(nf(num1, 4, 2), 10, 30);
+      text(nf(num2, 4, 2), 10, 80);
+      // Draw dividing line
+      stroke(120);
+      line(0, 50, width, 50);
+
+      describe('“0321.00” middle top, “-1321.00” middle bottom canvas');
+    }
+    </code>
+    </div>
 return:
   description: formatted String
   type: String

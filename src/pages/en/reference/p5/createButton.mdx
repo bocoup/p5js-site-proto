@@ -35,6 +35,56 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Create a button and place it beneath the canvas.
+      let button = createButton('click me');
+      button.position(0, 100);
+
+      // Use the button to change the background color.
+      button.mousePressed(() => {
+        let g = random(255);
+        background(g);
+      });
+
+      describe('A gray square with a button that says "click me" beneath it. The square changes color when the button is clicked.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let button;
+
+    function setup() {
+      // Create a button and set its value to 0.
+      // Place the button beneath the canvas.
+      button = createButton('click me', 'red');
+      button.position(0, 100);
+
+      // Change the button's value when the mouse
+      // is pressed.
+      button.mousePressed(() => {
+        let c = random(['red', 'green', 'blue', 'yellow']);
+        button.value(c);
+      });
+
+      describe('A red square with a button that says "click me" beneath it. The square changes color when the button is clicked.');
+    }
+
+    function draw() {
+      // Use the button's value to set the background color.
+      let c = button.value();
+      background(c);
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

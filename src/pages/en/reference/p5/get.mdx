@@ -40,6 +40,64 @@ description: >
 line: 659
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      let c = get();
+      image(c, width / 2, 0);
+
+      describe('Two identical mountain landscapes shown side-by-side.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      let c = get(50, 90);
+      fill(c);
+      noStroke();
+      square(25, 25, 50);
+
+      describe('A mountain landscape with an olive green square in its center.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      let c = get(0, 0, width / 2, height / 2);
+      image(c, width / 2, height / 2);
+
+      describe('A mountain landscape drawn on top of another mountain landscape.');
+    }
+    </code>
+    </div>
 return:
   description: subsection as a <a href="#/p5.Image">p5.Image</a> object.
   type: p5.Image

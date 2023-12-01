@@ -13,6 +13,17 @@ description: |
 line: 2545
 itemtype: method
 class: p5.Element
+example:
+  - |2-
+
+     <div class='norender'><code>
+     let div = createDiv('').size(100, 100);
+     div.html('hi');
+     </code></div>
+     <div class='norender'><code>
+     let div = createDiv('Hello ').size(100, 100);
+     div.html('World', true);
+     </code></div>
 return:
   description: the inner HTML of the element
   type: String

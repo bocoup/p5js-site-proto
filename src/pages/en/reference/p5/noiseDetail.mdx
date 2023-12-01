@@ -45,6 +45,46 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    let noiseLevel = 255;
+
+    let noiseScale = 0.02;
+
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width / 2; x += 1) {
+        // Scale input coordinates.
+        let nx = noiseScale * x;
+        let ny = noiseScale * y;
+
+        // Compute noise value.
+        noiseDetail(6, 0.25);
+        let c = noiseLevel * noise(nx, ny);
+        // Render left side.
+        stroke(c);
+        point(x, y);
+
+        // Compute noise value.
+        noiseDetail(4, 0.5);
+        c = noiseLevel * noise(nx, ny);
+        // Render right side.
+        stroke(c);
+        point(x + width / 2, y);
+      }
+    }
+
+
+    describe('Two gray cloudy patterns. The pattern on the right is cloudier
+    than the pattern on the left.');
+
+    </code>
+
+    </div>
 chainable: false
 ---
 

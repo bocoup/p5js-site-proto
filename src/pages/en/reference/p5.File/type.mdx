@@ -16,6 +16,36 @@ description: >
 line: 4920
 itemtype: property
 class: p5.File
+example:
+  - |-
+
+    <div>
+    <code>
+    // Use the file input to load a
+    // file and display its info.
+
+    function setup() {
+      background(200);
+
+      // Create a file input and place it beneath
+      // the canvas. Call displayType() when
+      // the file loads.
+      let input = createFileInput(displayType);
+      input.position(0, 100);
+
+      describe('A gray square with a file input beneath it. If the user loads a file, its type is written in black.');
+    }
+
+    // Display the p5.File's type
+    // once it loads.
+    function displayType(file) {
+      background(200);
+
+      // Display the p5.File's type.
+      text(`This is file's type is: ${file.type}`, 10, 10, 80, 80);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

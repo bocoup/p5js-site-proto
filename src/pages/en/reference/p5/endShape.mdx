@@ -53,6 +53,105 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    noFill();
+
+    beginShape();
+    vertex(20, 20);
+    vertex(45, 20);
+    vertex(45, 80);
+    endShape(CLOSE);
+
+    beginShape();
+    vertex(50, 20);
+    vertex(75, 20);
+    vertex(75, 80);
+    endShape();
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    let fx;
+    let vs = `#version 300 es
+
+    precision mediump float;
+
+    in vec3 aPosition;
+    flat out int instanceID;
+
+    uniform mat4 uModelViewMatrix;
+    uniform mat4 uProjectionMatrix;
+
+    void main() {
+
+      // copy the instance ID to the fragment shader
+      instanceID = gl_InstanceID;
+      vec4 positionVec4 = vec4(aPosition, 1.0);
+
+      // gl_InstanceID represents a numeric value for each instance
+      // using gl_InstanceID allows us to move each instance separately
+      // here we move each instance horizontally by id * 40
+      float xOffset = float(gl_InstanceID) * 40.0;
+
+      // apply the offset to the final position
+      gl_Position = uProjectionMatrix * uModelViewMatrix * positionVec4 -
+        vec4(xOffset, 0.0, 0.0, 0.0);
+    }
+    `;
+    let fs = `#version 300 es
+
+    precision mediump float;
+
+    out vec4 outColor;
+    flat in int instanceID;
+    uniform float numInstances;
+
+    void main() {
+      vec4 red = vec4(1.0, 0.0, 0.0, 1.0);
+      vec4 blue = vec4(0.0, 0.0, 1.0, 1.0);
+
+      // Normalize the instance id
+      float normId = float(instanceID) / numInstances;
+
+      // Mix between two colors using the normalized instance id
+      outColor = mix(red, blue, normId);
+    }
+    `;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      fx = createShader(vs, fs);
+    }
+
+    function draw() {
+      background(220);
+
+      // strokes aren't instanced, and are rather used for debug purposes
+      shader(fx);
+      fx.setUniform('numInstances', 4);
+
+      // this doesn't have to do with instancing, this is just for centering the squares
+      translate(25, -10);
+
+      // here we draw the squares we want to instance
+      beginShape();
+      vertex(0, 0);
+      vertex(0, 20);
+      vertex(20, 20);
+      vertex(20, 0);
+      vertex(0, 0);
+      endShape(CLOSE, 4);
+
+      resetShader();
+    }
+    </code>
+    </div>
 alt: Triangle line shape with smallest interior angle on bottom and upside-down L.
 chainable: true
 ---

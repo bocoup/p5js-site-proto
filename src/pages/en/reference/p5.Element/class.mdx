@@ -18,6 +18,32 @@ description: >
 line: 280
 itemtype: method
 class: p5.Element
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Create a canvas element and
+      // assign it to cnv.
+      let cnv = createCanvas(100, 100);
+
+      background(200);
+
+      // Add the class "small" to the
+      // canvas element.
+      cnv.class('small');
+
+      // Get the canvas element's class
+      // and display it.
+      let c = cnv.class();
+      text(c, 35, 54);
+
+      describe('The word "small" written in black on a gray canvas.');
+
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

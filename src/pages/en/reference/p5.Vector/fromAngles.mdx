@@ -24,6 +24,41 @@ params:
     optional: true
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    let v = p5.Vector.fromAngles(0, 0);
+    // Prints "p5.Vector Object : [0, -1, 0]" to the console.
+    print(v.toString());
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+
+    function draw() {
+      background(0);
+
+      fill(255);
+      noStroke();
+
+      let theta = frameCount *  0.05;
+      let phi = 0;
+      let v = p5.Vector.fromAngles(theta, phi, 100);
+      let c = color('deeppink');
+      pointLight(c, v);
+
+      sphere(35);
+
+      describe('A light shines on a pink sphere as it orbits.');
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Vector">p5.Vector</a> object.
   type: p5.Vector

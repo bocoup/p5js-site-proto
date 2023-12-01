@@ -62,6 +62,51 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadImage('assets/laDefense.jpg', img => {
+        image(img, 0, 0);
+      });
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      loadImage('assets/laDefense.jpg', success, failure);
+    }
+
+    function success(img) {
+      image(img, 0, 0);
+      describe('Image of the underside of a white umbrella and a gridded ceiling.');
+    }
+
+    function failure(event) {
+      console.error('Oops!', event);
+    }
+    </code>
+    </div>
 return:
   description: the <a href="#/p5.Image">p5.Image</a> object.
   type: p5.Image

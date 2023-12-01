@@ -41,6 +41,64 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Create three buttons.
+      createButton('1');
+      createButton('2');
+      createButton('3');
+
+      // Select the buttons by their tag.
+      let buttons = selectAll('button');
+
+      // Position the buttons.
+      for (let i = 0; i < 3; i += 1) {
+        buttons[i].position(0, i * 30);
+      }
+
+      describe('Three buttons stacked vertically. The buttons are labeled, "1", "2", and "3".');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Create three buttons and position them.
+      let b1 = createButton('1');
+      b1.position(0, 0);
+      let b2 = createButton('2');
+      b2.position(0, 30);
+      let b3 = createButton('3');
+      b3.position(0, 60);
+
+      // Add a class attribute to each button.
+      b1.class('btn');
+      b2.class('btn btn-pink');
+      b3.class('btn');
+
+      // Select the buttons by their class.
+      let buttons = selectAll('.btn');
+      let pinkButtons = selectAll('.btn-pink');
+
+      // Style the selected buttons.
+      buttons.forEach(btn => {
+        btn.style('font-family', 'Comic Sans MS');
+      });
+
+      pinkButtons.forEach(btn => {
+        btn.style('background', 'deeppink');
+        btn.style('color', 'white');
+      });
+
+      describe('Three buttons stacked vertically. The buttons are labeled, "1", "2", and "3". Buttons "1" and "3" are gray. Button "2" is pink.');
+    }
+    </code>
+    </div>
 return:
   description: >-
     array of <a href="#/p5.Element">p5.Element</a>s containing any elements

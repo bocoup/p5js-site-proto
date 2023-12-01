@@ -49,6 +49,48 @@ description: >
 line: 9
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100);
+      background(200);
+      noLoop();
+    }
+
+    function draw() {
+      line(10, 10, 90, 90);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let x = 0;
+    function setup() {
+      createCanvas(100, 100);
+    }
+
+    function draw() {
+      background(204);
+      x = x + 0.1;
+      if (x > width) {
+        x = 0;
+      }
+      line(x, 0, x, height);
+    }
+
+    function mousePressed() {
+      noLoop();
+    }
+
+    function mouseReleased() {
+      loop();
+    }
+    </code>
+    </div>
 alt: |-
   113 pixel long line extending from top-left to bottom right of canvas.
   horizontal line moves slowly from left. Loops but stops on mouse press.

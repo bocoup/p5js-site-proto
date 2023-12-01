@@ -16,6 +16,24 @@ params:
     type: Number
 itemtype: method
 class: p5.Color
+example:
+  - |-
+
+    <div>
+    <code>
+    let backgroundColor;
+
+    function setup() {
+      backgroundColor = color(100, 50, 150);
+    }
+
+    function draw() {
+      backgroundColor.setBlue(128 + 128 * sin(millis() / 1000));
+      background(backgroundColor);
+      describe('A canvas with a gradually changing background color.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

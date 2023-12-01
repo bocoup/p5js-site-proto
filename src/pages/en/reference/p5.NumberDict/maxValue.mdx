@@ -9,6 +9,17 @@ description: |
 line: 587
 itemtype: method
 class: p5.NumberDict
+example:
+  - |-
+
+    <div class='norender'>
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict({ 2: -10, 4: 0.65, 1.2: 3 });
+      let highestValue = myDictionary.maxValue(); // value is 3
+      print(highestValue);
+    }
+    </code></div>
 return:
   description: ''
   type: Number

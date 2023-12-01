@@ -16,6 +16,38 @@ description: |
 line: 1095
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe(
+        'Three white spheres. Each appears as a different color due to lighting.'
+      );
+    }
+    function draw() {
+      background(200);
+      noStroke();
+
+      ambientLight(255, 0, 0);
+      translate(-30, 0, 0);
+      ambientMaterial(255);
+      sphere(13);
+
+      noLights();
+      translate(30, 0, 0);
+      ambientMaterial(255);
+      sphere(13);
+
+      ambientLight(0, 255, 0);
+      translate(30, 0, 0);
+      ambientMaterial(255);
+      sphere(13);
+    }
+    </code>
+    </div>
 alt: |-
   Three white spheres. Each appears as a different
   color due to lighting.

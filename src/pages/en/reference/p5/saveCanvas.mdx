@@ -10,6 +10,68 @@ description: |
 line: 97
 itemtype: method
 class: p5
+example:
+  - |2-
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     createCanvas(100, 100);
+     background(255);
+     saveCanvas();
+     }
+     </code>
+     </div>
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     createCanvas(100, 100);
+     background(255);
+     saveCanvas('myCanvas.jpg');
+     }
+     </code>
+     </div>
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     createCanvas(100, 100);
+     background(255);
+     saveCanvas('myCanvas', 'jpg');
+     }
+     </code>
+     </div>
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     let cnv = createCanvas(100, 100);
+     background(255);
+     saveCanvas(cnv);
+     }
+     </code>
+     </div>
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     let cnv = createCanvas(100, 100);
+     background(255);
+     saveCanvas(cnv, 'myCanvas.jpg');
+     }
+     </code>
+     </div>
+
+     <div class='norender'>
+     <code>
+     function setup() {
+     let cnv = createCanvas(100, 100);
+     background(255);
+     saveCanvas(cnv, 'myCanvas', 'jpg');
+     }
+     </code>
+     </div>
 chainable: false
 ---
 

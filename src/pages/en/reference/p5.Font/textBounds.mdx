@@ -48,6 +48,78 @@ params:
     optional: true
 itemtype: method
 class: p5.Font
+example:
+  - |-
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      let bbox = font.textBounds('p5*js', 35, 53);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      textFont(font);
+      text('p5*js', 35, 53);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      textFont(font);
+      textSize(15);
+      textAlign(CENTER, CENTER);
+
+      let bbox = font.textBounds('p5*js', 50, 50);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      text('p5*js', 50, 50);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let font;
+
+    function preload() {
+      font = loadFont('assets/inconsolata.otf');
+    }
+
+    function setup() {
+      background(200);
+
+      let bbox = font.textBounds('p5*js', 31, 53, 15);
+      rect(bbox.x, bbox.y, bbox.w, bbox.h);
+
+      textFont(font);
+      textSize(15);
+      text('p5*js', 31, 53);
+
+      describe('The text "p5*js" written in black inside a white rectangle.');
+    }
+    </code>
+    </div>
 return:
   description: |-
     object describing the bounding box with

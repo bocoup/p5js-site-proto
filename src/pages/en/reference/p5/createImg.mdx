@@ -46,6 +46,24 @@ description: >
 line: 583
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      let img = createImg(
+        'https://p5js.org/assets/img/asterisk-01.png',
+        'The p5.js magenta asterisk.'
+      );
+      img.position(0, -10);
+
+      describe('A gray square with a magenta asterisk in its center.');
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

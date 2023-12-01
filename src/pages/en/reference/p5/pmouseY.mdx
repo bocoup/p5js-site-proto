@@ -18,6 +18,25 @@ description: >
 line: 159
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(237, 34, 93);
+      fill(0);
+      //draw a square only if the mouse is not moving
+      if (mouseY === pmouseY && mouseX === pmouseX) {
+        rect(20, 20, 60, 60);
+      }
+
+      print(pmouseY + ' -> ' + mouseY);
+      describe(`60-by-60 black rect center, fuchsia background.
+        rect flickers on mouse movement`);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

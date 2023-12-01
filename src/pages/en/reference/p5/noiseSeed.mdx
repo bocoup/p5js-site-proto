@@ -23,6 +23,30 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      noiseSeed(99);
+      background(255);
+    }
+
+    function draw() {
+      let noiseLevel = 100;
+      let noiseScale = 0.005;
+      // Scale input coordinate.
+      let nt = noiseScale * frameCount;
+      // Compute noise value.
+      let x = noiseLevel * noise(nt);
+      // Render.
+      line(x, 0, x, height);
+
+      describe('A black rectangle that grows randomly, first to the right and then to the left.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

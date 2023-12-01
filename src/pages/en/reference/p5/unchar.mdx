@@ -11,6 +11,14 @@ description: |
 line: 214
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(unchar('A')); // 65
+    print(unchar(['A', 'B', 'C'])); // [ 65, 66, 67 ]
+    print(unchar(split('ABC', ''))); // [ 65, 66, 67 ]
+    </code></div>
 return:
   description: integer representation of value
   type: Number

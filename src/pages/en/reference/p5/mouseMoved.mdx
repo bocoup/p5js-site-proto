@@ -24,6 +24,49 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Move the mouse across the page
+    // to change its value
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe(`black 50-by-50 rect becomes lighter with mouse movements until
+      white then resets no image displayed`);
+    }
+    function mouseMoved() {
+      value = value + 5;
+      if (value > 255) {
+        value = 0;
+      }
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    function mouseMoved() {
+      ellipse(mouseX, mouseY, 5, 5);
+      // prevent default
+      return false;
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    // returns a MouseEvent object
+    // as a callback argument
+    function mouseMoved(event) {
+      console.log(event);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

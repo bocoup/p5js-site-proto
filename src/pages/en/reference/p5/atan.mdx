@@ -25,6 +25,34 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let a = PI / 3;
+    let t = tan(a);
+    let at = atan(t);
+    text(`${round(a, 3)}`, 35, 25);
+    text(`${round(t, 3)}`, 35, 50);
+    text(`${round(at, 3)}`, 35, 75);
+
+    describe('The numbers 1.047, 1.732, and 1.047 written on separate rows.');
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let a = PI + PI / 3;
+    let t = tan(a);
+    let at = atan(t);
+    text(`${round(a, 3)}`, 35, 25);
+    text(`${round(t, 3)}`, 35, 50);
+    text(`${round(at, 3)}`, 35, 75);
+
+    describe('The numbers 4.189, 1.732, and 1.047 written on separate rows.');
+    </code>
+    </div>
 return:
   description: arc tangent of the given value.
   type: Number

@@ -47,6 +47,72 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // draw a spinning torus
+    // with ring radius 30 and tube radius 15
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('a rotating white torus');
+    }
+
+    function draw() {
+      background(205, 102, 94);
+      rotateX(frameCount * 0.01);
+      rotateY(frameCount * 0.01);
+      torus(30, 15);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    // slide to see how detailX works
+    let detailX;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      detailX = createSlider(3, 24, 3);
+      detailX.position(10, height + 5);
+      detailX.style('width', '80px');
+      describe(
+        'a rotating white torus with limited X detail, with a slider that adjusts detailX'
+      );
+    }
+
+    function draw() {
+      background(205, 102, 94);
+      rotateY(millis() / 1000);
+      torus(30, 15, detailX.value(), 12);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    // slide to see how detailY works
+    let detailY;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      detailY = createSlider(3, 16, 3);
+      detailY.position(10, height + 5);
+      detailY.style('width', '80px');
+      describe(
+        'a rotating white torus with limited Y detail, with a slider that adjusts detailY'
+      );
+    }
+
+    function draw() {
+      background(205, 102, 94);
+      rotateY(millis() / 1000);
+      torus(30, 15, 16, detailY.value());
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

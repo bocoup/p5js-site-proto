@@ -27,6 +27,24 @@ description: >
 line: 1107
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Get the sketch's URL path
+      // and display the first
+      // part.
+      let path = getURLPath();
+      text(path[0], 25, 54);
+
+      describe('The word "reference" written in black on a gray background.');
+    }
+    </code>
+    </div>
 return:
   description: path components.
   type: 'String[]'

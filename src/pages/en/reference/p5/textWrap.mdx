@@ -39,6 +39,32 @@ params:
     type: Constant
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    textSize(20);
+    textWrap(WORD);
+    text('Have a wonderful day', 0, 10, 100);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    textSize(20);
+    textWrap(CHAR);
+    text('Have a wonderful day', 0, 10, 100);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    textSize(20);
+    textWrap(CHAR);
+    text('祝你有美好的一天', 0, 10, 100);
+    </code>
+    </div>
 return:
   description: style
   type: String

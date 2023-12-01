@@ -19,6 +19,18 @@ params:
     type: Any
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    function setup() {
+      let myArray = ['Mango', 'Apple', 'Papaya'];
+      print(myArray); // ['Mango', 'Apple', 'Papaya']
+
+      append(myArray, 'Peach');
+      print(myArray); // ['Mango', 'Apple', 'Papaya', 'Peach']
+    }
+    </code></div>
 return:
   description: the array that was appended to
   type: Array

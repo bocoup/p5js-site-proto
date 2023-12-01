@@ -34,6 +34,47 @@ params:
     type: Function
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let particles;
+    let button;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      button = createButton('New');
+      button.mousePressed(makeParticles);
+      makeParticles();
+    }
+
+    function makeParticles() {
+      if (particles) freeGeometry(particles);
+
+      particles = buildGeometry(() => {
+        for (let i = 0; i < 60; i++) {
+          push();
+          translate(
+            randomGaussian(0, 20),
+            randomGaussian(0, 20),
+            randomGaussian(0, 20)
+          );
+          sphere(5);
+          pop();
+        }
+      });
+    }
+
+    function draw() {
+      background(255);
+      noStroke();
+      lights();
+      orbitControl();
+      model(particles);
+    }
+    </code>
+    </div>
 alt: A cluster of spheres.
 return:
   description: The model that was built from the callback function.

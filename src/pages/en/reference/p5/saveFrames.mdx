@@ -78,6 +78,48 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      let r = frameCount % 255;
+      let g = 50;
+      let b = 100;
+      background(r, g, b);
+
+      describe('A square repeatedly changes color from blue to pink.');
+    }
+
+    function keyPressed() {
+      if (key === 's') {
+        saveFrames('frame', 'png', 1, 5);
+      }
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      let r = frameCount % 255;
+      let g = 50;
+      let b = 100;
+      background(r, g, b);
+
+      describe('A square repeatedly changes color from blue to pink.');
+    }
+
+    function mousePressed() {
+      saveFrames('frame', 'png', 1, 5, data => {
+        // Prints an array of objects containing raw image data,
+        // filenames, and extensions.
+        print(data);
+      });
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

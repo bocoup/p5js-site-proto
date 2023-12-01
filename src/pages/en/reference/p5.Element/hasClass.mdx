@@ -14,6 +14,23 @@ params:
     type: String
 itemtype: method
 class: p5.Element
+example:
+  - |2-
+
+     <div class='norender'><code>
+     let div;
+    function setup() {
+       div = createDiv('div');
+       div.addClass('show');
+     }
+    function mousePressed() {
+       if (div.hasClass('show')) {
+         div.addClass('show');
+       } else {
+         div.removeClass('show');
+       }
+     }
+     </code></div>
 return:
   description: a boolean value if element has specified class
   type: Boolean

@@ -57,6 +57,64 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // Set the cursor to crosshairs: +
+      cursor(CROSS);
+
+      describe('A gray square. The cursor appears as crosshairs.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // Divide the canvas into quadrants.
+      line(50, 0, 50, 100);
+      line(0, 50, 100, 50);
+
+      // Change cursor based on mouse position.
+      if (mouseX < 50 && mouseY < 50) {
+        cursor(CROSS);
+      } else if (mouseX > 50 && mouseY < 50) {
+        cursor('progress');
+      } else if (mouseX > 50 && mouseY > 50) {
+        cursor('https://avatars0.githubusercontent.com/u/1617169?s=16');
+      } else {
+        cursor('grab');
+      }
+
+      describe('A gray square divided into quadrants. The cursor image changes when the mouse moves to each quadrant.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      // Change the cursor's active spot
+      // when the mouse is pressed.
+      if (mouseIsPressed === true) {
+        cursor('https://avatars0.githubusercontent.com/u/1617169?s=16', 8, 8);
+      } else {
+        cursor('https://avatars0.githubusercontent.com/u/1617169?s=16');
+      }
+
+      describe('An image of three purple curves follows the mouse. The image shifts when the mouse is pressed.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

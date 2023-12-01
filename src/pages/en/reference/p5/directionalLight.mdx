@@ -38,6 +38,28 @@ description: >
 line: 246
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe(
+        'scene with sphere and directional light. The direction of the light is controlled with the mouse position.'
+      );
+    }
+    function draw() {
+      background(0);
+      //move your mouse to change light direction
+      let dirX = (mouseX / width - 0.5) * 2;
+      let dirY = (mouseY / height - 0.5) * 2;
+      directionalLight(250, 250, 250, -dirX, -dirY, -1);
+      noStroke();
+      sphere(40);
+    }
+    </code>
+    </div>
 alt: |-
   scene with sphere and directional light. The direction of
   the light is controlled with the mouse position.

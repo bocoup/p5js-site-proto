@@ -12,6 +12,32 @@ description: |
 line: 216
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+      let num = 11253106.115;
+      let numArr = [1, 1, 2];
+
+      noStroke();
+      fill(0);
+      textSize(12);
+
+      // Draw formatted numbers
+      text(nfc(num, 4), 10, 30);
+      text(nfc(numArr, 2), 10, 80);
+
+      // Draw dividing line
+      stroke(120);
+      line(0, 50, width, 50);
+
+      describe('“11,253,106.115” top middle and “1.00,1.00,2.00” displayed bottom mid');
+    }
+    </code>
+    </div>
 return:
   description: formatted String
   type: String

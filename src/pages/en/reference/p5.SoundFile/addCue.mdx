@@ -38,6 +38,38 @@ params:
     optional: true
 itemtype: method
 class: p5.SoundFile
+example:
+  - |-
+
+    <div><code>
+    let mySound;
+    function preload() {
+      mySound = loadSound('assets/Damscray_DancingTiger.mp3');
+    }
+
+    function setup() {
+      let cnv = createCanvas(100, 100);
+      cnv.mousePressed(canvasPressed);
+      background(220);
+      text('tap to play', 10, 20);
+
+      // schedule calls to changeText
+      mySound.addCue(0, changeText, "hello" );
+      mySound.addCue(0.5, changeText, "hello," );
+      mySound.addCue(1, changeText, "hello, p5!");
+      mySound.addCue(1.5, changeText, "hello, p5!!");
+      mySound.addCue(2, changeText, "hello, p5!!!!!");
+    }
+
+    function changeText(val) {
+      background(220);
+      text(val, 10, 20);
+    }
+
+    function canvasPressed() {
+      mySound.play();
+    }
+    </code></div>
 return:
   description: |-
     id ID of this cue,

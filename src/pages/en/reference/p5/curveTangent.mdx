@@ -32,6 +32,27 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    noFill();
+    curve(5, 26, 73, 24, 73, 61, 15, 65);
+    let steps = 6;
+    for (let i = 0; i <= steps; i++) {
+      let t = i / steps;
+      let x = curvePoint(5, 73, 73, 15, t);
+      let y = curvePoint(26, 24, 61, 65, t);
+      //ellipse(x, y, 5, 5);
+      let tx = curveTangent(5, 73, 73, 15, t);
+      let ty = curveTangent(26, 24, 61, 65, t);
+      let a = atan2(ty, tx);
+      a -= PI / 2.0;
+      line(x, y, cos(a) * 8 + x, sin(a) * 8 + y);
+    }
+    </code>
+    </div>
 alt: right curving line mid-right of canvas with 7 short lines radiating from it.
 return:
   description: the tangent at position t

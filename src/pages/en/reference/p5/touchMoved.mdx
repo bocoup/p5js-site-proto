@@ -27,6 +27,50 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Move your finger across the page
+    // to change its value
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe('50-by-50 black rect turns lighter with touch until white. resets');
+    }
+    function touchMoved() {
+      value = value + 5;
+      if (value > 255) {
+        value = 0;
+      }
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    function touchMoved() {
+      ellipse(mouseX, mouseY, 5, 5);
+      // prevent default
+      return false;
+    }
+    describe('no image displayed');
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    // returns a TouchEvent object
+    // as a callback argument
+    function touchMoved(event) {
+      console.log(event);
+    }
+    describe('no image displayed');
+    </code>
+    </div>
 chainable: false
 ---
 

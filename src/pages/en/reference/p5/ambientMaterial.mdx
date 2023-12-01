@@ -21,6 +21,60 @@ description: |
 line: 859
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('sphere reflecting red, blue, and green light');
+    }
+    function draw() {
+      background(0);
+      noStroke();
+      ambientLight(255);
+      ambientMaterial(70, 130, 230);
+      sphere(40);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    // ambientLight is both red and blue (magenta),
+    // so object only reflects it's red and blue components
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('box reflecting only red and blue light');
+    }
+    function draw() {
+      background(70);
+      ambientLight(255, 0, 255); // magenta light
+      ambientMaterial(255); // white material
+      box(30);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    // ambientLight is green. Since object does not contain
+    // green, it does not reflect any light
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('box reflecting no light');
+    }
+    function draw() {
+      background(70);
+      ambientLight(0, 255, 0); // green light
+      ambientMaterial(255, 0, 255); // magenta material
+      box(30);
+    }
+    </code>
+    </div>
 alt: box reflecting no light
 chainable: true
 ---

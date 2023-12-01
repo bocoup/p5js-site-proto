@@ -26,6 +26,23 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    let data;
+
+    function preload() {
+      data = loadBytes('assets/mammals.xml');
+    }
+
+    function setup() {
+      for (let i = 0; i < 5; i++) {
+        console.log(data.bytes[i].toString(16));
+      }
+      describe('no image displayed');
+    }
+    </code></div>
 return:
   description: an object whose 'bytes' property will be the loaded buffer
   type: Object

@@ -14,6 +14,29 @@ description: >
 line: 995
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class="notest">
+    <code>
+    //click the canvas to lock the pointer
+    //click again to exit (otherwise escape)
+    let locked = false;
+    function draw() {
+      background(237, 34, 93);
+      describe('cursor gets locked / unlocked on mouse-click');
+    }
+    function mouseClicked() {
+      if (!locked) {
+        locked = true;
+        requestPointerLock();
+      } else {
+        exitPointerLock();
+        locked = false;
+      }
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

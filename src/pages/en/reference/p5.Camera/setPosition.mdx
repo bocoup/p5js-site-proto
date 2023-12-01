@@ -23,6 +23,41 @@ params:
     type: Number
 itemtype: method
 class: p5.Camera
+example:
+  - |-
+
+    <div>
+    <code>
+    // press '1' '2' or '3' keys to set camera position
+
+    let cam;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      normalMaterial();
+      cam = createCamera();
+    }
+
+    function draw() {
+      background(200);
+
+      // '1' key
+      if (keyIsDown(49)) {
+        cam.setPosition(30, 0, 80);
+      }
+      // '2' key
+      if (keyIsDown(50)) {
+        cam.setPosition(0, 0, 80);
+      }
+      // '3' key
+      if (keyIsDown(51)) {
+        cam.setPosition(-30, 0, 80);
+      }
+
+      box(20);
+    }
+    </code>
+    </div>
 alt: 'camera position changes as the user presses keys, altering view of a 3D box'
 chainable: false
 ---

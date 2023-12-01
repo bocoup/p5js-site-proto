@@ -28,6 +28,69 @@ params:
     type: p5.image
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class="notest">
+    <code>
+    let img;
+    function preload() {
+      img = loadImage('assets/outdoor_image.jpg');
+    }
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+    function draw() {
+      background(220);
+      imageMode(CENTER);
+      push();
+      translate(0, 0, -200);
+      scale(2);
+      image(img, 0, 0, width, height);
+      pop();
+      ambientLight(50);
+      imageLight(img);
+      specularMaterial(20);
+      noStroke();
+      scale(2);
+      rotateX(frameCount * 0.005);
+      rotateY(frameCount * 0.005);
+      box(25);
+    }
+    </code>
+    </div>
+  - |-
+
+    <div class="notest">
+    <code>
+    let img;
+    let slider;
+    function preload() {
+      img = loadImage('assets/outdoor_spheremap.jpg');
+    }
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      slider = createSlider(0, 400, 100, 1);
+      slider.position(0, height);
+    }
+    function draw() {
+      background(220);
+      imageMode(CENTER);
+      push();
+      translate(0, 0, -200);
+      scale(2);
+      image(img, 0, 0, width, height);
+      pop();
+      ambientLight(50);
+      imageLight(img);
+      specularMaterial(20);
+      shininess(slider.value());
+      noStroke();
+      scale(2);
+      sphere(15);
+    }
+    </code>
+    </div>
 alt: light with slider having a slider for varying roughness
 chainable: false
 ---

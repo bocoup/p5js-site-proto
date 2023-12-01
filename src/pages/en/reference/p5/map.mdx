@@ -46,6 +46,40 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let n = map(7, 0, 10, 0, 100);
+    text(n, 50, 50);
+
+    describe('The number 70 written in the middle of a gray square.');
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let x = map(2, 0, 10, 0, width);
+    circle(x, 50, 10);
+
+    describe('A white circle drawn on the left side of a gray square.');
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      let c = map(mouseX, 0, width, 0, 255);
+      fill(c);
+      circle(50, 50, 20);
+
+      describe('A circle changes color from black to white as the mouse moves from left to right.');
+    }
+    </code>
+    </div>
 return:
   description: remapped number.
   type: Number

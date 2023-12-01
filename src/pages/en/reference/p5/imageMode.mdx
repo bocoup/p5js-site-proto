@@ -39,6 +39,63 @@ params:
     type: Constant
 itemtype: method
 class: p5
+example:
+  - |-
+
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      background(200);
+      imageMode(CORNER);
+      image(img, 10, 10, 50, 50);
+
+      describe('A square image of a brick wall is drawn at the top left of a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      background(200);
+      imageMode(CORNERS);
+      image(img, 10, 10, 90, 40);
+
+      describe('An image of a brick wall is drawn on a gray square. The image is squeezed into a small rectangular area.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      background(200);
+      imageMode(CENTER);
+      image(img, 50, 50, 80, 80);
+
+      describe('A square image of a brick wall is drawn on a gray square.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

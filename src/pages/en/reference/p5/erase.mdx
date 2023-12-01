@@ -62,6 +62,89 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    background(100, 100, 250);
+
+    fill(250, 100, 100);
+
+    square(20, 20, 60);
+
+    erase();
+
+    circle(25, 30, 30);
+
+    noErase();
+
+    describe('A purple canvas with a pink square in the middle. A circle is
+    erased from the top-left, leaving a white hole.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    let p = createP('I am a DOM element');
+
+    p.style('font-size', '12px');
+
+    p.style('width', '65px');
+
+    p.style('text-align', 'center');
+
+    p.position(18, 26);
+
+
+    background(100, 170, 210);
+
+    erase(200, 100);
+
+    circle(50, 50, 77);
+
+    noErase();
+
+    describe('A blue canvas with a circular hole in the center that reveals the
+    message "I am a DOM element".');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    background(150, 250, 150);
+
+    fill(100, 100, 250);
+
+    square(20, 20, 60);
+
+    strokeWeight(5);
+
+    erase(150, 255);
+
+    triangle(50, 10, 70, 50, 90, 10);
+
+    noErase();
+
+    describe('A mint green canvas with a purple square in the center. A triangle
+    in the top-right corner partially erases its interior and a fully erases its
+    outline.');
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

@@ -18,6 +18,43 @@ description: >
 line: 943
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Set the pixel density to 1.
+      pixelDensity(1);
+
+      // Create a canvas and draw
+      // a circle.
+      createCanvas(100, 100);
+      background(200);
+      circle(50, 50, 70);
+
+      describe('A fuzzy white circle on a gray canvas.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      // Set the pixel density to 3.
+      pixelDensity(3);
+
+      // Create a canvas, paint the
+      // background, and draw a
+      // circle.
+      createCanvas(100, 100);
+      background(200);
+      circle(50, 50, 70);
+
+      describe('A sharp white circle on a gray canvas.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

@@ -31,6 +31,49 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Click anywhere in the webpage to change
+    // the color value of the rectangle
+
+    let colorValue = 0;
+    function draw() {
+      fill(colorValue);
+      rect(25, 25, 50, 50);
+      describe('black 50-by-50 rect turns white with mouse click/press.');
+    }
+    function mousePressed() {
+      if (colorValue === 0) {
+        colorValue = 255;
+      } else {
+        colorValue = 0;
+      }
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    function mousePressed() {
+      ellipse(mouseX, mouseY, 5, 5);
+      // prevent default
+      return false;
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    // returns a MouseEvent object
+    // as a callback argument
+    function mousePressed(event) {
+      console.log(event);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

@@ -33,6 +33,22 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      // Set the range for RGB values from 0 to 1.
+      colorMode(RGB, 1);
+
+      let r = norm(mouseX, 0, width);
+      background(r, 0, 0);
+
+      describe('A square changes color from black to red as the mouse moves from left to right.');
+    }
+    </code>
+    </div>
 return:
   description: normalized number.
   type: Number

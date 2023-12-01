@@ -23,6 +23,41 @@ params:
     type: Integer|String
 itemtype: method
 class: p5.Table
+example:
+  - |2-
+
+     <div class="norender">
+     <code>
+     // Given the CSV file "mammals.csv"
+     // in the project's "assets" folder:
+     //
+     // id,species,name
+     // 0,Capra hircus,Goat
+     // 1,Panthera pardus,Leopard
+     // 2,Equus zebra,Zebra
+
+     let table;
+
+     function preload() {
+     //my table is comma separated value "csv"
+     //and has a header specifying the columns labels
+     table = loadTable('assets/mammals.csv', 'csv', 'header');
+     }
+
+     function setup() {
+     //add another goat
+     let newRow = table.addRow();
+     newRow.setString('id', table.getRowCount() - 1);
+     newRow.setString('species', 'Scape Goat');
+     newRow.setString('name', 'Goat');
+
+     //find the rows containing animals named Goat
+     let rows = table.findRows('Goat', 'name');
+     print(rows.length + ' Goats found');
+     describe('no image displayed');
+     }
+     </code>
+     </div>
 return:
   description: An Array of TableRow objects
   type: 'p5.TableRow[]'

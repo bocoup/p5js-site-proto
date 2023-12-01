@@ -21,6 +21,59 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    // Default.
+
+    line(20, 20, 80, 20);
+
+    // Thicker.
+
+    strokeWeight(4);
+
+    line(20, 40, 80, 40);
+
+    // Beastly.
+
+    strokeWeight(10);
+
+    line(20, 70, 80, 70);
+
+    describe('Three horizontal black lines. The top line is thin, the middle is
+    medium, and the bottom is thick.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    // Default.
+
+    line(20, 20, 80, 20);
+
+    // Adding scale transformation.
+
+    scale(5);
+
+    // Coordinates adjusted for scaling.
+
+    line(4, 8, 16, 8);
+
+    describe('Two horizontal black lines. The top line is thin and the bottom is
+    five times thicker than the top.');
+
+    </code>
+
+    </div>
 chainable: true
 ---
 

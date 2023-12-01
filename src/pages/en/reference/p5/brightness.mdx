@@ -17,6 +17,67 @@ params:
     type: 'p5.Color|Number[]|String'
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    noStroke();
+
+    colorMode(HSB, 255);
+
+    const c = color(0, 126, 255);
+
+    fill(c);
+
+    rect(15, 20, 35, 60);
+
+    // Sets 'brightValue' to 255.
+
+    const brightValue = brightness(c);
+
+    fill(brightValue);
+
+    rect(50, 20, 35, 60);
+
+    describe('Two rectangles. The left one is salmon pink and the right one is
+    white.');
+
+    </code>
+
+    </div>
+
+
+    <div>
+
+    <code>
+
+    noStroke();
+
+    colorMode(HSB, 255);
+
+    const c = color('hsb(60, 100%, 50%)');
+
+    fill(c);
+
+    rect(15, 20, 35, 60);
+
+    // Sets 'brightValue' to 127.5 (50% of 255)
+
+    const brightValue = brightness(c);
+
+    fill(brightValue);
+
+    rect(50, 20, 35, 60);
+
+    describe('Two rectangles. The left one is olive and the right one is
+    gray.');
+
+    </code>
+
+    </div>
 return:
   description: the brightness value.
   type: Number

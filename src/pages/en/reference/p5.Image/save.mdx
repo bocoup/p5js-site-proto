@@ -45,6 +45,34 @@ params:
     optional: true
 itemtype: method
 class: p5.Image
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function draw() {
+      image(img, 0, 0);
+
+      describe('An image of a mountain landscape.');
+    }
+
+    function keyPressed() {
+      if (key === 's') {
+        img.save();
+      } else if (key === 'j') {
+        img.save('rockies.jpg');
+      } else if (key === 'p') {
+        img.save('rockies', 'png');
+      }
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

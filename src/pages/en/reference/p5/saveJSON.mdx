@@ -26,6 +26,36 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |2-
+
+     <div><code>
+     let json = {}; // new  JSON Object
+
+     json.id = 0;
+     json.species = 'Panthera leo';
+     json.name = 'Lion';
+
+     function setup() {
+     createCanvas(100, 100);
+     background(200);
+     text('click here to save', 10, 10, 70, 80);
+     describe('no image displayed');
+     }
+
+     function mousePressed() {
+     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+       saveJSON(json, 'lion.json');
+     }
+     }
+
+     // saves the following to a file called "lion.json":
+     // {
+     //   "id": 0,
+     //   "species": "Panthera leo",
+     //   "name": "Lion"
+     // }
+     </code></div>
 chainable: false
 ---
 

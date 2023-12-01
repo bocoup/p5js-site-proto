@@ -43,6 +43,31 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0, width, height);
+      let d = pixelDensity();
+      let halfImage = 4 * (d * width) * (d * height / 2);
+      loadPixels();
+      for (let i = 0; i < halfImage; i += 1) {
+        pixels[i + halfImage] = pixels[i];
+      }
+      updatePixels();
+
+      describe('Two identical images of mountain landscapes, one on top of the other.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

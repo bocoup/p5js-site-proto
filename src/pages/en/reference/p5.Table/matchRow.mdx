@@ -23,6 +23,35 @@ params:
     type: String|Integer
 itemtype: method
 class: p5.Table
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder:
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leopard
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      //my table is comma separated value "csv"
+      //and has a header specifying the columns labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      //Search using specified regex on a given column, return TableRow object
+      let mammal = table.matchRow(new RegExp('ant'), 1);
+      print(mammal.getString(1));
+      //Output "Panthera pardus"
+    }
+    </code>
+    </div>
 return:
   description: TableRow object
   type: p5.TableRow

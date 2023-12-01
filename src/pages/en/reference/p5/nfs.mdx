@@ -42,6 +42,35 @@ description: >
 line: 350
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+      let num1 = 321;
+      let num2 = -1321;
+
+      noStroke();
+      fill(0);
+      textSize(16);
+
+      // nfs() aligns num1 (positive number) with num2 (negative number) by
+      // adding a blank space in front of the num1 (positive number)
+      // [left = 4] in num1 add one 0 in front, to align the digits with num2
+      // [right = 2] in num1 and num2 adds two 0's after both numbers
+      // To see the differences check the example of nf() too.
+      text(nfs(num1, 4, 2), 10, 30);
+      text(nfs(num2, 4, 2), 10, 80);
+      // Draw dividing line
+      stroke(120);
+      line(0, 50, width, 50);
+
+      describe('“0321.00” top middle and “-1321.00” displayed bottom middle');
+    }
+    </code>
+    </div>
 return:
   description: formatted String
   type: String

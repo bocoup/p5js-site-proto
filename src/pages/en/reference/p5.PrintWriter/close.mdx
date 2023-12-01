@@ -9,6 +9,27 @@ description: |
 line: 1332
 itemtype: method
 class: p5.PrintWriter
+example:
+  - |-
+
+    <div class="norender notest">
+    <code>
+    // create a file called 'newFile.txt'
+    let writer = createWriter('newFile.txt');
+    // close the PrintWriter and save the file
+    writer.close();
+    </code>
+    </div>
+    <div class='norender notest'>
+    <code>
+    // create a file called 'newFile2.txt'
+    let writer = createWriter('newFile2.txt');
+    // write some data to the file
+    writer.write([100, 101, 102]);
+    // close the PrintWriter and save the file
+    writer.close();
+    </code>
+    </div>
 chainable: false
 ---
 

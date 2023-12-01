@@ -24,6 +24,21 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div modernizr='webgl'>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+    }
+    function draw() {
+      background(255);
+      rotateY(millis() / 1000);
+      box();
+    }
+    </code>
+    </div>
 alt: 3d box rotating around the y axis.
 chainable: true
 ---

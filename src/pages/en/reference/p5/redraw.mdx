@@ -43,6 +43,49 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div><code>
+    let x = 0;
+
+    function setup() {
+      createCanvas(100, 100);
+      noLoop();
+    }
+
+    function draw() {
+      background(204);
+      line(x, 0, x, height);
+    }
+
+    function mousePressed() {
+      x += 1;
+      redraw();
+    }
+    </code>
+    </div>
+
+    <div class='norender'>
+    <code>
+    let x = 0;
+
+    function setup() {
+      createCanvas(100, 100);
+      noLoop();
+    }
+
+    function draw() {
+      background(204);
+      x += 1;
+      line(x, 0, x, height);
+    }
+
+    function mousePressed() {
+      redraw(5);
+    }
+    </code>
+    </div>
 alt: |-
   black line on far left of canvas
   black line on far left of canvas

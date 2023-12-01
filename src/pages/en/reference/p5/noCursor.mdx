@@ -9,6 +9,25 @@ description: |
 line: 440
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Hide the cursor.
+      noCursor();
+    }
+
+    function draw() {
+      background(200);
+
+      circle(mouseX, mouseY, 10);
+
+      describe('A white circle on a gray background. The circle follows the mouse as it moves. The cursor is hidden.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

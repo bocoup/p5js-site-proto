@@ -27,6 +27,32 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Move the mouse left and right to see the curve change
+    function setup() {
+      createCanvas(100, 100);
+      noFill();
+    }
+
+    function draw() {
+      background(204);
+      let t = map(mouseX, 0, width, -5, 5);
+      curveTightness(t);
+      beginShape();
+      curveVertex(10, 26);
+      curveVertex(10, 26);
+      curveVertex(83, 24);
+      curveVertex(83, 61);
+      curveVertex(25, 65);
+      curveVertex(25, 65);
+      endShape();
+    }
+    </code>
+    </div>
 alt: 'Line shaped like right-facing arrow,points move with mouse-x and warp shape.'
 chainable: true
 ---

@@ -21,6 +21,54 @@ params:
     type: Function
 itemtype: method
 class: p5.MediaElement
+example:
+  - |-
+
+    <div>
+    <code>
+    let beat;
+    let isPlaying = false;
+    let isDone = false;
+
+    function setup() {
+
+      // Create a p5.MediaElement using createAudio().
+      beat = createAudio('assets/beat.mp3');
+
+      // Set isDone to false when
+      // the beat finishes.
+      beat.onended(() => {
+        isDone = true;
+      });
+
+      describe('The text "Click to play" written in black on a gray square. A beat plays when the user clicks. The text "Done!" appears when the beat finishes playing.');
+    }
+
+    function draw() {
+      background(200);
+
+      // Display different messages
+      // based on playback.
+      textAlign(CENTER);
+      if (isDone === true) {
+        text('Done!', 50, 50);
+      } else if (isPlaying === false) {
+        text('Click to play', 50, 50);
+      } else {
+        text('Playing...', 50, 50);
+      }
+    }
+
+    // Play the beat when the
+    // user presses the mouse.
+    function mousePressed() {
+      if (isPlaying === false) {
+        isPlaying = true;
+        beat.play();
+      }
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

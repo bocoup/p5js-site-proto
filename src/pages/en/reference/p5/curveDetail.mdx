@@ -18,6 +18,23 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div modernizr='webgl'>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+
+      curveDetail(5);
+    }
+    function draw() {
+      background(200);
+
+      curve(250, 600, 0, -30, 40, 0, 30, 30, 0, -250, 600, 0);
+    }
+    </code>
+    </div>
 alt: white arch shape with a low level of curve detail.
 chainable: true
 ---

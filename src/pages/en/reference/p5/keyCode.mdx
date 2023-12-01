@@ -13,6 +13,34 @@ description: |
 line: 60
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div><code>
+    let fillVal = 126;
+    function draw() {
+      fill(fillVal);
+      rect(25, 25, 50, 50);
+      describe(`Grey rect center. turns white when up arrow pressed and black when down.
+        Display key pressed and its keyCode in a yellow box.`);
+    }
+
+    function keyPressed() {
+      if (keyCode === UP_ARROW) {
+        fillVal = 255;
+      } else if (keyCode === DOWN_ARROW) {
+        fillVal = 0;
+      }
+    }
+    </code></div>
+    <div><code>
+    function draw() {}
+    function keyPressed() {
+      background('yellow');
+      text(`${key} ${keyCode}`, 10, 40);
+      print(key, ' ', keyCode);
+    }
+    </code></div>
 chainable: false
 ---
 

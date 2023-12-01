@@ -33,6 +33,62 @@ description: >
 line: 1103
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    let v1 = createVector(3, 4);
+    let v2 = createVector(3, 0);
+    let dp = v1.dot(v2);
+    // Prints "9" to the console.
+    print(dp);
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    let v1 = createVector(1, 0);
+    let v2 = createVector(0, 1);
+    let dp = p5.Vector.dot(v1, v2);
+    // Prints "0" to the console.
+    print(dp);
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      let v0 = createVector(width / 2, height / 2);
+      let v1 = createVector(30, 0);
+      drawArrow(v0, v1, 'black');
+
+      let v2 = createVector(mouseX - width / 2, mouseY - height / 2);
+      drawArrow(v0, v2, 'red');
+
+      let dp = v2.dot(v1);
+      text(`v2 • v1 = ${dp}`, 15, 20);
+
+      describe('Two arrows drawn on a gray square. A black arrow points to the right and a red arrow follows the mouse. The text "v1 • v2 = something" changes as the mouse moves.');
+    }
+
+    function drawArrow(base, vec, myColor) {
+      push();
+      stroke(myColor);
+      strokeWeight(3);
+      fill(myColor);
+      translate(base.x, base.y);
+      line(0, 0, vec.x, vec.y);
+      rotate(vec.heading());
+      let arrowSize = 7;
+      translate(vec.mag() - arrowSize, 0);
+      triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
+      pop();
+    }
+    </code>
+    </div>
 return:
   description: dot product.
   type: Number

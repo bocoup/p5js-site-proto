@@ -19,6 +19,32 @@ params:
     optional: true
 itemtype: method
 class: p5.Table
+example:
+  - |2-
+
+     <div class="norender"><code>
+     function setup() {
+     let table = new p5.Table();
+
+     table.addColumn('name');
+     table.addColumn('type');
+
+     let newRow = table.addRow();
+     newRow.setString('name', '   Lion  ,');
+     newRow.setString('type', ' Mammal  ');
+
+     newRow = table.addRow();
+     newRow.setString('name', '  Snake  ');
+     newRow.setString('type', '  Reptile  ');
+
+     table.trim();
+     print(table.getArray());
+     }
+
+     // prints:
+     //  0  "Lion"   "Mamal"
+     //  1  "Snake"  "Reptile"
+     </code></div>
 chainable: false
 ---
 

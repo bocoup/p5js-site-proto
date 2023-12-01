@@ -39,6 +39,29 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe(`black rect center. turns white when 'a' key typed and
+        black when 'b' pressed`);
+    }
+    function keyTyped() {
+      if (key === 'a') {
+        value = 255;
+      } else if (key === 'b') {
+        value = 0;
+      }
+      // uncomment to prevent any default behavior
+      // return false;
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

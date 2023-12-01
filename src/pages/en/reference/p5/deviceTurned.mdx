@@ -20,6 +20,55 @@ description: >
 line: 532
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    // Run this example on a mobile device
+    // Rotate the device by 90 degrees
+    // to change the value.
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe(`50-by-50 black rect in center of canvas.
+        turns white on mobile when device turns`);
+    }
+    function deviceTurned() {
+      if (value === 0) {
+        value = 255;
+      } else if (value === 255) {
+        value = 0;
+      }
+    }
+    </code>
+    </div>
+    <div>
+    <code>
+    // Run this example on a mobile device
+    // Rotate the device by 90 degrees in the
+    // X-axis to change the value.
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe(`50-by-50 black rect in center of canvas.
+        turns white on mobile when x-axis turns`);
+    }
+    function deviceTurned() {
+      if (turnAxis === 'X') {
+        if (value === 0) {
+          value = 255;
+        } else if (value === 255) {
+          value = 0;
+        }
+      }
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

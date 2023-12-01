@@ -21,6 +21,50 @@ description: >
 line: 368
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div class='norender'>
+    <code>
+    let v = createVector(3, 4, 5);
+    v.rem(2, 3, 4);
+    // Prints 'p5.Vector Object : [1, 1, 1]'.
+    print(v.toString());
+    </code>
+    </div>
+
+    <div class='norender'>
+    <code>
+    let v1 = createVector(3, 4, 5);
+    let v2 = createVector(2, 3, 4);
+    v1.rem(v2);
+
+    // Prints 'p5.Vector Object : [1, 1, 1]'.
+    print(v1.toString());
+    </code>
+    </div>
+
+    <div class='norender'>
+    <code>
+    let v = createVector(3, 4, 5);
+    let arr = [2, 3, 4];
+    v.rem(arr);
+
+    // Prints 'p5.Vector Object : [1, 1, 1]'.
+    print(v.toString());
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    let v1 = createVector(3, 4, 5);
+    let v2 = createVector(2, 3, 4);
+    let v3 = p5.Vector.rem(v1, v2);
+
+    // Prints 'p5.Vector Object : [1, 1, 1]'.
+    print(v3.toString());
+    </code>
+    </div>
 chainable: true
 ---
 

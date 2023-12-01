@@ -20,6 +20,28 @@ description: >
 line: 1192
 itemtype: method
 class: p5.Vector
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    let v1 = createVector(1, 0);
+    let v2 = createVector(3, 4);
+    let cp = v1.cross(v2);
+    // Prints "p5.Vector Object : [0, 0, 4]" to the console.
+    print(cp.toString());
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    let v1 = createVector(1, 0);
+    let v2 = createVector(3, 4);
+    let cp = p5.Vector.cross(v1, v2);
+    // Prints "p5.Vector Object : [0, 0, 4]" to the console.
+    print(cp.toString());
+    </code>
+    </div>
 return:
   description: cross product as a <a href="#/p5.Vector">p5.Vector</a>.
   type: p5.Vector

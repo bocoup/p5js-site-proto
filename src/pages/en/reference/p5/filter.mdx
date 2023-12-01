@@ -73,6 +73,162 @@ description: >
 line: 339
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(INVERT);
+
+      describe('A blue brick wall.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(GRAY);
+
+      describe('A brick wall drawn in grayscale.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(THRESHOLD);
+
+      describe('A brick wall drawn in black and white.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(OPAQUE);
+
+      describe('A red brick wall.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(POSTERIZE, 3);
+
+      describe('An image of a red brick wall drawn with limited color palette.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(BLUR, 3);
+
+      describe('A blurry image of a red brick wall.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(DILATE);
+
+      describe('A red brick wall with bright lines between each brick.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      filter(ERODE);
+
+      describe('A red brick wall with faint lines between each brick.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/bricks.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      // Don't use WebGL.
+      filter(BLUR, 3, false);
+
+      describe('A blurry image of a red brick wall.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

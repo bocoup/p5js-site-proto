@@ -34,6 +34,24 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+      translate(width / 2, height / 2);
+      let x = mouseX - width / 2;
+      let y = mouseY - height / 2;
+      let a = atan2(y, x);
+      rotate(a);
+      rect(-30, -5, 60, 10);
+
+      describe('A rectangle at the center of the canvas rotates with mouse movements.');
+    }
+    </code>
+    </div>
 return:
   description: arc tangent of the given point.
   type: Number

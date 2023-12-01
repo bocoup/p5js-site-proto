@@ -11,6 +11,18 @@ description: >
 line: 48
 itemtype: method
 class: p5
+example:
+  - |2-
+
+     <div class="norender">
+     <code>
+     function setup() {
+       let myDictionary = createNumberDict(100, 42);
+       print(myDictionary.hasKey(100)); // logs true to console
+      let anotherDictionary = createNumberDict({ 200: 84 });
+       print(anotherDictionary.hasKey(200)); // logs true to console
+     }
+     </code></div>
 return:
   description: ''
   type: p5.NumberDict

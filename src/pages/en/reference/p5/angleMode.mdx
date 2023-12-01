@@ -14,6 +14,46 @@ description: >
 line: 372
 itemtype: method
 class: p5
+example:
+  - >
+
+    <div>
+
+    <code>
+
+    let r = 40;
+
+    push();
+
+    rotate(PI / 6);
+
+    line(0, 0, r, 0);
+
+    text('0.524 rad', r, 0);
+
+    pop();
+
+
+    angleMode(DEGREES);
+
+    push();
+
+    rotate(60);
+
+    line(0, 0, r, 0);
+
+    text('60˚', r, 0);
+
+    pop();
+
+
+    describe('Two diagonal lines radiating from the top left corner of a square.
+    The lines are oriented 30 degrees from the edges of the square and 30
+    degrees apart from each other.');
+
+    </code>
+
+    </div>
 chainable: false
 ---
 

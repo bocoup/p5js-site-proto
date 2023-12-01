@@ -77,6 +77,65 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='notest'>
+    <code>
+    function setup() {
+      noCanvas();
+      createCapture(VIDEO);
+
+      describe('A video stream from the webcam.');
+    }
+    </code>
+    </div>
+
+    <div class='notest'>
+    <code>
+    let capture;
+
+    function setup() {
+      // Create the video capture and hide the element.
+      capture = createCapture(VIDEO);
+      capture.hide();
+
+      describe('A video stream from the webcam with inverted colors.');
+    }
+
+    function draw() {
+      // Draw the video capture within the canvas.
+      image(capture, 0, 0, width, width * capture.height / capture.width);
+      // Invert the colors in the stream.
+      filter(INVERT);
+    }
+    </code>
+    </div>
+
+    <div class='notest norender'>
+    <code>
+    function setup() {
+      createCanvas(480, 120);
+
+      // Create a constraints object.
+      let constraints = {
+        video: {
+          mandatory: {
+            minWidth: 1280,
+            minHeight: 720
+          },
+          optional: [{ maxFrameRate: 10 }]
+        },
+        audio: false
+      };
+
+      // Create the video capture.
+      createCapture(constraints);
+
+      describe('A video stream from the webcam.');
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

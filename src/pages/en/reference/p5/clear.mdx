@@ -45,6 +45,46 @@ params:
     type: Number
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      circle(mouseX, mouseY, 20);
+      describe('A white circle is drawn at the mouse x- and y-coordinates.');
+    }
+
+    function mousePressed() {
+      clear();
+      background(128);
+      describe('The canvas is cleared when the mouse is clicked.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let pg;
+
+    function setup() {
+      createCanvas(100, 100);
+      background(200);
+
+      pg = createGraphics(60, 60);
+      pg.background(200);
+      pg.noStroke();
+      pg.circle(pg.width / 2, pg.height / 2, 15);
+      image(pg, 20, 20);
+      describe('A white circle drawn on a gray square. The square gets smaller when the mouse is pressed.');
+    }
+
+    function mousePressed() {
+      clear();
+      image(pg, 20, 20);
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

@@ -42,6 +42,47 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+    function preload() {
+      img = loadImage('assets/rockies128.jpg');
+    }
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      textureWrap(MIRROR);
+      describe('an image of the rocky mountains repeated in mirrored tiles');
+    }
+
+    function draw() {
+      background(0);
+
+      let dX = mouseX;
+      let dY = mouseY;
+
+      let u = lerp(1.0, 2.0, dX);
+      let v = lerp(1.0, 2.0, dY);
+
+      scale(width / 2);
+
+      texture(img);
+
+      beginShape(TRIANGLES);
+      vertex(-1, -1, 0, 0, 0);
+      vertex(1, -1, 0, u, 0);
+      vertex(1, 1, 0, u, v);
+
+      vertex(1, 1, 0, u, v);
+      vertex(-1, 1, 0, 0, v);
+      vertex(-1, -1, 0, 0, 0);
+      endShape();
+    }
+    </code>
+    </div>
 alt: an image of the rocky mountains repeated in mirrored tiles
 chainable: false
 ---

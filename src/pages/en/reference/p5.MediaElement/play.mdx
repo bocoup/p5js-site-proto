@@ -9,6 +9,32 @@ description: |
 line: 3641
 itemtype: method
 class: p5.MediaElement
+example:
+  - |-
+
+    <div>
+    <code>
+    let beat;
+
+    function setup() {
+      background(200);
+
+      textAlign(CENTER);
+      text('Click to play', 50, 50);
+
+      // Create a p5.MediaElement using createAudio().
+      beat = createAudio('assets/beat.mp3');
+
+      describe('The text "Click to play" written in black on a gray background. A beat plays when the user clicks the square.');
+    }
+
+    // Play the beat when the user
+    // presses the mouse.
+    function mousePressed() {
+      beat.play();
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

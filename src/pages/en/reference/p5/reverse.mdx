@@ -14,6 +14,18 @@ params:
     type: Array
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    function setup() {
+      let myArray = ['A', 'B', 'C'];
+      print(myArray); // ['A','B','C']
+
+      reverse(myArray);
+      print(myArray); // ['C','B','A']
+    }
+    </code></div>
 return:
   description: the reversed list
   type: Array

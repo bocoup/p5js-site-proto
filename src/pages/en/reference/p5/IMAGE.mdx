@@ -79,6 +79,111 @@ description: >
 line: 832
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 0, 0);
+
+      describe('An image of the underside of a white umbrella with a gridded ceiling above.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 10, 10);
+
+      describe('An image of the underside of a white umbrella with a gridded ceiling above. The image has dark gray borders on its left and top.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 0, 0, 50, 50);
+
+      describe('An image of the underside of a white umbrella with a gridded ceiling above. The image is drawn in the top left corner of a dark gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 25, 25, 50, 50, 25, 25, 50, 50);
+
+      describe('An image of a gridded ceiling drawn in the center of a dark gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/moonwalk.jpg');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 0, 0, width, height, 0, 0, img.width, img.height, CONTAIN);
+
+      describe('An image of an astronaut on the moon. The top and bottom borders of the image are dark gray.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      // Image is 50 x 50 pixels.
+      img = loadImage('assets/laDefense50.png');
+    }
+
+    function setup() {
+      background(50);
+      image(img, 0, 0, width, height, 0, 0, img.width, img.height, COVER);
+
+      describe('A pixelated image of the underside of a white umbrella with a gridded ceiling above.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

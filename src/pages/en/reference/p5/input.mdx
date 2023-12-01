@@ -24,6 +24,51 @@ params:
     type: Function|Boolean
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Create a slider and place it beneath the canvas.
+      let slider = createSlider(0, 255, 200);
+      slider.position(0, 100);
+
+      // When the slider changes, use its value to paint
+      // the background.
+      slider.input(() => {
+        let g = slider.value();
+        background(g);
+      });
+
+      describe('A gray square with a range slider underneath it. The background changes shades of gray when the slider is moved.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Create an input and place it beneath the canvas.
+      let inp = createInput('');
+      inp.position(0, 100);
+
+      // When input is detected, paint the background gray
+      // and display the text.
+      inp.input(() => {
+        background(200);
+        let msg = inp.value();
+        text(msg, 5, 50);
+      });
+
+      describe('A gray square with a text input bar beneath it. Any text written in the input appears in the middle of the square.');
+    }
+    </code>
+    </div>
 chainable: true
 ---
 

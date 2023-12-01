@@ -18,6 +18,26 @@ description: >
 line: 128
 itemtype: property
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Move the mouse across the canvas to leave a trail
+    function setup() {
+      //slow down the frameRate to make it more visible
+      frameRate(10);
+    }
+
+    function draw() {
+      background(244, 248, 252);
+      line(mouseX, mouseY, pmouseX, pmouseY);
+      print(pmouseX + ' -> ' + mouseX);
+      describe(`line trail is created from cursor movements.
+        faster movement make longer line.`);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

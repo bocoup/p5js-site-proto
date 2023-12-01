@@ -40,6 +40,80 @@ description: >
 line: 1098
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      tint('red');
+      image(img, 50, 0);
+
+      describe('Two images of an umbrella and a ceiling side-by-side. The image on the right has a red tint.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      tint(255, 0, 0);
+      image(img, 50, 0);
+
+      describe('Two images of an umbrella and a ceiling side-by-side. The image on the right has a red tint.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      tint(255, 0, 0, 100);
+      image(img, 50, 0);
+
+      describe('Two images of an umbrella and a ceiling side-by-side. The image on the right has a transparent red tint.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      tint(255, 180);
+      image(img, 50, 0);
+
+      describe('Two images of an umbrella and a ceiling side-by-side. The image on the right is transparent.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

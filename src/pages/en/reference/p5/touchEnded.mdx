@@ -27,6 +27,51 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // Release touch within the image to
+    // change the value of the rectangle
+
+    let value = 0;
+    function draw() {
+      fill(value);
+      rect(25, 25, 50, 50);
+      describe('50-by-50 black rect turns white with touch.');
+    }
+    function touchEnded() {
+      if (value === 0) {
+        value = 255;
+      } else {
+        value = 0;
+      }
+    }
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    function touchEnded() {
+      ellipse(mouseX, mouseY, 5, 5);
+      // prevent default
+      return false;
+    }
+    describe('no image displayed');
+    </code>
+    </div>
+
+    <div class="norender">
+    <code>
+    // returns a TouchEvent object
+    // as a callback argument
+    function touchEnded(event) {
+      console.log(event);
+    }
+    describe('no image displayed');
+    </code>
+    </div>
 chainable: false
 ---
 

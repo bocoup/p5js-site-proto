@@ -37,6 +37,33 @@ params:
     optional: true
 itemtype: method
 class: p5.SoundFile
+example:
+  - |2-
+
+     <div><code>
+     let soundFile;
+     let loopStart = 0.5;
+     let loopDuration = 0.2;
+     function preload() {
+       soundFormats('ogg', 'mp3');
+       soundFile = loadSound('assets/Damscray_-_Dancing_Tiger_02.mp3');
+     }
+     function setup() {
+       let cnv = createCanvas(100, 100);
+       cnv.mousePressed(canvasPressed);
+       background(220);
+       text('tap to play, release to pause', 10, 20, width - 20);
+     }
+     function canvasPressed() {
+       soundFile.loop();
+       background(0, 200, 50);
+     }
+     function mouseReleased() {
+       soundFile.pause();
+       background(220);
+     }
+     </code>
+     </div>
 chainable: false
 ---
 

@@ -11,6 +11,14 @@ description: |
 line: 293
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(unhex('A')); // 10
+    print(unhex('FF')); // 255
+    print(unhex(['FF', 'AA', '00'])); // [ 255, 170, 0 ]
+    </code></div>
 return:
   description: integer representation of hexadecimal value
   type: Number

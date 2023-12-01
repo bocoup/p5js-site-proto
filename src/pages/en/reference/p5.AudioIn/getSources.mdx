@@ -27,6 +27,27 @@ params:
     optional: true
 itemtype: method
 class: p5.AudioIn
+example:
+  - |2-
+
+     <div><code>
+     let audioIn;
+
+     function setup(){
+       text('getting sources...', 0, 20);
+       audioIn = new p5.AudioIn();
+       audioIn.getSources(gotSources);
+     }
+
+     function gotSources(deviceList) {
+       if (deviceList.length > 0) {
+         //set the source to the first item in the deviceList array
+         audioIn.setSource(0);
+         let currentSource = deviceList[audioIn.currentSource];
+         text('set source to: ' + currentSource.deviceId, 5, 20, width);
+       }
+     }
+     </code></div>
 return:
   description: |-
     Returns a Promise that can be used in place of the callbacks, similar

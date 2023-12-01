@@ -18,6 +18,37 @@ params:
     optional: true
 itemtype: method
 class: p5.Table
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    // Given the CSV file "mammals.csv"
+    // in the project's "assets" folder:
+    //
+    // id,species,name
+    // 0,Capra hircus,Goat
+    // 1,Panthera pardus,Leopard
+    // 2,Equus zebra,Zebra
+
+    let table;
+
+    function preload() {
+      //my table is comma separated value "csv"
+      //and has a header specifying the columns labels
+      table = loadTable('assets/mammals.csv', 'csv', 'header');
+    }
+
+    function setup() {
+      let tableObject = table.getObject();
+
+      print(tableObject);
+      //outputs an object
+
+      describe('no image displayed');
+    }
+    </code>
+    </div>
 return:
   description: ''
   type: Object

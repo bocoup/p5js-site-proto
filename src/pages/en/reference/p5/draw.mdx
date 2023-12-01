@@ -63,6 +63,25 @@ description: >
 line: 113
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div><code>
+    let yPos = 0;
+    function setup() {
+      // setup() runs once
+      frameRate(30);
+    }
+    function draw() {
+      // draw() loops forever, until stopped
+      background(204);
+      yPos = yPos - 1;
+      if (yPos < 0) {
+        yPos = height;
+      }
+      line(0, yPos, width, yPos);
+    }
+    </code></div>
 alt: nothing displayed
 chainable: false
 ---

@@ -31,6 +31,18 @@ params:
     type: String
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let string = 'Hello p5js*!';
+    let regexp = 'p5js\\*';
+    let m = match(string, regexp);
+    text(m, 5, 50);
+    describe('“p5js*” displayed middle left of canvas.');
+    </code>
+    </div>
 return:
   description: Array of Strings found
   type: 'String[]'

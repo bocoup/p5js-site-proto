@@ -19,6 +19,16 @@ params:
     type: String|Boolean|Number|Array
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class='norender'><code>
+    print(boolean(0)); // false
+    print(boolean(1)); // true
+    print(boolean('true')); // true
+    print(boolean('abcd')); // false
+    print(boolean([0, 12, 'true'])); // [false, true, true]
+    </code></div>
 return:
   description: boolean representation of value
   type: Boolean

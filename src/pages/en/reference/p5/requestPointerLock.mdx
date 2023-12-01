@@ -25,6 +25,28 @@ description: >
 line: 950
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class="notest">
+    <code>
+    let cam;
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      requestPointerLock();
+      cam = createCamera();
+    }
+
+    function draw() {
+      background(255);
+      cam.pan(-movedX * 0.001);
+      cam.tilt(movedY * 0.001);
+      sphere(25);
+      describe(`3D scene moves according to mouse mouse movement in a
+        first person perspective`);
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

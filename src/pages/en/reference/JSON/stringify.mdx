@@ -19,6 +19,17 @@ params:
     type: Object
 itemtype: method
 class: JSON
+example:
+  - |-
+
+    <div class='norender'>
+    <code>
+    let myObject = { x: 5, y: 6 };
+    let myObjectAsString = JSON.stringify(myObject);
+    console.log(myObjectAsString); // prints "{"x":5,"y":6}" to the console
+    console.log(typeof myObjectAsString); // prints 'string' to the console
+    </code>
+    </div>
 alt: This example does not render anything
 chainable: false
 ---

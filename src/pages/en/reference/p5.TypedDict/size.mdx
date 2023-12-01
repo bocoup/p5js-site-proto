@@ -10,6 +10,18 @@ description: >
 line: 102
 itemtype: method
 class: p5.TypedDict
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    function setup() {
+      let myDictionary = createNumberDict(1, 10);
+      myDictionary.create(2, 20);
+      myDictionary.create(3, 30);
+      print(myDictionary.size()); // logs 3 to the console
+    }
+    </code></div>
 return:
   description: the number of key-value pairs in the Dictionary
   type: Integer

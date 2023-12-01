@@ -55,6 +55,34 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      noStroke();
+      fill(0, 10);
+
+      // Uniform distribution.
+      let x = random(width);
+      let y = 25;
+      circle(x, y, 5);
+
+      // Gaussian distribution with sd = 1.
+      x = randomGaussian(50);
+      y = 50;
+      circle(x, y, 5);
+
+      // Gaussian distribution with sd = 10.
+      x = randomGaussian(50, 10);
+      y = 75;
+      circle(x, y, 5);
+
+      describe('Three horizontal black lines are filled in randomly. The top line spans entire canvas. The middle line is very short. The bottom line spans two-thirds of the canvas.');
+    }
+    </code>
+    </div>
 return:
   description: random number.
   type: Number

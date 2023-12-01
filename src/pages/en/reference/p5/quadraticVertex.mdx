@@ -33,6 +33,46 @@ description: >
 line: 772
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    strokeWeight(5);
+    point(20, 20);
+    point(80, 20);
+    point(50, 50);
+
+    noFill();
+    strokeWeight(1);
+    beginShape();
+    vertex(20, 20);
+    quadraticVertex(80, 20, 50, 50);
+    endShape();
+    </code>
+    </div>
+
+    <div>
+    <code>
+    strokeWeight(5);
+    point(20, 20);
+    point(80, 20);
+    point(50, 50);
+
+    point(20, 80);
+    point(80, 80);
+    point(80, 60);
+
+    noFill();
+    strokeWeight(1);
+    beginShape();
+    vertex(20, 20);
+    quadraticVertex(80, 20, 50, 50);
+    quadraticVertex(20, 80, 80, 80);
+    vertex(80, 60);
+    endShape();
+    </code>
+    </div>
 alt: |-
   arched-shaped black line with 4 pixel thick stroke weight.
   backwards s-shaped black line with 4 pixel thick stroke weight.

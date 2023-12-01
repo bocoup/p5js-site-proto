@@ -55,6 +55,109 @@ description: >
 line: 1323
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let myRadio;
+
+    function setup() {
+      // Create a radio button element and place it
+      // in the top-left corner.
+      myRadio = createRadio();
+      myRadio.position(0, 0);
+      myRadio.size(60);
+
+      // Add a few color options.
+      myRadio.option('red');
+      myRadio.option('yellow');
+      myRadio.option('blue');
+
+      // Choose a default option.
+      myRadio.selected('yellow');
+
+      describe('A yellow square with three color options listed, "red", "yellow", and "blue". The square changes color when the user selects a new option.');
+    }
+
+    function draw() {
+      // Set the background color using the radio button.
+      let g = myRadio.value();
+      background(g);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let myRadio;
+
+    function setup() {
+      // Create a radio button element and place it
+      // in the top-left corner.
+      myRadio = createRadio();
+      myRadio.position(0, 0);
+      myRadio.size(50);
+
+      // Add a few color options.
+      // Color values are labeled with
+      // emotions they evoke.
+      myRadio.option('red', 'love');
+      myRadio.option('yellow', 'joy');
+      myRadio.option('blue', 'trust');
+
+      // Choose a default option.
+      myRadio.selected('yellow');
+
+      describe('A yellow square with three options listed, "love", "joy", and "trust". The square changes color when the user selects a new option.');
+    }
+
+    function draw() {
+      // Set the background color using the radio button.
+      let c = myRadio.value();
+      background(c);
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let myRadio;
+
+    function setup() {
+      // Create a radio button element and place it
+      // in the top-left corner.
+      myRadio = createRadio();
+      myRadio.position(0, 0);
+      myRadio.size(50);
+
+      // Add a few color options.
+      myRadio.option('red');
+      myRadio.option('yellow');
+      myRadio.option('blue');
+
+      // Choose a default option.
+      myRadio.selected('yellow');
+
+      // Create a button and place it beneath the canvas.
+      let btn = createButton('disable');
+      btn.position(0, 100);
+
+      // Use the button to disable the radio button.
+      btn.mousePressed(() => {
+        myRadio.disable(true);
+      });
+
+      describe('A yellow square with three options listed, "red", "yellow", and "blue". The square changes color when the user selects a new option. A "disable" button beneath the canvas disables the color options when pressed.');
+    }
+
+    function draw() {
+      // Set the background color using the radio button.
+      let c = myRadio.value();
+      background(c);
+    }
+    </code>
+    </div>
 return:
   description: new <a href="#/p5.Element">p5.Element</a> object.
   type: p5.Element

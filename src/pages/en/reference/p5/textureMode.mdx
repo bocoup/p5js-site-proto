@@ -25,6 +25,61 @@ params:
     type: Constant
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('quad with a texture, mapped using normalized coordinates');
+    }
+
+    function draw() {
+      texture(img);
+      textureMode(NORMAL);
+      beginShape();
+      vertex(-50, -50, 0, 0);
+      vertex(50, -50, 1, 0);
+      vertex(50, 50, 1, 1);
+      vertex(-50, 50, 0, 1);
+      endShape();
+    }
+    </code>
+    </div>
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/laDefense.jpg');
+    }
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('quad with a texture, mapped using image coordinates');
+    }
+
+    function draw() {
+      texture(img);
+      textureMode(IMAGE);
+      beginShape();
+      vertex(-50, -50, 0, 0);
+      vertex(50, -50, img.width, 0);
+      vertex(50, 50, img.width, img.height);
+      vertex(-50, 50, 0, img.height);
+      endShape();
+    }
+    </code>
+    </div>
 alt: 'quad with a texture, mapped using image coordinates'
 chainable: false
 ---

@@ -15,6 +15,23 @@ description: |
 line: 814
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('Sphere with normal material');
+    }
+
+    function draw() {
+      background(200);
+      normalMaterial();
+      sphere(40);
+    }
+    </code>
+    </div>
 alt: Sphere with normal material
 chainable: true
 ---

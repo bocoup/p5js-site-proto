@@ -26,6 +26,63 @@ description: >
 line: 13
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    let shapes;
+
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      makeShapes();
+    }
+
+    function makeShapes() {
+      beginGeometry();
+      scale(0.18);
+
+      push();
+      translate(100, -50);
+      scale(0.5);
+      rotateX(PI/4);
+      cone();
+      pop();
+      cone();
+
+      beginShape();
+      vertex(-20, -50);
+      quadraticVertex(
+        -40, -70,
+        0, -60
+      );
+      endShape();
+
+      beginShape(TRIANGLE_STRIP);
+      for (let y = 20; y <= 60; y += 10) {
+        for (let x of [20, 60]) {
+          vertex(x, y);
+        }
+      }
+      endShape();
+
+      beginShape();
+      vertex(-100, -120);
+      vertex(-120, -110);
+      vertex(-105, -100);
+      endShape();
+
+      shapes = endGeometry();
+    }
+
+    function draw() {
+      background(255);
+      lights();
+      orbitControl();
+      model(shapes);
+    }
+    </code>
+    </div>
 alt: 'A series of different flat, curved, and 3D shapes floating in space.'
 chainable: false
 ---

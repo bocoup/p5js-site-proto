@@ -15,6 +15,24 @@ description: >
 line: 1081
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      background(200);
+
+      // Get the sketch's URL
+      // and display it.
+      let url = getURL();
+      textWrap(CHAR);
+      text(url, 0, 40, 100);
+
+      describe('The URL "https://p5js.org/reference/#/p5/getURL" written in black on a gray background.');
+    }
+    </code>
+    </div>
 return:
   description: url
   type: String

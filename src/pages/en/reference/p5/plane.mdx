@@ -32,6 +32,24 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    // draw a plane
+    // with width 50 and height 50
+    function setup() {
+      createCanvas(100, 100, WEBGL);
+      describe('a white plane with black wireframe lines');
+    }
+
+    function draw() {
+      background(200);
+      plane(50, 50);
+    }
+    </code>
+    </div>
 alt: |-
   Nothing displayed on canvas
   Rotating interior view of a box with sides that change color.

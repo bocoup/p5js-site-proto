@@ -41,6 +41,46 @@ description: >
 line: 2859
 itemtype: method
 class: p5.Element
+example:
+  - |-
+
+    <div>
+    <code>
+    function setup() {
+      // Create a container div and
+      // place it at the top-left
+      // corner.
+      let container = createDiv();
+      container.position(0, 0);
+
+      // Create a paragraph element
+      // and place it within the container.
+      // Set its horizontal alignment to
+      // "left".
+      let p1 = createP('hi');
+      p1.parent(container);
+      p1.attribute('align', 'left');
+
+      // Create a paragraph element
+      // and place it within the container.
+      // Set its horizontal alignment to
+      // "center".
+      let p2 = createP('hi');
+      p2.parent(container);
+      p2.attribute('align', 'center');
+
+      // Create a paragraph element
+      // and place it within the container.
+      // Set its horizontal alignment to
+      // "right".
+      let p3 = createP('hi');
+      p3.parent(container);
+      p3.attribute('align', 'right');
+
+      describe('A gray square with the text "hi" written on three separate lines, each placed further to the right.');
+    }
+    </code>
+    </div>
 return:
   description: value of the attribute.
   type: String

@@ -10,6 +10,29 @@ description: |
 line: 2443
 itemtype: method
 class: p5.SoundFile
+example:
+  - |-
+
+    <div><code>
+    let drum;
+    function preload() {
+      drum = loadSound('assets/drum.mp3');
+    }
+
+    function setup() {
+      let cnv = createCanvas(100, 100);
+      cnv.mousePressed(canvasPressed);
+      background(220);
+      text('tap to play', 20, 20);
+    }
+
+    function canvasPressed() {
+      drum.stop();
+      drum.reverseBuffer();
+      drum.play();
+    }
+     </code>
+     </div>
 chainable: false
 ---
 

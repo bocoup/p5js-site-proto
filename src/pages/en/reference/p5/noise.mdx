@@ -88,6 +88,130 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      let x = 100 * noise(0.005 * frameCount);
+      let y = 100 * noise(0.005 * frameCount + 10000);
+
+      strokeWeight(5);
+      point(x, y);
+
+      describe('A black dot moves randomly on a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      let noiseLevel = 100;
+      let noiseScale = 0.005;
+      // Scale input coordinate.
+      let nt = noiseScale * frameCount;
+      // Compute noise value.
+      let x = noiseLevel * noise(nt);
+      let y = noiseLevel * noise(nt + 10000);
+      // Render.
+      strokeWeight(5);
+      point(x, y);
+
+      describe('A black dot moves randomly on a gray square.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      let noiseLevel = 100;
+      let noiseScale = 0.02;
+      // Scale input coordinate.
+      let x = frameCount;
+      let nx = noiseScale * x;
+      // Compute noise value.
+      let y = noiseLevel * noise(nx);
+      // Render.
+      line(x, 0, x, y);
+
+      describe('A hilly terrain drawn in gray against a black sky.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      background(200);
+
+      let noiseLevel = 100;
+      let noiseScale = 0.002;
+      for (let x = 0; x < width; x += 1) {
+        // Scale input coordinates.
+        let nx = noiseScale * x;
+        let nt = noiseScale * frameCount;
+        // Compute noise value.
+        let y = noiseLevel * noise(nx, nt);
+        // Render.
+        line(x, 0, x, y);
+      }
+
+      describe('A calm sea drawn in gray against a black sky.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let noiseLevel = 255;
+    let noiseScale = 0.01;
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width; x += 1) {
+        // Scale input coordinates.
+        let nx = noiseScale * x;
+        let ny = noiseScale * y;
+        // Compute noise value.
+        let c = noiseLevel * noise(nx, ny);
+        // Render.
+        stroke(c);
+        point(x, y);
+      }
+    }
+
+    describe('A gray cloudy pattern.');
+    </code>
+    </div>
+
+    <div>
+    <code>
+    function draw() {
+      let noiseLevel = 255;
+      let noiseScale = 0.009;
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          // Scale input coordinates.
+          let nx = noiseScale * x;
+          let ny = noiseScale * y;
+          let nt = noiseScale * frameCount;
+          // Compute noise value.
+          let c = noiseLevel * noise(nx, ny, nt);
+          // Render.
+          stroke(c);
+          point(x, y);
+        }
+      }
+
+      describe('A gray cloudy pattern that changes.');
+    }
+    </code>
+    </div>
 return:
   description: Perlin noise value at specified coordinates.
   type: Number

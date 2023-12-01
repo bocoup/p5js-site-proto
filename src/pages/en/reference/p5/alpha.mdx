@@ -17,6 +17,35 @@ params:
     type: 'p5.Color|Number[]|String'
 itemtype: method
 class: p5
+example:
+  - >-
+
+    <div>
+
+    <code>
+
+    noStroke();
+
+    const c = color(0, 126, 255, 102);
+
+    fill(c);
+
+    rect(15, 15, 35, 70);
+
+    // Sets 'alphaValue' to 102.
+
+    const alphaValue = alpha(c);
+
+    fill(alphaValue);
+
+    rect(50, 15, 35, 70);
+
+    describe('Two rectangles. The left one is light blue and the right one is
+    charcoal gray.');
+
+    </code>
+
+    </div>
 return:
   description: the alpha value.
   type: Number

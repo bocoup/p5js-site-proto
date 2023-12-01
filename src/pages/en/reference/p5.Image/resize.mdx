@@ -29,6 +29,62 @@ params:
     type: Number
 itemtype: method
 class: p5.Image
+example:
+  - |-
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      img.resize(50, 100);
+      image(img, 0, 0);
+
+      describe('Two images of a mountain landscape. One copy of the image is squeezed horizontally.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      img.resize(0, 30);
+      image(img, 0, 0);
+
+      describe('Two images of a mountain landscape. The small copy of the image covers the top-left corner of the larger image.');
+    }
+    </code>
+    </div>
+
+    <div>
+    <code>
+    let img;
+
+    function preload() {
+      img = loadImage('assets/rockies.jpg');
+    }
+
+    function setup() {
+      image(img, 0, 0);
+      img.resize(60, 0);
+      image(img, 0, 0);
+
+      describe('Two images of a mountain landscape. The small copy of the image covers the top-left corner of the larger image.');
+    }
+    </code>
+    </div>
 chainable: false
 ---
 

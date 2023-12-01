@@ -14,6 +14,19 @@ params:
     type: String
 itemtype: method
 class: p5.Element
+example:
+  - |2-
+
+     <div class='norender'><code>
+     let div;
+    function setup() {
+       div = createDiv('div');
+       div.addClass('show');
+     }
+    function mousePressed() {
+       div.toggleClass('show');
+     }
+     </code></div>
 chainable: true
 ---
 

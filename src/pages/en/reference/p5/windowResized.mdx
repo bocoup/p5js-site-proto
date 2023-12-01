@@ -25,6 +25,28 @@ params:
     optional: true
 itemtype: method
 class: p5
+example:
+  - |-
+
+    <div class="norender">
+    <code>
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      background(200);
+
+      describe('A gray canvas that takes up the entire browser window. It changes size to match the browser window.');
+    }
+
+    // Resize the canvas when the
+    // browser's size changes.
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+    </code>
+    </div>
 alt: This example does not render anything.
 chainable: false
 ---

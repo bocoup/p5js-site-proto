@@ -17,6 +17,25 @@ params:
     optional: true
 itemtype: method
 class: p5.SoundFile
+example:
+  - |2-
+
+     <div><code>
+     let mySound;
+     function preload() {
+       mySound = loadSound('assets/doorbell.mp3');
+     }
+     function setup() {
+       let cnv = createCanvas(100, 100);
+       cnv.mousePressed(canvasPressed);
+       background(220);
+       text('tap to download', 10, 20);
+     }
+
+     function canvasPressed() {
+       mySound.save('my cool filename');
+     }
+    </code></div>
 chainable: false
 ---
 
