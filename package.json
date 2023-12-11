@@ -29,6 +29,7 @@
     "patch-package": "^8.0.0",
     "postinstall-postinstall": "^2.1.0",
     "preact": "^10.6.5",
+    "prism-code-editor": "^2.2.4",
     "remark": "^15.0.1",
     "remark-mdx": "^3.0.0",
     "simple-git": "^3.20.0",

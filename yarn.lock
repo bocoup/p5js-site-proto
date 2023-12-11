@@ -1055,6 +1055,11 @@
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-6.0.3.tgz#705bb349e789efa06f43f128cef51240753424cb"
   integrity sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==
 
+"@types/prismjs@^1.26.2":
+  version "1.26.3"
+  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.3.tgz#47fe8e784c2dee24fe636cab82e090d3da9b7dec"
+  integrity sha512-A0D0aTXvjlqJ5ZILMz3rNfDBOx9hHxLZYv2by47Sm/pqW35zzjusrZTryatjN/Rf8Us2gZrJD+KeHbUSTux1Cw==
+
 "@types/prop-types@*":
   version "15.7.10"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.10.tgz#892afc9332c4d62a5ea7e897fe48ed2085bbb08a"
@@ -5171,6 +5176,13 @@ pretty-format@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
   integrity sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==
+
+prism-code-editor@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/prism-code-editor/-/prism-code-editor-2.2.4.tgz#2f7853eca8a4ed715d669e553b479f4db8847600"
+  integrity sha512-2qvoO6LxZ9dtjDJUlqD8Bs7cjlcCMKV5huqEog0m7wSVIBQ4+/En9WJK2HSq2NSUZV2pbXVTgd/NuFbWY9FemQ==
+  dependencies:
+    "@types/prismjs" "^1.26.2"
 
 prismjs@^1.29.0:
   version "1.29.0"
