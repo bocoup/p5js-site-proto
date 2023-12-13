@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
-import { minimalSetup } from "codemirror";
 import CodeMirror from "@uiw/react-codemirror";
+import { minimalSetup } from "@uiw/codemirror-extensions-basic-setup";
 import { javascript } from "@codemirror/lang-javascript";
 
 import { CodeFrame } from "../../CodeFrame";
@@ -19,9 +19,21 @@ export const CodeEmbedCodeMirror = (props) => {
       <CodeMirror
         value={codeString}
         theme="light"
-        extensions={[minimalSetup, javascript()]}
+        minimalSetup={{
+          highlightSpecialChars: false,
+          history: true,
+          drawSelection: true,
+          syntaxHighlighting: true,
+          defaultKeymap: true,
+          historyKeymap: true,
+        }}
+        indentWithTab={false}
+        extensions={[javascript()]}
         onChange={(val) => setCodeString(val)}
         editable={props.editable}
+        onCreateEditor={(editorView) =>
+          (editorView.contentDOM.ariaLabel = "Code Editor")
+        }
       />
       {props.previewable ? (
         <>
