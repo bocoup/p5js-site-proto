@@ -10,15 +10,14 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  experimental: {
-    // https://docs.astro.build/en/guides/internationalization/
-    i18n: {
-      defaultLocale: "en",
-      locales: ["en", "es"],
-      fallback: {
-        es: "en",
-      },
-      routingStrategy: "prefix-always",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    fallback: {
+      es: "en",
+    },
+    routing: {
+      prefixDefaultLocale: true,
     },
   },
 });

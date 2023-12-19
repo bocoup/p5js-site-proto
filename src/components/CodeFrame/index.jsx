@@ -2,7 +2,7 @@
 const wrapJsInMarkup = (jsCode) => `<!DOCTYPE html>
 <meta charset="utf8" />
 <body></body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js"></script>
 <script id="code" type="module">${jsCode}</script>
 `;
 
