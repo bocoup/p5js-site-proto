@@ -7,11 +7,15 @@ import "prism-code-editor/grammars/javascript";
 
 import { CodeFrame } from "../../CodeFrame";
 
-// interface CodeEmbedProps {
-//   initialValue?: string;
-//   editable: boolean;
-//   previewable: boolean;
-// }
+/*
+ * A more featured code embed component that uses Prism-Code-Editor
+ *
+ * Props: {
+ *   initialValue?: string;
+ *   editable: boolean;
+ *   previewable: boolean;
+ * }
+ */
 export const CodeEmbedPrism = (props) => {
   //  < HTMLDivElement >
   const divRef = useRef(null);

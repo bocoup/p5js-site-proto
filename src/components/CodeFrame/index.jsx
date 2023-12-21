@@ -7,6 +7,9 @@ const wrapJsInMarkup = (jsCode) => `<!DOCTYPE html>
 `;
 
 // props: { code: string }
+/*
+ * Component that uses an iframe to run p5 code.
+ */
 export const CodeFrame = (props) => (
   <iframe
     srcDoc={wrapJsInMarkup(props.code)}

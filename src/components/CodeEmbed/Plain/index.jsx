@@ -1,3 +1,6 @@
+/*
+ * A simple code embed component that uses only plain HTML.
+ */
 const CodeEmbed = ({ code }) => {
   return (
     <div>

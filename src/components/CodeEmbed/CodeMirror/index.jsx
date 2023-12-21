@@ -5,11 +5,15 @@ import { javascript } from "@codemirror/lang-javascript";
 
 import { CodeFrame } from "../../CodeFrame";
 
-// interface CodeEmbedProps {
-//   initialValue?: string;
-//   editable: boolean;
-//   previewable: boolean;
-// }
+/*
+ * A more featured code embed component that uses CodeMirror
+ *
+ * Props: {
+ *   initialValue?: string;
+ *   editable: boolean;
+ *   previewable: boolean;
+ * }
+ */
 export const CodeEmbedCodeMirror = (props) => {
   const [codeString, setCodeString] = useState(props.initialValue ?? "");
   const [previewCodeString, setPreviewCodeString] = useState(codeString);
